@@ -35,14 +35,26 @@
 
 
 \begin{document}
-\section{Definition}
+\section{Definitions}
 \begin{defn}[Graph - Abstract]
-	An {\bfseries Abstract Graph} \(G\) is a set \((V,E, \partial, i)\) where \(V\) and \(E\) are non-empty sets and \(\partial: E \to V\) and \(i: E \to E\) are functions satisfying \(i^2(e)=e\) and \(i(e) \neq e\) for all \(e \in E\).
+	An {\em Abstract Graph} \(\Gamma\) is a set \((V,E, \partial, i)\) where \(V\) and \(E\) are non-empty sets and \(\partial: E \to V\) and \(i: E \to E\) are functions satisfying \(i^2(e)=e\) and \(i(e) \neq e\) for all \(e \in E\). 
+	%i.e. partial is a function from edges to vertices and i is a fixed point free involution
 \end{defn}
 
-We set \(o(e) := \partial(e)\) and \(t(e) := (\partial\circ i)(e)\) for origin and terminal vertices and put \(\overline{e} := i(e)\).
+We set \(o(e) := \partial(e)\) and \(t(e) := (\partial\circ i)(e)\) for origin and terminal vertices and put \(\overline{e} := i(e)\). We call the orbits of \(i\) the {\em undirected edges} of \(G\).
 
+\begin{defn}[Collapse Move]
+	If we have a group \(G\) acting on a tree \(T\) with an edge \(e\) such that \(G_{e} = G_{v}\) where \(v=o(e)\) and \(o(e)\) and \(t(e)\) are in different \(G\)-orbits then we can form \(T_{e}\) a new tree with \(V(T_{e} )=V(T)\smallsetminus G t(e)\) and \(E(T_{e} )=E(T) \smallsetminus Ge\). Then for all edges \(f\) with \(o(f) = t(ge)\) for some \(g \in G\) we define \(o(f)=gv\) in \(T_{e}\). 
+	
+	(Alternatively, if \(q\) was the map that paired the inital and terminal vertices of \(g e\) and left the others alone then we could define the new tree by taking \(E(T_{e} ):=E(T)\smallsetminus Ge \) and \(V(T_{e} ):=q(V)\) with attaching map \(q \circ \partial\).
+
+	If \(\mathcal{G}\) is a graph of groups decomposition of \(G\) with \(\varphi_{e}: G_{e} \to G_{\partial e}\) an isomorphism then define \(\mathcal{G}_{e}\) by removing \(e\), \(\overline{e}\) and \(\partial e\) and for every edge \(f\) with \(\partial(f) = \partial(e)\) replace \(\varphi_{f}\) with \(\varphi_{\overline{e}} \circ \varphi_{e}^{-1} \circ \varphi_{f}\) and set \(\partial f = \partial \overline{e}\). This corresponds to taking the edge \(e\) from the tree description above and folding \([e]\) in the graph.
+
+\end{defn}
 \begin{defn}[Fold]
-	(placeholder)
+	Given a tree with \(\partial e = \partial f\) identify \(e\) with \(f\) as well as \(\overline{e}\) and \(\overline{f}\) and \(\overline{\partial} e\) with \(\overline{\partial} f\) and do so equivariantly. (In \(\mathcal{G}\) this corresponds to moves of type A or B with subtype I, II, or III.)
 \end{defn}
+
+\begin{claim*} A reduced not locally finite tree remains not locally finite after folding.
+\end{claim*}
 \end{document}
