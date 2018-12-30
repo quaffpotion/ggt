@@ -37,11 +37,17 @@
 \begin{document}
 \section{Definitions}
 \begin{defn}[Graph - Abstract]
-	An {\em Abstract Graph} \(\Gamma\) is a set \((V,E, \partial, i)\) where \(V\) and \(E\) are non-empty sets and \(\partial: E \to V\) and \(i: E \to E\) are functions satisfying \(i^2(e)=e\) and \(i(e) \neq e\) for all \(e \in E\). 
-	%i.e. partial is a function from edges to vertices and i is a fixed point free involution
+	An {\em Abstract Graph} \(\Gamma\) is a set \((V,E, \partial, i)\) where \(V\) and \(E\) are non-empty sets and \(\partial: E \to V\) and \(i: E \to E\) are functions satisfying \(i^2(e)=e\) and \(i(e) \neq e\) for all \(e \in E\). (i.e. the function \(i\) is a fixed-point free involution)
+	
 \end{defn}
 
-We set \(o(e) := \partial(e)\) and \(t(e) := (\partial\circ i)(e)\) for origin and terminal vertices and put \(\overline{e} := i(e)\). We call the orbits of \(i\) the {\em undirected edges} of \(G\).
+We set \(o(e) := \partial(e)\) and \(t(e) := (\partial\circ i)(e)\) for origin and terminal vertices and put \(\overline{e} := i(e)\). We call the orbits of \(i\) the {\em undirected edges} of \(G\). (i.e. the set \(\{ e, \overline{e}\}\) is an undirected edge) 
+
+\begin{defn}
+	A tree action \((G,T)\) is {\em minimal} if it contains no proper invariant subtree. A graph of groups \(\mathcal{G}\) is minimal if there is no proper subgroup carrying the entire group.
+	
+\end{defn}
+
 
 \begin{defn}[Collapse Move]
 	If we have a group \(G\) acting on a tree \(T\) with an edge \(e\) such that \(G_{e} = G_{v}\) where \(v=o(e)\) and \(o(e)\) and \(t(e)\) are in different \(G\)-orbits then we can form \(T_{e}\) a new tree with \(V(T_{e} )=V(T)\smallsetminus G t(e)\) and \(E(T_{e} )=E(T) \smallsetminus Ge\). Then for all edges \(f\) with \(o(f) = t(ge)\) for some \(g \in G\) we define \(o(f)=gv\) in \(T_{e}\). 
@@ -60,7 +66,7 @@ We set \(o(e) := \partial(e)\) and \(t(e) := (\partial\circ i)(e)\) for origin a
 
 \hrulefill
 
-
+\section{Claims}
 
 
 
