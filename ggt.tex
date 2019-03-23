@@ -20,6 +20,8 @@
 
 
 \theoremstyle{mystyle}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{thm*}{Theorem}[section]
 \newtheorem{lem}{Lemma}[section]
 \newtheorem{pro}[lem]{Proposition}
 \newtheorem{defn}[lem]{Definition}
@@ -35,6 +37,20 @@
 
 
 \begin{document}
+\section{Guirardel Core}
+
+\section{VH-complexes}
+
+Let \(X\) be our complex and \(X_{V}\) be the set of vertical edges. We say gates are connected components of \(X_{V}\) and corridors are cc of \(X - X_{V}\). The complex \(X\) is clean if the attaching maps of the corridors are injective.
+
+\begin{thm}[Wise]
+	If \(X\) a complete, VH, clean, connected complex then there is a finite sheeted cover that's a graph product.
+\end{thm}
+
+\begin{thm}
+	If \(X\) is NPC, VH, compact, nice(???) then \(X\) is complete XOR contains a locally geodesic VH pair of lollipops
+\end{thm}
+
 \section{Definitions}
 \begin{defn}[Graph - Abstract]
 	An {\em Abstract Graph} \(\Gamma\) is a set \((V,E, \partial, i)\) where \(V\) and \(E\) are non-empty sets and \(\partial: E \to V\) and \(i: E \to E\) are functions satisfying \(i^2(e)=e\) and \(i(e) \neq e\) for all \(e \in E\). (i.e. the function \(i\) is a fixed-point free involution)
