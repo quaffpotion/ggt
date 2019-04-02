@@ -27,12 +27,20 @@
 Definitions for cohomological and geometric dimension:
 	https://berstein.wordpress.com/2011/04/07/applications-of-the-bestvina-brady-theorem/
 
-Additional facts for 2019-03-29: Our situation is different because we're using trees instead of arbitrary cube complexes and our action comes from a diagonal action
+Additional facts for 2019-03-29: 
+	Our situation is different because we're using trees instead of arbitrary cube complexes and our action comes from a diagonal action
 
 Reading: Guirardel Core Paper
 	- need to check `examples 2.2`
 
 Possibly silly Q:
 	Q: Core is G-invariant
-	A1?: Union of light quadrants is G-invariant
-	
+	A: Union of light quadrants is G-invariant
+	R: This is part of why for non-empty cores, weakly heavy implies heavy
+
+2019-04-02:
+
+	Executive Summary of Cocompactness:
+		
+
+
