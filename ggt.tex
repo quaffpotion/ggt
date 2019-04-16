@@ -1,11 +1,12 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd}
+\usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd, xcolor}
+\definecolor{mypink1}{rgb}{0.858, 0.188, 0.478}
 \swapnumbers
 
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\thesubsection\ #1}}
 \fancyhf{}
-\lhead{Geometric Group Theory Notes}
+\lhead{Research Outline}
 \rhead{Tony Martino}
 
 \newtheoremstyle{mystyle}
@@ -37,6 +38,40 @@
 
 
 \begin{document}
+
+\section{Background}
+
+\begin{enumerate}
+    \item cohomological and geometric dimension
+    \item group splittings
+    \item Danny Wise VH-complexes
+    \item Guirardel Core
+\end{enumerate}
+
+\section{Problem Statement}
+
+Statement for Dimension 2: 
+
+Best case scenario: Given \(N \geq 2\) tree actions (i.e. splittings) that are pairwise not in the same deformation space obtain a generalized-VH complex, called the core (e.g. VHD-complex for the case of three pairwise inequivalent actions) by deleting light quadrants from the tree product.
+
+The core is generalized-VH, simply connected, and cocompact. The quotient modulo \(G\) is a compact, generalized-VH, graph-of-spaces decomposition of \(G\) along its (two-sided) hyperplanes. (i.e. in particular edge maps are injective on fundamental groups) The hyperplanes are also generalized-VH complexes. Using a theorem of Bieri we get that cd \(G\) is strictly greater than that of it's hyperplanes. Continuing inductively, we get that \(G\) has cd \(\geq N\).
+
+\section{Progress}
+
+\begin{enumerate}
+    \item Freeness of product action:
+
+	    We're going to walk through the setup in the two dimensional case. Let \(G\) be a group with two locally finite type \(FP\) actions \(T_{1}\) and \(T_{2}\) lying in different deformation spaces.  Consider the diagonal action on \(T_{1} \times T_{2}\), we will show that this action is free. {\color{mypink1}We will show that for a given \(g \in G\) that if \(g\) fixed a point in one tree then it doesn't fix a point in the other. By symmetry suppose \(g\) fixes a point in \(T_{1}\). Consider \(G_{v}\) where \(v\) lies in \(T_{1}\), as a subgroup of \(G\) it also acts on \(T_{2}\). Suppose that \(G_{v}\) acts without a global fixed point on \(T_{2}\) then }
+    \item Hyperplane separability:
+        Note that hyperplanes in the tree product are dual to edges in its one-skeleton and we have a diagonal action without edge inversions.
+    \item Using Bieri: If a group \(G\) has geometric dimension \(n\) and acts on a locally finite tree with \(FP_\infty\) (i.e. finite dimensional \(K(G,1)\)) stabilizers then the stabilizers have geometric dimension \(\leq n-1\).
+    \item Using Howsen
+    \item Using ``Quadrant-Convex'' lemma of Guirardel 
+    \item Using injectivity lemma for maps of NPC complexes
+    \item other: relevant facts on locally finite trees
+\end{enumerate};
+
+\end{document}
 \section{Guirardel Core}
 
 \section{VH-complexes}
@@ -87,3 +122,4 @@ We set \(o(e) := \partial(e)\) and \(t(e) := (\partial\circ i)(e)\) for origin a
 
 
 \end{document}
+
