@@ -41,17 +41,38 @@
 \section{Background}
 
 \begin{enumerate}
-    \item cohomological and geometric dimension
-    \item group splittings
-    \item Danny Wise VH-complexes
+    \item Group Splittings
     
-        In his thesis Danny Wise considered {\em VH-complexes}, these are square complexes with the edge set split into two disjoint sets such that attaching maps alternate between them. Among other items, Wise showed that from a VH-complex you can extract two splittings (vertical and horizontal respectively) of it's fundamental group.
+        Classical combinatorial group theory gives an algebraic notion of gluing groups along subgroups. Using suitable spaces and Siefert-van Kampen's theorem one can interpret the gluing as taking the quotient of a topological space. In the definitions below, amalgamation and HNN extension from the point of view of topology correspond to the disconnected and connected case. (e.g. An HNN extension along an automorphism is the fundamental group of a mapping torus) For a different kind of intuition note that an amalgamated free product is the pushout in the category of groups.
+        
+        Given \(A\leq G\) and \(B\leq H\) and an isomorphism \(\phi:A\to B\) and another isomorphism \(\psi: C\to C\) where \(C\leq G\) we can form the {\em amalgamated free product of \(G\) and \(H\) along \(\phi\)} denoted \(A*_\phi B\) with presentation \(\langle G, H\mid \phi(a) = b, a\in A\rangle\) and the {\em HNN extension of \(G\) along \(\psi\)} denoted \(G*_\psi\) with presentation \(\langle G, t\mid \psi(c)=tct^{-1}, c\in C\rangle\). 
+        
+        We will use results from Bass-Serre theory which gives a correspondence between splittings and \(G\)-trees. Roughly speaking, the groups in the amalgamation or HNN extension appear as vertex and edge stabilizers and vice versa.
+    \item Daniel Wise VH-complexes
+    
+        In his thesis Wise considered {\em VH-complexes}, these are square complexes with the edge set split into two disjoint sets such that attaching maps alternate between them. Among other items, Wise showed that from a VH-complex you can extract two splittings (vertical and horizontal) of it's fundamental group.
     \item Guirardel Core
+    
+        A particularly nice example comes from interpreting the algebraic definition of a group splitting topologically. First, specialize to the case of cyclic splittings of a fixed surface group. In this special case splittings correspond to homotopy classes of simply closed curves on a surface. The splittings further correspond to actions on trees and taking the diagonal action we get an action on a product of trees. Guirardel's work applies to more general \(\mathbb{R}\)-trees but in this case the {\em Guirardel core} is a contractible cocompact square complex - in fact, the quotient recovers the surface as a square complex with a number of squares equal to the intersection number of the curves.
 \end{enumerate}
 
 \section{Problem Statement}
 
-Statement for Dimension 2: 
+\subsection{VH implies at most two actions:}
+
+We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
+
+
+\section{Timeline}
+
+The precise details of the lemmas and definitions still need to be worked out in full. (e.g. crafting a version of Guirardel's core for three instead of two trees requires work) That said, I plan to begin writing my thesis in the Summer with the intent of graduating in the Spring of 2020.
+
+\section{Career}
+I've decided that the most important factor in my next career opportunity is location. Given this, I've been focusing on industry and government jobs. I have a resume and a GitHub account with examples of my work. I've also talked to  friends and family - including some OU gradautes - who work in areas I would enjoy.
+
+\end{document}
+
+\subsection{Recovering actions in dimension 2:}
 
 Wise obtained splittings from a VH-complex, we want a kind of converse. Consider a group of cohomological dimension two that has two actions on locally finite trees with FP vertex stabilizers. Suppose further that these actions are not in the same deformation space. We want to conclude our group is the fundamental group of a compact VH-complex and moreover the actions coming from Wise's work recover our original actions.
 
