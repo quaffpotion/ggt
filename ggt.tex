@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd, xcolor}
+\usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd, xcolor, mathrsfs,hyperref,cleveref}
 \definecolor{mypink1}{rgb}{0.858, 0.188, 0.478}
 \swapnumbers
 
@@ -22,18 +22,18 @@
 
 \theoremstyle{mystyle}
 \newtheorem{thm}{Theorem}[section]
-\newtheorem{thm*}{Theorem}[section]
+\newtheorem{thm*}{Theorem}
 \newtheorem{lem}{Lemma}[section]
-\newtheorem{pro}[lem]{Proposition}
-\newtheorem{defn}[lem]{Definition}
+\newtheorem{pro}{Proposition}
+\newtheorem{defn}{Definition}
 \newtheorem*{defn*}{Definition}
 \newtheorem*{claim*}{Claim}
 \newtheorem*{lem*}{Lemma}
 
 \theoremstyle{remark}
-\newtheorem{rmk}[lem]{Remark}
-\newtheorem{ex}[lem]{Example}
-\newtheorem{nex}[lem]{Not Example}
+\newtheorem{rmk}{Remark}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{nex}{Not Example}[section]
 
 
 
@@ -71,43 +71,104 @@ The precise details of the lemmas and definitions still need to be worked out in
 I've decided that the most important factor in my next career opportunity is location. Given this, I've been focusing on industry and government jobs. I have a resume and a GitHub account with examples of my work. I've also talked to  friends and family - including some OU gradautes - who work in areas I would enjoy.
 
 \section{Progress}
+\subsection{Definitions}
 
+\begin{defn}[Directions] A {\em direction} is a connected component of an \(\mathbb{R}\)-tree minus a point. 
+\end{defn}
+\begin{defn}[Halfspaces] A halfspace is a direction obtained from deleting the midpoint of an edge.
+\end{defn}
+\begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are onto
+\end{defn}
+\begin{defn}[Generalized quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor 
+\end{defn}
+\begin{defn}[product-convex] We say that \(S\subset X\) is product-convex if it's complement is the union of generalized quadrants.
+\end{defn}
+\begin{defn}[cellular-product-convex] We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized quadrants.
+\end{defn}
+\begin{defn}
+    [Induced cell structure]
+    Given a fiber of a projection we give it the cell structure from identifying e.g. pt x X2 x X3 with X2 x X3 (this way we can talk about cellular-product-convexity of slices)
+\end{defn}
 \subsection{Statements}
 
 \begin{lem}
-	[Filling Lemma in \(\mathbb{R}^{2}\)]
+    [Filling Lemma in \(\mathbb{R}^{2}\)]
 \end{lem}
 \begin{proof}
-	(sketch) This one is miai with a line that's left out
+    (sketch) This one is miai with a line that's left out
 \end{proof}
 \begin{lem}
-	[Filling Lemma in \(T_{1} \times T_{2}\)]
+    [Filling Lemma in \(T_{1} \times T_{2}\)]
 \end{lem}
 \begin{proof}
-	(sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
+    (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
 \end{proof}
 \begin{lem}
-	[Filling Lemma in \(\mathbb{R}^{3}\)]
+    [Filling Lemma in \(\mathbb{R}^{3}\)]
 \end{lem}
 \begin{proof}
-	(sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
+    (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
 \end{proof}
 \begin{lem}
-	[Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
+    [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
+    (Here we're taking convex hulls in the tree factors)
+\begin{proof}
+    (todo)
+\end{proof}
 \end{lem}
+\begin{pro}
+    [For subcomplexes, new-cvx \(\Longrightarrow\) old-cvx]
+    (note: we may not need this see \ref{label1})
+    \begin{proof}
+        (seems clear but write out)
+    \end{proof}
+\end{pro}
+\begin{pro}
+    [necessarily subcomplexes]
+    \label{label1}
+    If a set satisfies new-cvx then it is a subcomplex.
+    \begin{proof}
+        (todo)
+    \end{proof}
+\end{pro}
+\begin{pro}
+    [subcomplex, old-cvx \(\Longrightarrow\) new-cvx]
+    \begin{proof}
+        (todo)
+    \end{proof}
+\end{pro}
 
 \subsection{Ongoing}
 \begin{enumerate}
-	\item Cocompactness: This will need work
-	\item Simply-connected: This should follow by showing that hyperplanes are simply-connected by showing that they are slices which will be quadrant-convex and so contractible (and so s.c. as needed)
-	\item Definition details: We want the final core to be a subcomplex, so on the one hand we want to remove open quadrants however the arguments are slightly easier if we were allowed to remove closed quadrants. It might be possible to only talk about midpoints of edges (i.e. halfspaces in trees) instead of arbitrary points (i.e. branch points are annoying) The arguments seem to go through for our locally finite simplicial tree case either way. 
+    \item Cocompactness: This will need work
+    \item Simply-connected: This should follow by showing that hyperplanes are simply-connected by showing that they are slices which will be quadrant-convex and so contractible (and so s.c. as needed)
+    \item Definition details: We want the final core to be a subcomplex, so on the one hand we want to remove open quadrants however the arguments are slightly easier if we were allowed to remove closed quadrants. It might be possible to only talk about midpoints of edges (i.e. halfspaces in trees) instead of arbitrary points (i.e. branch points are annoying) The arguments seem to go through for our locally finite simplicial tree case either way. 
 \end{enumerate}
 
-\subsubsection{Definition details}
+\subsubsection{Transition from old-convex to new-convex}
+
+\begin{lem}
+    [retract separation]
+    You can pull back a separation of a retract to a separation of the whole space.
+\end{lem}
+\begin{lem}
+    [Separating at midpoints implies new-cvx for subcomplexes]
+\end{lem}
+\begin{lem}
+    [Octant preimages correspond to octants in both \(\mathbb{R}^3\) and \(\mathbb{T}\)]
+\end{lem}
+\begin{lem}
+    [Slices old-QC implies old-OC for reals]
+\end{lem}
+\begin{lem}
+    [Slices old-QC implies old-OC for trees at midpoints]
+\end{lem}
+\begin{thm}
+    [Slices QC implies OC for trees]
+\end{thm}
 
 
 \end{document}
 
 #justVimThings
 v to select some text, press "S", then a delimiter
-
