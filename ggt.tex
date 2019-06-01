@@ -147,28 +147,47 @@ I've decided that the most important factor in my next career opportunity is loc
 
 \subsubsection{Transition from old-convex to new-convex}
 
+In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as a midpoint hence we can separate. The idea is the separation is kept track of in a cube and this cube appears in \(X\) as well --- 
+
+\begin{itemize}
+	\item \(X=T_{1} \times T_{2} \times T_{3}\)
+	\item \(K \subseteq X\) always as subcomplex
+\end{itemize}
+
 \begin{lem}
     [retract separation]
     You can pull back a separation of a retract to a separation of the whole space.
 \end{lem}
 \begin{lem}
-    [Separating at midpoints implies new-cvx for subcomplexes]
+	[\label{lem:midpointsep} Separating at midpoints implies new-cvx for subcomplexes]
+	If \(K \subseteq X \) has the property that for every midpoint disjoint from \(K\) we can find a generalized-quadrant containing the midpoint that's disjoint from \(K\) then \(K\) is cellular-product-convex.
 \end{lem}
 \begin{lem}
-    [Octant preimages correspond to octants in both \(\mathbb{R}^3\) and \(\mathbb{T}\)]
+	[the implication]
+	Lemma \ref{lem:midpointsep} and Lemma \ref{lem:octant} imply \ref{thm:QCOC}
+\end{lem}
+\begin{lem}
+	[\label{lem:octant}Octant preimages correspond to octants in both \(\mathbb{R}^3\) and \(\mathbb{T}\)]
 \end{lem}
 \begin{lem}
     [Slices old-QC implies old-OC for reals]
+
+
 \end{lem}
 \begin{lem}
     [Slices old-QC implies old-OC for trees at midpoints]
 \end{lem}
 \begin{thm}
+	\label{thm:QCOC}
     [Slices QC implies OC for trees]
+	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. If \(K\) is a subcomplex of \(X\) that is connected, has cellular-product-convex fibers, and has connected fibers then \(K\) is also cellular-product-convex.
 \end{thm}
 
 
 \end{document}
 
 #justVimThings
-v to select some text, press "S", then a delimiter
+surround a selection of text: v to select some text, press "S", then a delimiter
+	- works with (, {, [ and <p>, <body>, etc.
+delete cursor to beginning of word: d/<type word here>
+	- works on multiple lines
