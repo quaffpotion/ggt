@@ -71,8 +71,12 @@ The precise details of the lemmas and definitions still need to be worked out in
 I've decided that the most important factor in my next career opportunity is location. Given this, I've been focusing on industry and government jobs. I have a resume and a GitHub account with examples of my work. I've also talked to  friends and family - including some OU gradautes - who work in areas I would enjoy.
 
 \section{Progress}
+\label{ss:Definitions}
 \subsection{Definitions}
-
+\begin{defn}
+	[retraction]
+	Let \(X = T_{1} \times T_{2} \times T_{3}\) be a product of trees considered as a cell complex. Let \(C\) in \(X\) be the product of 3 edges*.  Define \(r_{i}: X \to T_{i}\) by collapsing connected components of \(X - e_{i}\) to the corresponding endpoints of \(e_{i}\) then put \(r = r_{1} \times r_{2} \times r_{3}\). (* we want a product of closed edges, decide on notation, perhaps \(\overset{\bullet}{e}\) )
+\end{defn}
 \begin{defn}[Directions] A {\em direction} is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
 \begin{defn}[Halfspaces] A halfspace is a direction obtained from deleting the midpoint of an edge.
@@ -83,7 +87,9 @@ I've decided that the most important factor in my next career opportunity is loc
 \end{defn}
 \begin{defn}[product-convex] We say that \(S\subset X\) is product-convex if it's complement is the union of generalized quadrants.
 \end{defn}
-\begin{defn}[cellular-product-convex] We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized quadrants.
+\begin{defn}[cellular-product-convex] 
+\label{defn:cellular-product-convex}
+	We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized quadrants.
 \end{defn}
 \begin{defn}
     [Induced cell structure]
@@ -180,7 +186,13 @@ In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as 
 \begin{thm}
 	\label{thm:QCOC}
     [Slices QC implies OC for trees]
-	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. If \(K\) is a subcomplex of \(X\) that is connected, has cellular-product-convex fibers, and has connected fibers then \(K\) is also cellular-product-convex.
+	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
+	\begin{itemize}
+		\item connected
+		\item has connected hyperplanes
+		\item has cellular-product-convex hyperplanes \ref{defn:cellular-product-convex}
+	\end{itemize}
+Then \(K\) is also cellular-product-convex.
 \end{thm}
 
 \subsubsection{Reduction to cube}
@@ -231,3 +243,4 @@ surround a selection of text: v to select some text, press "S", then a delimiter
 	- works with (, {, [ and <p>, <body>, etc.
 delete cursor to beginning of word: d/<type word here>
 	- works on multiple lines
+move down by display lines: prefix with g e.g. gj, gk, g0, g$
