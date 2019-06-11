@@ -183,17 +183,6 @@ In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as 
 \begin{lem}
     [Slices old-QC implies old-OC for trees at midpoints]
 \end{lem}
-\begin{thm}
-	\label{thm:QCOC}
-    [Slices QC implies OC for trees]
-	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
-	\begin{itemize}
-		\item connected
-		\item has connected hyperplanes
-		\item has cellular-product-convex hyperplanes \ref{defn:cellular-product-convex}
-	\end{itemize}
-Then \(K\) is also cellular-product-convex.
-\end{thm}
 
 \subsubsection{Reduction to cube}
 
@@ -209,6 +198,17 @@ Some observations:
 	\item asdfasdf
 \end{itemize}
 
+\begin{thm}
+	\label{thm:QCOC}
+    [Slices QC implies OC for trees]
+	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
+	\begin{itemize}
+		\item connected
+		\item has connected hyperplanes
+		\item has cellular-product-convex hyperplanes \ref{defn:cellular-product-convex}
+	\end{itemize}
+Then \(K\) is also cellular-product-convex.
+\end{thm}
 We need four lemmas:
 
 \begin{lem}
@@ -222,19 +222,22 @@ We need four lemmas:
 	Then \(S\) is disjoint from some closed octant of \(\mathbb{E}\). 
 \end{lem}
 
+\begin{lem}
+	\label{lem:Xtocube}
+	[X to cube]
+	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\pi S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\pi\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
+\begin{proof}
+	We identify the cube in \(X\) with \([-1,1] \times [-1,1] \times [-1,1]\)  in \(\mathbb{R}^{3}\). In \(X\) points disjoint from the cube are sent to it's boundary and points inside the cube are left unmoved hence \((0,0,0)\) is not in \(\pi S\). The set \(S\) is connected and \(\pi\) is continuous so \(\pi S\) is also connected.  
+			
+\end{proof}
+	
+
+
+\end{lem}
+
 \begin{rmk}
 The logic should go: if \(S\) in \(X\) satisfies the hypotheses of \ref{thm:QCOC} then \(\pi S\) satisfies the hypotheses of \ref{lem:cubeOC}; if \(S\) satisfies the conclusion of \ref{lem:cubeOC} then \(p^{-1} S\) satisfies the conclusion of \ref{thm:QCOC}. Lastly, because we're taking pre-images running this logic through with one set from the beginning we have proven \ref{thm:QCOC}.
 \end{rmk}
-
-
-
-\fbox{\begin{minipage}{30 em}
-\begin{enumerate}
-	\item Formally state pieces of remark
-	\item prove pieces of remark
-	\item prove remark
-\end{enumerate}
-\end{minipage}}
 
 \end{document}
 
