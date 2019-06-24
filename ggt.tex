@@ -71,40 +71,47 @@ The precise details of the lemmas and definitions still need to be worked out in
 I've decided that the most important factor in my next career opportunity is location. Given this, I've been focusing on industry and government jobs. I have a resume and a GitHub account with examples of my work. I've also talked to  friends and family - including some OU gradautes - who work in areas I would enjoy.
 
 \section{Progress}
-\label{ss:Definitions}
+\subsection{Ongoing}
+\begin{enumerate}
+    \item Cocompactness: This will need work
+    \item Simply-connected: This should follow by showing that hyperplanes are simply-connected by showing that they are slices which will be quadrant-convex and so contractible (and so s.c. as needed)
+    \item Definition details: We want the final core to be a subcomplex, so on the one hand we want to remove open quadrants however the arguments are slightly easier if we were allowed to remove closed quadrants. It might be possible to only talk about midpoints of edges (i.e. halfspaces in trees) instead of arbitrary points (i.e. branch points are annoying) The arguments seem to go through for our locally finite simplicial tree case either way. 
+\end{enumerate}
+
 \subsection{Definitions}
-\begin{defn}
-	[retraction]
-	Let \(X = T_{1} \times T_{2} \times T_{3}\) be a product of trees considered as a cell complex. Let \(C\) in \(X\) be the product of 3 edges*.  Define \(r_{i}: X \to T_{i}\) by collapsing connected components of \(X - e_{i}\) to the corresponding endpoints of \(e_{i}\) then put \(r = r_{1} \times r_{2} \times r_{3}\). (* we want a product of closed edges, decide on notation, perhaps \(\overset{\bullet}{e}\) )
-\end{defn}
+
 \begin{defn}[Directions] A {\em direction} is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
 \begin{defn}[Halfspaces] A halfspace is a direction obtained from deleting the midpoint of an edge.
 \end{defn}
-\begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are onto
+\begin{defn}[closed Halfspaces] A component of tree minus a point, union the point.
 \end{defn}
-\begin{defn}[Generalized quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor 
+\begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are identity
 \end{defn}
-\begin{defn}[product-convex] We say that \(S\subset X\) is product-convex if it's complement is the union of generalized quadrants.
-\end{defn}
-\begin{defn}[cellular-product-convex] 
-\label{defn:cellular-product-convex}
-	We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized quadrants.
+\begin{defn}[Generalized open quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor 
 \end{defn}
 \begin{defn}
-    [Induced cell structure]
-    Given a fiber of a projection we give it the cell structure from identifying e.g. pt x X2 x X3 with X2 x X3 (this way we can talk about cellular-product-convexity of slices)
+    [Generalized closed quadrant]
 \end{defn}
+\begin{defn}
+    [Guirardel Quadrant]
+    Product of two directions. (This coincides with our definition of generalized-open-quadrants where \(k=2\) remembering to allow products of directions not just halfspaces)
+\end{defn}
+\begin{defn}[product-convex] We say that \(S\subset X\) is product-convex if it's complement is the union of generalized closed Guirardel quadrants.
+\end{defn}
+\begin{defn}[cellular-product-convex] We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized closed quadrants.
+\end{defn}
+
 \subsection{Statements}
 
 \begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{2}\)]
+    [Filling Lemma in \(\mathbb{R}^{2}\) with Guirardel-qudrants]
 \end{lem}
 \begin{proof}
     (sketch) This one is miai with a line that's left out
 \end{proof}
 \begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2}\)]
+    [Filling Lemma in \(T_{1} \times T_{2}\) with Guirardel-quadrants]
 \end{lem}
 \begin{proof}
     (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
@@ -144,12 +151,6 @@ I've decided that the most important factor in my next career opportunity is loc
     \end{proof}
 \end{pro}
 
-\subsection{Ongoing}
-\begin{enumerate}
-    \item Cocompactness: This will need work
-    \item Simply-connected: This should follow by showing that hyperplanes are simply-connected by showing that they are slices which will be quadrant-convex and so contractible (and so s.c. as needed)
-    \item Definition details: We want the final core to be a subcomplex, so on the one hand we want to remove open quadrants however the arguments are slightly easier if we were allowed to remove closed quadrants. It might be possible to only talk about midpoints of edges (i.e. halfspaces in trees) instead of arbitrary points (i.e. branch points are annoying) The arguments seem to go through for our locally finite simplicial tree case either way. 
-\end{enumerate}
 
 \subsubsection{Transition from old-convex to new-convex}
 
