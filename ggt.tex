@@ -80,7 +80,7 @@ I've decided that the most important factor in my next career opportunity is loc
 \end{defn}
 \begin{defn}[closed Halfspaces] A component of tree minus a point, union the point.
 \end{defn}
-\begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are identity
+\begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are onto.
 \end{defn}
 \begin{defn}[Generalized open quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor 
 \end{defn}
@@ -96,16 +96,21 @@ I've decided that the most important factor in my next career opportunity is loc
 \begin{defn}[cellular-product-convex] We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized closed quadrants.
 \end{defn}
 
+\begin{defn}
+	[Filling]
+	Let \(\{X_{k}\}_{k}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X = \prod X_{k}\) define \(S_{k} = \{p \in X \mid \pi_{k} (p) \in \text{chull}_{k}  (\pi_{k} S), \forall j\neq k \wedge \pi_{j} (p) \in \pi_{j} (S) \} \).
+\end{defn}
+
 \subsection{Statements}
 
 \begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{2}\) with Guirardel-qudrants]
+    [Filling Lemma in \(\mathbb{R}^{2}\)]
 \end{lem}
 \begin{proof}
     (sketch) This one is miai with a line that's left out
 \end{proof}
 \begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2}\) with Guirardel-quadrants]
+    [Filling Lemma in \(T_{1} \times T_{2}\)]
 \end{lem}
 \begin{proof}
     (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
