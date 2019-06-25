@@ -129,24 +129,6 @@ I've decided that the most important factor in my next career opportunity is loc
 \end{proof}
 \end{lem}
 
-\subsubsection{Transition from old-convex to new-convex}
-
-In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as a midpoint hence we can separate. The idea is the separation is kept track of in a cube and this cube appears in \(X\) as well. 
-
-In the below use the following notation:
-\begin{itemize}
-	\item \(X=T_{1} \times T_{2} \times T_{3}\)
-	\item \(K \subseteq X\) always as subcomplex
-\end{itemize}
-
-\begin{lem}
-    [retract separation]
-    You can pull back a separation of a retract to a separation of the whole space.
-\end{lem}
-\begin{lem}
-	[\label{lem:midpointsep}Separating at midpoints implies cell-prod-cvx for subcomplexes]
-	If \(K \subseteq X \) has the property that for every midpoint disjoint from \(K\) we can find a generalized-closed-quadrant containing the midpoint that's disjoint from \(K\) then \(K\) is cellular-product-convex.
-\end{lem}
 
 \subsubsection{Reduction to cube}
 
@@ -155,7 +137,7 @@ Some observations:
 	\item We care about subcomplexes so removing a midpoint removes an entire cube - this has three consequences:
 		\begin{enumerate}
 			\item The subcomplex will retract to a cube, in fact the image will lie on the boundary
-			\item No need to worry about ``plucking out a point'' to make the retraction work, no points of our set lie ``inside'' the octahedron
+			\item No need to worry about ``plucking out a point'' to make the retraction go to an octahedron, no points of our set lie inside the octahedron.
 			\item only need to worry about what hyperplanes are doing as opposed to general fibers
 		\end{enumerate}
 	\item Keep the square picture in mind when doing the retraction - octants retract to vertices, etc. Things contract in sheets if you like.
@@ -163,8 +145,7 @@ Some observations:
 
 \subsection{Main Goals}
 \begin{thm}
-	\label{thm:QCOC}
-    [Slices QC implies OC for trees]
+    [\label{thm:QCOC}Slices QC implies OC for trees]
 	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
 	\begin{itemize}
 		\item connected
@@ -176,8 +157,7 @@ Then \(K\) is also cellular-product-convex.
 We need four lemmas, the last two give the implication after taking intersections:
 
 \begin{lem}
-	\label{lem:cubeOC}
-	[Cube OC] Let \(S \subseteq \mathbb{E}  \) be a closed set such that \(S\) satisfies: 
+	[\label{lem:cubeOC}Cube OC] Let \(S \subseteq \mathbb{E}  \) be a closed set such that \(S\) satisfies: 
 	\begin{enumerate}
 		\item \((0,0,0) \not\in S\) 
 		\item \(S\) connected
