@@ -129,33 +129,12 @@ I've decided that the most important factor in my next career opportunity is loc
     (todo)
 \end{proof}
 \end{lem}
-\begin{pro}
-    [For subcomplexes, new-cvx \(\Longrightarrow\) old-cvx]
-    (note: we may not need this see \ref{label1})
-    \begin{proof}
-        (seems clear but write out)
-    \end{proof}
-\end{pro}
-\begin{pro}
-    [necessarily subcomplexes]
-    \label{label1}
-    If a set satisfies new-cvx then it is a subcomplex.
-    \begin{proof}
-        (todo)
-    \end{proof}
-\end{pro}
-\begin{pro}
-    [subcomplex, old-cvx \(\Longrightarrow\) new-cvx]
-    \begin{proof}
-        (todo)
-    \end{proof}
-\end{pro}
-
 
 \subsubsection{Transition from old-convex to new-convex}
 
-In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as a midpoint hence we can separate. The idea is the separation is kept track of in a cube and this cube appears in \(X\) as well --- 
+In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as a midpoint hence we can separate. The idea is the separation is kept track of in a cube and this cube appears in \(X\) as well. 
 
+In the below use the following notation:
 \begin{itemize}
 	\item \(X=T_{1} \times T_{2} \times T_{3}\)
 	\item \(K \subseteq X\) always as subcomplex
@@ -166,23 +145,8 @@ In \(\mathbb{R}^{3} \) no point is a branch point so we can view every point as 
     You can pull back a separation of a retract to a separation of the whole space.
 \end{lem}
 \begin{lem}
-	[\label{lem:midpointsep} Separating at midpoints implies new-cvx for subcomplexes]
-	If \(K \subseteq X \) has the property that for every midpoint disjoint from \(K\) we can find a generalized-quadrant containing the midpoint that's disjoint from \(K\) then \(K\) is cellular-product-convex.
-\end{lem}
-\begin{lem}
-	[the implication]
-	Lemma \ref{lem:midpointsep} and Lemma \ref{lem:octant} imply \ref{thm:QCOC}
-\end{lem}
-\begin{lem}
-	[\label{lem:octant}Octant preimages correspond to octants in both \(\mathbb{R}^3\) and \(\mathbb{T}\)]
-\end{lem}
-\begin{lem}
-    [Slices old-QC implies old-OC for reals]
-
-
-\end{lem}
-\begin{lem}
-    [Slices old-QC implies old-OC for trees at midpoints]
+	[\label{lem:midpointsep}Separating at midpoints implies cell-prod-cvx for subcomplexes]
+	If \(K \subseteq X \) has the property that for every midpoint disjoint from \(K\) we can find a generalized-closed-quadrant containing the midpoint that's disjoint from \(K\) then \(K\) is cellular-product-convex.
 \end{lem}
 
 \subsubsection{Reduction to cube}
@@ -195,10 +159,10 @@ Some observations:
 			\item No need to worry about ``plucking out a point'' to make the retraction work, no points of our set lie ``inside'' the octahedron
 			\item only need to worry about what hyperplanes are doing as opposed to general fibers
 		\end{enumerate}
-	\item Keep the square picture in mind when doing the retraction - octants retract to vertices, etc. Things contract in sheets if you like
-	\item asdfasdf
+	\item Keep the square picture in mind when doing the retraction - octants retract to vertices, etc. Things contract in sheets if you like.
 \end{itemize}
 
+\subsection{Main Goals}
 \begin{thm}
 	\label{thm:QCOC}
     [Slices QC implies OC for trees]
@@ -206,11 +170,11 @@ Some observations:
 	\begin{itemize}
 		\item connected
 		\item has connected hyperplanes
-		\item has cellular-product-convex hyperplanes \ref{defn:cellular-product-convex}
+		\item has cellular-product-convex hyperplanes 
 	\end{itemize}
 Then \(K\) is also cellular-product-convex.
 \end{thm}
-We need four lemmas:
+We need four lemmas, the last two give the implication after taking intersections:
 
 \begin{lem}
 	\label{lem:cubeOC}
@@ -218,32 +182,27 @@ We need four lemmas:
 	\begin{enumerate}
 		\item \((0,0,0) \not\in S\) 
 		\item \(S\) connected
-		\item \(S \cap (\text{coordinate-plane})\) is connected and disjoint from some quadrant in that plane.
+		\item \(S \cap (\text{coordinate-plane})\) is connected.
+		\item \(S \cap (\text{coordinate-plane})\) is disjoint from some closed quadrant in that plane.
 	\end{enumerate}
 	Then \(S\) is disjoint from some closed octant of \(\mathbb{E}\). 
+	\begin{proof}
+		(todo, should follow from notes on the \(\mathbb{R}^{3}\) case.)
+	\end{proof}
 \end{lem}
 
 \begin{lem}
-	\label{lem:Xtocube}
-	[X to cube]
+	[\label{lem:Xtocube}X to cube]
 	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\pi S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\pi\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
 \begin{proof}
-	We identify the cube in \(X\) with \([-1,1] \times [-1,1] \times [-1,1]\)  in \(\mathbb{R}^{3}\). In \(X\) points disjoint from the cube are sent to it's boundary and points inside the cube are left unmoved hence \((0,0,0)\) is not in \(\pi S\). The set \(S\) is connected and \(\pi\) is continuous so \(\pi S\) is also connected.  
-
-	First we check that \(\pi S \cap \text{(coordinate plane)}\) is connected. 	
-	Next we check that ... is QC
-			
+	(todo)	
 \end{proof}
-	
-
-
 \end{lem}
 
-\begin{rmk}
-The logic should go: if \(S\) in \(X\) satisfies the hypotheses of \ref{thm:QCOC} then \(\pi S\) satisfies the hypotheses of \ref{lem:cubeOC}; if \(S\) satisfies the conclusion of \ref{lem:cubeOC} then \(p^{-1} S\) satisfies the conclusion of \ref{thm:QCOC}. Lastly, because we're taking pre-images running this logic through with one set from the beginning we have proven \ref{thm:QCOC}.
-\end{rmk}
-
-2019-06-19: Upon reflection, the 5.1 hyp \(\implies \) 5.11 hyp implication seems easy. 
+\begin{lem}
+	[Connecting logic]
+	If \(S\) satisfies the conclusion of lemma \ref{lem:cubeOC}, then the inverse image of \(S\) under \(\pi\) satisfies the conclusion of theorem \ref{thm:QCOC}.
+\end{lem}
 
 \end{document}
 
