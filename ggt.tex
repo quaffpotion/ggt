@@ -70,11 +70,12 @@ The precise details of the lemmas and definitions still need to be worked out in
 \section{Career}
 I've decided that the most important factor in my next career opportunity is location. Given this, I've been focusing on industry and government jobs. I have a resume and a GitHub account with examples of my work. I've also talked to  friends and family - including some OU gradautes - who work in areas I would enjoy.
 
+\pagebreak
 \section{Progress}
 
 \subsection{Definitions}
 
-\begin{defn}[Directions] A {\em direction} is a connected component of an \(\mathbb{R}\)-tree minus a point. 
+\begin{defn}[Directions] A direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
 \begin{defn}[Halfspaces] A halfspace is a direction obtained from deleting the midpoint of an edge.
 \end{defn}
@@ -82,14 +83,14 @@ I've decided that the most important factor in my next career opportunity is loc
 \end{defn}
 \begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are onto.
 \end{defn}
-\begin{defn}[Generalized open quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor 
+\begin{defn}[Generalized open quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor (i.e. so it's non-empty)
 \end{defn}
 \begin{defn}
     [Generalized closed quadrant]
 \end{defn}
 \begin{defn}
     [Guirardel Quadrant]
-    Product of two directions. (This coincides with our definition of generalized-open-quadrants where \(k=2\) remembering to allow products of directions not just halfspaces)
+    Product of two directions. (This coincides with our definition of generalized-open-quadrants where \(k=2\) but also allowing products of directions not just halfspaces)
 \end{defn}
 \begin{defn}[product-convex] We say that \(S\subset X\) is product-convex if it's complement is the union of generalized closed Guirardel quadrants.
 \end{defn}
@@ -98,7 +99,7 @@ I've decided that the most important factor in my next career opportunity is loc
 
 \begin{defn}
 	[Filling]
-	Let \(\{X_{k}\}_{k}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X = \prod X_{k}\) define \(S_{k} = \{p \in X \mid \pi_{k} (p) \in \text{chull}_{k}  (\pi_{k} S), \forall j\neq k \wedge \pi_{j} (p) \in \pi_{j} (S) \} \).
+	Let \(\{X_{k}\}_{k}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X = \prod X_{k}\) define \(S_{k} = \{p \in X \mid \pi_{k} (p) \in \text{chull}_{k}  (\pi_{k} S)\wedge \forall j\neq k: \pi_{j} (p) \in \pi_{j} (S) \} \).
 \end{defn}
 
 \subsection{Statements}
@@ -180,7 +181,7 @@ We need four lemmas, the last two give the implication after taking intersection
 
 \begin{lem}
 	[Connecting logic]
-	If \(S\) satisfies the conclusion of lemma \ref{lem:cubeOC}, then the inverse image of \(S\) under \(\pi\) satisfies the conclusion of theorem \ref{thm:QCOC}.
+	If \(\pi S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
 \end{lem}
 
 \end{document}
