@@ -144,7 +144,7 @@ Some observations:
 	\item Keep the square picture in mind when doing the retraction - octants retract to vertices, etc. Things contract in sheets if you like.
 \end{itemize}
 
-\subsection{Main Goals}
+\subsection{Octant Convexity of the core}
 \begin{thm}
     [\label{thm:QCOC}Slices QC implies OC for trees]
 	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
@@ -183,6 +183,16 @@ We need four lemmas, the last two give the implication after taking intersection
 	[Connecting logic]
 	If \(\pi S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
 \end{lem}
+
+\section{Proving Core is valid}
+
+\begin{rmk}
+	It turns out that we do not technically need the QC \(\implies\) OC lemma since we can directly prove that our core is QC. Our goal in this section is to prove that along with other facts to establish the core that we need.
+
+\subsection{Outline and notation for the construction of the core}
+
+	From Guirardel we get a map from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \Im(f)\) and will show it's cocompact. Then we put \(K = \text{hull}{S}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). Again, this needs to be cocompact. The main goal is to show that \(C\) is actually QC as well so that we get a legitimate graph of spaces decomposition of \(G\).
+\end{rmk}
 
 \end{document}
 
