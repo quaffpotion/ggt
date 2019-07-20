@@ -75,6 +75,11 @@ I've decided that the most important factor in my next career opportunity is loc
 
 \subsection{Definitions}
 
+\begin{defn}
+	[Finite Type] 
+	An action of {\em finite type} is one where the tree is locally finite and vertex stabilizers are of type FP (i.e. of type \(FP_{n}\) for all \(n\) and of finite cohomological dimension; (clarification:) here \(FP_{n}\) is a condition on projective resolutions of \(\mathbb{Z}\) )
+\end{defn}
+
 \begin{defn}[Directions] A direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
 \begin{defn}[Halfspaces] A halfspace is a direction obtained from deleting the midpoint of an edge.
@@ -116,19 +121,6 @@ I've decided that the most important factor in my next career opportunity is loc
 \begin{proof}
     (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
 \end{proof}
-\begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{3}\)]
-\end{lem}
-\begin{proof}
-    (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
-\end{proof}
-\begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
-    (Here we're taking convex hulls in the tree factors)
-\begin{proof}
-    (todo)
-\end{proof}
-\end{lem}
 
 
 \subsubsection{Reduction to cube}
@@ -184,20 +176,51 @@ We need four lemmas, the last two give the implication after taking intersection
 	If \(\pi S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
 \end{lem}
 
+\section{Setup}
+Taking \(G\) to be the fundamental group of a finite VH-complex \(X\) implies that it's geometric and algebraic cohomological dimension (over any \(R\)) is 2. (technicality: certainly at most 2, though it could be free but maybe we rule that out)
+
+We will look at \(G\) acting on trees of finite type. Bieri and above assumption imply that \(G\) is the fundamental group of a \label{inline:finitetype} finite index graph of finitely generated free groups.
+
+Wise tells us that we get two splittings (should genuinely be different, look at horizontal -vs- vertical loops) - we will assume that one of these splittings is of the type above \ref{inline:finitetype} (check: are both? should check.)
 \section{Proving Core is valid}
 
 \begin{rmk}
 	It turns out that we do not technically need the QC \(\implies\) OC lemma since we can directly prove that our core is QC. Our goal in this section is to prove that along with other facts to establish the core that we need.
+\end{rmk}
 
 \subsection{Outline and notation for the construction of the core}
 
 	From Guirardel we get a map from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{hull}{S}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). Again, this needs to be cocompact. The main goal is to show that \(C\) is actually QC as well so that we get a legitimate graph of spaces decomposition of \(G\).
-\end{rmk}
+
+\subsection{Proving core is hyperplane QC}
+One path is to show that \(C\) is 1-dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're QC as needed.
+
+\begin{lem}
+	[Guirardel's QC Lemma] (...)
+\end{lem}
+
+\begin{lem}
+    [Filling Lemma in \(\mathbb{R}^{3}\)]
+\end{lem}
+\begin{proof}
+    (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
+\end{proof}
+\begin{lem}
+    [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
+    (Here we're taking convex hulls in the tree factors)
+\begin{proof}
+    (todo)
+\end{proof}
+\end{lem}
+
 
 \section{Recovering Tree actions from VHD-complex}
 
 
 \end{document}
+words to search for: clarification, question, technicality
+
+
 
 #justVimThings
 surround a selection of text: v to select some text, press "S", then a delimiter
@@ -205,3 +228,6 @@ surround a selection of text: v to select some text, press "S", then a delimiter
 delete cursor to beginning of word: d/<type word here>
 	- works on multiple lines
 move down by display lines: prefix with g e.g. gj, gk, g0, g$
+start search backwards via ?
+
+
