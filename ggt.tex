@@ -38,107 +38,68 @@
 
 
 \begin{document}
-\section{Background}
-
-\begin{enumerate}
-    \item Group Splittings
-    
-        Classical combinatorial group theory gives an algebraic notion of gluing groups along subgroups. Using suitable spaces and Siefert-van Kampen's theorem one can interpret the gluing as taking the quotient of a topological space. In the definitions below, amalgamation and HNN extension from the point of view of topology correspond to the disconnected and connected case. (e.g. An HNN extension along an automorphism is the fundamental group of a mapping torus) For a different kind of intuition note that an amalgamated free product is the pushout in the category of groups.
-        
-        Given \(A\leq G\) and \(B\leq H\) and an isomorphism \(\phi:A\to B\) and another isomorphism \(\psi: C\to C\) where \(C\leq G\) we can form the {\em amalgamated free product of \(G\) and \(H\) along \(\phi\)} denoted \(A*_\phi B\) with presentation \(\langle G, H\mid \phi(a) = b, a\in A\rangle\) and the {\em HNN extension of \(G\) along \(\psi\)} denoted \(G*_\psi\) with presentation \(\langle G, t\mid \psi(c)=tct^{-1}, c\in C\rangle\). 
-        
-        We will use results from Bass-Serre theory which gives a correspondence between splittings and \(G\)-trees. Roughly speaking, the groups in the amalgamation or HNN extension appear as vertex and edge stabilizers and vice versa.
-    \item Daniel Wise VH-complexes
-    
-        In his thesis Wise considered {\em VH-complexes}, these are square complexes with the edge set split into two disjoint sets such that attaching maps alternate between them. Among other items, Wise showed that from a VH-complex you can extract two splittings (vertical and horizontal) of it's fundamental group.
-    \item Guirardel Core
-    
-        A particularly nice example comes from interpreting the algebraic definition of a group splitting topologically. First, specialize to the case of cyclic splittings of a fixed surface group. In this special case splittings correspond to homotopy classes of simply closed curves on a surface. The splittings further correspond to actions on trees and taking the diagonal action we get an action on a product of trees. Guirardel's work applies to more general \(\mathbb{R}\)-trees but in this case the {\em Guirardel core} is a contractible cocompact square complex - in fact, the quotient recovers the surface as a square complex with a number of squares equal to the intersection number of the curves.
-\end{enumerate}
 
 \section{Problem Statement}
 
-\subsection{VH implies at most two actions:}
 
 We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
-
-
-\section{Timeline}
-
-The precise details of the lemmas and definitions still need to be worked out in full. (e.g. crafting a version of Guirardel's core for three instead of two trees requires work) That said, I plan to begin writing my thesis in the Summer with the intent of graduating in the Spring of 2020.
-
-\section{Career}
-I've decided that the most important factor in my next career opportunity is location. Given this, I've been focusing on industry and government jobs. I have a resume and a GitHub account with examples of my work. I've also talked to  friends and family - including some OU gradautes - who work in areas I would enjoy.
-
-\pagebreak
-\section{Progress}
 
 \subsection{Definitions}
 
 \begin{defn}
-	[Finite Type] 
-	An action of {\em finite type} is one where the tree is locally finite and vertex stabilizers are of type FP (i.e. of type \(FP_{n}\) for all \(n\) { \em and } of finite cohomological dimension, \(FP_{\infty}\) is just having \(FP_{n}\) for all \(n\). (clarification:) here \(FP_{n}\) is a condition on projective resolutions of \(\mathbb{Z}\) )
+	[Type \(FP\) ]
+	A group is of type \(FP\) if it is (1) type \(FP_n\) for all \(n\) and (2) finite geometric cohomological dimension.
 \end{defn}
 
-\begin{defn}[Directions] A direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
-\end{defn}
-\begin{defn}[Halfspaces] A halfspace is a direction obtained from deleting the midpoint of an edge.
-\end{defn}
-\begin{defn}[closed Halfspaces] A component of tree minus a point, union the point.
-\end{defn}
-\begin{defn}[Halfspaces of a product] A halfspace of a product is a subset where one projection is a halfspace in it's factor and the others are onto.
-\end{defn}
-\begin{defn}[Generalized open quadrants] A generalized quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) product halfspaces where each one lies in a separate factor (i.e. so it's non-empty)
-\end{defn}
 \begin{defn}
-    [Generalized closed quadrant]
+	[Finite Type] 
+	An action of {\em finite type} is one on a locally finite tree where  vertex stabilizers are of type FP.
 \end{defn}
-\begin{defn}
-    [Guirardel Quadrant]
-    Product of two directions. (This coincides with our definition of generalized-open-quadrants where \(k=2\) but also allowing products of directions not just halfspaces)
+
+\begin{defn}[open Direction] An open direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
-\begin{defn}[product-convex] We say that \(S\subset X\) is product-convex if it's complement is the union of generalized closed Guirardel quadrants.
+
+\begin{defn}[Closed Direction] A closed directon is a connected component of an \(\mathbb{R}\)-tree minus a point, union that point.
+\end{defn}
+\begin{defn}[Open Halfspace] An open halfspace is an open direction obtained from deleting the midpoint of an edge.
+\end{defn}
+\begin{defn}[Closed Halfspace] A closed halfspace is a closed direction obtained from deleting the midpoint of an edge.
+\end{defn}
+\begin{defn}[Halfspaces of a product] An open (resp. closed) halfspace of a product (at a certain index) is a subset where one projection is an open (resp. closed)  halfspace in it's factor and the others are onto.
+\end{defn}
+\begin{defn}[Generalized quadrants] A generalized open (resp. closed) quadrant with respect to a product of \(k\) spaces is an intersection of \(k\) open (resp. closed) product halfspaces where each one is at a different index.
 \end{defn}
 \begin{defn}[cellular-product-convex] We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized closed quadrants.
 \end{defn}
 
 \begin{defn}
 	[Filling]
-	Let \(\{X_{k}\}_{k}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X = \prod X_{k}\) define \(S_{k} = \{p \in X \mid \pi_{k} (p) \in \text{chull}_{k}  (\pi_{k} S)\wedge \forall j\neq k: \pi_{j} (p) \in \pi_{j} (S) \} \).
+	Let \(\{X_{k}\}_{k}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k} = \{p \in X \mid \pi_{k} (p) \in \text{chull}_{X_{k}}  (\pi_{k} S)\wedge \forall j\neq k: \pi_{j} (p) \in \pi_{j} (S) \} \).
 \end{defn}
 
-\subsection{Statements}
+\subsection{Misc Statements}
 
 \begin{lem}
-	\label{lem:fillr2}
     [Filling Lemma in \(\mathbb{R}^{2}\)]
+	\label{lem:fillr2}
 \end{lem}
 \begin{proof}
     (sketch) This one is miai with a line that's left out
 \end{proof}
 \begin{lem}
-	\label{lem:fillt2}
     [Filling Lemma in \(T_{1} \times T_{2}\)]
+	\label{lem:fillt2}
 \end{lem}
 \begin{proof}
     (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
 \end{proof}
 
 
-\subsubsection{Reduction to cube}
+\section{Outline and notation for the construction of the core}
 
-Some observations:
-\begin{itemize}
-	\item We care about subcomplexes so removing a midpoint removes an entire cube - this has three consequences:
-		\begin{enumerate}
-			\item The subcomplex will retract to a cube, in fact the image will lie on the boundary
-			\item No need to worry about ``plucking out a point'' to make the retraction go to an octahedron, no points of our set lie inside the octahedron.
-			\item only need to worry about what hyperplanes are doing as opposed to general fibers
-		\end{enumerate}
-	\item Keep the square picture in mind when doing the retraction - octants retract to vertices, etc. Things contract in sheets if you like.
-\end{itemize}
+	From Guirardel we get a map from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{hull}{S}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). Again, this needs to be cocompact. The main goal is to show that \(C\) is actually QC as well so that we get a legitimate graph of spaces decomposition of \(G\).
 
-\subsection{Octant Convexity of the core}
+\section{Octant Convexity of the core}
 \begin{thm}
     [\label{thm:QCOC}Slices QC implies OC for trees]
 	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
@@ -167,7 +128,7 @@ We need four lemmas, the last two give the implication after taking intersection
 
 \begin{lem}
 	[\label{lem:Xtocube}X to cube]
-	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\pi S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\pi\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
+	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\rho S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\rho\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
 \begin{proof}
 	(todo)	
 \end{proof}
@@ -175,26 +136,11 @@ We need four lemmas, the last two give the implication after taking intersection
 
 \begin{lem}
 	[Connecting logic]
-	If \(\pi S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
+	If \(\rho S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
 \end{lem}
 
-\section{Setup}
-Taking \(G\) to be the fundamental group of a finite VH-complex \(X\) implies that it's geometric and algebraic cohomological dimension (over any \(R\)) is 2. (technicality: certainly at most 2, though it could be free but maybe we rule that out)
 
-We will look at \(G\) acting on trees of finite type. Bieri and above assumption imply that \(G\) is the fundamental group of a \label{inline:finitetype} finite index graph of finitely generated free groups.
-
-Wise tells us that we get two splittings (should genuinely be different, look at horizontal -vs- vertical loops) - we will assume that one of these splittings is of the type above \ref{inline:finitetype} (check: are both? should check.)
-\section{Proving Core is valid}
-
-\begin{rmk}
-	It turns out that we do not technically need the QC \(\implies\) OC lemma since we can directly prove that our core is QC. Our goal in this section is to prove that along with other facts to establish the core that we need.
-\end{rmk}
-
-\subsection{Outline and notation for the construction of the core}
-
-	From Guirardel we get a map from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{hull}{S}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). Again, this needs to be cocompact. The main goal is to show that \(C\) is actually QC as well so that we get a legitimate graph of spaces decomposition of \(G\).
-
-\subsection{Proving core is hyperplane QC}
+\section{Proving core is hyperplane QC}
 One path is to show that \(C\) is 1-dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're QC as needed.
 
 \begin{lem}
@@ -206,7 +152,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	[Planar path argument in \(\mathbb{R}^{3}\) ]
 	\label{lem:path}
 
-	If \(S \subseteq \mathbb{R}^{3}\) is connected in \(xy\)-planes then \(yS\) is connected in \(xz\)-planes. \textcolor{mypink1}{Issue with disconnected points having different \(z\)-coordinates. Try doing version where we assume \(S\) is connected and connected in all coordinate planes and we want to conclude that all fills are also connected in all coordinate directions} 
+	If \(S \subseteq \mathbb{R}^{3}\) is connected in all coordinate planes then \(xS\), \(yS\), and \(zS\) are as well. 
 	
 
 \end{lem}
@@ -219,8 +165,8 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
     (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
 \end{proof}
 \begin{lem}
-	\label{lem:fillt3}
     [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
+	\label{lem:fillt3}
     (Here we're taking convex hulls in the tree factors)
 \begin{proof}
     (todo)
