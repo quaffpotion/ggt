@@ -19,6 +19,8 @@
   {.5em}
   {}
 
+\newcommand{\sxyz}{((S_x)_y)_z}
+\newcommand{\rxy}{(R_x)_y}
 
 \theoremstyle{mystyle}
 \newtheorem{thm}{Theorem}[section]
@@ -82,6 +84,7 @@ We want to show the following statement or similar: if a group is the fundamenta
 \begin{lem}
     [Filling Lemma in \(\mathbb{R}^{2}\)]
 	\label{lem:fillr2}
+	If \(R \subseteq \mathbb{R}^{2}\) is connected, then \(\rxy\) is 1-dim fiber convex.
 \end{lem}
 \begin{proof}
     (sketch) This one is miai with a line that's left out
@@ -152,7 +155,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	[Planar path argument in \(\mathbb{R}^{3}\) ]
 	\label{lem:path}
 
-	If \(S \subseteq \mathbb{R}^{3}\) is connected in all coordinate planes then \(xS\), \(yS\), and \(zS\) are as well. 
+	If \(S \subseteq \mathbb{R}^{3}\) is connected in all coordinate planes then \(S_x\), \(S_{y}\), and \(S_{z}\) are as well. 
 	
 
 \end{lem}
@@ -160,6 +163,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \begin{lem}
     [Filling Lemma in \(\mathbb{R}^{3}\)]
 	\label{lem:fillr3}
+	If \(S \subseteq \mathbb{R}^{3}\) is itself connected and connected in all coordinate planes, then \(\sxyz\) is 1-dim fiber convex.
 \end{lem}
 \begin{proof}
     (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
