@@ -12,8 +12,8 @@
 - [ ] Three trees filling lemma
 - [ ] lem1: Planar subargument for three trees
 - [ ] Reduce lem1 to to tree coloring lemma lem2
--- [ ] Setup retraction
--- [ ] Consider graph projection
+	- [ ] Setup retraction
+	- [ ] Consider graph projection
 - [ ] lem2: tree coloring lemma
 ## Written
 # Part 2
