@@ -7,7 +7,6 @@
 - [ ] R^2 filling lemma
 - [ ] R^3 filling lemma
 - [ ] R^3 switching lemma
-- [ ] Planar subargument for R^3
 - [ ] Two trees filling lemma
 - [ ] Three trees filling lemma
 - [ ] lem1: Planar subargument for trees
