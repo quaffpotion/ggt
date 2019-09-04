@@ -13,6 +13,7 @@
 - [ ] Reduce lem1 to to tree coloring lemma lem2
 	- [ ] Define usual retraction formally
 	- [x] Upper plane only argument
+	- [x] workaround connected components (e.g. infinitely colored) parts
 - [ ] lem2: tree coloring lemma
 	- [x] state
 	- [ ] prove
