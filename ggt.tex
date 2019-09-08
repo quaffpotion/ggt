@@ -213,12 +213,39 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 
 \end{lem}
 
-\begin{lem}
-	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) satisfying properties below  with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
+\subsection{Definitions for combinatorial lemma}
+\begin{defn}
+	[straddle]
+	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
 	\begin{enumerate}
-		\item Every \(e_{i}\) is straddled
-		\item 	 asdfasdf
-		\item 	 asdaf
+		\item There exists \(k\) such that \(p(k)=e\).
+		\item Both halfspaces of \(e\) contain an endpoint of \(p\).
+	\end{enumerate}
+\end{defn}
+\begin{defn}
+	[complexity]
+	Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled.
+\end{defn}
+\begin{defn}
+	[path snipping]
+ \textcolor{mypink1}{need: some details about subpaths as sequences of letters or as restrictions of functions or as concatenated sequences of letters} 
+	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by restricting each subpath as well.
+	
+\end{defn}
+\begin{defn}
+	[outer]
+	Let \(T\) be a tree, \(x \in T\), and \(A\) be a subset of edges. Let \(e^{+}\) denote the halfspace of \(e\) that doesn't contain \(x\). An edge \(e\) of \(T\) is {\em outer} with respect to \((x,A)\) if \(e^{+} \cap A=\varnothing\).  
+\end{defn}
+\begin{lem}
+	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
+	\begin{enumerate}
+		\item \(\lambda_{1} \neq \lambda_{N} \) 
+		\item The first edge of \(\sigma_{1}\) is dual to the last edge of \(\sigma_{N}\).
+		\item \(\forall 1 \leq i \leq N \exists k\) \(e_{i}\) is {\em straddled} by \(\sigma_k\).
+		\item 	 The coloring \(\lambda\) is constant on the set of all subpaths using a given \(e_{k}\).
+		\item 	 The set \(\{e_{1},\ldots, e_{m}\}\) separates \(x_{0}\) from \(A\).
+
+		\item If the endpoints of \(\sigma_{k}\) contain \(x_{0}\) then \(k\) is either 1 or \(N\).
 	\end{enumerate}
 \end{lem}
 
