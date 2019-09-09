@@ -237,7 +237,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	Let \(T\) be a tree, \(x \in T\), and \(A\) be a subset of edges. Let \(e^{+}\) denote the halfspace of \(e\) that doesn't contain \(x\). An edge \(e\) of \(T\) is {\em outer} with respect to \((x,A)\) if \(e^{+} \cap A=\varnothing\).  
 \end{defn}
 \begin{lem}
-	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
+	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) with \(m > 1\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
 	\begin{enumerate}
 		\item \(\lambda_{1} \neq \lambda_{N} \) 
 		\item The first edge of \(\sigma_{1}\) is dual to the last edge of \(\sigma_{N}\).
@@ -247,6 +247,12 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 
 		\item If the endpoints of \(\sigma_{k}\) contain \(x_{0}\) then \(k\) is either 1 or \(N\).
 	\end{enumerate}
+	\begin{proof}
+		Let \(e\) be a bad outer edge of \(T\) with respect to \(x_{0}\) and \(A\). Let \(i\) and \(j\) be the first and next integers such that \(\sigma_{i} , \sigma_{j}\) straddle \(e\). To get a valid snip, take the largest inital and tail segments of \(\sigma_{i}\) and \(\sigma_{j}\) that don't include \(e\) (resp \(\overline{e}\) ), perform a snip to create \(p'\) with subpaths that remain the same, become empty and are excluded, or in the case of \(\sigma_{i} , \sigma_{j}\) obtain the (possibly empty) initial segment (resp tail) \(\sigma'_{i}\) ( \(\sigma '_{j}\) ). 
+
+		At this stage we must check that various things remain true. Because we chose a bad edge, by property (1) at most one of \(\sigma_{i}\), \(\sigma_{j}\) can be \(1\) or \(N\). If neither subpath is the first or last, then the result of the snip is a non-degenerate path. Should it happen that either is involved, property (2) implies that after snipping at a bad edge the first and last subpaths will still share a common edge because that common edge cannot be bad because the first and last paths have different colors. Taken together this means that the result of the snip is both non-degenerate and preserves properties (1) and (2). Since we are only removing subpaths, property (4) remains true.
+		\textcolor{mypink1}{we need to worry about when to delete and when to combine paths ... if you keep the endpoint then certainly all edges remain bad ... if you remove the endpoint then you might need to remove several edges ... also if you might not be able to keep the endpoint if it would land on the basepoint ... (in our case, we're never snipping the edge near the basepoint so we can always elect to keep the endpoint) } 	
+	\end{proof}
 \end{lem}
 
 \begin{lem}
