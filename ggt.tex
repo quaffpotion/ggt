@@ -218,7 +218,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	[straddle]
 	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
 	\begin{enumerate}
-		\item There exists \(k\) such that \(p(k) \in  \{e, \overline{e}\}\). (i.e. the path uses the geometric edge \(\{e , \overline{e}\}\) corresponding to  \(e\))
+		\item There exists \(k\) such that \(p(k)=e\).
 		\item Both halfspaces of \(e\) contain an endpoint of \(p\).
 	\end{enumerate}
 \end{defn}
@@ -228,7 +228,8 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
 	[path snipping]
-	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by restricting each subpath as well. (Any resulting subpaths that are empty may or may not be deleted based on context)
+ \textcolor{mypink1}{need: some details about subpaths as sequences of letters or as restrictions of functions or as concatenated sequences of letters} 
+	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by restricting each subpath as well.
 	
 \end{defn}
 \begin{defn}
@@ -241,32 +242,20 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 		\item \(\lambda_{1} \neq \lambda_{N} \) 
 		\item The first edge of \(\sigma_{1}\) is dual to the last edge of \(\sigma_{N}\).
 		\item \(\forall 1 \leq i \leq N \exists k\) \(e_{i}\) is {\em straddled} by \(\sigma_k\).
-		\item 	 The coloring \(\lambda\) is constant on the set of all subpaths using some element of the geometric edge corresponding to \(e_{k}\).
-		\item 	 The set \(\{e_{1},\ldots, e_{m}\}\) separates \(x_{0}\) from \(A\). (as geometric edges e.g. \(\{e, \overline{e}\}\))
+		\item 	 The coloring \(\lambda\) is constant on the set of all subpaths using a given \(e_{k}\).
+		\item 	 The set \(\{e_{1},\ldots, e_{m}\}\) separates \(x_{0}\) from \(A\).
 
 		\item If the endpoints of \(\sigma_{k}\) contain \(x_{0}\) then \(k\) is either 1 or \(N\).
 	\end{enumerate}
 	\begin{proof}
-	 Suppose such a \(K\) exists. For any edge \(e\) we use \(e^{+}\) to denote the halfspace that doesn't contain \(x_{0}\). Let \(e\) be a bad outer edge of \(T\) with respect to \(x_{0}\) and \(A\). Let \(i\) and \(j\) be the first and next integers such that \(\sigma_{i} , \sigma_{j}\) straddle \(e\). To get a valid snip, take the largest inital (tail) segments of \(\sigma_{i}\) (\(\sigma_{j}\)) that don't include \(e\) (resp \(\overline{e}\) ). Perform a snip to create \(p'\) with subpaths that remain the same, become empty and are excluded, or in the case of \(\sigma_{i} , \sigma_{j}\) obtain the (possibly empty) initial segment (resp tail) \(\sigma'_{i}\) ( \(\sigma '_{j}\) ). 
+		Without loss of generality, choose orientations on the bad edges such that \(e_{i}^{+}\) doesn't contain \(x_{0}\). Let \(e\) be a bad outer edge of \(T\) with respect to \(x_{0}\) and \(A\). Let \(i\) and \(j\) be the first and next integers such that \(\sigma_{i} , \sigma_{j}\) straddle \(e\). To get a valid snip, take the largest inital (tail) segments of \(\sigma_{i}\) (\(\sigma_{j}\)) that don't include \(e\) (resp \(\overline{e}\) ). Perform a snip to create \(p'\) with subpaths that remain the same, become empty and are excluded, or in the case of \(\sigma_{i} , \sigma_{j}\) obtain the (possibly empty) initial segment (resp tail) \(\sigma'_{i}\) ( \(\sigma '_{j}\) ). 
 
 		At this stage we must check that various things remain true. Consider the geodesic \(g\) from \(x_{ 0}\) to \(\partial e\). Let \(B\) be the union of the endpoints of \(\sigma_{k}\) for \(i\leq k\leq j\). We will consider four cases:
 		\begin{enumerate}
 			\item There are no bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
-				\begin{claim*}
-					combine paths, remove edge
-				\end{claim*}
 			\item There are no bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
-				\begin{claim*}
-					combine paths, keep edge
-				\end{claim*}
 			\item There are bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
-				\begin{claim*}
-					separate paths, remove edge	
-				\end{claim*}
 			\item There are bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
-				\begin{claim*}
-					combine paths, keep edge
-				\end{claim*}
 		\end{enumerate}
 	\end{proof}
 \end{lem}
