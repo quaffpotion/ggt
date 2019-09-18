@@ -10,13 +10,14 @@
 - [ ] Two trees filling lemma
 - [ ] Three trees filling lemma
 - [ ] lem1: Planar subargument for trees
-- [ ] Reduce lem1 to to tree coloring lemma lem2
-	- [ ] Define usual retraction formally
+- [x] Reduce lem1 to to tree coloring lemma lem2 (resolved: take all paths to be combinatorial from the start)
+	- [x] (depreciated) Define usual retraction formally
 	- [x] Upper plane only argument
 	- [x] workaround connected components (e.g. infinitely colored) parts
 - [ ] lem2: tree coloring lemma
 	- [x] state
 	- [ ] prove
+- [ ] Prove K > 0 to K' must have K' > 0.
 ## Written 
 # Part 2
 
