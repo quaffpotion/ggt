@@ -278,6 +278,8 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \begin{lem}
 	Given the SETUP (taking T to be the middle factor etc.) we obtain \(K\) as in above ... (list the properties we get from setup)
 \end{lem}
+
+(current 9/17): The issue is, what if after combining we suddenly reach complexity zero. The logic should go: Suppose there was a counterexample K>0, then K>K'>0. Continue ad infinitum, contradiction. The key is that K' is strictly less than K and that K' is never zero. The never zero is the issue. Aside: If you really get stuck, go back to keeping the paths separate and potentially adding an element to A to get A', this seemed easier to control - but this version worked better by picking a set of bad edges that separate and following them through the process.
 \end{document}
 words to search for: clarification, question, technicality, concern
 
