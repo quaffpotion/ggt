@@ -31,6 +31,8 @@
 \newtheorem*{defn*}{Definition}
 \newtheorem*{claim*}{Claim}
 \newtheorem*{lem*}{Lemma}
+\newtheorem*{cor*}{Corollary}
+
 
 \theoremstyle{remark}
 \newtheorem{rmk}{Remark}[section]
@@ -280,6 +282,26 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{lem}
 
 (current 9/17): The issue is, what if after combining we suddenly reach complexity zero. The logic should go: Suppose there was a counterexample K>0, then K>K'>0. Continue ad infinitum, contradiction. The key is that K' is strictly less than K and that K' is never zero. The never zero is the issue. Aside: If you really get stuck, go back to keeping the paths separate and potentially adding an element to A to get A', this seemed easier to control - but this version worked better by picking a set of bad edges that separate and following them through the process.
+
+\begin{cor*}
+	Let \(K > 0\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Then \(K' > 0\).
+	\begin{proof}
+		
+	\end{proof}
+\end{cor*}
+\begin{lem}
+	[Multipath]
+	 \label{lem:multi} 
+	Let \(K\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Let \(p\) be a path in \(K'\) between \(x_{0}\) and some \(a \in A'\) that is {\em multicolored} relative to \(\lambda'\). Then \(p\) is multicolored relative to \(\lambda\) in \(K\) and goes between \(x_{0}\) and some \(a \in A\).
+	\begin{proof}
+		Check that if an edge is monocolored in \(K\) then it is monocolored in \(K'\) as well. Given this, the multicolored path \(p\) in \(K'\) cannot use \(e\) and so is entirely contained in \(e^{+}\). However, because the snip only affects the coloring of edges outside \(e^{+}\) and doesn't change the set of endpoints in \(e^{+}\) we have that the multicolored path exists in \(K\) between \(x_{0}\) and \(a:=a' \in A\).
+	\end{proof}
+\end{lem}
+\begin{lem}
+	[Edges]
+	 \label{edges} 
+	  Let \(K=0\) be as in SETUP. Then \(K\) has a multicolored path between \(x_{0}\) and some \(a \in A\).
+\end{lem}
 \end{document}
 words to search for: clarification, question, technicality, concern
 
