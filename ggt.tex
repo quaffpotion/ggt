@@ -60,7 +60,7 @@ We want to show the following statement or similar: if a group is the fundamenta
 	An action of {\em finite type} is one on a locally finite tree where  vertex stabilizers are of type FP.
 \end{defn}
 
-\begin{defn}[open Direction] An open direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
+\begin{defn}[Open Direction] An open direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
 
 \begin{defn}[Closed Direction] A closed directon is a connected component of an \(\mathbb{R}\)-tree minus a point, union that point.
@@ -78,72 +78,13 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 \begin{defn}
 	[Filling]
-	Let \(\{X_{k}\}_{k}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \pi_{k} (\{q_{k} , r_{k}\}).\] 
+    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}).\] 
 \end{defn}
-
-\subsection{Misc Statements}
-
-\begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{2}\)]
-	\label{lem:fillr2}
-	If \(R \subseteq \mathbb{R}^{2}\) is connected, then \(\rxy\) is 1-dim fiber convex.
-\end{lem}
-\begin{proof}
-    (sketch) This one is miai with a line that's left out
-\end{proof}
-\begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2}\)]
-	\label{lem:fillt2}
-\end{lem}
-\begin{proof}
-    (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
-\end{proof}
 
 
 \section{Outline and notation for the construction of the core}
 
-	From Guirardel we get a map from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{hull}{S}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). Again, this needs to be cocompact. The main goal is to show that \(C\) is actually QC as well so that we get a legitimate graph of spaces decomposition of \(G\).
-
-\section{Octant Convexity of the core}
-\begin{thm}
-    [\label{thm:QCOC}Slices QC implies OC for trees]
-	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
-	\begin{itemize}
-		\item connected
-		\item has connected hyperplanes
-		\item has cellular-product-convex hyperplanes 
-	\end{itemize}
-Then \(K\) is also cellular-product-convex.
-\end{thm}
-We need four lemmas, the last two give the implication after taking intersections:
-
-\begin{lem}
-	[\label{lem:cubeOC}Cube OC] Let \(S \subseteq \mathbb{E}  \) be a closed set such that \(S\) satisfies: 
-	\begin{enumerate}
-		\item \((0,0,0) \not\in S\) 
-		\item \(S\) connected
-		\item \(S \cap (\text{coordinate-plane})\) is connected.
-		\item \(S \cap (\text{coordinate-plane})\) is disjoint from some closed quadrant in that plane.
-	\end{enumerate}
-	Then \(S\) is disjoint from some closed octant of \(\mathbb{E}\). 
-	\begin{proof}
-		(todo, should follow from notes on the \(\mathbb{R}^{3}\) case.)
-	\end{proof}
-\end{lem}
-
-\begin{lem}
-	[\label{lem:Xtocube}X to cube]
-	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\rho S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\rho\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
-\begin{proof}
-	(todo)	
-\end{proof}
-\end{lem}
-
-\begin{lem}
-	[Connecting logic]
-	If \(\rho S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
-\end{lem}
-
+    From Guirardel we get a map \(f\) from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{cell}{(S)}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). The main goal is to show that \(C\) is a cocompact cube complex with quasi-convex hyperplanes so that we get a legitimate graph of spaces decomposition for \(G\).
 
 \section{Proving core is hyperplane QC}
 One path is to show that \(C\) is 1-dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're QC as needed.
@@ -307,6 +248,62 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	 \label{edges} 
 	  Let \(K=0\) be as in SETUP. Then \(K\) has a multicolored path between \(x_{0}\) and some \(a \in A\).
 \end{lem}
+\subsection{Misc Statements}%{{{
+\begin{lem}
+    [Filling Lemma in \(\mathbb{R}^{2}\)]
+	\label{lem:fillr2}
+	If \(R \subseteq \mathbb{R}^{2}\) is connected, then \(\rxy\) is 1-dim fiber convex.
+\end{lem}
+\begin{proof}
+    (sketch) This one is miai with a line that's left out
+\end{proof}
+\begin{lem}
+    [Filling Lemma in \(T_{1} \times T_{2}\)]
+	\label{lem:fillt2}
+\end{lem}
+\begin{proof}
+    (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
+\end{proof}%}}}
+\section{Octant Convexity of the core}%{{{
+\begin{thm}
+    [\label{thm:QCOC}Slices QC implies OC for trees]
+	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
+	\begin{itemize}
+		\item connected
+		\item has connected hyperplanes
+		\item has cellular-product-convex hyperplanes 
+	\end{itemize}
+Then \(K\) is also cellular-product-convex.
+\end{thm}
+We need four lemmas, the last two give the implication after taking intersections:
+
+\begin{lem}
+	[\label{lem:cubeOC}Cube OC] Let \(S \subseteq \mathbb{E}  \) be a closed set such that \(S\) satisfies: 
+	\begin{enumerate}
+		\item \((0,0,0) \not\in S\) 
+		\item \(S\) connected
+		\item \(S \cap (\text{coordinate-plane})\) is connected.
+		\item \(S \cap (\text{coordinate-plane})\) is disjoint from some closed quadrant in that plane.
+	\end{enumerate}
+	Then \(S\) is disjoint from some closed octant of \(\mathbb{E}\). 
+	\begin{proof}
+		(todo, should follow from notes on the \(\mathbb{R}^{3}\) case.)
+	\end{proof}
+\end{lem}
+
+\begin{lem}
+	[\label{lem:Xtocube}X to cube]
+	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\rho S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\rho\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
+\begin{proof}
+	(todo)	
+\end{proof}
+\end{lem}
+
+\begin{lem}
+	[Connecting logic]
+	If \(\rho S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
+\end{lem}%}}}
+
 \end{document}
 words to search for: clarification, question, technicality, concern
 
