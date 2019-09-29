@@ -93,74 +93,12 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	[Guirardel Lemma 5.4, Corollary 5.5]
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
-
-\begin{lem}
-	[Coloring Lemma]
-	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{i=N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{i=N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{(\sigma_{i} , i )\}_{i=1}^{i=N}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
-
-	\begin{proof}
-		Suppose this were false, then WLOG we could form a counterexample \(K = (T,x_{0}, \sigma_{1} \cdots \sigma_{N} , e_{1} , \ldots, e_{m})\) such that (1) \(\lambda\) is constant on the subpaths using a given \(e_{i}\), (2) the edges separate \(x_{0}\) from \(A\), and (3) for every \(e_{ i}\) there is some \(\sigma_{j}\) such that each halfspace of \(e_{i}\) contains exactly one endpoint of \(\sigma_{j}\). Define the complexity \(c\) of such an example as the sum of the number of times an \(e_{i}\) is {\em straddled} as in (3). Because edges are separating, \(c\) must be even. 
-
-		We will call the \(e_{1},\ldots,e_{N}\) {\em bad} edges. A bad edge is {\em outer} if it's halfspace not containing \(x_{0}\) doesn't contain any bad edges.
-
-
-		Next we will define a {\em snip} on \(K\). Pick a bad edge \(e\)  of \(K\), let \(i\) and \(j\) be the first and next \(\sigma_{i}\) and \(\sigma_{j}\) that straddle \(e\). Form \(\sigma_{i}'\) by taking the longest initial segment of \(\sigma_{i}\) that doesn't use \(e\) and \(\sigma_{j} '\) by taking the longest tail segment of \(\sigma_{j}\) that doesn't use \(e\). Form \(p'\) by replacing the \(\sigma\)'s with \(\sigma '\)'s.
-		\begin{claim*}Performing a snip on an outer edge of \(K\) produces a new counterexample of complexity \(c'=c-2\).
-
-		\end{claim*}
-	\end{proof}
-\end{lem}
-
-\begin{lem}
-	[Well-defined filling \(\mathbb{R}^{3}\) ]
-
-	If \(S \subseteq \mathbb{R}^{3}\) is connected in all coordinate planes then \(S_x\), \(S_{y}\), and \(S_{z}\) are as well. 
-	
-
-\end{lem}
-
-\begin{lem}
-	[Switching Lemma in \(\mathbb{R}^{3}\) ]
-	 \label{lem:switch} 
-	 If \(S\) is connected in all \(xy\)-planes, then \((S_{x})_{y} = (S_{y})_{x}\).
-	
-\end{lem}
-\begin{lem}
-    [Planar Path Argument]
-    Given SETUP, and a planar slice, we can find a path
-\end{lem}
-\begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{3}\)]
-	\label{lem:fillr3}
-	If \(S \subseteq \mathbb{R}^{3}\) is itself connected and connected in all coordinate planes, then \(\sxyz\) is 1-dim fiber convex.
-\end{lem}
-\begin{proof}
-    (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
-\end{proof}
-\begin{proof}
-	Let \(S\) be as above. Consider \(S_{ y}\) and a slice of \(S_{ y}\) given by the intersection of \(S_{ y}\) with some \(xz\)-plane. If a point in the slice is in \(S_{y} \smallsetminus   S\) then by the definition of filling there exists two points, each with different \(y\)-coordinates but the same coordinates in our \(xz\)-plane, on either side. Consider the line that's the intersection of our \(xz\)-plane and the \(xy\)-plane containing our point. This line must contain an element of \(S\) else \(S\) wouldn't be connected in \(xy\)-planes. Consider the \(xy\)-plane containing our three points of \(S\) so far. We will say points with \(x\)-coordinates greater than our red point 
-\end{proof}
-\begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
-	\label{lem:fillt3}
-    (Here we're taking convex hulls in the tree factors)
-\begin{proof}
-    (todo)
-\end{proof}
-\end{lem}
-
-
-\section{Recovering Tree actions from VHD-complex}
-
-\newpage
-\section{Drafts}
-\begin{lem}
-	[Coloring Lemma]
+\subsection{Planar Path Argument}
+\begin{lem}[Coloring Lemma]%{{{
 	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
+\end{lem}%}}}
 
-\end{lem}
-
-\subsection{Definitions for combinatorial lemma}
+\subsection{Definitions for combinatorial lemma}%{{{
 \begin{defn}
 	[straddle]
 	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
@@ -247,7 +185,144 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	[Edges]
 	 \label{edges} 
 	  Let \(K=0\) be as in SETUP. Then \(K\) has a multicolored path between \(x_{0}\) and some \(a \in A\).
+\end{lem}%}}}
+
+\begin{lem}
+	[Well-defined filling \(\mathbb{R}^{3}\) ]
+
+	If \(S \subseteq \mathbb{R}^{3}\) is connected in all coordinate planes then \(S_x\), \(S_{y}\), and \(S_{z}\) are as well. 
+	
+
 \end{lem}
+
+\begin{lem}
+	[Switching Lemma in \(\mathbb{R}^{3}\) ]
+	 \label{lem:switch} 
+	 If \(S\) is connected in all \(xy\)-planes, then \((S_{x})_{y} = (S_{y})_{x}\).
+	
+\end{lem}
+\begin{lem}
+    [Planar Path Argument]
+    Given SETUP, and a planar slice, we can find a path
+\end{lem}
+\begin{lem}
+    [Filling Lemma in \(\mathbb{R}^{3}\)]
+	\label{lem:fillr3}
+	If \(S \subseteq \mathbb{R}^{3}\) is itself connected and connected in all coordinate planes, then \(\sxyz\) is 1-dim fiber convex.
+\end{lem}
+\begin{proof}
+    (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
+\end{proof}
+\begin{proof}
+	Let \(S\) be as above. Consider \(S_{ y}\) and a slice of \(S_{ y}\) given by the intersection of \(S_{ y}\) with some \(xz\)-plane. If a point in the slice is in \(S_{y} \smallsetminus   S\) then by the definition of filling there exists two points, each with different \(y\)-coordinates but the same coordinates in our \(xz\)-plane, on either side. Consider the line that's the intersection of our \(xz\)-plane and the \(xy\)-plane containing our point. This line must contain an element of \(S\) else \(S\) wouldn't be connected in \(xy\)-planes. Consider the \(xy\)-plane containing our three points of \(S\) so far. We will say points with \(x\)-coordinates greater than our red point 
+\end{proof}
+\begin{lem}
+    [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
+	\label{lem:fillt3}
+    (Here we're taking convex hulls in the tree factors)
+\begin{proof}
+    (todo)
+\end{proof}
+\end{lem}
+
+
+\section{Recovering Tree actions from VHD-complex}
+
+\newpage
+\section{Drafts}
+\begin{lem}%{{{
+	[Coloring Lemma]
+	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
+
+\end{lem}%}}}
+\subsection{Definitions for combinatorial lemma}%{{{
+\begin{defn}
+	[straddle]
+	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
+	\begin{enumerate}
+		\item There exists \(k\) such that \(p(k) \in  \{e, \overline{e}\}\). (i.e. the path uses the geometric edge \(\{e , \overline{e}\}\) corresponding to  \(e\))
+		\item Both halfspaces of \(e\) contain an endpoint of \(p\).
+	\end{enumerate}
+\end{defn}
+\begin{defn}
+	[complexity]
+	Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled.
+\end{defn}
+\begin{defn}
+	[path snipping]
+	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by restricting each subpath as well. (Any resulting subpaths that are empty may or may not be deleted based on context)
+	
+\end{defn}
+\begin{defn}
+	[outer]
+	Let \(T\) be a tree, \(x \in T\), and \(A\) be a subset of edges. Let \(e^{+}\) denote the halfspace of \(e\) that doesn't contain \(x\). An edge \(e\) of \(T\) is {\em outer} with respect to \((x,A)\) if \(e^{+} \cap A=\varnothing\).  
+\end{defn}
+\begin{lem}
+	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) with \(m > 1\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
+	\begin{enumerate}
+		\item \(\lambda_{1} \neq \lambda_{N} \) 
+		\item The first edge of \(\sigma_{1}\) is dual to the last edge of \(\sigma_{N}\).
+		\item \(\forall 1 \leq i \leq N \exists k\) \(e_{i}\) is {\em straddled} by \(\sigma_k\).
+		\item 	 The coloring \(\lambda\) is constant on the set of all subpaths using some element of the geometric edge corresponding to \(e_{k}\).
+		\item 	 The set \(\{e_{1},\ldots, e_{m}\}\) separates \(x_{0}\) from \(A\). (as geometric edges e.g. \(\{e, \overline{e}\}\))
+
+		\item If the endpoints of \(\sigma_{k}\) contain \(x_{0}\) then \(k\) is either 1 or \(N\).
+	\end{enumerate}
+	\begin{proof}
+	 Suppose such a \(K\) exists. For any edge \(e\) we use \(e^{+}\) to denote the halfspace that doesn't contain \(x_{0}\). Let \(e\) be a bad outer edge of \(T\) with respect to \(x_{0}\) and \(A\). Let \(i\) and \(j\) be the first and next integers such that \(\sigma_{i} , \sigma_{j}\) straddle \(e\). To get a valid snip, take the largest inital (tail) segments of \(\sigma_{i}\) (\(\sigma_{j}\)) that don't include \(e\) (resp \(\overline{e}\) ). Perform a snip to create \(p'\) with subpaths that remain the same, become empty and are excluded, or in the case of \(\sigma_{i} , \sigma_{j}\) obtain the (possibly empty) initial segment (resp tail) \(\sigma'_{i}\) ( \(\sigma '_{j}\) ). 
+
+		At this stage we must check that various things remain true. Consider the geodesic \(g\) from \(x_{ 0}\) to \(\partial e\). Let \(B\) be the union of the endpoints of \(\sigma_{k}\) for \(i\leq k\leq j\). We will consider four cases:
+		\begin{enumerate}
+			\item There are no bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
+				\begin{claim*}
+					combine paths, remove edge
+				\end{claim*}
+			\item There are no bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
+				\begin{claim*}
+					combine paths, keep edge
+				\end{claim*}
+			\item There are bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
+				\begin{claim*}
+					separate paths, remove edge	
+				\end{claim*}
+			\item There are bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
+				\begin{claim*}
+					combine paths, keep edge
+				\end{claim*}
+		\end{enumerate}
+	\end{proof}
+\end{lem}
+
+\begin{lem}
+	Let \(K\) satisfy the above properties, then \(c \neq 2\).
+\end{lem}
+
+\begin{lem}
+	Given the SETUP (taking T to be the middle factor etc.) we obtain \(K\) as in above ... (list the properties we get from setup)
+\end{lem}
+
+(current 9/17): The issue is, what if after combining we suddenly reach complexity zero. The logic should go: Suppose there was a counterexample K>0, then K>K'>0. Continue ad infinitum, contradiction. The key is that K' is strictly less than K and that K' is never zero. The never zero is the issue. Aside: If you really get stuck, go back to keeping the paths separate and potentially adding an element to A to get A', this seemed easier to control - but this version worked better by picking a set of bad edges that separate and following them through the process.
+
+\begin{cor*}
+	Let \(K > 0\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Then \(K' > 0\).
+	\begin{proof}
+        (Here we only need to show that \(K > K'\) and then apply the edges lemma)
+		
+	\end{proof}
+\end{cor*}
+\begin{lem}
+	[Multipath]
+	 \label{lem:multi} 
+	Let \(K\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Let \(p\) be a path in \(K'\) between \(x_{0}\) and some \(a \in A'\) that is {\em multicolored} relative to \(\lambda'\). Then \(p\) is multicolored relative to \(\lambda\) in \(K\) and goes between \(x_{0}\) and some \(a \in A\).
+	\begin{proof}
+		Check that if an edge is monocolored in \(K\) then it is monocolored in \(K'\) as well. Given this, the multicolored path \(p\) in \(K'\) cannot use \(e\) and so is entirely contained in \(e^{+}\). However, because the snip only affects the coloring of edges outside \(e^{+}\) and doesn't change the set of endpoints in \(e^{+}\) we have that the multicolored path exists in \(K\) between \(x_{0}\) and \(a:=a' \in A\).
+	\end{proof}
+\end{lem}
+\begin{lem}
+	[Edges]
+	 \label{edges} 
+	  Let \(K=0\) be as in SETUP. Then \(K\) has a multicolored path between \(x_{0}\) and some \(a \in A\).
+\end{lem}%}}}
 \subsection{Misc Statements}%{{{
 \begin{lem}
     [Filling Lemma in \(\mathbb{R}^{2}\)]
