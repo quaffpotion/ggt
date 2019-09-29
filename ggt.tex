@@ -98,7 +98,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
 \end{lem}%}}}
 
-\subsection{Definitions for combinatorial lemma}%{{{
+\subsubsection{Definitions for combinatorial lemma}%{{{
 \begin{defn}
 	[straddle]
 	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
@@ -131,29 +131,6 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 
 		\item If the endpoints of \(\sigma_{k}\) contain \(x_{0}\) then \(k\) is either 1 or \(N\).
 	\end{enumerate}
-	\begin{proof}
-	 Suppose such a \(K\) exists. For any edge \(e\) we use \(e^{+}\) to denote the halfspace that doesn't contain \(x_{0}\). Let \(e\) be a bad outer edge of \(T\) with respect to \(x_{0}\) and \(A\). Let \(i\) and \(j\) be the first and next integers such that \(\sigma_{i} , \sigma_{j}\) straddle \(e\). To get a valid snip, take the largest inital (tail) segments of \(\sigma_{i}\) (\(\sigma_{j}\)) that don't include \(e\) (resp \(\overline{e}\) ). Perform a snip to create \(p'\) with subpaths that remain the same, become empty and are excluded, or in the case of \(\sigma_{i} , \sigma_{j}\) obtain the (possibly empty) initial segment (resp tail) \(\sigma'_{i}\) ( \(\sigma '_{j}\) ). 
-
-		At this stage we must check that various things remain true. Consider the geodesic \(g\) from \(x_{ 0}\) to \(\partial e\). Let \(B\) be the union of the endpoints of \(\sigma_{k}\) for \(i\leq k\leq j\). We will consider four cases:
-		\begin{enumerate}
-			\item There are no bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
-				\begin{claim*}
-					combine paths, remove edge
-				\end{claim*}
-			\item There are no bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
-				\begin{claim*}
-					combine paths, keep edge
-				\end{claim*}
-			\item There are bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
-				\begin{claim*}
-					separate paths, remove edge	
-				\end{claim*}
-			\item There are bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
-				\begin{claim*}
-					combine paths, keep edge
-				\end{claim*}
-		\end{enumerate}
-	\end{proof}
 \end{lem}
 
 \begin{lem}
@@ -164,7 +141,6 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	Given the SETUP (taking T to be the middle factor etc.) we obtain \(K\) as in above ... (list the properties we get from setup)
 \end{lem}
 
-(current 9/17): The issue is, what if after combining we suddenly reach complexity zero. The logic should go: Suppose there was a counterexample K>0, then K>K'>0. Continue ad infinitum, contradiction. The key is that K' is strictly less than K and that K' is never zero. The never zero is the issue. Aside: If you really get stuck, go back to keeping the paths separate and potentially adding an element to A to get A', this seemed easier to control - but this version worked better by picking a set of bad edges that separate and following them through the process.
 
 \begin{cor*}
 	Let \(K > 0\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Then \(K' > 0\).
@@ -187,6 +163,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	  Let \(K=0\) be as in SETUP. Then \(K\) has a multicolored path between \(x_{0}\) and some \(a \in A\).
 \end{lem}%}}}
 
+\subsection{Wrap up lemmas}
 \begin{lem}
 	[Well-defined filling \(\mathbb{R}^{3}\) ]
 
@@ -226,160 +203,10 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{lem}
 
 
-\section{Recovering Tree actions from VHD-complex}
 
 \newpage
-\section{Drafts}
-\begin{lem}%{{{
-	[Coloring Lemma]
-	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
-
-\end{lem}%}}}
-\subsection{Definitions for combinatorial lemma}%{{{
-\begin{defn}
-	[straddle]
-	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
-	\begin{enumerate}
-		\item There exists \(k\) such that \(p(k) \in  \{e, \overline{e}\}\). (i.e. the path uses the geometric edge \(\{e , \overline{e}\}\) corresponding to  \(e\))
-		\item Both halfspaces of \(e\) contain an endpoint of \(p\).
-	\end{enumerate}
-\end{defn}
-\begin{defn}
-	[complexity]
-	Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled.
-\end{defn}
-\begin{defn}
-	[path snipping]
-	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by restricting each subpath as well. (Any resulting subpaths that are empty may or may not be deleted based on context)
-	
-\end{defn}
-\begin{defn}
-	[outer]
-	Let \(T\) be a tree, \(x \in T\), and \(A\) be a subset of edges. Let \(e^{+}\) denote the halfspace of \(e\) that doesn't contain \(x\). An edge \(e\) of \(T\) is {\em outer} with respect to \((x,A)\) if \(e^{+} \cap A=\varnothing\).  
-\end{defn}
-\begin{lem}
-	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) with \(m > 1\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
-	\begin{enumerate}
-		\item \(\lambda_{1} \neq \lambda_{N} \) 
-		\item The first edge of \(\sigma_{1}\) is dual to the last edge of \(\sigma_{N}\).
-		\item \(\forall 1 \leq i \leq N \exists k\) \(e_{i}\) is {\em straddled} by \(\sigma_k\).
-		\item 	 The coloring \(\lambda\) is constant on the set of all subpaths using some element of the geometric edge corresponding to \(e_{k}\).
-		\item 	 The set \(\{e_{1},\ldots, e_{m}\}\) separates \(x_{0}\) from \(A\). (as geometric edges e.g. \(\{e, \overline{e}\}\))
-
-		\item If the endpoints of \(\sigma_{k}\) contain \(x_{0}\) then \(k\) is either 1 or \(N\).
-	\end{enumerate}
-	\begin{proof}
-	 Suppose such a \(K\) exists. For any edge \(e\) we use \(e^{+}\) to denote the halfspace that doesn't contain \(x_{0}\). Let \(e\) be a bad outer edge of \(T\) with respect to \(x_{0}\) and \(A\). Let \(i\) and \(j\) be the first and next integers such that \(\sigma_{i} , \sigma_{j}\) straddle \(e\). To get a valid snip, take the largest inital (tail) segments of \(\sigma_{i}\) (\(\sigma_{j}\)) that don't include \(e\) (resp \(\overline{e}\) ). Perform a snip to create \(p'\) with subpaths that remain the same, become empty and are excluded, or in the case of \(\sigma_{i} , \sigma_{j}\) obtain the (possibly empty) initial segment (resp tail) \(\sigma'_{i}\) ( \(\sigma '_{j}\) ). 
-
-		At this stage we must check that various things remain true. Consider the geodesic \(g\) from \(x_{ 0}\) to \(\partial e\). Let \(B\) be the union of the endpoints of \(\sigma_{k}\) for \(i\leq k\leq j\). We will consider four cases:
-		\begin{enumerate}
-			\item There are no bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
-				\begin{claim*}
-					combine paths, remove edge
-				\end{claim*}
-			\item There are no bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
-				\begin{claim*}
-					combine paths, keep edge
-				\end{claim*}
-			\item There are bad edges on \(g\) and \(e^{+} \cap B= \varnothing \). 
-				\begin{claim*}
-					separate paths, remove edge	
-				\end{claim*}
-			\item There are bad edges on \(g\) and \(e^{+} \cap B\neq \varnothing \). 
-				\begin{claim*}
-					combine paths, keep edge
-				\end{claim*}
-		\end{enumerate}
-	\end{proof}
-\end{lem}
-
-\begin{lem}
-	Let \(K\) satisfy the above properties, then \(c \neq 2\).
-\end{lem}
-
-\begin{lem}
-	Given the SETUP (taking T to be the middle factor etc.) we obtain \(K\) as in above ... (list the properties we get from setup)
-\end{lem}
-
-(current 9/17): The issue is, what if after combining we suddenly reach complexity zero. The logic should go: Suppose there was a counterexample K>0, then K>K'>0. Continue ad infinitum, contradiction. The key is that K' is strictly less than K and that K' is never zero. The never zero is the issue. Aside: If you really get stuck, go back to keeping the paths separate and potentially adding an element to A to get A', this seemed easier to control - but this version worked better by picking a set of bad edges that separate and following them through the process.
-
-\begin{cor*}
-	Let \(K > 0\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Then \(K' > 0\).
-	\begin{proof}
-        (Here we only need to show that \(K > K'\) and then apply the edges lemma)
-		
-	\end{proof}
-\end{cor*}
-\begin{lem}
-	[Multipath]
-	 \label{lem:multi} 
-	Let \(K\) be as in SETUP. Let \(K'\) be the result of performing an outer snip on \(K\). Let \(p\) be a path in \(K'\) between \(x_{0}\) and some \(a \in A'\) that is {\em multicolored} relative to \(\lambda'\). Then \(p\) is multicolored relative to \(\lambda\) in \(K\) and goes between \(x_{0}\) and some \(a \in A\).
-	\begin{proof}
-		Check that if an edge is monocolored in \(K\) then it is monocolored in \(K'\) as well. Given this, the multicolored path \(p\) in \(K'\) cannot use \(e\) and so is entirely contained in \(e^{+}\). However, because the snip only affects the coloring of edges outside \(e^{+}\) and doesn't change the set of endpoints in \(e^{+}\) we have that the multicolored path exists in \(K\) between \(x_{0}\) and \(a:=a' \in A\).
-	\end{proof}
-\end{lem}
-\begin{lem}
-	[Edges]
-	 \label{edges} 
-	  Let \(K=0\) be as in SETUP. Then \(K\) has a multicolored path between \(x_{0}\) and some \(a \in A\).
-\end{lem}%}}}
-\subsection{Misc Statements}%{{{
-\begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{2}\)]
-	\label{lem:fillr2}
-	If \(R \subseteq \mathbb{R}^{2}\) is connected, then \(\rxy\) is 1-dim fiber convex.
-\end{lem}
-\begin{proof}
-    (sketch) This one is miai with a line that's left out
-\end{proof}
-\begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2}\)]
-	\label{lem:fillt2}
-\end{lem}
-\begin{proof}
-    (sketch) find replace the proof in \(\mathbb{R}^{2}\) with corresponding words for trees e.g. connecting becomes convex hull, left becomes inside a half space etc.
-\end{proof}%}}}
-\section{Octant Convexity of the core}%{{{
-\begin{thm}
-    [\label{thm:QCOC}Slices QC implies OC for trees]
-	Let \(X=T_{1} \times T_{2} \times T_{3}\) where each \(T_{i}\) is a locally finite tree. Let \(K\) be a subcomplex of \(X\) that satisfies: 
-	\begin{itemize}
-		\item connected
-		\item has connected hyperplanes
-		\item has cellular-product-convex hyperplanes 
-	\end{itemize}
-Then \(K\) is also cellular-product-convex.
-\end{thm}
-We need four lemmas, the last two give the implication after taking intersections:
-
-\begin{lem}
-	[\label{lem:cubeOC}Cube OC] Let \(S \subseteq \mathbb{E}  \) be a closed set such that \(S\) satisfies: 
-	\begin{enumerate}
-		\item \((0,0,0) \not\in S\) 
-		\item \(S\) connected
-		\item \(S \cap (\text{coordinate-plane})\) is connected.
-		\item \(S \cap (\text{coordinate-plane})\) is disjoint from some closed quadrant in that plane.
-	\end{enumerate}
-	Then \(S\) is disjoint from some closed octant of \(\mathbb{E}\). 
-	\begin{proof}
-		(todo, should follow from notes on the \(\mathbb{R}^{3}\) case.)
-	\end{proof}
-\end{lem}
-
-\begin{lem}
-	[\label{lem:Xtocube}X to cube]
-	If \(S\) satisfies the hypotheses of \ref{thm:QCOC} then \(\rho S\) satisfies the hypotheses of \ref{lem:cubeOC} provided \(\rho\) is a projection map to a cube determined by a midpoint disjoint from \(S\).
-\begin{proof}
-	(todo)	
-\end{proof}
-\end{lem}
-
-\begin{lem}
-	[Connecting logic]
-	If \(\rho S\) satisfies the conclusion of lemma \ref{lem:cubeOC} for each cube disjoint from \(S\), then \(S\) satisfies the conclusion of theorem \ref{thm:QCOC}.
-\end{lem}%}}}
-
 \end{document}
+
 words to search for: clarification, question, technicality, concern
 
 
