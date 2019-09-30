@@ -164,47 +164,26 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{lem}%}}}
 
 \subsection{Wrap up lemmas}
-\begin{lem}
-	[Well-defined filling \(\mathbb{R}^{3}\) ]
+The following is a list of statements, the goal is to prove enough of them to arrive at item number 1 for a suitably chosen core \(C\).
+\begin{enumerate}
+    \item \(C \subseteq \mathscr{T}\) has simply connected hyperplanes
+    \item \(C\) has hyperplanes that are (1) connected (2) quadrant convex
+    \item The hyperplanes and one dimensional fibers of \(C\) are connected
+    \item If \(S \subseteq \mathscr{T}\) connected in all coordinate planes, then so are \(S_{x}, S_{y},\) and \(S_{z}\).
+    \item If \(R \subseteq T_{1} \times T_{2}\) is connected in all \(xy\)-planes then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
+    \item If \(S \subseteq \mathscr{T}\) is connected and connected in all coordinate planes then \(\sxyz\) is one dimensional fiberwise convex. 
+    \item If \(S \subseteq \mathscr{T}\) and is connected in all coordinate planes then \( \left( S_{x} \right)_{y} = \left( S_{y} \right)_{x}\).
+    \item Planar Path Argument
+\end{enumerate}
 
-	If \(S \subseteq \mathbb{R}^{3}\) is connected in all coordinate planes then \(S_x\), \(S_{y}\), and \(S_{z}\) are as well. 
-	
-
-\end{lem}
-
-\begin{lem}
-	[Switching Lemma in \(\mathbb{R}^{3}\) ]
-	 \label{lem:switch} 
-	 If \(S\) is connected in all \(xy\)-planes, then \((S_{x})_{y} = (S_{y})_{x}\).
-	
-\end{lem}
 \begin{lem}
     [Planar Path Argument]
-    Given SETUP, and a planar slice, we can find a path
-\end{lem}
-\begin{lem}
-    [Filling Lemma in \(\mathbb{R}^{3}\)]
-	\label{lem:fillr3}
-	If \(S \subseteq \mathbb{R}^{3}\) is itself connected and connected in all coordinate planes, then \(\sxyz\) is 1-dim fiber convex.
-\end{lem}
-\begin{proof}
-    (sketch) Need to use the Guirardel lemma to get two ways of writing the quadrant-convex hull of a set. This allows switching. Then assuming things are connected in all planes get that one filling is still connected and so you can apply the switching again. (There is a planar path argument to make) Then you get the result.
-\end{proof}
-\begin{proof}
-	Let \(S\) be as above. Consider \(S_{ y}\) and a slice of \(S_{ y}\) given by the intersection of \(S_{ y}\) with some \(xz\)-plane. If a point in the slice is in \(S_{y} \smallsetminus   S\) then by the definition of filling there exists two points, each with different \(y\)-coordinates but the same coordinates in our \(xz\)-plane, on either side. Consider the line that's the intersection of our \(xz\)-plane and the \(xy\)-plane containing our point. This line must contain an element of \(S\) else \(S\) wouldn't be connected in \(xy\)-planes. Consider the \(xy\)-plane containing our three points of \(S\) so far. We will say points with \(x\)-coordinates greater than our red point 
-\end{proof}
-\begin{lem}
-    [Filling Lemma in \(T_{1} \times T_{2} \times T_{3}\)]
-	\label{lem:fillt3}
-    (Here we're taking convex hulls in the tree factors)
-\begin{proof}
-    (todo)
-\end{proof}
+    Given SETUP, let \(S\) be a non-empty closed subset of \(T_{1} \times T_{2}\) and suppose \(p \not\in S_{x}\smallsetminus S\), then there exists \(q \in S \cap \left( \{p_{1} \} \times T_{2} \right)\) such that \([p,q] \subseteq \{p_{1} \} \times T_{2}\).
+    \begin{proof}
+        Given SETUP, we apply the combinatorial lemma.
+    \end{proof}
 \end{lem}
 
-
-
-\newpage
 \end{document}
 
 words to search for: clarification, question, technicality, concern
