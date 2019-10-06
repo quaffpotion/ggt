@@ -196,15 +196,17 @@ The implications are as follows:
     [Statement 4]
     Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
     \begin{proof}
-        Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the plane is connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{3} (p_{3} )\), we will show that there is a path in \(S_{x} \cap \pi_{3}^{-1} (p_{1} )\) between \(p\) and some point in \(S\).
+        Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we will show that there is a path in \(S_{x} \cap \pi_{3}^{-1} (p_{2} )\) between \(p\) and some point in \(S\).
        
-        (argue that theres a point \(p\) that isn't in \(S\) that is flanked by two points in \(S\) in the horizontal factor.)
-        
-        {\sc Claim:} Given a path between the left and right points above that lies in \(S\) there exists a subpath with endpoints in the horizontal factor such that the interior of the path lies entirely in {\em one vertical direction}.
-
-            {\sc Claim:} Let \(R \subseteq T_{1} \times T_{2}\) and let \(\sigma\) be a path from \(p\) to \(q\) where \(p,q \in S\) and \(p_{2} = q_{2}\) and \(r \in [p,q]\) but \(r \not\in S\). Then there exists a 
+        Since \(p\) isn't in \(S\) there exist distinct points \(r\) and \(s\) in \(S \) that agree in all coordinates except the first where we have that \(p_{1} \in \text{cvxhull}_1 (\{r_{1} , s_{1}\})\). Now, because \(S\) is connected in all coordinate planes there is a path \(\sigma\) from \(r\) to \(s\) that lies in \(S \cap \pi_{2}^{-1} (p_{2})\). In fact, we can take \(\sigma\) to be a path that begins and ends at \(p\) and \(r\) but otherwise has vertical coordinates strictly lying in exactly one vertical direction. We have factored out this situation into a separate claim below the fold. Given the claim \ref{lem:verticalsubpath}, it remains to show that there is a path connecting \(p\) to another point in \(S\). 
     \end{proof}
 \end{lem}
+
+\begin{claim*}
+    [Reduction to subpath in single vertical direction]
+    \label{lem:verticalsubpath} 
+    Let \(R\) be a subset of \(T_{1} \times T_{2}\) ...
+\end{claim*}
 \end{document}
 
 
