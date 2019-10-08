@@ -1,6 +1,6 @@
 # Todo
 - [ ] Write outline in rooted tree form
-    - [ ] State combinatorial lemma
+    - [x] State coloring lemma
     - [x] State wrap up lemmas
     - [ ] Formally state each node in tree
     - [ ] Prove the 4,7 to 6 implication (arrive at core having connected 1-dim fibers)
