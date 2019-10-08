@@ -1,6 +1,8 @@
 # Todo
 - [ ] Write outline in rooted tree form
-    - [x] State coloring lemma
+    - [ ] State coloring lemma
+        - [ ] update statement using SETUP from phone pictures
+        - [ ] clean up proof of coloring lemma using phone pictures
     - [x] State wrap up lemmas
     - [ ] Formally state each node in tree
     - [ ] Prove the 4,7 to 6 implication (arrive at core having connected 1-dim fibers)
