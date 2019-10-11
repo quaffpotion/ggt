@@ -96,6 +96,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \subsection{Planar Path Argument}
  \label{lem:ppa} 
 \begin{lem}[Coloring Lemma]%{{{
+    \label{lem:coloring} 
 	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
 \end{lem}%}}}
 
@@ -175,7 +176,9 @@ The following is a list of statements, the goal is to prove enough of them to ar
     \item If \(S \subseteq \mathscr{T}\) is connected and connected in all coordinate planes then \(\sxyz\) is one dimensional fiberwise convex. 
     \item If \(S \subseteq \mathscr{T}\) and is connected in all coordinate planes then \( \left( S_{x} \right)_{y} = \left( S_{y} \right)_{x}\).
     \item Planar Path Argument
+    \item Guirardel's Lemma
 \end{enumerate}
+
 
 \begin{lem}
     [Planar Path Argument]
@@ -190,18 +193,16 @@ The implications are as follows:
 \begin{alignat}{3}
     (4),(7) &\fbox{\(\Rightarrow\)}  (6) \Rightarrow (3) \Rightarrow (2)\Rightarrow (1)\\
     (8) &\Rightarrow (4)\\
-    (5) &\Rightarrow (7)
+    (9) &\Rightarrow (5) \Rightarrow (7)
 \end{alignat}
 
 \begin{lem}
     [Statement 4]
     Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
     \begin{proof}
-        Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we will show that there is a path in \(S_{x} \cap \pi_{3}^{-1} (p_{2} )\) between \(p\) and some point in \(S\).
+        Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we will show that there is a path in \(S_{x} \cap \pi_{2}^{-1} (p_{2} )\) between \(p\) and some point in \(S\).
        
         Since \(p\) isn't in \(S\) there exist distinct points \(r\) and \(s\) in \(S \) that agree in all coordinates except the first where we have that \(p_{1} \in \text{cvxhull}_1 (\{r_{1} , s_{1}\})\). Now, because \(S\) is connected in all coordinate planes there is a path \(\sigma\) from \(r\) to \(s\) that lies in \(S \cap \pi_{2}^{-1} (p_{2})\). In fact, we can take \(\sigma\) to be a path that begins and ends at \(p\) and \(r\) but otherwise has vertical coordinates strictly lying in exactly one vertical direction. We have factored out this situation into a separate claim below the fold. Given the claim \ref{lem:verticalsubpath}, it remains to show that there is a path connecting \(p\) to another point in \(S\). 
-    \end{proof}
-\end{lem}
 
 \begin{claim*}
     [Reduction to subpath in single vertical direction]
@@ -217,9 +218,14 @@ The implications are as follows:
     \begin{proof}
         Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set has a finite number of connected components. ( all closed intervals ). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of connected components is at least 2. Consider pairs of endpoints of the open intervals making up the complement of our inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath with endpoints in \(T_{1} \times \{r_{2}\}\) and interior in in vertical directions. Our subpath lies in the product of a disjoint union of vertical directions (trees) and a compact subtree of \(T_{1}\). Since only the endpoints lie in \(T_{1} \times \{r_{2}\}\) we have that the image of the interior of the subpath must lie in a single vertical direction. (i.e. a connected component of a disjoint union of connected directions cross a subtree)
 
-        Take \(\sigma\) as in the claim. Considering closed quadrants, there exists a sequence \(t_{1},\ldots,t_{n}\) such that \(\sigma (t_i)=:v_i\) are vertices in \(\{r_{1} \times \overline\delta \}\)  (here \(\delta\) is the distinguished vertical direction) with the property that \(\sigma (t_{1}) =p\), \(\sigma (t_{n}) = q\), and \(\sigma_{i} := \sigma \mid_{[t_{i} , t_{i + 1} ]}\) lie in quadrant \(i\) for \(0 < i < n\). Projecting, we obtain a sequence of subpaths in the closure of \(\delta\) in \(T_{2}\) that are colored based on their quadrant. Note that \(\overline \delta\) has a valence one vertex at \(r_{2}\) and subpaths don't end at \(p\) or \(q\) unless it's the first or last. Multicolored paths in this vertical direction give paths contained in \(S_{x}\), we use the coloring lemma \ref{lem:ppa}  that shows there is a path between \(r\) and some other \(v_{i} \in S\).  
     \end{proof}
 \end{claim*}
+        Take \(\sigma\) as in the claim. Considering closed quadrants, there exists a sequence \(t_{1},\ldots,t_{n}\) such that \(\sigma (t_i)=:v_i\) are vertices in \(\{r_{1} \times \overline\delta \}\)  (here \(\delta\) is the distinguished vertical direction) with the property that \(\sigma (t_{1}) =p\), \(\sigma (t_{n}) = q\), and \(\sigma_{i} := \sigma \mid_{[t_{i} , t_{i + 1} ]}\) lie in quadrant \(i\) for \(0 < i < n\). Projecting, we obtain a sequence of subpaths in the closure of \(\delta\) in \(T_{2}\) that are colored based on their quadrant. Note that \(\overline \delta\) has a valence one vertex at \(r_{2}\) (because we took a direction) and subpaths don't end at \(p\) or \(q\) unless it's the first or last. This situation satisfies the conditions for our coloring lemma \ref{lem:coloring}.
+        
+        Multicolored paths in this vertical direction give paths contained in \(S_{x}\), we use the coloring lemma \ref{lem:coloring}  that shows there is a path between \(r\) and some other \(v_{i} \in S\).  This completes the proof.
+    \end{proof}
+\end{lem}
+
 \end{document}
 
 

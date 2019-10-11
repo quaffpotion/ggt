@@ -8,7 +8,7 @@
     - [ ] Prove the 4,7 to 6 implication (arrive at core having connected 1-dim fibers)
     - [ ] Use Lemmas to prove main statement
 - [x] Show our setup matches the hypotheses for the combinatorial lemma
-    - [x] (Lemma 4) Path in positive halfspace lemma (cf: 10/1 notes)
+    - [x] Path in positive halfspace lemma 
     - [x] Specify existence of subpaths formally
     - [x] Existence of subpaths in vertical factor from original path implies a path in the filled set.
 - [ ] Setup for the combinatorial lemma is invariant under snipping procedure (cf: 10/1 notes)
