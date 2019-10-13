@@ -203,7 +203,7 @@ The implications are as follows:
        
         Since \(p\) isn't in \(S\) there exist distinct points \(r\) and \(s\) in \(S \) that agree in all coordinates except the first where we have that \(p_{1} \in \text{cvxhull}_1 (\{r_{1} , s_{1}\})\). Now, because \(S\) is connected in all coordinate planes there is a path \(\sigma\) from \(r\) to \(s\) that lies in \(S \cap \pi_{2}^{-1} (p_{2})\). In fact, we can take \(\sigma\) to be a path that begins and ends at \(p\) and \(r\) but otherwise has vertical coordinates strictly lying in exactly one vertical direction. We have factored out this situation into a separate claim below the fold. Given the claim \ref{lem:verticalsubpath}, it remains to show that there is a path connecting \(p\) to another point in \(S\). 
 
-\begin{claim*}
+\begin{lem}
     [Reduction to subpath in single vertical direction]
     \label{lem:verticalsubpath} 
     Let \(S\) be a subset of \(T_{1} \times T_{2}\) and let \(p,q,r \in S\) satisfy: 
@@ -218,15 +218,19 @@ The implications are as follows:
         Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set has a finite number of connected components. ( all closed intervals ). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of connected components is at least 2. Consider pairs of endpoints of the open intervals making up the complement of our inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath with endpoints in \(T_{1} \times \{r_{2}\}\) and interior in in vertical directions. Our subpath lies in the product of a disjoint union of vertical directions (trees) and a compact subtree of \(T_{1}\). Since only the endpoints lie in \(T_{1} \times \{r_{2}\}\) we have that the image of the interior of the subpath must lie in a single vertical direction. (i.e. a connected component of a disjoint union of connected directions cross a subtree)
 
     \end{proof}
-\end{claim*}
+\end{lem}
         Take \(\sigma\) as in the claim. Considering closed quadrants, there exists a sequence \(t_{1},\ldots,t_{n}\) such that \(\sigma (t_i)=:v_i\) are vertices in \(\{r_{1} \times \overline\delta \}\)  (here \(\delta\) is the distinguished vertical direction) with the property that \(\sigma (t_{1}) =p\), \(\sigma (t_{n}) = q\), and \(\sigma_{i} := \sigma \mid_{[t_{i} , t_{i + 1} ]}\) lie in quadrant \(i\) for \(0 < i < n\). Projecting, we obtain a sequence of subpaths in the closure of \(\delta\) in \(T_{2}\) that are colored based on their quadrant. Note that \(\overline \delta\) has a valence one vertex at \(r_{2}\) (because we took a direction) and subpaths don't end at \(p\) or \(q\) unless it's the first or last. This situation satisfies the conditions for our coloring lemma \ref{lem:coloring}.
         
         Multicolored paths in this vertical direction give paths contained in \(S_{x}\), we use the coloring lemma \ref{lem:coloring}  that shows there is a path between \(r\) and some other \(v_{i} \in S\).  This completes the proof.
     \end{proof}
 \end{lem}
 
+\begin{lem}
+    [Boxed Implication]
+ \label{lem:boximp} 
+    asdfq
+\end{lem}
 \end{document}
-
 
 words to search for: clarification, question, technicality, concern
 
