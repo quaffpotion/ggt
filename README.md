@@ -5,7 +5,7 @@
         - [ ] clean up proof of coloring lemma using phone pictures
     - [x] State wrap up lemmas
     - [ ] Formally state each node in tree
-    - [ ] Prove the 4,7 to 6 implication (arrive at core having connected 1-dim fibers)
+    - [x] Prove Boxed Lemma 
     - [ ] Use Lemmas to prove main statement
 - [x] Show our setup matches the hypotheses for the combinatorial lemma
     - [x] Path in positive halfspace lemma 

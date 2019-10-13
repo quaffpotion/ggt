@@ -21,6 +21,7 @@
 
 \newcommand{\sxyz}{((S_x)_y)_z}
 \newcommand{\rxy}{(R_x)_y}
+\newcommand{\Sxyz}[3]{((S_#1)_#2)_#3}
 
 \theoremstyle{mystyle}
 \newtheorem{thm}{Theorem}[section]
@@ -228,7 +229,7 @@ The implications are as follows:
 \begin{lem}
     [Boxed Implication]
  \label{lem:boximp} 
-    asdfq
+    Repeatedly applying statement (7) to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers as needed. 
 \end{lem}
 \end{document}
 
