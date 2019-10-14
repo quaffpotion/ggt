@@ -9,6 +9,7 @@
 \lhead{Research Outline}
 \rhead{Tony Martino}
 
+%Commands
 \newtheoremstyle{mystyle}
   {\topsep}
   {\topsep}
@@ -92,6 +93,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 
 \begin{lem}
 	[Guirardel Lemma 5.4, Corollary 5.5]
+ \label{lem:guirardel} 
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
 \subsection{Planar Path Argument}
@@ -109,6 +111,10 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 		\item There exists \(k\) such that \(p(k) \in  \{e, \overline{e}\}\). (i.e. the path uses the geometric edge \(\{e , \overline{e}\}\) corresponding to  \(e\))
 		\item Both halfspaces of \(e\) contain an endpoint of \(p\).
 	\end{enumerate}
+\end{defn}
+\begin{defn}
+    [Bad]
+    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((\sigma = \sigma_{1} \cdots \sigma_{N} , \lambda , A)\) if \(e\) separates some \(a \in A\) from \(x_{0}\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
 \end{defn}
 \begin{defn}
 	[complexity]
@@ -175,7 +181,7 @@ The following is a list of statements, the goal is to prove enough of them to ar
     \item If \(S \subseteq \mathscr{T}\) connected in all coordinate planes, then so are \(S_{x}, S_{y},\) and \(S_{z}\).
     \item If \(R \subseteq T_{1} \times T_{2}\) has convex fibers then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
     \item If \(S \subseteq \mathscr{T}\) is connected and connected in all coordinate planes then \(\sxyz\) is one dimensional fiberwise convex. 
-    \item If \(S \subseteq \mathscr{T}\) and is connected in all coordinate planes then \( \left( S_{x} \right)_{y} = \left( S_{y} \right)_{x}\).
+    \item \label{state:7} If \(S \subseteq \mathscr{T}\) and is connected in all coordinate planes then \( \left( S_{x} \right)_{y} = \left( S_{y} \right)_{x}\).
     \item Planar Path Argument
     \item Guirardel's Lemma
 \end{enumerate}
@@ -226,10 +232,11 @@ The implications are as follows:
     \end{proof}
 \end{lem}
 
+%Boxed Implication
 \begin{lem}
     [Boxed Implication]
  \label{lem:boximp} 
-    Repeatedly applying statement (7) to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers as needed. 
+    Repeatedly applying statement \ref{state:7} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
 \end{lem}
 \end{document}
 
