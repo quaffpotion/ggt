@@ -113,7 +113,6 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
         \item \(\sigma_{1} (1) = \sigma_{N} (-1)\) 
         \item \(\lambda_{1} \neq \lambda_{N}\) 
         \item Only the first and last subpaths have endpoints at the basepoint.
-
     \end{enumerate}
 \end{defn}
 \begin{defn}
@@ -141,6 +140,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	[outer]
 	Let \(T\) be a tree, \(x \in T\), and \(A\) be a subset of edges. Let \(e^{+}\) denote the halfspace of \(e\) that doesn't contain \(x\). An edge \(e\) of \(T\) is {\em outer} with respect to \((x,A)\) if \(e^{+} \cap A=\varnothing\).  
 \end{defn}
+
 \begin{lem}
 	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) with \(m > 1\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
 	\begin{enumerate}
@@ -214,14 +214,7 @@ The implications are as follows:
     (8) &\Rightarrow (4)\\
     (9) &\Rightarrow (5) \Rightarrow (7)
 \end{alignat}
-\begin{lem}
-    [Statement 4]
-    Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
-    \begin{proof}
-        Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we will show that there is a path in \(S_{x} \cap \pi_{2}^{-1} (p_{2} )\) between \(p\) and some point in \(S\).
-       
-        Since \(p\) isn't in \(S\) there exist distinct points \(r\) and \(s\) in \(S \) that agree in all coordinates except the first where we have that \(p_{1} \in \text{cvxhull}_1 (\{r_{1} , s_{1}\})\). Now, because \(S\) is connected in all coordinate planes there is a path \(\sigma\) from \(r\) to \(s\) that lies in \(S \cap \pi_{2}^{-1} (p_{2})\). In fact, we can take \(\sigma\) to be a path that begins and ends at \(p\) and \(r\) but otherwise has vertical coordinates strictly lying in exactly one vertical direction. We have factored out this situation into a separate claim below the fold. Given the claim \ref{lem:verticalsubpath}, it remains to show that there is a path connecting \(p\) to another point in \(S\). 
-
+%lem:verticalsubpath
 \begin{lem}
     [Reduction to subpath in single vertical direction]
     \label{lem:verticalsubpath} 
@@ -238,7 +231,16 @@ The implications are as follows:
 
     \end{proof}
 \end{lem}
-        Take \(\sigma\) as in the claim. Considering closed quadrants, there exists a sequence \(t_{1},\ldots,t_{n}\) such that \(\sigma (t_i)=:v_i\) are vertices in \(\{r_{1} \times \overline\delta \}\)  (here \(\delta\) is the distinguished vertical direction) with the property that \(\sigma (t_{1}) =p\), \(\sigma (t_{n}) = q\), and \(\sigma_{i} := \sigma \mid_{[t_{i} , t_{i + 1} ]}\) lie in quadrant \(i\) for \(0 < i < n\). Projecting, we obtain a sequence of subpaths in the closure of \(\delta\) in \(T_{2}\) that are colored based on their quadrant. Note that \(\overline \delta\) has a valence one vertex at \(r_{2}\) (because we took a direction) and subpaths don't end at \(p\) or \(q\) unless it's the first or last. This situation satisfies the conditions for our coloring lemma \ref{lem:coloring}.
+\begin{lem}
+    [Statement 4]
+    Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
+    \begin{proof}
+        Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we will show that there is a path in \(S_{x} \cap \pi_{2}^{-1} (p_{2} )\) between \(p\) and some point in \(S\).
+       
+        Since \(p\) isn't in \(S\) there exist distinct points \(r\) and \(s\) in \(S \) that agree in all coordinates except the first where we have that \(p_{1} \in \text{cvxhull}_1 (\{r_{1} , s_{1}\})\). Now, because \(S\) is connected in all coordinate planes there is a path \(\sigma\) from \(r\) to \(s\) that lies in \(S \cap \pi_{2}^{-1} (p_{2})\). In fact, we can take \(\sigma\) to be a path that begins and ends at \(p\) and \(r\) but otherwise has vertical coordinates strictly lying in exactly one vertical direction. We have factored out this situation into a separate claim below the fold. Given the claim \ref{lem:verticalsubpath}, it remains to show that there is a path connecting \(p\) to another point in \(S\). 
+
+
+        Take \(\sigma\) as in the claim \ref{lem:verticalsubpath}. Considering closed quadrants, there exists a sequence \(t_{1},\ldots,t_{n}\) such that \(\sigma (t_i)=:v_i\) are vertices in \(\{r_{1} \times \overline\delta \}\)  (here \(\delta\) is the distinguished vertical direction) with the property that \(\sigma (t_{1}) =p\), \(\sigma (t_{n}) = q\), and \(\sigma_{i} := \sigma \mid_{[t_{i} , t_{i + 1} ]}\) lie in quadrant \(i\) for \(0 < i < n\). Projecting, we obtain a sequence of subpaths in the closure of \(\delta\) in \(T_{2}\) that are colored based on their quadrant. Note that \(\overline \delta\) has a valence one vertex at \(r_{2}\) (because we took a direction) and subpaths don't end at \(p\) or \(q\) unless it's the first or last. This situation satisfies the conditions for our coloring lemma \ref{lem:coloring}.
         
         Multicolored paths in this vertical direction give paths contained in \(S_{x}\), we use the coloring lemma \ref{lem:coloring}  that shows there is a path between \(r\) and some other \(v_{i} \in S\).  This completes the proof.
     \end{proof}
