@@ -102,6 +102,9 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \begin{lem}[Coloring Lemma]
     \label{lem:coloring} 
 	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
+    \begin{proof}
+        (Sketch) Suppose the coloring lemma were false, then there exists some \(K\) satisfying the setup with \(K > 0\). Then after snipping we obtain \(0 < K' < K\). However, this is impossible.
+    \end{proof}
 \end{lem}
 \subsubsection{Definitions for combinatorial lemma}
 \begin{defn}
@@ -153,11 +156,12 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{lem}
 
 \begin{lem}
+    [Nonzero]
+    \label{lem:nonzero} 
     If \(K\) satisfies setup and \(K > 0\) then \(K' \neq 0\).
     \begin{proof}
         Since \(K > 0\) we have at least one bad edge, perform a snip at that edge. Suppose for sake of a contradiction that \(K' = 0\). By a previous lemma we know that \(K'\) satisfies the setup. Due to \ref{item:interior} and \ref{item:colors} \(A':= \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\} \) is non-empty. Consider the geodesic from \(x_{0}\) to a point \(a \in A'\) in \(K'\). (Note, because we're in a tree every edge of this geodesic receives a color) This geodesic contains no monocolored edges, if it did then we would have a bad edge, which would imply \(K' > 0\) a contradiction.
     \end{proof}
-
 \end{lem}
 
 
