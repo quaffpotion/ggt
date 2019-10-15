@@ -131,7 +131,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
 	[complexity]
-	Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled.
+    Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled. (We often take the set of edges to be the bad edges)
 \end{defn}
 \begin{defn}
 	[path snipping]
@@ -153,7 +153,12 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{lem}
 
 \begin{lem}
-    If \(K\) satisfies setup and \(K > 0\) then \(K' \neq 0\)  
+    If \(K\) satisfies setup and \(K > 0\) then \(K' \neq 0\).
+    \begin{proof}
+        Since \(K > 0\) we have at least one bad edge, perform a snip at that edge. Suppose for sake of a contradiction that \(K' = 0\). By a previous lemma we know that \(K'\) satisfies the setup. Due to \ref{item:interior} and \ref{item:colors} \(A':= \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\} \) is non-empty. Consider the geodesic from \(x_{0}\) to a point \(a \in A'\) in \(K'\). (Note, because we're in a tree every edge of this geodesic receives a color) This geodesic contains no monocolored edges, if it did then we would have a bad edge, which would imply \(K' > 0\) a contradiction.
+    \end{proof}
+
+    !!! seems we have two ways of proving this... one via induction and the other via checking multipaths ???
 \end{lem}
 
 %depreciated
