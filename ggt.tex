@@ -110,9 +110,9 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
     We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda)\) satisfies property {\em setup} if: 
     \begin{enumerate}
         \item \(\sigma\) is a loop at \(x_{0} := \partial_{0} \sigma (1)\).
-        \item \(\sigma_{1} (1) = \sigma_{N} (-1)\) 
+        \item \(\sigma_{1} (1) = \overline{ \sigma_{N} (-1) }\) 
         \item \(\lambda_{1} \neq \lambda_{N}\) 
-        \item Only the first and last subpaths have endpoints at the basepoint.
+        \item \(x_{0} \not\in A:= \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\} \).
     \end{enumerate}
 \end{defn}
 \begin{defn}
@@ -125,7 +125,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
     [Bad]
-    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((\sigma = \sigma_{1} \cdots \sigma_{N} , \lambda , A)\) if \(e\) separates some \(a \in A\) from \(x_{0}\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
+    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((\sigma = \sigma_{1} \cdots \sigma_{N} , \lambda , A, x_{0} )\) where \(A \subseteq V(T)\) and \(x_{0} \in T\) if \(e\) separates some \(a \in A\) from \(x_{0}\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
 \end{defn}
 \begin{defn}
 	[complexity]
@@ -141,6 +141,9 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 	Let \(T\) be a tree, \(x \in T\), and \(A\) be a subset of edges. Let \(e^{+}\) denote the halfspace of \(e\) that doesn't contain \(x\). An edge \(e\) of \(T\) is {\em outer} with respect to \((x,A)\) if \(e^{+} \cap A=\varnothing\).  
 \end{defn}
 
+
+
+%depreciated
 \begin{lem}
 	If there exists \(K=(T,x_{0} ,\sigma_{1} \cdots \sigma_{N} , \{ e_{ 1} ,\ldots, e_{m}  \}, \lambda )\) with \(m > 1\) satisfying the below properties with complexity \(c > 2\) then there exists \(K'\) also satisfying those properties with \(c' = c - 2\).
 	\begin{enumerate}
