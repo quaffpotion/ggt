@@ -103,7 +103,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
     \label{lem:coloring} 
 	Let \(T\) be a finite combinatorial tree with a valence one vertex \(x_{0}\). Let \((\sigma_{i} )_{i=1}^{N}\) be a sequence of non-degenerate edgepaths and let \(p = *_{i=1}^{N} \sigma_{i}\) be a loop based at \(x_{0}\). Let \(\lambda\) be a function from \(\{1,\ldots,N\}\) to a non-empty finite set such that \(\lambda (1) \neq \lambda (N)\). Suppose that \(x_{0} \in \{\delta_{0} \sigma_{i} , \delta_{1} \sigma_{i} \} \implies i \in \{1,N\}\). Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
     \begin{proof}
-        (Sketch) Suppose the coloring lemma were false, then there exists some \(K\) satisfying the setup with \(K > 0\). Then after snipping we obtain \(0 < K' < K\). However, this is impossible.
+        (Sketch) Suppose the coloring lemma were false, then there exists some \(K\) satisfying property setup \ref{def:setup} with \(K > 0\). Then after snipping we obtain \(0 < K' < K\). However, this is impossible to continue forever due to \ref{lem:nonzero}.
     \end{proof}
 \end{lem}
 \subsubsection{Definitions for combinatorial lemma}
@@ -183,7 +183,7 @@ The implications are as follows:
 \begin{alignat}{3}
     (4),(7) &\fbox{\(\label{eqn:filling}\Rightarrow\)}  (6) \Rightarrow (3) \Rightarrow (2)\Rightarrow (1) \\
     (8) &\Rightarrow (4)\\
-    (9) &\Rightarrow (5) \Rightarrow (7)
+    (5) &\Rightarrow (7)
 \end{alignat}
 %lem:verticalsubpath
 \begin{lem}
