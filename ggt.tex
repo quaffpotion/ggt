@@ -53,6 +53,10 @@ We want to show the following statement or similar: if a group is the fundamenta
 \subsection{Definitions}
 
 \begin{defn}
+	[Filling]
+    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}).\] 
+\end{defn}
+\begin{defn}
 	[Type \(FP\) ]
 	A group is of type \(FP\) if it is (1) type \(FP_n\) for all \(n\) and (2) finite geometric cohomological dimension.
 \end{defn}
@@ -78,10 +82,6 @@ We want to show the following statement or similar: if a group is the fundamenta
 \begin{defn}[cellular-product-convex] We say that \(K \subset X\) is cellular-product-convex if it's complement is the open cellular neighborhood of a union of generalized closed quadrants.
 \end{defn}
 
-\begin{defn}
-	[Filling]
-    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}).\] 
-\end{defn}
 
 
 \section{Outline and notation for the construction of the core}
@@ -158,7 +158,6 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
         Since \(K > 0\) we have at least one bad edge, perform a snip at that edge. Suppose for sake of a contradiction that \(K' = 0\). By a previous lemma we know that \(K'\) satisfies the setup. Due to \ref{item:interior} and \ref{item:colors} \(A':= \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\} \) is non-empty. Consider the geodesic from \(x_{0}\) to a point \(a \in A'\) in \(K'\). (Note, because we're in a tree every edge of this geodesic receives a color) This geodesic contains no monocolored edges, if it did then we would have a bad edge, which would imply \(K' > 0\) a contradiction.
     \end{proof}
 
-    !!! seems we have two ways of proving this... one via induction and the other via checking multipaths ???
 \end{lem}
 
 
@@ -195,7 +194,7 @@ The implications are as follows:
     \end{enumerate}
     Let \(\sigma : [0,1] \to S\) be a path from \(p\) to \(q\), then there exists a path \(\sigma '\) such that taking \(p,q:= \sigma '(0), \sigma '(1)\) satisfies properties (2)-(4) and \(\pi_{2} (\text{Im}( \sigma '\mid_{(0,1)} ))\) is contained in an open direction of \(T_{2}\) at \(r_{2}\).
     \begin{proof}
-        Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set has a finite number of connected components. ( all closed intervals ). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of connected components is at least 2. Consider pairs of endpoints of the open intervals making up the complement of our inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath with endpoints in \(T_{1} \times \{r_{2}\}\) and interior in in vertical directions. Our subpath lies in the product of a disjoint union of vertical directions (trees) and a compact subtree of \(T_{1}\). Since only the endpoints lie in \(T_{1} \times \{r_{2}\}\) we have that the image of the interior of the subpath must lie in a single vertical direction. (i.e. a connected component of a disjoint union of connected directions cross a subtree)
+        (Sketch) Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set has a finite number of connected components (all closed intervals). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of connected components is at least 2. Consider pairs of endpoints of the open intervals making up the complement of our inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath with endpoints in \(T_{1} \times \{r_{2}\}\) and interior in in vertical directions. Our subpath lies in the product of a disjoint union of vertical directions (trees) and a compact subtree of \(T_{1}\). Since only the endpoints lie in \(T_{1} \times \{r_{2}\}\) we have that the image of the interior of the subpath must lie in a single vertical direction. (i.e. a connected component of a disjoint union of connected directions cross a subtree)
 
     \end{proof}
 \end{lem}
