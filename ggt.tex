@@ -109,11 +109,12 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
     \label{def:setup} 
     We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda)\) satisfies property {\em setup} if: 
     \begin{enumerate}
-        \item \(\sigma\) is a loop at \(x_{0} := \partial_{0} \sigma (1)\).
-        \item The subpaths \(\sigma_{i}\) are non-degenerate.
-        \item \(\sigma_{1} (1) = \overline{ \sigma_{N} (-1) }\) 
-        \item \(\lambda_{1} \neq \lambda_{N}\) 
-        \item \(x_{0} \not\in A:= \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\} \).
+        \item \label{item:loop} \(\sigma\) is a loop at \(x_{0} := \partial_{0} \sigma (1)\).
+        \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate.
+        \item \label{item:sharededge} \(\sigma_{1} (1) = \overline{ \sigma_{N} (-1) }\) 
+        \item \label{item:colors} \(\lambda_{1} \neq \lambda_{N}\) 
+        \item \label{item:endpoints} \(x_{0} \not\in A:= \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\} \).
+        \item \label{item:interior} The interior of \(\sigma\) doesn't use \(x_{0}\).
     \end{enumerate}
 \end{defn}
 \begin{defn}
@@ -126,7 +127,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
     [Bad]
-    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((\sigma = \sigma_{1} \cdots \sigma_{N} , \lambda)\) if \(e\) separates some \(a \in \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\}\) from \(\partial_{0}\sigma (1)\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
+    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda)\) if \(e\) separates some \(a \in \text{endpoints} \smallsetminus \{\partial_{0} \sigma_{1} , \partial_{1} \sigma_{N}\}\) from \(\partial_{0}\sigma (1)\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
 \end{defn}
 \begin{defn}
 	[complexity]
@@ -143,9 +144,11 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 
 \begin{lem}
+    [Setup is snip invariant]
+ \label{lem:preservesetup} 
     If \(K\) satisfies property setup then \(K'\) obtained from performing a snip on a bad edge also satisfies property setup.
     \begin{proof}
-        
+        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is in at most one of them. Furthermore, \(e \neq \sigma_{1} (1)\) because then a subpath other than the first and last would use \(x_{0}\) which isn't allowed by \ref{item:interior}. Hence, the snipped path \(\sigma '\) will begin with an initial segment of \(\sigma_{1}\) and end with a tail of \(\sigma_{N}\).This shows that properties \ref{item:loop} , \ref{item:nondegen} , \ref{item:sharededge} , \ref{item:colors} are preserved. Because \(\sigma '\) is a restriction, we also get proprties  \ref{item:endpoints} and \ref{item:interior}. 
     \end{proof}
 \end{lem}
 
