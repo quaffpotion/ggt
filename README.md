@@ -1,4 +1,5 @@
 # Todo
+- [x] Prove Statement 4 modulo claims
 - [ ] Write outline in rooted tree form
     - [ ] State coloring lemma
         - [ ] update statement using SETUP from phone pictures
