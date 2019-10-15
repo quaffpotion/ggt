@@ -1,15 +1,4 @@
 # Todo
-- [x] Prove Statement 4 modulo claims
-- [ ] Write outline in rooted tree form
-    - [ ] State coloring lemma
-        - [ ] update statement using SETUP from phone pictures
-        - [ ] clean up proof of coloring lemma using phone pictures
-    - [x] State wrap up lemmas
-    - [ ] Formally state each node in tree
-    - [x] Prove Boxed Lemma 
-    - [ ] Use Lemmas to prove main statement
-- [x] Show our setup matches the hypotheses for the combinatorial lemma
-    - [x] Path in positive halfspace lemma 
-    - [x] Specify existence of subpaths formally
-    - [x] Existence of subpaths in vertical factor from original path implies a path in the filled set.
-- [ ] Setup for the combinatorial lemma is invariant under snipping procedure (cf: 10/1 notes)
+- [ ] Spell out how you're applying (4) to then apply (7) in lemma boxed implication
+- [ ] see phone for proper writeup of nonzero lemma
+- [ ] prove statement (5)
