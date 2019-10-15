@@ -131,11 +131,11 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
 	[complexity]
-    Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled. (We often take the set of edges to be the bad edges)
+    Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled. (We often take the set of edges to be the bad edges of some tree)
 \end{defn}
 \begin{defn}
 	[path snipping]
-	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by restricting each subpath as well. Any resulting subpaths that are empty are deleted.
+	Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the restriction of \(p\) to \(\{k\mid 1 \leq k < i\} \cup \{k \mid j < k < \infty\}\). If \(p\) has a subpath structure then the subpath structure for \(p'\) is given by first concatenating subpaths that use the portion that is cut out into one subpath and then restricting all subpaths to the new domain. Any subpaths that are empty are deleted.
 	
 \end{defn}
 \begin{defn}
