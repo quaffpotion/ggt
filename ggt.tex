@@ -153,9 +153,9 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \begin{lem}
     [Decreasing]
     \label{lem:decreasing} 
-    If \(K\) satsifies property setup, then \(K' < K\).
+    If \(K\) satsifies property setup and \(K >0\), then \(K > K'\).
     \begin{proof}
-        (Sketch) If \(K\) satisfies setup then \(K>0\). Consider the halfspace \(e^{+}\), every edge in this halfspace remains bad and contributes the same complexity as it did in \(K\). For edges outside this halfspace, they are either no longer bad and therefore contribute nothing, or contribute less because we removed subpaths or combined two subpaths into one.
+        Consider the halfspace \(e^{+}\) of \(e\) that contains \(x_{0}\), every edge in this halfspace retains the same colorings, though it's possible some are no longer bad. For edges outside this halfspace, they are either no longer bad and therefore contribute nothing, or contribute less because we removed subpaths or combined two subpaths into one.
     \end{proof}
 \end{lem}
 
