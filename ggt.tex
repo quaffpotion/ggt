@@ -129,38 +129,6 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
  \label{lem:guirardel} 
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
-\subsection{Planar Path Argument}
-
- \label{lem:ppa} 
-\begin{lem}[Coloring Lemma]
-    \label{lem:coloring} 
-	Let \(K\) satisfy property setup. Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
-    \begin{proof}
-        Suppose the lemma were false. Then there exists some \(K\) with property setup such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e, \overline{e}\}\). Hence, \(K\) has bad edges and \(K > 0\). Let \(K'\) be the result of snipping a bad edge. Note that \(K'\) has property setup as well by \ref{lem:preservesetup}. By lemma \ref{lem:decreasing}, \(K'<K\). Suppose for sake of a contradiction that \(K' = 0\). Then \(K'\) would have a multicolored path between \(x_{0}\) and some \(a' \in A' \subseteq A\), which implies that \(K\) already had the same multicolored path because edges can only lose colors after a snip; a contradiction. Hence, \(K' > 0\). Continuing via \ref{lem:decreasing}  we obtain, \(K > K' > K'' > \ldots > 0\) an infinite decreasing sequence of positive integers, which is impossible. Therefore the lemma is true.
-    \end{proof}
-\end{lem}
-
-
-\begin{lem}
-    [Setup is snip invariant]
- \label{lem:preservesetup} 
-    If \(K\) satisfies property setup \ref{def:setup}  then \(K'\) obtained from performing a snip on a bad edge also satisfies property setup.
-    \begin{proof}
-        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is used (recall \(e\) is used by \(p\) if \(p \cap \{e, \overline{e}\} \neq \varnothing \)) in at most one of them. Since \(T\) is a tree and \(\sigma\) a loop, \(\overline{e}\) must appear in \(\sigma\).
-        If either \(e\) or \(\overline{e}\) has an endpoint at \(x_{0}\) then one of them is \(\sigma (1)\) by property \ref{item:interior}. Hence, by property \ref{item:sharededge} the other is \(\overline{\overline\sigma_{N} (1)}\) which is the last edge of \(\sigma_{N}\). But then since \(e\) is bad \(\lambda_{1} = \lambda_{N}\) a contradiction. Therefore, \(e\) is not the initial edge of \(\sigma_{1}\) nor the final edge of \(\sigma_{N}\). This implies that when we perform the snip properties \ref{item:loop}, \ref{item:nondegen}, \ref{item:sharededge} , \ref{item:colors} , and \ref{item:interior} are preserved. 
-    \end{proof}
-\end{lem}
-
-\begin{lem}
-    [Decreasing]
-    \label{lem:decreasing} 
-    Consider \(J\) as in \ref{def:complexity} with \(J > 0\), let \(J'\) be the result of snipping a bad edge, then \(J' < J\).
-    \begin{proof}
-        (Sketch)
-        Consider the halfspace \(e^{+}\) of \(e\) that contains \(x_{0}\), every edge in this halfspace retains the same colorings, though it's possible some are no longer bad. For edges outside this halfspace, they are either no longer bad and therefore contribute nothing, or contribute less because we removed subpaths or combined two subpaths into one.
-    \end{proof}
-\end{lem}
-
 \subsection{Wrap up lemmas}
 The following is a list of statements, the goal is to prove enough of them to arrive at item number 1 for a suitably chosen core \(C\).
 \begin{enumerate}
@@ -218,6 +186,38 @@ The implications are as follows:
  \label{lem:boximp} 
     Repeatedly applying statement \ref{state:7} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
 \end{lem}
+\subsection{Planar Path Argument}
+
+ \label{lem:ppa} 
+\begin{lem}[Coloring Lemma]
+    \label{lem:coloring} 
+	Let \(K\) satisfy property setup. Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e,\overline{e}\}\) and \(\lambda ( i ) \neq \lambda ( j )\).
+    \begin{proof}
+        Suppose the lemma were false. Then there exists some \(K\) with property setup such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) intersect \(\{e, \overline{e}\}\). Hence, \(K\) has bad edges and \(K > 0\). Let \(K'\) be the result of snipping a bad edge. Note that \(K'\) has property setup as well by \ref{lem:preservesetup}. By lemma \ref{lem:decreasing}, \(K'<K\). Suppose for sake of a contradiction that \(K' = 0\). Then \(K'\) would have a multicolored path between \(x_{0}\) and some \(a' \in A' \subseteq A\), which implies that \(K\) already had the same multicolored path because edges can only lose colors after a snip; a contradiction. Hence, \(K' > 0\). Continuing via \ref{lem:decreasing}  we obtain, \(K > K' > K'' > \ldots > 0\) an infinite decreasing sequence of positive integers, which is impossible. Therefore the lemma is true.
+    \end{proof}
+\end{lem}
+
+
+\begin{lem}
+    [Setup is snip invariant]
+ \label{lem:preservesetup} 
+    If \(K\) satisfies property setup \ref{def:setup}  then \(K'\) obtained from performing a snip on a bad edge also satisfies property setup.
+    \begin{proof}
+        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is used (recall \(e\) is used by \(p\) if \(p \cap \{e, \overline{e}\} \neq \varnothing \)) in at most one of them. Since \(T\) is a tree and \(\sigma\) a loop, \(\overline{e}\) must appear in \(\sigma\).
+        If either \(e\) or \(\overline{e}\) has an endpoint at \(x_{0}\) then one of them is \(\sigma (1)\) by property \ref{item:interior}. Hence, by property \ref{item:sharededge} the other is \(\overline{\overline\sigma_{N} (1)}\) which is the last edge of \(\sigma_{N}\). But then since \(e\) is bad \(\lambda_{1} = \lambda_{N}\) a contradiction. Therefore, \(e\) is not the initial edge of \(\sigma_{1}\) nor the final edge of \(\sigma_{N}\). This implies that when we perform the snip properties \ref{item:loop}, \ref{item:nondegen}, \ref{item:sharededge} , \ref{item:colors} , and \ref{item:interior} are preserved. 
+    \end{proof}
+\end{lem}
+
+\begin{lem}
+    [Decreasing]
+    \label{lem:decreasing} 
+    Consider \(J\) as in \ref{def:complexity} with \(J > 0\), let \(J'\) be the result of snipping a bad edge, then \(J' < J\).
+    \begin{proof}
+        (Sketch)
+        Consider the halfspace \(e^{+}\) of \(e\) that contains \(x_{0}\), every edge in this halfspace retains the same colorings, though it's possible some are no longer bad. For edges outside this halfspace, they are either no longer bad and therefore contribute nothing, or contribute less because we removed subpaths or combined two subpaths into one.
+    \end{proof}
+\end{lem}
+
 \end{document}
 
 words to search for: clarification, question, technicality, concern
