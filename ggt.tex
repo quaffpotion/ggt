@@ -111,9 +111,9 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
     We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda, x_{0} )\) satisfies property {\em setup} if: 
     \begin{enumerate}
         \item \label{item:loop} \(\sigma\) is a loop at \(x_{0}\).
-        \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate.
-        \item \label{item:sharededge} \(\sigma_{1} (1) = \overline{ \sigma_{N}} (1) \) 
-        \item \label{item:colors} \(\lambda_{1} \neq \lambda_{N}\) 
+        \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate. (i.e. as words in the edge set they are non-empty)
+        \item \label{item:sharededge} The path \(\sigma\) begins and ends at the same geometric edge. i.e. \(\sigma_{1} (1) = \overline{ \sigma_{N}} (1) \) 
+        \item \label{item:colors} The first and last subpath have different colors i.e. \(\lambda_{1} \neq \lambda_{N}\) 
         \item \label{item:interior} The interior of \(\sigma\) doesn't use \(x_{0}\), that is \(\partial_{0} \sigma (i) = x_{0} \implies i=1\) and \(\partial_{0} \overline\sigma (i)=x_{0} \implies i=1\).
     \end{enumerate}
 \end{defn}
