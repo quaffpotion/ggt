@@ -135,7 +135,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
 	[path snipping]
-    Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(i<j\) and  \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the concatenation of the maximal, possibly empty, initial segment of \(p\) not including \(e\) and the maximal, possibly empty, tail segment of \(p\) not including \(f\).
+    Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(i<j\) and  \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the concatenation of the maximal, possibly empty, initial segment of \(p\) not including \(e\) and the maximal, possibly empty, tail segment of \(p\) not including \(f\). 
 \end{defn}
 
 
@@ -145,8 +145,8 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
  \label{lem:preservesetup} 
     If \(K\) satisfies property setup \ref{def:setup}  then \(K'\) obtained from performing a snip on a bad edge also satisfies property setup.
     \begin{proof}
-        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is used in at most one of them. Since \(T\) is a tree, \(\overline{e}\) must appear in \(\sigma\).
-        If either \(e\) or \(\overline{e}\) has an endpoint at \(x_{0}\) then one is \(\sigma (1)\). Hence, by property \ref{item:sharededge} the other is \(\overline{\overline\sigma_{N} (1)}\) which is the last edge of \(\sigma_{N}\). But then \(\lambda_{1} = \lambda_{N}\) a contradiction. Therefore, \(e\) is not the initial edge of \(\sigma_{1}\) nor the final edge of \(\sigma_{N}\). Hence, when we perform the snip properties \ref{item:loop}, \ref{item:nondegen}, \ref{item:sharededge} , \ref{item:colors} , and \ref{item:interior} are preserved. 
+        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is used (recall \(e\) is used by \(p\) if \(p \cap \{e, \overline{e}\} \neq \varnothing \)) in at most one of them. Since \(T\) is a tree and \(\sigma\) a loop, \(\overline{e}\) must appear in \(\sigma\).
+        If either \(e\) or \(\overline{e}\) has an endpoint at \(x_{0}\) then one of them is \(\sigma (1)\) by property \ref{item:interior}. Hence, by property \ref{item:sharededge} the other is \(\overline{\overline\sigma_{N} (1)}\) which is the last edge of \(\sigma_{N}\). But then since \(e\) is bad \(\lambda_{1} = \lambda_{N}\) a contradiction. Therefore, \(e\) is not the initial edge of \(\sigma_{1}\) nor the final edge of \(\sigma_{N}\). Hence, when we perform the snip properties \ref{item:loop}, \ref{item:nondegen}, \ref{item:sharededge} , \ref{item:colors} , and \ref{item:interior} are preserved. 
     \end{proof}
 \end{lem}
 
