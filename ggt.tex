@@ -108,11 +108,11 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \begin{defn}
     [Setup]
     \label{def:setup} 
-    We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda)\) satisfies property {\em setup} if: 
+    We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda, x_{0} )\) satisfies property {\em setup} if: 
     \begin{enumerate}
-        \item \label{item:loop} \(\sigma\) is a loop at \(x_{0} := \partial_{0} \sigma (1)\).
+        \item \label{item:loop} \(\sigma\) is a loop at \(x_{0}\).
         \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate.
-        \item \label{item:sharededge} \(\sigma_{1} (1) = \overline{ \sigma_{N} (-1) }\) 
+        \item \label{item:sharededge} \(\sigma_{1} (1) = \overline{ \sigma_{N}} (1) \) 
         \item \label{item:colors} \(\lambda_{1} \neq \lambda_{N}\) 
         \item \label{item:interior} The interior of \(\sigma\) doesn't use \(x_{0}\), that is \(\partial_{0} \sigma (i) = x_{0} \implies i=1\) and \(\partial_{0} \overline\sigma (i)=x_{0} \implies i=1\).
     \end{enumerate}
@@ -127,7 +127,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
     [Bad]
-    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda,x_{0} )\) if \(e\) separates some \(a \in \text{endpoints} \smallsetminus \{x_{0} \}\) from \(\partial_{0}\sigma (1)\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
+    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda,x_{0} )\) if \(e\) separates some \(a \in \text{endpoints} \smallsetminus \{x_{0} \}\) from \(x_{0}\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
 \end{defn}
 \begin{defn}
 	[complexity]
@@ -138,13 +138,15 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
     Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(i<j\) and  \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the concatenation of the maximal, possibly empty, initial segment of \(p\) not including \(e\) and the maximal, possibly empty, tail segment of \(p\) not including \(f\).
 \end{defn}
 
+
 %testggc
 \begin{lem}
     [Setup is snip invariant]
  \label{lem:preservesetup} 
     If \(K\) satisfies property setup \ref{def:setup}  then \(K'\) obtained from performing a snip on a bad edge also satisfies property setup.
     \begin{proof}
-        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is in at most one of them. Furthermore, \(e \neq \sigma_{1} (1)\) because then a subpath other than the first and last would use \(x_{0}\) which isn't allowed by \ref{item:interior}. Hence, the snipped path \(\sigma '\) will begin with an initial segment of \(\sigma_{1}\) and end with a tail of \(\sigma_{N}\).This shows that properties \ref{item:loop} , \ref{item:nondegen} , \ref{item:sharededge} , \ref{item:colors} are preserved. Because \(\sigma '\) is a restriction, we also get proprties  \ref{item:interior}. 
+        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) is used in at most one of them. Since \(T\) is a tree, \(\overline{e}\) must appear in \(\sigma\).
+        If either \(e\) or \(\overline{e}\) has an endpoint at \(x_{0}\) then one is \(\sigma (1)\). Hence, by property \ref{item:sharededge} the other is \(\overline{\overline\sigma_{N} (1)}\) which is the last edge of \(\sigma_{N}\). But then \(\lambda_{1} = \lambda_{N}\) a contradiction. Therefore, \(e\) is not the initial edge of \(\sigma_{1}\) nor the final edge of \(\sigma_{N}\). Hence, when we perform the snip properties \ref{item:loop}, \ref{item:nondegen}, \ref{item:sharededge} , \ref{item:colors} , and \ref{item:interior} are preserved. 
     \end{proof}
 \end{lem}
 
