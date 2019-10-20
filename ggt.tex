@@ -131,6 +131,7 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \end{defn}
 \begin{defn}
 	[complexity]
+    \label{def:complexity} 
     Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled. (We often take the set of edges to be the bad edges of some tree)
 \end{defn}
 \begin{defn}
@@ -153,8 +154,9 @@ One path is to show that \(C\) is 1-dimensional fiberwise connected and then app
 \begin{lem}
     [Decreasing]
     \label{lem:decreasing} 
-    If \(K\) satsifies property setup and \(K >0\), then \(K > K'\).
+    Consider \(J\) as in \ref{def:complexity} with \(J > 0\), let \(J'\) be the result of snipping a bad edge, then \(J' < J\).
     \begin{proof}
+        (Sketch)
         Consider the halfspace \(e^{+}\) of \(e\) that contains \(x_{0}\), every edge in this halfspace retains the same colorings, though it's possible some are no longer bad. For edges outside this halfspace, they are either no longer bad and therefore contribute nothing, or contribute less because we removed subpaths or combined two subpaths into one.
     \end{proof}
 \end{lem}
