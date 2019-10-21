@@ -57,14 +57,18 @@ We want to show the following statement or similar: if a group is the fundamenta
     We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda, x_{0} )\) satisfies property {\em setup} if: 
     \begin{enumerate}
         \item \label{item:loop} \(\sigma\) is a loop at \(x_{0}\).
-        \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate. (i.e. as words in the edge set they are non-empty)
+        \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate. (i.e. as words in the edge set \(\{e_{1} , \overline{e_{1}} , e_{2} , \overline{e_{2}},\ldots\}\)  they are non-empty)
         \item \label{item:sharededge} The path \(\sigma\) begins and ends at the same geometric edge. i.e. \(\sigma_{1} (1) = \overline{ \sigma_{N}} (1) \) 
         \item \label{item:colors} The first and last subpath have different colors i.e. \(\lambda_{1} \neq \lambda_{N}\) 
         \item \label{item:interior} The interior of \(\sigma\) doesn't use \(x_{0}\), that is \(\partial_{0} \sigma (i) = x_{0} \implies i=1\) and \(\partial_{0} \overline\sigma (i)=x_{0} \implies i=1\).
     \end{enumerate}
 \end{defn}
 \begin{defn}
-	[straddle]
+    [Use]
+    We say the directed edge path \(p\) uses \(e\) if there exists some \(i\) such that \(p (i) \in \{e, \overline{e}\}\).
+\end{defn}
+\begin{defn}
+	[Straddle]
 	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
 	\begin{enumerate}
 		\item There exists \(k\) such that \(p(k) \in  \{e, \overline{e}\}\). (i.e. the path uses the geometric edge \(\{e , \overline{e}\}\) corresponding to  \(e\))
@@ -82,7 +86,7 @@ We want to show the following statement or similar: if a group is the fundamenta
 \end{defn}
 \begin{defn}
 	[path snipping]
-    Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(i<j\) and  \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the concatenation of the maximal, possibly empty, initial segment of \(p\) not including \(e\) and the maximal, possibly empty, tail segment of \(p\) not including \(f\). 
+    Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(i<j\) and  \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the concatenation of the maximal, possibly empty, initial segment of \(p\) not including \(e\) and the maximal, possibly empty, tail segment of \(p\) not including \(f\). If \(p\) comes with subpaths, combine the middle snipped paths;
 \end{defn}
 \subsubsection{Miscellaneous}
 \begin{defn}
