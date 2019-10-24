@@ -54,39 +54,29 @@ We want to show the following statement or similar: if a group is the fundamenta
 \begin{defn}
     [Setup]
     \label{def:setup} 
-    We say \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda, x_{0} )\) satisfies property {\em setup} if: 
+    We say that \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) satisfies property {\em setup} if:
     \begin{enumerate}
-        \item \label{item:loop} \(\sigma\) is a loop at \(x_{0}\).
-        \item \label{item:nondegen} The subpaths \(\sigma_{i}\) are non-degenerate. (i.e. as words in the edge set \(\{e_{1} , \overline{e_{1}} , e_{2} , \overline{e_{2}},\ldots\}\)  they are non-empty)
-        \item \label{item:sharededge} The path \(\sigma\) begins and ends at the same geometric edge. i.e. \(\sigma_{1} (1) = \overline{ \sigma_{N}} (1) \) 
-        \item \label{item:colors} The first and last subpath have different colors i.e. \(\lambda_{1} \neq \lambda_{N}\) 
-        \item \label{item:interior} The interior of \(\sigma\) doesn't use \(x_{0}\), that is \(\partial_{0} \sigma (i) = x_{0} \implies i=1\) and \(\partial_{0} \overline\sigma (i)=x_{0} \implies i=1\).
+        \item \(T\) is a topological tree 
+        \item \(T \smallsetminus x_{0}\) is connected, where \(x_{0}\) is a 0-cell.
+        \item \(\sigma\) is a concatenation of non-degenerate edgepaths
+        \item \(\sigma (t)=x_{0} \implies t \in \{0,1\}\) 
+        \item \(\lambda (1) \neq \lambda (2)\) 
+    \end{enumerate}
+\end{defn}
+\begin{claim*}
+    If \(K\) satisfies property setup then the first and last edge of \(\sigma\) are equal.
+\end{claim*}
+\begin{defn}
+    [Bad]
+    Given \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) we say that an edge is {\em bad} if:
+    \begin{enumerate}
+        \item \(e^{+} \cap \text{endpoints} \neq \varnothing\) where \(e^{+}\) is the halfspace of \(e\) not containing \(x_{0}\).
+        \item \(\left| \{\lambda (k) \mid e \subseteq \text{Im} \sigma_{k}\} \right|=1\).
     \end{enumerate}
 \end{defn}
 \begin{defn}
-    [Use]
-    We say the directed edge path \(p\) uses \(e\) if there exists some \(i\) such that \(p (i) \in \{e, \overline{e}\}\).
-\end{defn}
-\begin{defn}
-	[Straddle]
-	A path \(p\) in a tree \(T\) {\em straddles} an edge \(e\) if
-	\begin{enumerate}
-		\item There exists \(k\) such that \(p(k) \in  \{e, \overline{e}\}\). (i.e. the path uses the geometric edge \(\{e , \overline{e}\}\) corresponding to  \(e\))
-		\item Both halfspaces of \(e\) contain an endpoint of \(p\).
-	\end{enumerate}
-\end{defn}
-\begin{defn}
-    [Bad]
-    An edge \(e\) in a tree \(T\) is {\em bad} with respect to \((T, \sigma = \sigma_{1} \cdots \sigma_{N} , \lambda,x_{0} )\) if \(e\) separates some \(a \in \text{endpoints} \smallsetminus \{x_{0} \}\) from \(x_{0}\) and \(\lambda\) is constant on the set of subpaths that use \(e\).
-\end{defn}
-\begin{defn}
-	[complexity]
-    \label{def:complexity} 
-    Given \(J=(T, \sigma_{1} \cdots \sigma_{N} , \{e_{1} , \ldots, e_{m}\})\) we define the {\em complexity} of \(J\) to be the sum of the number of times each edge is straddled. (We often take the set of edges to be the bad edges of some tree)
-\end{defn}
-\begin{defn}
 	[path snipping]
-    Let \(p\) be a path and let \(e=p(i), f=p(j)\) be edges such that \(i<j\) and  \(\partial_{0}  e = \partial_{1} f \). Then \(p'\) is the concatenation of the maximal, possibly empty, initial segment of \(p\) not including \(e\) and the maximal, possibly empty, tail segment of \(p\) not including \(f\). If \(p\) comes with subpaths, combine the middle snipped subpaths. When the subpath colors match assign the combined subpath the same color.
+    Let \(p\) be a loop in a tree. We say \(p'\) is the {\em snip} at an edge \(e\) of \(p\) if \(p'=p\mid_{[0,t_0]} p\mid_{[t_1,1]}\) where \(t_{0} = \sup \{t \mid p\mid_{[0,t)} \cap e  = \varnothing \}\) and \(t_{1} = \inf \{t > t_{0} \mid e \subseteq \text{Im} \sigma \mid_{ (t_{0} ,t] } \}\). When \(p=p_{1} \cdots p_{N}\) we take the subpaths of \(p'\) to be \(p'_{k} = p\mid_{[0,t_0]} p\mid_{[t_1,1]}\) when non-degenerate. 
 \end{defn}
 \subsubsection{Miscellaneous}
 \begin{defn}
