@@ -78,8 +78,8 @@ We want to show the following statement or similar: if a group is the fundamenta
 \end{defn}
 
 \begin{defn}
-	[path snipping]
-    Let \(p\) be a loop in a tree. We say \(p'\) is the {\em snip} at an edge \(e\) of \(p\) if \(p'=p\mid_{[0,t_0]} p\mid_{[t_1,1]}\) where \(t_{0} = \sup \{t \mid p\mid_{[0,t)} \cap e  = \varnothing \}\) and \(t_{1} = \inf \{t > t_{0} \mid e \subseteq \text{Im} \sigma \mid_{ (t_{0} ,t] } \}\). When \(p=p_{1} \cdots p_{N}\) we take the subpaths of \(p'\) to be \(p'_{k} = p\mid_{[0,t_0]} p\mid_{[t_1,1]}\) when non-degenerate. 
+	[bad edge snipping]
+    Let \(K\) satisfy property setup with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the same color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
 \end{defn}
 \subsubsection{Miscellaneous}
 \begin{defn}
