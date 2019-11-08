@@ -63,17 +63,20 @@ We want to show the following statement or similar: if a group is the fundamenta
         \item \(\lambda (1) \neq \lambda (2)\) 
     \end{enumerate}
 \end{defn}
+
 \begin{claim*}
     If \(K\) satisfies property setup then the first and last edge of \(\sigma\) are equal.
 \end{claim*}
+
 \begin{defn}
     [Bad]
     Given \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) we say that an edge is {\em bad} if:
     \begin{enumerate}
-        \item \(e^{+} \cap \text{endpoints} \neq \varnothing\) where \(e^{+}\) is the halfspace of \(e\) not containing \(x_{0}\).
-        \item \(\left| \{\lambda (k) \mid e \subseteq \text{Im} \sigma_{k}\} \right|=1\).
+        \item The edge \(e\) separates the basepoint from some endpoint. i.e. \[e^{+} \cap \text{endpoints} \neq \varnothing\] where \(e^{+}\) is the halfspace of \(e\) not containing \(x_{0}\).
+        \item The edge \(e\) always has the same color. i.e. \(\left| \{\lambda (k) \mid e \subseteq \text{Im} \sigma_{k}\} \right|=1\).
     \end{enumerate}
 \end{defn}
+
 \begin{defn}
 	[path snipping]
     Let \(p\) be a loop in a tree. We say \(p'\) is the {\em snip} at an edge \(e\) of \(p\) if \(p'=p\mid_{[0,t_0]} p\mid_{[t_1,1]}\) where \(t_{0} = \sup \{t \mid p\mid_{[0,t)} \cap e  = \varnothing \}\) and \(t_{1} = \inf \{t > t_{0} \mid e \subseteq \text{Im} \sigma \mid_{ (t_{0} ,t] } \}\). When \(p=p_{1} \cdots p_{N}\) we take the subpaths of \(p'\) to be \(p'_{k} = p\mid_{[0,t_0]} p\mid_{[t_1,1]}\) when non-degenerate. 
