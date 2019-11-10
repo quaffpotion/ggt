@@ -78,6 +78,11 @@ We want to show the following statement or similar: if a group is the fundamenta
     Let \(K\) satisfy property setup with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
 \end{defn}
 \subsubsection{Miscellaneous}
+\begin{lem}
+	[Guirardel Lemma 5.4, Corollary 5.5]
+ \label{lem:guirardel} 
+	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
+\end{lem}
 \begin{claim*}
     If \(K\) satisfies property setup then the first and last edge of \(\sigma\) are equal.
 \end{claim*}
@@ -124,21 +129,24 @@ We want to show the following statement or similar: if a group is the fundamenta
 \begin{thm}
     Let \(G\) be the fundamental group of a compact VH-complex. Then \(G\) acts geometrically on \(C\) cube complex with simply connected hyperplanes where \(C = \text{fill}( \text{cell}( \text{Im}(f) ) )\).
 \end{thm}
-\section{Proving core is hyperplane Quadrant Convex}
-One path is to show that \(C\) is 1-dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're QC as needed.
-
-\begin{lem}
-	[Guirardel Lemma 5.4, Corollary 5.5]
- \label{lem:guirardel} 
-	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
-\end{lem}
-
+\section{Core has quadrant convex hyperplanes}
+Our goal is to show that the core is a graph of groups decomposition for \(G\), this follows from the corollary below which we will conclude from the theorem.
 \begin{cor*}
     The core \(C \subseteq \mathscr{T}\) has simply connected hyperplanes.
 \end{cor*}
+
 \begin{thm}
     The core \(C\) has hyperplanes that are (1) connected and (2) quadrant convex.
 \end{thm}
+
+One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're quadrant convex as needed.
+
+\begin{lem}
+    [Connected fibers]
+    The core \(C\) has connected one dimensional fibers.
+\end{lem}
+
+
 
 \subsection{Wrap up lemmas}
 The following is a list of statements, the goal is to prove enough of them to arrive at item number 1 for a suitably chosen core \(C\).
@@ -190,7 +198,15 @@ The implications are as follows:
     \end{proof}
 \end{lem}
 
-%Boxed Implication
+\begin{lem}
+    [Statement 5]
+    If \(R \subseteq T_{1} \times T_{2}\) has convex fibers then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
+    \begin{proof}
+        (...)
+    \end{proof}
+
+\end{lem}
+
 \begin{lem}
     [Boxed Implication]
  \label{lem:boximp} 
