@@ -203,7 +203,10 @@ The implications are as follows:
     \label{lem:coloring} 
     Let \(K\) satisfy property setup. Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\) and \(\lambda ( i ) \neq \lambda ( j )\).
     \begin{proof}
-        Suppose the lemma were false. Then there exist counterexamples \(K\) satisfying property setup such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\). These \(K\) have bad edges and \(| \sigma | > 0 \). Now take a \(K\) such that \(| \sigma |\) is minimized. Let \(K'\) be the result of snipping a bad edge. By lemma \ref{lem:preservesetup}, \(K'\) has property setup so \(| \sigma ' | > 0\). From LEMMA we get that \(K'\) has no multicolored edgepath, but \(| \sigma' | < | \sigma |\) a contradiction.
+        Suppose the lemma were false. Then there exist counterexamples \(K\) satisfying property setup such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\). These \(K\) have bad edges and \(| \sigma | > 0 \). Now take a \(K\) such that \(| \sigma |\) is minimized. Let \(K'\) be the result of snipping a bad edge. By lemma \ref{lem:preservesetup}, \(K'\) has property setup so \(| \sigma ' | > 0\). If \(K'\) contained a multicolored path between \(x_{0}\) and some \(a'\) in \(A'\) then because the path \(\sigma\) in \(K\) an be obtained by inserting subpaths into \(\sigma '\), we have that \(A' \subseteq A\) and any edge that was multicolored stays multicolored. Therefore \(K'\) has no multicolored path, because that would force \(K\) to have one. Then the fact \(| \sigma' | < | \sigma |\) gives a contradiction because \(K\) was chosen to be minimal. 
+        
+        
+    
         
     \end{proof}
 \end{lem}
