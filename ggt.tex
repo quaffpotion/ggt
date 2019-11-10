@@ -50,7 +50,6 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 \subsection{Definitions}
 
-\subsubsection{Definitions for combinatorial lemma}
 \begin{defn}
     [Setup]
     \label{def:setup} 
@@ -64,9 +63,6 @@ We want to show the following statement or similar: if a group is the fundamenta
     \end{enumerate}
 \end{defn}
 
-\begin{claim*}
-    If \(K\) satisfies property setup then the first and last edge of \(\sigma\) are equal.
-\end{claim*}
 
 \begin{defn}
     [Bad]
@@ -79,9 +75,12 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 \begin{defn}
 	[bad edge snipping]
-    Let \(K\) satisfy property setup with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the same color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
+    Let \(K\) satisfy property setup with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
 \end{defn}
 \subsubsection{Miscellaneous}
+\begin{claim*}
+    If \(K\) satisfies property setup then the first and last edge of \(\sigma\) are equal.
+\end{claim*}
 \begin{defn}
 	[Filling]
     Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}).\] 
@@ -161,9 +160,8 @@ The implications are as follows:
     (8) &\Rightarrow (4)\\
     (5) &\Rightarrow (7)
 \end{alignat}
-%lem:verticalsubpath
 \begin{lem}
-    [Reduction to subpath in single vertical direction]
+    [Reduction to vertical subpath]
     \label{lem:verticalsubpath} 
     Let \(S\) be a subset of \(T_{1} \times T_{2}\) and let \(p,q,r \in S\) satisfy: 
     \begin{enumerate}
@@ -174,7 +172,7 @@ The implications are as follows:
     \end{enumerate}
     Let \(\sigma : [0,1] \to S\) be a path from \(p\) to \(q\), then there exists a path \(\sigma '\) such that taking \(p,q:= \sigma '(0), \sigma '(1)\) satisfies properties (2)-(4) and \(\pi_{2} (\text{Im}( \sigma '\mid_{(0,1)} ))\) is contained in an open direction of \(T_{2}\) at \(r_{2}\).
     \begin{proof}
-        (Sketch) Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set has a finite number of connected components (all closed intervals). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of connected components is at least 2. Consider pairs of endpoints of the open intervals making up the complement of our inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath with endpoints in \(T_{1} \times \{r_{2}\}\) and interior in in vertical directions. Our subpath lies in the product of a disjoint union of vertical directions (trees) and a compact subtree of \(T_{1}\). Since only the endpoints lie in \(T_{1} \times \{r_{2}\}\) we have that the image of the interior of the subpath must lie in a single vertical direction. (i.e. a connected component of a disjoint union of connected directions cross a subtree)
+        Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set is a finite union of closed intervals in \([0,1]\). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of interals is at least 2. Consider pairs of endpoints of the closed intervals making up the closure of the complement of the inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath \(\sigma '\) where only the endpoints map into \(T_{1} \times \{r_{2}\}\). Consider \(\sigma ' \mid_{(0,1)}\), it's image lies in a product of a finite subtree of \(T_{1}\) and a disjoint union of directions of \(T_{2}\) at \(r_{2}\). Because \(\sigma '\) is continuous it must lie in a single connected component and so projects to a single verticle direction of \(T_{2}\) at \(r_{2}\).
 
     \end{proof}
 \end{lem}
