@@ -218,19 +218,7 @@ The implications are as follows:
     \end{proof}
 \end{lem}
 
-\begin{lem}
-    [Decreasing]
-    \label{lem:decreasing} 
-    Consider \(J\) as in \ref{def:complexity} with \(J > 0\), let \(J'\) be the result of snipping a bad edge, then \(J' < J\).
-    \begin{proof}
-        (Sketch)
-        Consider the halfspace \(e^{+}\) of \(e\) that contains \(x_{0}\), every edge in this halfspace retains the same colorings, though it's possible some are no longer bad. For edges outside this halfspace, they are either no longer bad and therefore contribute nothing, or contribute less because we removed subpaths or combined two subpaths into one.
-    \end{proof}
-\end{lem}
-
 \end{document}
-
-words to search for: clarification, question, technicality, concern
 
 #justVimThings
 select last search: //, go to end of search upon finding: //e
@@ -241,17 +229,6 @@ delete cursor to beginning of word: d/<type word here>
 	- works on multiple lines
 move down by display lines: prefix with g e.g. gj, gk, g0, g$
 start search backwards via ?
-workaround for 
 
 
 
-from 10/15:
-
-claim: K has no multi ==> K > 0
-
-claim: path multi \in K' then multi \in K
-
-claim: K no multi, K has setup, then K' \neq 0
-pf: K'=0 => K' had multi => K had multi ==><== contradiction.
-
-claim: K has setup then 
