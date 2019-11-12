@@ -45,9 +45,6 @@
 
 \begin{document}
 
-\section{Problem Statement}
-We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
-
 \subsection{Definitions}
 
 \begin{defn}
@@ -118,17 +115,6 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 
 
-\section{Outline and notation for the construction of the core}
-
-    From Guirardel we get a map \(f\) from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{cell}{(S)}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). The main goal is to show that \(C\) is a cocompact cube complex with quadrant-convex hyperplanes so that we get a legitimate graph of spaces decomposition for \(G\) over the hyperplanes.
-
-
-\begin{cor*}
-    Let \(G\) be the fundamental group of a compact VH-complex. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to their deformation spaces these are the only two such actions.
-\end{cor*}
-\begin{thm}
-    Let \(G\) be the fundamental group of a compact VH-complex. Then \(G\) acts geometrically on \(C\) cube complex with simply connected hyperplanes where \(C = \text{fill}( \text{cell}( \text{Im}(f) ) )\).
-\end{thm}
 \section{Core has quadrant convex hyperplanes}
 Our goal is to show that the core is a graph of groups decomposition for \(G\), this follows from the corollary below which we will conclude from the theorem.
 \begin{cor*}
