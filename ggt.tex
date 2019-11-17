@@ -22,6 +22,7 @@
 
 \newcommand{\sxyz}{((S_x)_y)_z}
 \newcommand{\rxy}{(R_x)_y}
+\newcommand{\ryx}{(R_y)_x}
 \newcommand{\Sxyz}[3]{((S_#1)_#2)_#3}
 
 \theoremstyle{mystyle}
@@ -200,9 +201,10 @@ The implications are as follows:
 
 \begin{lem}
     [Statement 5]
-    If \(R \subseteq T_{1} \times T_{2}\) has connected fibers then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
+    If \(R \subseteq T_{1} \times T_{2}\) is a connected subcomplex then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
     \begin{proof}
-        (...)
+        We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap T_{1} \times \{y_{0}\}\) were a disconnected \(x\)-fiber. Then because \(\rxy\) is a subcomplex we have that the fiber is separated by an edge. Let \(x_{0}\) be the midpoint of this edge. 
+        Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\).
     \end{proof}
 
 \end{lem}
