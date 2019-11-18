@@ -203,22 +203,22 @@ The implications are as follows:
     [Statement 5]
     If \(R \subseteq T_{1} \times T_{2}\) is a connected subcomplex then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
     \begin{proof}
-        We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge. Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). 
-
-        We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\). Suppose this were false, and that \(\ell \cap \rxy \neq \varnothing\) and \(r \cap \rxy \neq \varnothing\). We consider three cases: (1) \(\ell\) and \(r\) intersect \(R_{x}\) nontrivially (2) \(\ell\) and \(r\) don't intersect \(R_{x}\), and (3) Exactly one of \(\ell\) or \(r\) intersects \(R_{x}\) nontrivially.
+        We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge. Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
+        
+        Suppose this were false, and that \(\ell \cap \rxy \neq \varnothing\) and \(r \cap \rxy \neq \varnothing\). We consider three cases: (1) \(\ell\) and \(r\) intersect \(R_{x}\) nontrivially (2) \(\ell\) and \(r\) don't intersect \(R_{x}\), and (3) exactly one of \(\ell\) or \(r\) intersects \(R_{x}\) nontrivially.
         \begin{enumerate}
             \item Case 1: If both \(\ell\) and \(r\) intersect \(R_{x}\) then both contain points of \(R\) because we filled in the \(x\)-fiber, but then \(x_{0} \times y_{0}  \in R_{x}\) a contradiction.
             \item Case 2: Pick a point \(x^+\) in \(r \cap \rxy \smallsetminus R_{x} \). Let \(q^{+}\) and \(q^-\) be points above and below \(x^+\) in \(R_{x}\). These points are either in \(R\) already, or because we filled in the \(x\)-fiber there exist points above and below the line \(\ell \cup r\) but this is a contradiction since \(R\) is connected.
             \item Case 3: Without loss of generality, suppose \(\ell \cap R_{x} = \varnothing\) and \(r \cap R_{x} \neq \varnothing\). This implies there is some \(s \in R \cap r\), we will get a contradiction by separating this point from another point in \(R\). 
                 
                 Let \(u\) and \(d\) be directions of \(x_{0} \times T_{2}\) at \(x_{0} \times y_{0}\). If both intersected \(R_{x}\) then \(x_{0} \times y_{0} \in R \) a contradiction so without loss of generality, suppose \(d \cap R_{x} \neq \varnothing \). Now let \(x^-\) be a point in \(\ell\), by assumption \(x^- \in \rxy \smallsetminus R_{x} \). This gives a point \(q^-\) below \(\ell\) in \(R_{x}\) which is already in \(R\) or there exists a point \(t^- \in R\) to the left of \(q^-\); but this is a contradiction since \(\ell \cup d\) separates these points from \(s \in R\).
-
-                Hence, either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\) where the rays are taken at midpoints missing from \(R\) and as a result \(\rxy\) has connected fibers. Similarly, \(\ryx\) also has connected fibers. 
-
-
-                (...)
-             
         \end{enumerate}
+
+                Hence, either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\) as needed, so \(\rxy\) has connected \(x\)-fibers. Similarly, \(\ryx\) also has connected fibers. 
+
+
+                (... now we need to show they are equal)
+             
       
     \end{proof}
 
