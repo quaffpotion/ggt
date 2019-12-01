@@ -7,4 +7,5 @@
 - [ ] Compute torus splitting example
 - [ ] Think about why there must be at least one hierarchy of non-trivial splittings
 - [ ] Write down proof that elliptic subgroup containment implies equality for locally finite trees
+- [ ] Write up lemma that gives a G-map from a free action on a 2-complex and an action on a tree.
 
