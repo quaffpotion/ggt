@@ -7,5 +7,5 @@
 - [ ] Prove that fibers are bounded
 - [ ] Compute torus splitting example
 - [ ] Think about why there must be at least one hierarchy of non-trivial splittings
-- [ ] Write down proof that elliptic subgroup containment implies equality for locally finite trees
+- [ ] Find proof that elliptic subgroup containment implies equality for locally finite trees
 
