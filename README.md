@@ -1,4 +1,6 @@
 # To Write
+- [ ] One skeleton a union of forests and VH gives you a free face (2d version)
+    - [x] Prove that hyperplanes are graphs with rank
 - [ ] Rxy = Ryx
 - [ ] lemma that gives a G-map from a free action on a 2-complex and an action on a tree.
 - [ ] connected coordinate planes are homeomorphic to the fibers of the coordinate functions
