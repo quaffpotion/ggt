@@ -215,12 +215,16 @@ The implications are as follows:
                 Let \(u\) and \(d\) be directions of \(x_{0} \times T_{2}\) at \(x_{0} \times y_{0}\). If both intersected \(R_{x}\) then \(x_{0} \times y_{0} \in R \) a contradiction so without loss of generality, suppose \(d \cap R_{x} \neq \varnothing \). Now let \(x^-\) be a point in \(\ell\), by assumption \(x^- \in \rxy \smallsetminus R_{x} \). This gives a point \(q^-\) below \(\ell\) in \(R_{x}\) which is already in \(R\) or there exists a point \(t^- \in R\) to the left of \(q^-\); but this is a contradiction since \(\ell \cup d\) separates these points from \(s \in R\).
         \end{enumerate}
 
-                Hence, either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\) as needed, so \(\rxy\) has connected \(x\)-fibers. Similarly, \(\ryx\) also has connected fibers. 
+                Hence, either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\) as needed, so \(\rxy\) has connected \(x\)-fibers. Similarly, \(\ryx\) also has connected fibers. Hence by \ref{lem:guirardel} their complements are unions of quadrants and so they contain \(QH(R)\). It remains to show that they are contained within \(QH(R)\). 
+
+                \begin{claim*}
+                    \(\rxy \subseteq QH(R)\) 
+                    \begin{proof}
+                        (sketch) The idea is to show that for every point \(p \in \rxy\) that for every quadrant \(Q\) containing \(p\) (i.e. that would be attempting to remove it) we can find a point \(r \in R \cap Q\). Picking an open quadrant containing \(p\) amounts to picking a point \(q = (q_{1}, q_2)\) with halfspaces at each coordinate that contain the corresponding \(p_{i}\). The hard case is where \(p \in \rxy \smallsetminus R_x\) - so you pick a point in a vertical direction at \(p\) pointing towards \(p\), because this point is only there due to filling there's another vertical direction that you're grabbing that contains some \(R_x\). Then you pick a horizintal place and point towards \(p_1\), this must contain at least one of the directions with \(R\) in it.
+                    \end{proof}
+                \end{claim*}
 
 
-                (... now we need to show they are equal)
-             
-      
     \end{proof}
 
 \end{lem}
