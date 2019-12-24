@@ -221,8 +221,10 @@ The implications are as follows:
                     \(\rxy \subseteq QH(R)\) 
                     \begin{proof}
                         (sketch) The idea is to show that for every point \(p \in \rxy\) that for every quadrant \(Q\) containing \(p\) (i.e. that would be attempting to remove it) we can find a point \(r \in R \cap Q\). Picking an open quadrant containing \(p\) amounts to picking a point \(q = (q_{1}, q_2)\) with halfspaces at each coordinate that contain the corresponding \(p_{i}\). The hard case is where \(p \in \rxy \smallsetminus R_x\) - so you pick a point in a vertical direction at \(p\) pointing towards \(p\), because this point is only there due to filling there's another vertical direction that you're grabbing that contains some \(R_x\). Then you pick a horizintal place and point towards \(p_1\), this must contain at least one of the directions with \(R\) in it.
+                    \end{proof}
 
-                        (sketch 2) We will show for every point \(p \in \rxy\) and every open quadrant \(Q\) with \(p \in Q\) that there exists some \(r \in R \cap Q\). Let \(q=(q_1,q_2)\) be the point where \(Q\) is based and label the halfspaces so that \(Q=q_1^{+} \times q_{2}^{+}\).
+                    \begin{proof}
+                        We will show for every point \(p \in \rxy\) and every open quadrant \(Q\) with \(p \in Q\) that there exists some \(r \in R \cap Q\). Let \(q=(q_1,q_2)\) be the point where \(Q\) is based and label the halfspaces so that \(Q=q_1^{+} \times q_{2}^{+}\).
 
                         Case 1 \(p \in R_x \smallsetminus R\): Let \(p \in R_x \smallsetminus R\): Let \(\ell = (\ell_1,p_2)\) and \(u=(u_1,p_2)\) be points in \(R\) that cause the vertical filling. Now, \(q_1^+\) contains all but one direction at \(p_1\) and so must contain either \(\ell_1\) or \(u_1\). Since \(q_2^+\) must contain \(p_2\) we get that \(Q=q_1^+ \times q_2^+\) contains a point of \(R\).
 
