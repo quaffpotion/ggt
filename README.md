@@ -2,9 +2,9 @@
 - [ ] One skeleton a union of forests and VH gives you a free face (2d, 3d version)
     - [x] Prove that hyperplanes are graphs with rank in 2d case, in 3d case hyp of hyp are graphs with rank
     - [ ] Prove that these hyperplanes (in either case) embedd or cause a problem with a global condition.
-- [ ] Rxy = Ryx
+- [x] Rxy = Ryx
     - [x] Explain how we use Guirardel to get QH(R) subset Rxy.
-    - [ ] Write up Rxy subset QH(R).
+    - [x] Write up Rxy subset QH(R).
 - [ ] lemma that gives a G-map from a free action on a 2-complex and an action on a tree.
 - [ ] connected coordinate planes are homeomorphic to the fibers of the coordinate functions
 - [ ] connected fibers argument, uses continuous function a(t)/(a(t)+b)
