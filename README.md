@@ -1,4 +1,5 @@
 # To Write
+- [ ] Obtain the main corollary (that the core has simply connected hyperplanes) from the results so far. (This will be `part 1` and should come from refactoring the wrap up lemmas)
 - [ ] One skeleton a union of forests and VH gives you a free face (2d, 3d version)
     - [x] Prove that hyperplanes are graphs with rank in 2d case, in 3d case hyp of hyp are graphs with rank
     - [ ] Prove that these hyperplanes (in either case) embedd or cause a problem with a global condition.
