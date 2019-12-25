@@ -1,6 +1,7 @@
 # To Write
 - [ ] lemma that gives a G-map from a free action on a 2-complex and an action on a tree.
     - [ ] Part 1: Construct equivariant map
+        - [ ] Need details on standard 2-cell to tripod fibration.
     - [ ] Part 2: Fibration details
 - [ ] Obtain the main corollary (that the core has simply connected hyperplanes) from the results so far. (This will be `part 1` and should come from refactoring the wrap up lemmas)
 - [ ] One skeleton a union of forests and VH gives you a free face (2d, 3d version)

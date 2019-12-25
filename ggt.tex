@@ -80,6 +80,22 @@ We want to show the following statement or similar: if a group is the fundamenta
 \end{defn}
 \subsubsection{Miscellaneous}
 \begin{lem}
+    [Equivariant Map]
+    \label{lem:equivariant} 
+    Suppose that \(G\) acts freely on a simplicial complex \(K\) and a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where \(\mathscr{F}\) the connected components of the fibration from \(f\) is a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
+    \begin{proof}
+        Part 1: Construct an equivariant map.
+
+        We start by defining \(f\) on \(K^{(0)}\) the 1-skeleton. By equivariance it is enough to define the map on a single vertex in each vertex orbit. These choices can be arbitrary. Next we check that the resulting map is well-defined. Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so \[ f(v)=g^{-1}h f(v)=g^{-1} f(hv) \] but then \[ f(gv)=gf(v)=gg^{-1} f(hv)=f(hv).\] 
+        
+        Next we define the map on edges. If \(vw\) is an edge, map it to the geodesic \([f(v),g(w)]\). 
+        
+        Lastly, for 2-cells we use the standard fibration from mapping triangles to tripods.
+        
+        Part 2: Fibration details.
+    \end{proof}
+\end{lem}
+\begin{lem}
 	[Guirardel Lemma 5.4, Corollary 5.5]
  \label{lem:guirardel} 
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
