@@ -1,6 +1,10 @@
 # To Write
+- [ ] connected coordinate planes are homeomorphic to the fibers of the coordinate functions
+- [ ] connected fibers argument, uses continuous function a(t)/(a(t)+b)
+- [ ] elliptic subgroup containment implies equality for locally finite trees
 - [ ] lemma that gives a G-map from a free action on a 2-complex and an action on a tree.
     - [ ] Part 1: Construct equivariant map
+        - [x] Define map on 0-cells and 1-cells
         - [ ] Need details on standard 2-cell to tripod fibration.
     - [ ] Part 2: Fibration details
 - [ ] Obtain the main corollary (that the core has simply connected hyperplanes) from the results so far. (This will be `part 1` and should come from refactoring the wrap up lemmas)
@@ -10,10 +14,7 @@
 - [x] Rxy = Ryx
     - [x] Explain how we use Guirardel to get QH(R) subset Rxy.
     - [x] Write up Rxy subset QH(R).
-- [ ] connected coordinate planes are homeomorphic to the fibers of the coordinate functions
-- [ ] connected fibers argument, uses continuous function a(t)/(a(t)+b)
 - [ ] argument that if S has bounded fibers then so does Sx, can't reuse same climbing section type argument, think about first and last times the path is projected to a given point. 
-- [ ] elliptic subgroup containment implies equality for locally finite trees
 - [ ] argue that the bad case is all trees in lower splittings
 
 # To prove
