@@ -1,5 +1,5 @@
 # To Write
-- [ ] connected coordinate planes are homeomorphic to the fibers of the coordinate functions
+- [ ] coordinate planes are homeomorphic to the fibers of the coordinate functions
 - [ ] connected fibers argument, uses continuous function a(t)/(a(t)+b)
 - [ ] elliptic subgroup containment implies equality for locally finite trees
 - [ ] lemma that gives a G-map from a free action on a 2-complex and an action on a tree.

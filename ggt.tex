@@ -80,6 +80,12 @@ We want to show the following statement or similar: if a group is the fundamenta
 \end{defn}
 \subsubsection{Miscellaneous}
 \begin{lem}
+    [Extension]
+    \label{lem:guirardel-extension}
+    (Lemma 8.9 in Guirardel)
+    ...extending \(f\)...
+\end{lem}
+\begin{lem}
     [Equivariant Map]
     \label{lem:equivariant} 
     Suppose that \(G\) acts freely on a simplicial complex \(K\) and a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where \(\mathscr{F}\) the connected components of the fibration from \(f\) is a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
@@ -136,7 +142,7 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 
 \section{Outline and notation for the construction of the core}
-
+\subsection{General Plan}
     From Guirardel we get a map \(f\) from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{cell}{(S)}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). The main goal is to show that \(C\) is a cocompact cube complex with quadrant-convex hyperplanes so that we get a legitimate graph of spaces decomposition for \(G\) over the hyperplanes.
 
 
@@ -146,6 +152,16 @@ We want to show the following statement or similar: if a group is the fundamenta
 \begin{thm}
     Let \(G\) be the fundamental group of a compact VH-complex. Then \(G\) acts geometrically on \(C\) cube complex with simply connected hyperplanes where \(C = \text{fill}( \text{cell}( \text{Im}(f) ) )\).
 \end{thm}
+\subsection{Core Construction}
+Take G acting on \(T_{3}\) a geometric action and note that G acting on \(\widetilde{K}\) is a free properly discontinuous action. From \ref{lem:equivariant} we can consturct a map \(f: \widetilde{K} \to T_{3}\) that is invariant. Let \(\mathscr{F}\) denote the set of connected components of fibers of \(f\). Using \ref{lem:guirardel-extension} we obtain \(\hat f : \mathscr{C} \to T_{3} \). 
+\begin{lem}
+    [Connected Fibers]
+\end{lem}
+\begin{lem}
+    [Fibers homeomorphic to Coordinate planes]
+\end{lem}
+
+
 \section{Core has quadrant convex hyperplanes}
 Our goal is to show that the core is a graph of groups decomposition for \(G\), this follows from the corollary below which we will conclude from the theorem.
 \begin{cor*}
