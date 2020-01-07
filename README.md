@@ -1,4 +1,5 @@
 # To Write
+- [ ] Getting invariant projection maps from the VH-splittings.
 - [ ] coordinate planes are homeomorphic to the fibers of the coordinate functions
 - [ ] connected fibers argument, uses continuous function a(t)/(a(t)+b)
 - [ ] elliptic subgroup containment implies equality for locally finite trees
