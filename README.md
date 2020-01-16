@@ -2,8 +2,10 @@
 - [ ] elliptic subgroup containment implies equality for locally finite trees
 - [ ] Getting invariant projection maps from the VH-splittings.
 - [ ] coordinate planes are homeomorphic to the fibers of the coordinate functions
+    - [ ] review
 - [ ] write connected fibers argument, uses continuous function a(t)/(a(t)+b)
     - [x] prove connected fibers argument, uses continuous function a(t)/(a(t)+b)
+    - [ ] review
 - [ ] lemma that gives a G-map from a free action on a 2-complex and an action on a tree.
     - [ ] Part 1: Construct equivariant map
         - [x] Define map on 0-cells and 1-cells
