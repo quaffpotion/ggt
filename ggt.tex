@@ -145,7 +145,27 @@ We want to show the following statement or similar: if a group is the fundamenta
 \subsection{Proof Walkthrough}
     Let \(X\) be a compact VH-complex and set \(G= \pi_{1} (X)\). Form \(\widetilde{K} \to K\) the universal cover. Note, \(G \curvearrowright \widetilde{K} \) freely and PDC.   
 \subsection{General Plan}
+Our goal is to show that a well chosen object which we call the core core is a graph of groups decomposition for \(G\), this follows from the corollary below which we will conclude from the theorem.
+\begin{cor*}
+    The core \(C \subseteq \mathscr{T}\) has simply connected hyperplanes.
+\end{cor*}
+
+\begin{thm}
+    The core \(C\) has hyperplanes that are (1) connected and (2) quadrant convex.
+\end{thm}
+
+One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're quadrant convex as needed.
+
+\begin{lem}
+    [Connected fibers]
+    The core \(C\) has connected one dimensional fibers.
+\end{lem}
+
+To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(S\) by taking \(C = \sxyz\). This \(S\) will be a cellular hull of \(\text{Im}(f)\) for a suitable \(f\).
+    
     From Guirardel we get a map \(f\) from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{cell}{(S)}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). The main goal is to show that \(C\) is a cocompact cube complex with quadrant-convex hyperplanes so that we get a legitimate graph of spaces decomposition for \(G\) over the hyperplanes.
+
+    Our main result is the following corollary:
 
 
 \begin{cor*}
@@ -154,6 +174,7 @@ We want to show the following statement or similar: if a group is the fundamenta
 \begin{thm}
     Let \(G\) be the fundamental group of a compact VH-complex. Then \(G\) acts geometrically on \(C\) cube complex with simply connected hyperplanes where \(C = \text{fill}( \text{cell}( \text{Im}(f) ) )\).
 \end{thm}
+
 \subsection{Core Construction}
 Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\widetilde{K} \to K\). Note that \(G\) acts on \(\widetilde K\) freely and PDC. Since \(K\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1} := \pi_{1}\) and \(f_{2} := \pi_{2}\). Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction to get an equivariant map \(f_{3} : \widetilde K \to T_{3}\) with some other relevant properties. Using Guirardel 8.9 we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. In order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. Next, we show these extensions still have connected fibers. The product of the maps which we will denote by \(f\) is equivariant. Checking a formal equality and using the fact that the fibers of the extensions are connected gives us that \(S : = \text{Im}(f)\) is connected in all coordinate planes which allows us to apply the machinery of Part 1.
 \begin{lem}
@@ -182,23 +203,6 @@ Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\wi
 
 
 \section{Core has quadrant convex hyperplanes}
-Our goal is to show that the core is a graph of groups decomposition for \(G\), this follows from the corollary below which we will conclude from the theorem.
-\begin{cor*}
-    The core \(C \subseteq \mathscr{T}\) has simply connected hyperplanes.
-\end{cor*}
-
-\begin{thm}
-    The core \(C\) has hyperplanes that are (1) connected and (2) quadrant convex.
-\end{thm}
-
-One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're quadrant convex as needed.
-
-\begin{lem}
-    [Connected fibers]
-    The core \(C\) has connected one dimensional fibers.
-\end{lem}
-
-To achieve this, we'll build \(C\) from a suitable subcomplex \(S\) by taking \(C = \sxyz\). This \(S\) will be a cellular hull of \(\text{Im}(f)\) for a suitable \(f\).
 
 
 \subsection{Wrap up lemmas}
