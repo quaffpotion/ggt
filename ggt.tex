@@ -49,6 +49,22 @@
 \section{Problem Statement}
 We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
 
+\subsection{Dramatis Person\ae}
+\begin{itemize}
+    \item \(X\) a compact connected VH-complex
+    \item \(G = \pi_{1} (X)\) 
+    \item \(T_{1}\) the tree from the horizontal splitting of \(X\)
+    \item \(T_{2}\) the tree from the vertical splitting of \(X\) 
+    \item \(T_{3}\) an interloping locally finite \(G\)-tree with FP vertex stabilizers
+    \item \(\mathscr{T} = T_{1} \times T_{2} \times T_{3} \) 
+    \item \(X^{+}\) a certain complex containing \(X\)
+    \item \(f: X^{+} \to \mathscr{T}\) an equivariant map
+    \item \(\Gamma \) a certain compact connected subgraph of \(X^{(1)}\) the 1-skeleton of \(X\)
+    \item \(J = \text{Im}(f)\) 
+    \item \(K = \text{cell}(J)\) 
+    \item \(C = \text{fill}(K)\) the hero of our story, the simply-connected core on which \(G\) acts
+\end{itemize}
+
 \subsection{Definitions}
 
 \begin{defn}
