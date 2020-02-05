@@ -20,10 +20,10 @@
   {.5em}
   {}
 
-\newcommand{\sxyz}{((S_x)_y)_z}
+\newcommand{\sxyz}{((K_x)_y)_z}
 \newcommand{\rxy}{(R_x)_y}
 \newcommand{\ryx}{(R_y)_x}
-\newcommand{\Sxyz}[3]{((S_#1)_#2)_#3}
+\newcommand{\Sxyz}[3]{((K_#1)_#2)_#3}
 
 \theoremstyle{mystyle}
 \newtheorem{thm}{Theorem}[section]
@@ -95,6 +95,11 @@ We want to show the following statement or similar: if a group is the fundamenta
     Let \(K\) satisfy property setup with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
 \end{defn}
 \subsubsection{Miscellaneous}
+\begin{defn}
+    [Fiberwise Connected]
+    \label{def:connfibers} 
+    Let \(S \subseteq X \times Y \times Z\). If \(S \cap \{\text{pt}_1\} \times \{\text{pt}_2\} \times Z\) and all similar sets as well as permutations are connected then we say \(S\) is one dimensional fiberwise connected.
+\end{defn}
 \begin{lem}
     [Extension]
     \label{lem:guirardel-extension}
@@ -158,38 +163,36 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 
 \section{Outline and notation for the construction of the core}
-\subsection{Proof Walkthrough}
-    Let \(X\) be a compact VH-complex and set \(G= \pi_{1} (X)\). Form \(\widetilde{K} \to K\) the universal cover. Note, \(G \curvearrowright \widetilde{K} \) freely and PDC.   
 \subsection{General Plan}
-Our goal is to show that a well chosen object which we call the core core is a graph of groups decomposition for \(G\), this follows from the corollary below which we will conclude from the theorem.
-\begin{cor*}
-    The core \(C \subseteq \mathscr{T}\) has simply connected hyperplanes.
-\end{cor*}
+Our goal is to show that a well chosen cube complex which we call the core has a quotient that is a graph of spaces decomposition for \(G\) in three different ways. From this we will conclude that our group has dimension at least three which is impossible because we assumed it was VH.
 
-\begin{thm}
-    The core \(C\) has hyperplanes that are (1) connected and (2) quadrant convex.
-\end{thm}
-
-One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected and then apply Guirardel's lemma in each hyperplane to conclude that they're quadrant convex as needed.
-
-\begin{lem}
-    [Connected fibers]
-    The core \(C\) has connected one dimensional fibers.
-\end{lem}
-
-To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(S\) by taking \(C = \sxyz\). This \(S\) will be a cellular hull of \(\text{Im}(f)\) for a suitable \(f\).
+    In terms of properties of the core we need three things: (1) hyperplanes are simply connected, (2) cocompact, (3) hierarchy of splittings gives enough dimension. We will take the edge spaces of our graph of spaces to be a subset of hyperplanes. 
     
-    From Guirardel we get a map \(f\) from the universal cover of our VH complex to the product of three trees by taking inclusion in the first two factors and Guirardel's map in the last factor. We obtain \(S = \text{Im}(f)\) and will show it's cocompact. Then we put \(K = \text{cell}{(S)}\) and show it's still cocompact. Finally we fill \(K\) in all three directions obtaining the core \(C\). The main goal is to show that \(C\) is a cocompact cube complex with quadrant-convex hyperplanes so that we get a legitimate graph of spaces decomposition for \(G\) over the hyperplanes.
-
-    Our main result is the following corollary:
-
-
+    To be a valid decomposition we need that the edge spaces are injective on fundamental groups. For this we need the corollary below.
 \begin{cor*}
-    Let \(G\) be the fundamental group of a compact VH-complex. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to their deformation spaces these are the only two such actions.
+    The hyperplanes of \(C\) are simply connected. 
 \end{cor*}
+
 \begin{thm}
-    Let \(G\) be the fundamental group of a compact VH-complex. Then \(G\) acts geometrically on \(C\) cube complex with simply connected hyperplanes where \(C = \text{fill}( \text{cell}( \text{Im}(f) ) )\).
+    The hyperplanes of \(C\) are quadrant convex.    
 \end{thm}
+
+One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected \ref{def:connfibers} and then apply Guirardel's lemma \ref{lem:guirardel} in each hyperplane to conclude that they're quadrant convex as needed.
+
+\begin{thm}
+    [Connected fibers]
+    The one dimensional fibers of \(C\) are connected.
+\end{thm}
+
+
+To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(K \subseteq \mathscr{T} \) by taking \(C = \sxyz\). This \(K\) will be the cellular hull of \(J\) which we define to be the image of a suitable map \(f\).
+
+Ultimately, the injectivty on fundamental groups will follow from the core being one dimensional fiberwise connected and the second requirement that \(C\) be cocompact will follow from an argument that starts by bounding the size of fibers. Finally, having enough dimension will follow from some assumptions about our actions.
+
+Our main result is the following:
+\begin{cor*}
+    Let \(G\) be the fundamental group of a compact VH-complex. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to their deformation spaces these are the only two such actions unless \(G\) satisfies {\em property A}.
+\end{cor*}
 
 \subsection{Core Construction}
 Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\widetilde{K} \to K\). Note that \(G\) acts on \(\widetilde K\) freely and PDC. Since \(K\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1} := \pi_{1}\) and \(f_{2} := \pi_{2}\). Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction to get an equivariant map \(f_{3} : \widetilde K \to T_{3}\) with some other relevant properties. Using Guirardel 8.9 we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. In order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. Next, we show these extensions still have connected fibers. The product of the maps which we will denote by \(f\) is equivariant. Checking a formal equality and using the fact that the fibers of the extensions are connected gives us that \(S : = \text{Im}(f)\) is connected in all coordinate planes which allows us to apply the machinery of Part 1.
