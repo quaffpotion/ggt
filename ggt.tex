@@ -162,37 +162,18 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 
 
-\section{Outline and notation for the construction of the core}
-\subsection{General Plan}
+\section{Outlines}
 Our goal is to show that a well chosen cube complex which we call the core has a quotient that is a graph of spaces decomposition for \(G\) in three different ways. From this we will conclude that our group has dimension at least three which is impossible because we assumed it was VH.
 
     In terms of properties of the core we need three things: (1) hyperplanes are simply connected, (2) cocompact, (3) hierarchy of splittings gives enough dimension. We will take the edge spaces of our graph of spaces to be a subset of hyperplanes. 
-    
-    To be a valid decomposition we need that the edge spaces are injective on fundamental groups. For this we need the corollary below.
-\begin{cor*}
-    The hyperplanes of \(C\) are simply connected. 
-\end{cor*}
-
-\begin{thm}
-    The hyperplanes of \(C\) are quadrant convex.    
-\end{thm}
-
-One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected \ref{def:connfibers} and then apply Guirardel's lemma \ref{lem:guirardel} in each hyperplane to conclude that they're quadrant convex as needed.
-
-\begin{thm}
-    [Connected fibers]
-    The one dimensional fibers of \(C\) are connected.
-\end{thm}
 
 
-To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(K \subseteq \mathscr{T} \) by taking \(C = \sxyz\). This \(K\) will be the cellular hull of \(J\) which we define to be the image of a suitable map \(f\).
+    Our main result is the following:
 
-Ultimately, the injectivty on fundamental groups will follow from the core being one dimensional fiberwise connected and the second requirement that \(C\) be cocompact will follow from an argument that starts by bounding the size of fibers. Finally, having enough dimension will follow from some assumptions about our actions.
+    \begin{cor*}
+            Let \(G\) be the fundamental group of a compact VH-complex. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to their deformation spaces these are the only two such actions unless \(G\) satisfies {\em property A}.
+    \end{cor*}
 
-Our main result is the following:
-\begin{cor*}
-    Let \(G\) be the fundamental group of a compact VH-complex. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to their deformation spaces these are the only two such actions unless \(G\) satisfies {\em property A}.
-\end{cor*}
 
 \subsection{Core Construction}
 Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\widetilde{K} \to K\). Note that \(G\) acts on \(\widetilde K\) freely and PDC. Since \(K\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1} := \pi_{1}\) and \(f_{2} := \pi_{2}\). Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction to get an equivariant map \(f_{3} : \widetilde K \to T_{3}\) with some other relevant properties. Using Guirardel 8.9 we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. In order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. Next, we show these extensions still have connected fibers. The product of the maps which we will denote by \(f\) is equivariant. Checking a formal equality and using the fact that the fibers of the extensions are connected gives us that \(S : = \text{Im}(f)\) is connected in all coordinate planes which allows us to apply the machinery of Part 1.
@@ -219,8 +200,33 @@ Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\wi
     \end{align*}
 \end{lem}
 
- At the end of Part 1 we have obtained our core. We still need to verify cocompactness. Indeed we have the following lemmas:
 
+    
+    \subsection{Simply connected hyperplanes}
+    To be a valid decomposition we need that the edge spaces are injective on fundamental groups. For this we need the corollary below.
+\begin{cor*}
+    The hyperplanes of \(C\) are simply connected. 
+\end{cor*}
+
+\begin{thm}
+    The hyperplanes of \(C\) are quadrant convex.    
+\end{thm}
+
+One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected \ref{def:connfibers} and then apply Guirardel's lemma \ref{lem:guirardel} in each hyperplane to conclude that they're quadrant convex as needed.
+
+\begin{thm}
+    [Connected fibers]
+    The one dimensional fibers of \(C\) are connected.
+\end{thm}
+
+
+To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(K \subseteq \mathscr{T} \) by taking \(C = \sxyz\). This \(K\) will be the cellular hull of \(J\) which we define to be the image of a suitable map \(f\).
+
+
+
+
+\subsection{Cocompactness of the Core}
+The second requirement that \(C\) be cocompact will follow from an argument that starts by bounding the size of fibers. 
  \begin{lem}
      [Finite fibers]
      ...need to latex...
@@ -231,7 +237,15 @@ Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\wi
      ...need to understand...
  \end{lem}
 
-After this we have that the quotient of the core is a graph of groups decomposition for \(G\). With this splitting in hand we want to verify that it's made of successive graphs of groups of items of a certain dimension so we can apply Bieri.
+
+\subsection{Required splitting properties}
+Note first we establish that \(C\) is itself simply connected.
+\begin{lem}
+    The core \(C\) is simply connected.
+\end{lem}
+
+Finally, having enough dimension will follow from some assumptions about our actions.
+With this splitting in hand we want to verify that it's made of successive graphs of groups of items of a certain dimension so we can apply Bieri.
 
 \begin{lem}
     [Directional splittings are non-trivial]
@@ -242,7 +256,7 @@ After this we have that the quotient of the core is a graph of groups decomposit
 \end{thm}
 
 
-
+\hrulefill
 \section{Core has quadrant convex hyperplanes}
 
 
