@@ -104,7 +104,7 @@ We want to show the following statement or similar: if a group is the fundamenta
     [Extension]
     \label{lem:guirardel-extension}
     (Lemma 8.9 in Guirardel)
-    ...extending \(f\)...
+    Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
 \end{lem}
 \begin{lem}
     [Equivariant Map]
@@ -176,31 +176,7 @@ Our goal is to show that a well chosen cube complex which we call the core has a
 
 
 \subsection{Core Construction}
-Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\widetilde{K} \to K\). Note that \(G\) acts on \(\widetilde K\) freely and PDC. Since \(K\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1} := \pi_{1}\) and \(f_{2} := \pi_{2}\). Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction to get an equivariant map \(f_{3} : \widetilde K \to T_{3}\) with some other relevant properties. Using Guirardel 8.9 we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. In order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. Next, we show these extensions still have connected fibers. The product of the maps which we will denote by \(f\) is equivariant. Checking a formal equality and using the fact that the fibers of the extensions are connected gives us that \(S : = \text{Im}(f)\) is connected in all coordinate planes which allows us to apply the machinery of Part 1.
-\begin{lem}
-    [Connected Fibers]
-    Let \(p\) in \(X\) our 2-complex, let \(p'\) be the unique projection. Let \(\Gamma\) be a compact subgraph in our 2-complex \(X\).  Take \(T\) to be either \(T_{1}\) or \(T_{2}\). For now suppose we have defined a map \(f: \Gamma \to T\). We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
-    \[ F(x,s) = 
-        \begin{cases} 
-            f(x)& s=0\\ 
-            t_{0} & s=1\\
-            \gamma_{f(x),t_{0}} (s | \gamma |)a & \text{else}
-        \end{cases}
-    \]
-    Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0}\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
-\end{lem}
-\begin{lem}
-    [Fibers homeomorphic to Coordinate planes]
-    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(S = \text{Im}(f)\). We claim that \(S \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
-    \begin{align*}
-        p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
-        & \Longleftrightarrow \exists x \in X^{+} (f(k)=p \wedge \hat f_3(k)=z)\\
-        & \Longleftrightarrow \exists x \in X^{+} (f(k)=p \wedge \hat k \in \hat f_3^{-1} (z))\\
-        & \Longleftrightarrow p \in \text{Im}_f(\hat f_3^{-1} (z))
-    \end{align*}
-\end{lem}
-
-
+Let \(K\) be a compact VH-complex and set \(G= \pi_{1} K\). Form the cover \(\widetilde{K} \to K\). Note that \(G\) acts on \(\widetilde K\) freely and PDC. Since \(K\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1} := \pi_{1}\) and \(f_{2} := \pi_{2}\). Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction to get an equivariant map \(f_{3} : \widetilde K \to T_{3}\) with some other relevant properties. Using Guirardel 8.9 \ref{lem:guirardel-extension} we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. We also need the proof of lemma \ref{lem:guirardel-extension} to ensure certain properties hold. Then, in order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. 
     
     \subsection{Simply connected hyperplanes}
     To be a valid decomposition we need that the edge spaces are injective on fundamental groups. For this we need the corollary below.
@@ -256,9 +232,30 @@ With this splitting in hand we want to verify that it's made of successive graph
 \end{thm}
 
 
-\hrulefill
 \section{Core has quadrant convex hyperplanes}
 
+\begin{lem}
+    [Connected Fibers]
+    Let \(p\) in \(X\) our 2-complex, let \(p'\) be the unique projection. Let \(\Gamma\) be a compact subgraph in our 2-complex \(X\).  Take \(T\) to be either \(T_{1}\) or \(T_{2}\). For now suppose we have defined a map \(f: \Gamma \to T\). We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
+    \[ F(x,s) = 
+        \begin{cases} 
+            f(x)& s=0\\ 
+            t_{0} & s=1\\
+            \gamma_{f(x),t_{0}} (s | \gamma |)a & \text{else}
+        \end{cases}
+    \]
+    Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0}\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
+\end{lem}
+\begin{lem}
+    [Fibers homeomorphic to Coordinate planes]
+    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(S = \text{Im}(f)\). We claim that \(S \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
+    \begin{align*}
+        p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
+        & \Longleftrightarrow \exists x \in X^{+} (f(k)=p \wedge \hat f_3(k)=z)\\
+        & \Longleftrightarrow \exists x \in X^{+} (f(k)=p \wedge \hat k \in \hat f_3^{-1} (z))\\
+        & \Longleftrightarrow p \in \text{Im}_f(\hat f_3^{-1} (z))
+    \end{align*}
+\end{lem}
 
 \subsection{Wrap up lemmas}
 The following is a list of statements, the goal is to prove enough of them to arrive at item number 1 for a suitably chosen core \(C\).
