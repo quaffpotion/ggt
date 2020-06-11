@@ -45,6 +45,158 @@
 
 
 \begin{document}
+\tableofcontents
+
+\section{Toy Version}
+\subsection{Cocompactness Argument}
+
+\begin{lem} 
+[Filling preserves cocompactness]
+\label{lem:fillingcocompact}
+We have that $(S_{23})_x$ is cocompact.
+\begin{proof}
+    Recall that $S_{23}$ is itself cocompact and is contained in a set that can be written as $A\times B$ where $A\subset T_1$ and $B\subset T_2\times T_3$ with $B$ cocompact as well. Also remember that $G$ acts freely on $T_2\times T_3$. For each vertex orbit of $B$ choose a particular vertex. Call them $\{b_1,\ldots,b_n\}$; by cocompactness this list is finite. By freeness in the second factor, the stabilizer of $S' := S_{23} \cap (T_1 \times \{b_1\})$ is trivial. This means that $S'$ injects into $S_{23}/G$ which is compact by assumption. Since we are dealing with cell complexes, $S'$ is also compact. From this we have that $S_{23}\cap (T_1\times \{v\})$ for any vertex $v$ of $B$ is compact. Note, this argument applies if $v$ is replaced by a general point in $T_2 \times T_3$.
+    
+    Consider a point $p \in (S_{23})_x$. By the definition of filling, this point $p$ is contained in a slice of $S_{23}$, that is $p \in S_{23}\cap (T_1 \times \{r\})$ for some $r$ in $T_2\times T_3$.
+    
+   [[[[[
+   
+   See notes on 2020-05-27 for this
+   
+   [ Need to argue that there is a universal bound on the size of the slices - for slices at vertices it's clear, what about for slices at points in edges? Do I even need local finiteness for this? Just the fact that it's a cell complex? ]]]]]
+   
+   More or less, for every cell downstairs look at the orbit upstairs, pick one point per orbit, this slice is compact, moving around in the cell doesn't change the projection in the first factor so there is a universal bound
+   ]
+    
+        Because there is a universal bound on the diameter of $S_{23}\cap (T_1 \times \{r\})$ over all possible $r$ we have that $(S_{23})_x$ is contained in an $R$ neighborhood of $S_{23}$. Together with the local finiteness of $T_1 \times T_2 \times T_3$ we conclude that $(S_{23})_x$ is cocompact as needed. 
+    
+    
+    
+    
+    
+    
+\end{proof}
+\end{lem}
+
+\subsection{Promote elliptic containment to equality}
+\subsubsection{Definitions}
+\begin{defn}[morphism]
+A map $X\to Y$ between two trees is called a morphism if it sends vertices to vertices and edges to edges. 
+
+(Formally, there is something to say, however if you think of your edges as intervals of the real line then you might as well take the homeomorphisms to be linear maps. For our purposes, only combinatorial information is relevant. If the maps stretch or squish parts of edges we wouldn't care)
+\end{defn}
+
+\begin{lem}[invariant map from elliptic inclusion]
+Given invariant trees $X$ and $Y$ such that $\mathcal{E}(X)\subset\mathcal{E}(Y)$, there exists an equivariant map $X\to Y$.
+ 
+ \begin{proof}
+ Consider the vertex orbits in $X$. Pick a vertex from each orbit. Consider how the stabilizers of these vertices in $X$ act on $Y$. Because of the elliptic subgroup containment, each $G_{x_i}$ we picked out fixes a non-empty set of vertices in $Y$. Begin to define a map on the 0-skeleton by sending $x_i$ to something in $Y$ fixed by $G_{x_i}$. There are several choices, but a fixed set of choices plus the invariant condition defines a map on the 0-skeleton.
+ 
+The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. Suppose $x=gx_0=hx_0$, then $(h^{-1}g)x_0 = x_0$ and so $h^{-1}g \in G_{x_0}$. Then $f(x_0)=f( (h^{-1}g)x_0)$ which gives $h f(x_0) = f(gx_0)$ and so $f(hx_0)=f(gx_0)$ as needed.
+ 
+ Once we have a map on the 0-skeleton we can extend it to the entire tree by drawing unique geodesics in the trees.
+\end{proof}
+\end{lem}
+
+\begin{thm}[Factoring as folds, from Bestvina paper]
+Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
+\end{thm}
+
+\subsubsection{Result}
+\begin{lem}[Promote Elliptic Containment]
+Given an invariant morphism $X \to Y$ where $Y$ is locally finite and both actions are minimal we show that $X$ is necessarily locally finite and that $X$ and $Y$ have the same elliptic subgroups.
+\end{lem}
+
+\begin{pro}[Holds for Folds]
+Given a fold $X\to Y$ where $Y$ is locally finite we have the following:
+\begin{enumerate}
+    \item $X$ is locally finite
+    \item If an element acts hyperbolically on $X$ then it acts hyperbolically on $Y$ as well.
+\end{enumerate}
+
+\end{pro}
+
+\begin{pro}[Holds for collapsing]
+Given a map $X\to Y$ that's given by collapsing trees to vertices and where $X$ and $Y$ are locally finite we have the following. If an element acts hyperbolically on $X$ then it acts hyperbolically on $Y$ as well.
+
+\end{pro}
+
+\subsection{Toy Version}
+
+\subsubsection{Cited Theorems}
+
+\begin{thm}[F, ``On uniqueness...'', Thm 3.2]
+\label{thm:forester}
+Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are related by an elementary deformation if and only if they have the same elliptic subgroups.
+\end{thm}
+
+\subsubsection{Definitions}
+
+\begin{defn}[Finite Type]
+We say a tree action is of \emph{finite type} if the action is non-trivial, the tree is locally finite, and the vertex stabilizers are FP, with finite quotient graph.
+\end{defn}
+
+\begin{rmk}
+    We will assume a group of dimension 2 and in that case Bieri gives that actions of finite type have vertex and edge stabilizers that are finitely generated free groups.
+\end{rmk}
+
+\begin{rmk}
+    Bieri gives us that if we have an action of finite type then the group is FP.
+\end{rmk}
+
+\begin{defn}[Transverse]
+    We say that two tree actions $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two stabilizers, one for each tree, such that their intersection is FP.
+\end{defn}
+
+\begin{rmk}
+    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces
+\end{rmk}
+
+\subsubsection{Result}
+
+\begin{pro}
+ Let $G$ a group of cohomological dimension 2. If $X$ and $Y$ are $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
+\begin{enumerate}
+    \item $X$, $Y$ transverse
+    \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
+    \item There exists a cocompact VH-complex $K$ with $\pi_1(K) = G$ whose horizontal and vertical splittings are $X$ and $Y$.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}
+    \item $1\Rightarrow 2$: Fix $x_0 \in V(X)$ Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri to get:
+    \begin{align*}
+        2 &= dG\\
+          &= dG_{x_0}+1\\
+          &= d( G_{x_0} )_y+1+1\\
+          &= d(G_{x_0}\cap G_y)+2
+    \end{align*}
+    
+    Hence, $d(G_{x_0}\cap G_y)=0$ so $G_{x_0}\cap G_y$ is trivial.
+    
+    \begin{claim*}
+    The action of $G_{x_0}$ on $Y$ is non-trivial.
+    \begin{proof}
+    Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
+    \end{proof}
+    \end{claim*}
+    \item $2\Rightarrow 1$: Trivial groups are FP.
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. Guirardel gives us a simply-connected cocompact core $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    
+    It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
+    
+    \item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are the connected components of the set of vertical edges in the 1-skeleton of $K$. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
+    
+    By Wise, we have that the universal cover of $K$ is contained in $X \times Y$. Because the action respects the product structure, and because vertex spaces (in our case, graphs) are covered by embedded copies of their own universal covers we have that the non-trivial element $g$ when represented by a loop in a vertex space lifts to a path with distinct endpoints in a tree consisting entirely of vertical edges in $X \times Y$. In fact, $G_x$ acts on $\{x\}\times Y$ and freely on $\widetilde{K} \cap (\{x\}\times Y)$ because the action on $\widetilde{K}$ is a covering space action. This means that $g$ acts hyperbolically on $Y$ and we get an axis in $Y$. This remains an axis in $X \times Y$.
+    
+    Thus from looking at the vertical splitting (where vertex spaces were made of vertical edges) we obtained an axis consisting entirely of vertical edges. Similarly, after looking at the horizontal splitting we obtain an axis consisting entirely of horizontal edges. 
+    
+    Finally, since $X \times Y$ is CAT(0) these axes would have to be parallel. This is a contradiction.
+\end{enumerate}
+\end{proof}
+\end{pro}
+
+\subsection{Combining into main argument}
+We need ... \ref{lem:fillingcocompact}.
 
 \section{Problem Statement}
 We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
@@ -183,8 +335,18 @@ Our goal is to show that when we have three different actions there exists a wel
     Our main result is the following:
 
     \begin{cor*}
-            Let \(G\) be the fundamental group of a compact VH-complex. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to deformation these are the only two such actions unless \(G\) satisfies {\em property A}.
+        Let \(G\) be the fundamental group of a compact VH-complex that doesn't satisfy {\em property A}. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to deformation these are the only two such actions. 
     \end{cor*}
+
+\subsection{Misc lemmas}
+
+\begin{lem}
+    [Invariant to bounded distance]
+    Let \(A\) and \(B\) be invariant closed subsets of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\). Then \(A\) and \(B\) are Hausdorff equivalent. 
+    \begin{proof}
+        Pick an arbitrary element \(a \in A\) and  
+    \end{proof}
+\end{lem}
 
 
 \subsection{Main Equivariant Map Construction}
@@ -224,7 +386,7 @@ The second requirement that \(C\) be cocompact will follow from an argument that
 
  \begin{lem}
      [Universal bound on fibers]
-     ...need to understand...
+     ...need to latex...
  \end{lem}
 
 
@@ -256,6 +418,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 
 \begin{lem}
     [Connected Fibers]
+    \label{lem:confib} 
     Let \(p\) in \(X\) our 2-complex, let \(p'\) be the unique projection. Let \(\Gamma\) be a compact subgraph in our 2-complex \(X\).  Take \(T\) to be either \(T_{1}\) or \(T_{2}\). For now suppose we have defined a map \(f: \Gamma \to T\). We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
     \[ F(x,s) = 
         \begin{cases} 
@@ -268,11 +431,15 @@ With this splitting in hand we want to verify that it's made of successive graph
 \end{lem}
 \begin{lem}
     [Fibers homeomorphic to Coordinate planes]
-    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(S = \text{Im}(f)\). We claim that \(S \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
+
+
+
+    \textcolor{red}{Changed letters, need to fix
+    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. }
     \begin{align*}
         p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
-        & \Longleftrightarrow \exists x \in X^{+} (f(k)=p \wedge \hat f_3(k)=z)\\
-        & \Longleftrightarrow \exists x \in X^{+} (f(k)=p \wedge \hat k \in \hat f_3^{-1} (z))\\
+        & \Longleftrightarrow \exists x \in X^{+} (f(x)=p \wedge \hat f_3(x)=z)\\
+        & \Longleftrightarrow \exists x \in X^{+} (f(x)=p \wedge x \in \hat f_3^{-1} (z))\\
         & \Longleftrightarrow p \in \text{Im}_f(\hat f_3^{-1} (z))
     \end{align*}
 \end{lem}
