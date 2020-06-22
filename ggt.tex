@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd, xcolor, mathrsfs,hyperref,cleveref}
-\definecolor{mypink1}{rgb}{0.858, 0.188, 0.478}
+\definecolor{error}{rgb}{1,0 , 0}
 \swapnumbers
 
 \pagestyle{fancy}
@@ -342,9 +342,9 @@ Our goal is to show that when we have three different actions there exists a wel
 
 \begin{lem}
     [Invariant to bounded distance]
-    Let \(A\) and \(B\) be invariant closed subsets of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\). Then \(A\) and \(B\) are Hausdorff equivalent. 
+    Let \(A\) and \(B\) be invariant subcomplexes of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\) after restricting the action on \(X\). Then \(A\) and \(B\) are Hausdorff equivalent. 
     \begin{proof}
-        Pick an arbitrary element \(a \in A\) and  
+        \textcolor{error}{[warning]Because we are dealing with cocompact actions on cell complexes for the action on \(A\) there exists a subcomplex [we need subcomplex because we need closed because we declare a distance later from a set to a point]} \(F \subseteq A\) such that \(F\) is bounded with orbit \(A\). We call \(F\) a fundamental domain. Let \(D_{1}\) be the diameter of \(F\). Pick some \(b_{0} \in B\) and let \(D_{2}\) be the distance from \(F\) to \(b_{0}\). Pick an arbitrary \(a \in A\). Because the orbit of \(F\) is \(A\) there exists some \(g \in G\) such that \(a \in gF\). Then \(a\) is within \(D_{1} + D_{2}\) of \(g y\). Hence, \(A\) is contained in the \(D_{1} + D_{2}\) neighborhood of \(B\). Switching \(A\) and \(B\) in this argument and taking the maximum of the distances shows that \(A\) and \(B\) are both contained in \(R\) neighborhoods of each other for some \(R\); that is they are Hausdorff equivalent.
     \end{proof}
 \end{lem}
 
@@ -434,7 +434,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 
 
 
-    \textcolor{red}{Changed letters, need to fix
+    \textcolor{error}{[warning] Changed letters, need to fix
     Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. }
     \begin{align*}
         p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
