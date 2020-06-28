@@ -66,6 +66,13 @@ Recall that $G$ acts freely on $T_2\times T_3$. For each vertex orbit of $B$ cho
 \end{lem}
 
 \subsection{Promote elliptic containment to equality}
+\textcolor{blue}{
+    Sketch: The first fact is if G has a hyperbolic element then H has a unique non-empty minimal tree that's the union of all the axes. From this we can prove that commensurable groups where one has a hyperbolic element gets you that both have the same non-empty minimal tree. From here, we think about what would happen if an element was hyperbolic got sent to an elliptic element. Say there are at least two points in Y. Looking at preimages, we get two stabilized trees. The stabilizer of one point in Y over in X stabilizes a tree and so the minimal subtree for that group is in that tree which is disjoint from the other stabilizer because of how functiotns work. Except by local finiteness the groups are the commensurable. So the trees are both equal and disjoint which is bad.
+    - still need to say that inverse of a point is a tree
+    - still need to say why stabs are commensurable
+}
+
+
 \color{orange}
 \subsubsection{Definitions}
 \begin{defn}[morphism]
@@ -89,7 +96,6 @@ The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. S
 \begin{thm}[Factoring as folds, from Bestvina paper]
 Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
 \end{thm}
-\color{black}
 \subsubsection{Result}
 \begin{lem}[Promote Elliptic Containment]
 Given an invariant morphism $X \to Y$ where $Y$ is locally finite and both actions are minimal we show that $X$ is necessarily locally finite and that $X$ and $Y$ have the same elliptic subgroups.
@@ -108,7 +114,7 @@ Given a fold $X\to Y$ where $Y$ is locally finite we have the following:
 Given a map $X\to Y$ that's given by collapsing trees to vertices and where $X$ and $Y$ are locally finite we have the following. If an element acts hyperbolically on $X$ then it acts hyperbolically on $Y$ as well.
 
 \end{pro}
-
+\color{black}
 \subsection{Toy Version}
 
 \subsubsection{Cited Theorems}
@@ -172,7 +178,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
-    \item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are the connected components of the set of vertical edges in the 1-skeleton of $K$. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
+\item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are \textcolor{blue}{connected subgraphs whose edges are vertical edges} in the 1-skeleton of $K$. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
     
     By Wise, we have that the universal cover of $K$ is contained in $X \times Y$. Because the action respects the product structure, and because vertex spaces (in our case, graphs) are covered by embedded copies of their own universal covers we have that the non-trivial element $g$ when represented by a loop in a vertex space lifts to a path with distinct endpoints in a tree consisting entirely of vertical edges in $X \times Y$. In fact, $G_x$ acts on $\{x\}\times Y$ and freely on $\widetilde{K} \cap (\{x\}\times Y)$ because the action on $\widetilde{K}$ is a covering space action. This means that $g$ acts hyperbolically on $Y$ and we get an axis in $Y$. This remains an axis in $X \times Y$.
     
