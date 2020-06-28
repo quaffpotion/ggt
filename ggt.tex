@@ -59,14 +59,14 @@ Recall that $G$ acts freely on $T_2\times T_3$. For each vertex orbit of $B$ cho
 
 
 
-    \textcolor{blue}{Let \(a \times b\) be a vertex of \((S_{23})_x\). By construction, \(a \in \text{chull}(\text{projection}(\text{slice}(S_{23}, b)))\). 
+    \textcolor{blue}{[fix] Let \(a \times b\) be a vertex of \((S_{23})_x\). By construction, \(a \in \text{chull}(\text{projection}(\text{slice}(S_{23}, b)))\). 
     Hence there exists \(D\) such that slices of \((S_{ 23 })_x\) have diameter no greater than \(D\) in the product metric. 
     This means each slice of \((S_{23})_x\) has a finite number of vertices. Lastly, since \(S_{23}\) is $G$-invariant and we're acting by a product, (so the slice at \(gb\) is the slice at \(b\) acted on by \(g\)) which means there are a finite number of isometry classes of slices since \(B\) is cocompact. Hence, there are a finite number of vertex orbits so our set is cocompact as needed}
 \end{proof}
 \end{lem}
 
 \subsection{Promote elliptic containment to equality}
-\textcolor{blue}{
+\textcolor{blue}{[fix]
     Sketch: The first fact is if G has a hyperbolic element then H has a unique non-empty minimal tree that's the union of all the axes. From this we can prove that commensurable groups where one has a hyperbolic element gets you that both have the same non-empty minimal tree. From here, we think about what would happen if an element was hyperbolic got sent to an elliptic element. Say there are at least two points in Y. Looking at preimages, we get two stabilized trees. The stabilizer of one point in Y over in X stabilizes a tree and so the minimal subtree for that group is in that tree which is disjoint from the other stabilizer because of how functiotns work. Except by local finiteness the groups are the commensurable. So the trees are both equal and disjoint which is bad.
     - still need to say that inverse of a point is a tree
     - still need to say why stabs are commensurable
@@ -174,11 +174,11 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. Guirardel gives us a simply-connected cocompact core $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. Guirardel gives us a simply-connected cocompact core \textcolor{blue}{[fix] Needs prop 4.14 G} $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
-\item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are \textcolor{blue}{connected subgraphs whose edges are vertical edges} in the 1-skeleton of $K$. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
+\item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are \textcolor{blue}{[fix] connected subgraphs whose edges are vertical edges} in the 1-skeleton of $K$. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
     
     By Wise, we have that the universal cover of $K$ is contained in $X \times Y$. Because the action respects the product structure, and because vertex spaces (in our case, graphs) are covered by embedded copies of their own universal covers we have that the non-trivial element $g$ when represented by a loop in a vertex space lifts to a path with distinct endpoints in a tree consisting entirely of vertical edges in $X \times Y$. In fact, $G_x$ acts on $\{x\}\times Y$ and freely on $\widetilde{K} \cap (\{x\}\times Y)$ because the action on $\widetilde{K}$ is a covering space action. This means that $g$ acts hyperbolically on $Y$ and we get an axis in $Y$. This remains an axis in $X \times Y$.
     
@@ -428,8 +428,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 
 
 
-    \textcolor{blue}{[fix, correct as written] 
-    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. }
+    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
     \begin{align*}
         p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
         & \Longleftrightarrow \exists x \in X^{+} (f(x)=p \wedge \hat f_3(x)=z)\\
