@@ -2,23 +2,23 @@
 \contentsline {subsection}{\numberline {1.1}Cocompactness Argument}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Promote elliptic containment to equality}{2}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Definitions}{2}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}Result}{3}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.2}Result}{2}{subsubsection.1.2.2}
 \contentsline {subsection}{\numberline {1.3}Toy Version}{3}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Cited Theorems}{3}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {1.3.2}Definitions}{3}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Result}{4}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.3}Result}{3}{subsubsection.1.3.3}
 \contentsline {subsection}{\numberline {1.4}Combining into main argument}{5}{subsection.1.4}
 \contentsline {section}{\numberline {2}Problem Statement}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Dramatis Person\ae }{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}Dramatis Person\ae }{5}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Definitions}{6}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Miscellaneous}{7}{subsubsection.2.2.1}
-\contentsline {section}{\numberline {3}Outlines}{9}{section.3}
+\contentsline {section}{\numberline {3}Outlines}{8}{section.3}
 \contentsline {subsection}{\numberline {3.1}Misc lemmas}{9}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Main Equivariant Map Construction}{9}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Simply connected hyperplanes}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3}Simply connected hyperplanes}{9}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Cocompactness of the Core}{10}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Required splitting properties}{10}{subsection.3.5}
-\contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{11}{section.4}
+\contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{10}{section.4}
 \contentsline {subsection}{\numberline {4.1}Wrap up lemmas}{11}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Using Wrap-up lemmas to prove main statement}{12}{subsubsection.4.1.1}
 \contentsline {subsection}{\numberline {4.2}Planar Path Argument}{15}{subsection.4.2}

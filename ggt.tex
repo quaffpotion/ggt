@@ -53,22 +53,15 @@
 \begin{lem} 
 [Filling preserves cocompactness]
 \label{lem:fillingcocompact}
-We have that $(S_{23})_x$ is cocompact.
+    Since $S_{23}$ is a cocompact $G$-invariant subcomplex that's contained in \(A \times B\) where \(A\) and \(B\) are subcomplexes of \(T_1\) and \(T_2 \times T_3\) respectively and \(B\) is itself cocompact we have that $(S_{23})_x$ is cocompact as well.
 \begin{proof}
-    Recall that $S_{23}$ is itself cocompact and is contained in a set that can be written as $A\times B$ where $A\subset T_1$ and $B\subset T_2\times T_3$ with $B$ cocompact as well. Also remember that $G$ acts freely on $T_2\times T_3$. For each vertex orbit of $B$ choose a particular vertex. Call them $\{b_1,\ldots,b_n\}$; by cocompactness this list is finite. By freeness in the second factor, the stabilizer of $S' := S_{23} \cap (T_1 \times \{b_1\})$ is trivial. This means that $S'$ injects into $S_{23}/G$ which is compact by assumption. Since we are dealing with cell complexes, $S'$ is also compact. Repeating this argument a finite number of times we have that $S_{23}\cap (T_1\times \{b_k\})$ is compact for each \(k\). Compact items have a well defined diameter, taking the maximum diamater and noting we're acting by isometries gives that there is a bound on the diameters of \(S_{23} \cap (T_1\times \{v\})\) as \(v\) ranges over vertices of \(B\). Lastly, because \(S_{23}\) is contained in a product, \textcolor{blue}{[fix] Thew new plan is to show that S23x is cocompact by showing that it is covered by a finite number of vertex orbits. Using product structure to know that when we bring a slice to the correct height that it is the right slice??}
+Recall that $G$ acts freely on $T_2\times T_3$. For each vertex orbit of $B$ choose a particular vertex. Call them $\{b_1,\ldots,b_n\}$; by cocompactness this list is finite. By freeness in the second factor, the stabilizer of $S' := S_{23} \cap (T_1 \times \{b_1\})$ is trivial. This means that $S'$ injects into $S_{23}/G$ which is compact by assumption. Since we are dealing with cell complexes, $S'$ is also compact. Repeating this argument a finite number of times we have that $S_{23}\cap (T_1\times \{b_k\})$ is compact for each \(k\). Compact items have a well defined diameter, taking the maximum diamater and noting we're acting by isometries gives that there is a bound on the diameters of \(S_{23} \cap (T_1\times \{v\})\) as \(v\) ranges over vertices of \(B\). 
 
 
-    this argument applies if $v$ is replaced by a general point in the projection of \(S_{23}\) onto $T_2 \times T_3$.
-    
-    Consider a point $p \in (S_{23})_x$. By the definition of filling, this point $p$ is contained in a slice of $S_{23}$, that is $p \in S_{23}\cap (T_1 \times \{r\})$ for some $r$ in $T_2\times T_3$. 
-    
-        Because there is a universal bound on the diameter of $S_{23}\cap (T_1 \times \{r\})$ over all possible $r$ we have that $(S_{23})_x$ is contained in an $R$ neighborhood of $S_{23}$. Together with the local finiteness of $T_1 \times T_2 \times T_3$ we conclude that $(S_{23})_x$ is cocompact as needed. 
-    
-    
-    
-    
-    
-    
+
+    \textcolor{blue}{Let \(a \times b\) be a vertex of \((S_{23})_x\). By construction, \(a \in \text{chull}(\text{projection}(\text{slice}(S_{23}, b)))\). 
+    Hence there exists \(D\) such that slices of \((S_{ 23 })_x\) have diameter no greater than \(D\) in the product metric. 
+    This means each slice of \((S_{23})_x\) has a finite number of vertices. Lastly, since \(S_{23}\) is $G$-invariant and we're acting by a product, (so the slice at \(gb\) is the slice at \(b\) acted on by \(g\)) which means there are a finite number of isometry classes of slices since \(B\) is cocompact. Hence, there are a finite number of vertex orbits so our set is cocompact as needed}
 \end{proof}
 \end{lem}
 
