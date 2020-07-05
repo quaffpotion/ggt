@@ -65,24 +65,42 @@
 
 \begin{pro}
     [Folds ``factor'' as an elementary collapse and a collapse map]
+    \label{pro:foldfactor} 
     If \(X \to Y\) is a fold, then there exists a tree \(Z\) along with collapse maps to \(X\) and
 \(Y\). Moreover, the map to \(X\) is a collapse map corresponding to an elementary collapse.
 \end{pro}
 
 \begin{lem}
     [Hyperbolic elements are preserved]
-    Suppose \(X \to Y\) is a collapse map bewteen \(G\)-trees of finite-type with finitely generated edge and vertex groups.  Suppose also that the image of the map contains more than one vertex. Then, if an element if hyperbolic for \(X\) it is also hyperbolic for \(Y\).
+    \label{lem:promoteelliptic} 
+    Suppose \(X \to Y\) is a collapse map bewteen locally finite \(G\)-trees. Suppose \(Y\) is not a single point. Then, if an element is hyperbolic for \(X\) it is also hyperbolic for \(Y\).
+    \begin{proof}
+        \textcolor{orange}{[warning] really we are using the fact that the image of this map contains more than two points. We could assume minimality and equivariance to get onto as well. Collapse maps are onto by construction}
+        Suppose for sake of a contradiction that \(g\in G\) were hyperbolic for \(X\) and elliptic for \(Y\). Let \(y \in Y\) be some vertex fixed by the elliptic element \(g\) and \(G_y\) it's stabilizer. Since \(Y\) is not a single point, there is another vertex \(y\neq z \in Y\). Because \(Y\) is locally finite, \(G_y\) and \(G_z\) are commensurable. The pre-images of \(G\)-maps are invariant. By the construction of a collapse map, the preimage of vertices are connected. Putting these together we have that the preimages of vertices are invariant trees. This means that the minimal subtrees of \(G_y\) and \(G_z\) are contained in the disjoint preimages of \(y\) and \(z\) respectively. However, since they are commensurable and \(G_y\) contains the hyperbolic element \(g\), these minimal trees are non-empty and equal. This is a contradiction.
+    \end{proof}
 \end{lem}
 
+\begin{thm}
+    [Elliptic elements determine elliptic subgroups]
+    \ref{thm:ellelesubgroups} 
+    For nice tree actions, elliptic elements are enough to determine elliptic subgroups.
+\end{thm}
+
 \begin{thm}[Factoring as folds, from Bestvina paper, p455]
+    \label{thm:folds} 
 Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
 \end{thm}
 
 \begin{thm}
     [Elliptic containment implies equality]
     If \(X\) and \(Y\) are \(G\)-trees of finite type with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
-    
+    \begin{proof}
+        We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds. Then we use \ref{pro:foldfactor} and finite generation to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one which means we keep local finiteness.
+    \end{proof}
 \end{thm}
+
+
+
 
 \subsection{Toy version of main result}
 
@@ -137,7 +155,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \begin{claim*}
     The action of $G_{x_0}$ on $Y$ is non-trivial.
     \begin{proof}
-    Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
+        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{lem:promoteelliptic} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.

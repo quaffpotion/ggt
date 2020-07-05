@@ -2,19 +2,19 @@
 \contentsline {subsection}{\numberline {1.1}Promote elliptic containment to equality}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Toy version of main result}{2}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Definitions}{2}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}Result}{2}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.2}Result}{3}{subsubsection.1.2.2}
 \contentsline {section}{\numberline {2}Problem Statement}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Dramatis Person\ae }{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}Dramatis Person\ae }{5}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Definitions}{5}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Miscellaneous}{6}{subsubsection.2.2.1}
-\contentsline {section}{\numberline {3}Outlines}{7}{section.3}
+\contentsline {section}{\numberline {3}Outlines}{8}{section.3}
 \contentsline {subsection}{\numberline {3.1}Misc lemmas}{8}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Main Equivariant Map Construction}{9}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Simply connected hyperplanes}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Cocompactness of the Core}{9}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Required splitting properties}{9}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.4}Cocompactness of the Core}{10}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Required splitting properties}{10}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}Combining into main argument}{10}{subsection.3.6}
-\contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{10}{section.4}
+\contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{11}{section.4}
 \contentsline {subsection}{\numberline {4.1}Wrap up lemmas}{11}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Using Wrap-up lemmas to prove main statement}{12}{subsubsection.4.1.1}
 \contentsline {subsection}{\numberline {4.2}Planar Path Argument}{15}{subsection.4.2}
