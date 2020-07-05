@@ -48,77 +48,43 @@
 \tableofcontents
 
 \section{Toy Version}
-\subsection{Cocompactness Argument}
-
-\begin{lem} 
-[Filling preserves cocompactness]
-\label{lem:fillingcocompact}
-    Since $S_{23}$ is a cocompact $G$-invariant subcomplex that's contained in \(A \times B\) where \(A\) and \(B\) are subcomplexes of \(T_1\) and \(T_2 \times T_3\) respectively and \(B\) is itself cocompact and $G$ acts freely on $T_2\times T_3$ we have that $(S_{23})_x$ is cocompact as well. 
-\begin{proof}
-     For each vertex orbit of $B$ choose a particular vertex. By cocompactness this list is finite; call them $\{b_1,\ldots,b_n\}$. By freeness in the second factor, the stabilizer of $S' := S_{23} \cap (T_1 \times \{b_1\})$ is trivial. This means that $S'$ injects into $S_{23}/G$ which is compact by assumption. Since we are dealing with cell complexes, $S'$ is also compact. Repeating this argument a finite number of times we have that $S_{23}\cap (T_1\times \{b_k\})$ is compact for each \(1 \leq k \leq n \). Compact items have a well defined diameter. Taking the maximum diamater (in the product metric) and noting we're acting by isometries gives that there is a bound \(D\) on the diameters of \(S_{23} \cap (T_1\times \{v\})\) as \(v\) ranges over vertices of \(B\). 
-
-
-
-    Let \(a \times b\) be a vertex of \((S_{23})_x\). By construction, \(a\) lies within the convex hull of the projection of \(S_{23} \cap (T_1\times \{b\})\) (a slice of \(S_{23}\) ) to the \(T_1\) factor, hence slices of \((S_{ 23 })_x\) have diameter no greater than \(D\) in the product metric. 
-    This means each slice of \((S_{23})_x\) has a finite number of vertices. It remains to show that there is a unviersal bound on the number of vertices as we range over all slices. Since \(S_{23}\) is $G$-invariant and we're acting by a product, (so the slice at \(gb\) is the slice at \(b\) acted on by \(g\)) there are a finite number of isometry classes of slices since \(B\) is cocompact. Hence, there are a finite number of vertex orbits so \((S_{23})_x\) is cocompact as needed.
-\end{proof}
-\end{lem}
-
 \subsection{Promote elliptic containment to equality}
-\color{blue}
-[fix]
-    Sketch: The first fact is if G has a hyperbolic element then H has a unique non-empty minimal tree that's the union of all the axes. From this we can prove that commensurable groups where one has a hyperbolic element gets you that both have the same non-empty minimal tree. From here, we think about what would happen if an element was hyperbolic got sent to an elliptic element. Say there are at least two points in Y. Looking at preimages, we get two stabilized trees. The stabilizer of one point in Y over in X stabilizes a tree and so the minimal subtree for that group is in that tree which is disjoint from the other stabilizer because of how functiotns work. Except by local finiteness the groups are the commensurable. So the trees are both equal and disjoint which is bad.
 
-- Preimage of point is connected because you can draw paths between points in preimage and these will need to be in the preimage
-
-- still need to say why stabs are commensurable
-\color{black}
-
-\color{orange}
-\subsubsection{Definitions}
-\begin{defn}[morphism]
-A map $X\to Y$ between two trees is called a morphism if it sends vertices to vertices and edges to edges. 
-
-(Formally, there is something to say, however if you think of your edges as intervals of the real line then you might as well take the homeomorphisms to be linear maps. For our purposes, only combinatorial information is relevant. If the maps stretch or squish parts of edges we wouldn't care)
+\begin{defn}
+    [Simplicial Map]
+    A map between simplicial complexes is simplicial if the image of a set of vertices that spans a simplex also spans as simplex.
 \end{defn}
+\begin{defn}
+    [Collapse Map]
+    Given a \(G\)-tree, collapsing components of an invariant forest to points gives a \(G\)-map.
+\end{defn}
+\begin{pro}
+    [Subgraph Collapse]
+    Replacing a connected subgraph in a graph of groups decomposition with a vertex group with the same group as the collapsed graph corresponds to collapsing an invariant forest to points.
+\end{pro}
 
-\begin{lem}[invariant map from elliptic inclusion]
-Given invariant trees $X$ and $Y$ such that $\mathcal{E}(X)\subset\mathcal{E}(Y)$, there exists an equivariant map $X\to Y$.
- 
- \begin{proof}
- Consider the vertex orbits in $X$. Pick a vertex from each orbit. Consider how the stabilizers of these vertices in $X$ act on $Y$. Because of the elliptic subgroup containment, each $G_{x_i}$ we picked out fixes a non-empty set of vertices in $Y$. Begin to define a map on the 0-skeleton by sending $x_i$ to something in $Y$ fixed by $G_{x_i}$. There are several choices, but a fixed set of choices plus the invariant condition defines a map on the 0-skeleton.
- 
-The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. Suppose $x=gx_0=hx_0$, then $(h^{-1}g)x_0 = x_0$ and so $h^{-1}g \in G_{x_0}$. Then $f(x_0)=f( (h^{-1}g)x_0)$ which gives $h f(x_0) = f(gx_0)$ and so $f(hx_0)=f(gx_0)$ as needed.
- 
- Once we have a map on the 0-skeleton we can extend it to the entire tree by drawing unique geodesics in the trees.
-\end{proof}
+\begin{pro}
+    [Folds ``factor'' as an elementary collapse and a collapse map]
+    If \(X \to Y\) is a fold, then there exists a tree \(Z\) along with collapse maps to \(X\) and
+\(Y\). Moreover, the map to \(X\) is a collapse map corresponding to an elementary collapse.
+\end{pro}
+
+\begin{lem}
+    [Hyperbolic elements are preserved]
+    Suppose \(X \to Y\) is a collapse map bewteen \(G\)-trees of finite-type with finitely generated edge and vertex groups.  Suppose also that the image of the map contains more than one vertex. Then, if an element if hyperbolic for \(X\) it is also hyperbolic for \(Y\).
 \end{lem}
 
-\begin{thm}[Factoring as folds, from Bestvina paper]
+\begin{thm}[Factoring as folds, from Bestvina paper, p455]
 Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
 \end{thm}
-\subsubsection{Result}
-\begin{lem}[Promote Elliptic Containment]
-Given an invariant morphism $X \to Y$ where $Y$ is locally finite and both actions are minimal we show that $X$ is necessarily locally finite and that $X$ and $Y$ have the same elliptic subgroups.
-\end{lem}
 
-\begin{pro}[Holds for Folds]
-Given a fold $X\to Y$ where $Y$ is locally finite we have the following:
-\begin{enumerate}
-    \item $X$ is locally finite
-    \item If an element acts hyperbolically on $X$ then it acts hyperbolically on $Y$ as well.
-\end{enumerate}
+\begin{thm}
+    [Elliptic containment implies equality]
+    If \(X\) and \(Y\) are \(G\)-trees of finite type with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
+    
+\end{thm}
 
-\end{pro}
-
-\begin{pro}[Holds for collapsing]
-Given a map $X\to Y$ that's given by collapsing trees to vertices and where $X$ and $Y$ are locally finite we have the following. If an element acts hyperbolically on $X$ then it acts hyperbolically on $Y$ as well.
-
-\end{pro}
-\color{black}
-\subsection{Toy Version}
-
-\subsubsection{Cited Theorems}
+\subsection{Toy version of main result}
 
 \begin{thm}[F, ``On uniqueness...'', Thm 3.2]
 \label{thm:forester}
@@ -179,7 +145,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
-\item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are \textcolor{blue}{[fix] connected subgraphs whose edges are vertical edges} in the 1-skeleton of $K$. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
+\item $3\Rightarrow 2$: Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are connected subgraphs whose edges are all vertical. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
     
     By Wise, we have that the universal cover of $K$ is contained in $X \times Y$. Because the action respects the product structure, and because vertex spaces (in our case, graphs) are covered by embedded copies of their own universal covers we have that the non-trivial element $g$ when represented by a loop in a vertex space lifts to a path with distinct endpoints in a tree consisting entirely of vertical edges in $X \times Y$. In fact, $G_x$ acts on $\{x\}\times Y$ and freely on $\widetilde{K} \cap (\{x\}\times Y)$ because the action on $\widetilde{K}$ is a covering space action. This means that $g$ acts hyperbolically on $Y$ and we get an axis in $Y$. This remains an axis in $X \times Y$.
     
@@ -190,8 +156,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \end{proof}
 \end{pro}
 
-\subsection{Combining into main argument}
-We need ... \ref{lem:fillingcocompact}.
 
 \section{Problem Statement}
 We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
@@ -335,6 +299,27 @@ Our goal is to show that when we have three different actions there exists a wel
 
 \subsection{Misc lemmas}
 
+\begin{defn}[morphism]
+A map $X\to Y$ between two trees is called a morphism if it sends vertices to vertices and edges to edges. 
+
+(Formally, there is something to say, however if you think of your edges as intervals of the real line then you might as well take the homeomorphisms to be linear maps. For our purposes, only combinatorial information is relevant. If the maps stretch or squish parts of edges we wouldn't care)
+\end{defn}
+
+
+
+
+\begin{lem}[eqivariant map from elliptic inclusion]
+    If $X$ and $Y$ are \(G\)-trees such that $\mathcal{E}(X)\subset\mathcal{E}(Y)$, then there exists an equivariant map $X\to Y$.
+ 
+ \begin{proof}
+ Consider the vertex orbits in $X$. Pick a vertex from each orbit. Consider how the stabilizers of these vertices in $X$ act on $Y$. Because of the elliptic subgroup containment, each $G_{x_i}$ we picked out fixes a non-empty set of vertices in $Y$. Begin to define a map on the 0-skeleton by sending $x_i$ to something in $Y$ fixed by $G_{x_i}$. There are several choices, but a fixed set of choices plus the invariant condition defines a map on the 0-skeleton.
+ 
+The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. Suppose $x=gx_0=hx_0$, then $(h^{-1}g)x_0 = x_0$ and so $h^{-1}g \in G_{x_0}$. Then $f(x_0)=f( (h^{-1}g)x_0)$ which gives $h f(x_0) = f(gx_0)$ and so $f(hx_0)=f(gx_0)$ as needed.
+ 
+ Once we have a map on the 0-skeleton we can extend it to the entire tree by drawing unique geodesics in the trees.
+\end{proof}
+\end{lem}
+
 \begin{lem}
     [Invariant to bounded distance]
     Let \(A\) and \(B\) be invariant subcomplexes of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\) after restricting the action on \(X\). Then \(A\) and \(B\) are Hausdorff equivalent. 
@@ -408,6 +393,22 @@ With this splitting in hand we want to verify that it's made of successive graph
         ...look in section II.6 of BH... Need enough facts to avoid non-proper spaces, get a semisimple action, and axes.
     \end{proof}
 \end{lem}
+
+\subsection{Combining into main argument}
+\begin{lem} 
+[Filling preserves cocompactness]
+\label{lem:fillingcocompact}
+    Since $S_{23}$ is a cocompact $G$-invariant subcomplex that's contained in \(A \times B\) where \(A\) and \(B\) are subcomplexes of \(T_1\) and \(T_2 \times T_3\) respectively and \(B\) is itself cocompact and $G$ acts freely on $T_2\times T_3$ we have that $(S_{23})_x$ is cocompact as well. 
+\begin{proof}
+     For each vertex orbit of $B$ choose a particular vertex. By cocompactness this list is finite; call them $\{b_1,\ldots,b_n\}$. By freeness in the second factor, the stabilizer of $S' := S_{23} \cap (T_1 \times \{b_1\})$ is trivial. This means that $S'$ injects into $S_{23}/G$ which is compact by assumption. Since we are dealing with cell complexes, $S'$ is also compact. Repeating this argument a finite number of times we have that $S_{23}\cap (T_1\times \{b_k\})$ is compact for each \(1 \leq k \leq n \). Compact items have a well defined diameter. Taking the maximum diamater (in the product metric) and noting we're acting by isometries gives that there is a bound \(D\) on the diameters of \(S_{23} \cap (T_1\times \{v\})\) as \(v\) ranges over vertices of \(B\). 
+
+
+
+    Let \(a \times b\) be a vertex of \((S_{23})_x\). By construction, \(a\) lies within the convex hull of the projection of \(S_{23} \cap (T_1\times \{b\})\) (a slice of \(S_{23}\) ) to the \(T_1\) factor, hence slices of \((S_{ 23 })_x\) have diameter no greater than \(D\) in the product metric. 
+    This means each slice of \((S_{23})_x\) has a finite number of vertices. It remains to show that there is a unviersal bound on the number of vertices as we range over all slices. Since \(S_{23}\) is $G$-invariant and we're acting by a product, (so the slice at \(gb\) is the slice at \(b\) acted on by \(g\)) there are a finite number of isometry classes of slices since \(B\) is cocompact. Hence, there are a finite number of vertex orbits so \((S_{23})_x\) is cocompact as needed.
+\end{proof}
+\end{lem}
+
 
 \section{Core has quadrant convex hyperplanes}
 
