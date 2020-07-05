@@ -54,6 +54,12 @@
     [Simplicial Map]
     A map between simplicial complexes is simplicial if the image of a set of vertices that spans a simplex also spans as simplex.
 \end{defn}
+
+\begin{defn}
+    [Morphism]
+    We say a simplicial map between trees is a morphism if edges go to edges.
+\end{defn}
+
 \begin{defn}
     [Collapse Map]
     Given a \(G\)-tree, collapsing components of an invariant forest to points gives a \(G\)-map.
@@ -75,14 +81,13 @@
     \label{lem:promoteelliptic} 
     Suppose \(X \to Y\) is a collapse map bewteen locally finite \(G\)-trees. Suppose \(Y\) is not a single point. Then, if an element is hyperbolic for \(X\) it is also hyperbolic for \(Y\).
     \begin{proof}
-        \textcolor{orange}{[warning] really we are using the fact that the image of this map contains more than two points. We could assume minimality and equivariance to get onto as well. Collapse maps are onto by construction}
-        Suppose for sake of a contradiction that \(g\in G\) were hyperbolic for \(X\) and elliptic for \(Y\). Let \(y \in Y\) be some vertex fixed by the elliptic element \(g\) and \(G_y\) it's stabilizer. Since \(Y\) is not a single point, there is another vertex \(y\neq z \in Y\). Because \(Y\) is locally finite, \(G_y\) and \(G_z\) are commensurable. The pre-images of \(G\)-maps are invariant. By the construction of a collapse map, the preimage of vertices are connected. Putting these together we have that the preimages of vertices are invariant trees. This means that the minimal subtrees of \(G_y\) and \(G_z\) are contained in the disjoint preimages of \(y\) and \(z\) respectively. However, since they are commensurable and \(G_y\) contains the hyperbolic element \(g\), these minimal trees are non-empty and equal. This is a contradiction.
+        Suppose for sake of a contradiction that \(g\in G\) were hyperbolic for \(X\) and elliptic for \(Y\). Let \(y \in Y\) be some vertex fixed by the elliptic element \(g\) and \(G_y\) it's stabilizer. Since \(Y\) is not a single point, there is another vertex \(y\neq z \in Y\). Because \(Y\) is locally finite, \(G_y\) and \(G_z\) are commensurable. For \(G\)-maps, pre-images are invariant. By the construction of a collapse map, the preimage of vertices are connected and non-empty. Putting these together we have that the preimages of vertices are invariant trees. This means that the minimal subtrees of \(G_y\) and \(G_z\) acting on \(X\) are contained in the disjoint preimages of \(y\) and \(z\) respectively. However, since they are commensurable and \(G_y\) contains the hyperbolic element \(g\), these minimal trees are non-empty and equal. This is a contradiction.
     \end{proof}
 \end{lem}
 
 \begin{thm}
     [Elliptic elements determine elliptic subgroups]
-    \ref{thm:ellelesubgroups} 
+    \label{thm:ellelesubgroups} 
     For nice tree actions, elliptic elements are enough to determine elliptic subgroups.
 \end{thm}
 
@@ -95,7 +100,15 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     [Elliptic containment implies equality]
     If \(X\) and \(Y\) are \(G\)-trees of finite type with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
     \begin{proof}
-        We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds. Then we use \ref{pro:foldfactor} and finite generation to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one which means we keep local finiteness.
+
+        \begin{itemize}
+                
+\item         \textcolor{orange}{[warning] When we use this later, we don't have any conditions on the trees. So in this proof we should go to minimal actions to use Bestvina and have a remark saying it still applies}
+     \item    \textcolor{orange}{[warning] Can we just assume locally finite on both and not need to pull back as much?}
+        \end{itemize}
+
+
+        We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}.  
     \end{proof}
 \end{thm}
 
