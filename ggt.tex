@@ -89,6 +89,7 @@
     [Elliptic elements determine elliptic subgroups]
     \label{thm:ellelesubgroups} 
     For nice tree actions, elliptic elements are enough to determine elliptic subgroups.
+    
 \end{thm}
 
 \begin{thm}[Factoring as folds, from Bestvina paper, p455]
@@ -98,15 +99,8 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 
 \begin{thm}
     [Elliptic containment implies equality]
-    If \(X\) and \(Y\) are \(G\)-trees of finite type with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
+    If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
     \begin{proof}
-
-        \begin{itemize}
-                
-\item         \textcolor{orange}{[warning] When we use this later, we don't have any conditions on the trees. So in this proof we should go to minimal actions to use Bestvina and have a remark saying it still applies}
-     \item    \textcolor{orange}{[warning] Can we just assume locally finite on both and not need to pull back as much?}
-        \end{itemize}
-
 
         We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}.  
     \end{proof}
@@ -147,7 +141,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \subsubsection{Result}
 
 \begin{pro}
- Let $G$ a group of cohomological dimension 2. If $X$ and $Y$ are $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
+ Let $G$ a group of cohomological dimension 2. If $X$ and $Y$ are non-trivial $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
 \begin{enumerate}
     \item $X$, $Y$ transverse
     \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
