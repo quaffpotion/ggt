@@ -332,6 +332,15 @@ Our goal is to show that when we have three different actions there exists a wel
 
 \subsection{Misc lemmas}
 
+\begin{lem}
+    [core is nonempty]
+    \label{lem:corenonempty} 
+    Let \(X\) and \(Y\) be two non-trivial actions of a finitely generated group \(G\) with finitely generated vertex groups that lie in different deformation spaces. Then the core of \(X\) and \(Y\) is non-empty.
+    \begin{proof}
+        By Guirardel Proposition 3.1, if they were in the same deformation space then they would have homothetic length functions i.e. one length function is a multiple of the other. Since elliptic elemenets fix a point, they have length zero. This means that \(X\) and \(Y\) have the same elliptic elements. From theorem 4.2 and corollary 4.3 in [F] we get that they have the same elliptic subgroups. This implies they lie in the same deformation space which contradicts our original assumption.
+    \end{proof}
+\end{lem}
+
 \begin{defn}[morphism]
 A map $X\to Y$ between two trees is called a morphism if it sends vertices to vertices and edges to edges. 
 
