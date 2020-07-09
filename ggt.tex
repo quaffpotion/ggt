@@ -333,6 +333,14 @@ Our goal is to show that when we have three different actions there exists a wel
 \subsection{Misc lemmas}
 
 \begin{lem}
+    [core is connected]
+    Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then the core is connected.
+    \begin{proof}
+        By Guirardel, the core is disconnected if and only if the two trees have a common refinement. This corresponds to collapse maps. On the graph of groups level this means there is an edge common in both quotient graphs. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradics our initial assumptions.
+    \end{proof}
+\end{lem}
+
+\begin{lem}
     [core is nonempty]
     \label{lem:corenonempty} 
     Let \(X\) and \(Y\) be two non-trivial actions of a finitely generated group \(G\) with finitely generated vertex groups that lie in different deformation spaces. Then the core of \(X\) and \(Y\) is non-empty.
