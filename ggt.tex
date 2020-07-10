@@ -110,7 +110,7 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
     \begin{proof}
 
-        We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}. \textcolor{blue}{[fix] Add the final bit about the immersion, note that for trees immersions are inclusions. Note that if you're including Z into a tree you can think of the action of Z as the restriction of the action on the target tree. Just need to check that the axis stays... essentially because the entire tree stays}  
+        We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}. \textcolor{blue}{(fix) Add the final bit about the immersion, note that for trees immersions are inclusions. Note that if you're including Z into a tree you can think of the action of Z as the restriction of the action on the target tree. Just need to check that the axis stays... essentially because the entire tree stays}  
     \end{proof}
 \end{thm}
 
@@ -174,7 +174,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. Guirardel gives us a simply-connected cocompact core \textcolor{blue}{[fix] Needs prop 4.14 G} $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. Guirardel gives us a simply-connected cocompact core \textcolor{blue}{(fix) needs connected implies simply connected} $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
@@ -343,10 +343,11 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 \begin{lem}
     [core is connected]
+    \label{lem:coreconnected} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then the core is connected.
     \begin{proof}
         \textcolor{red}{[warning] still need connected implies simply-connected}
-        By Guirardel, the core is disconnected if and only if the two trees have a common refinement. This corresponds to collapse maps. On the graph of groups level this means there is an edge common in both quotient graphs. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradics our initial assumptions.
+        By Guirardel Proposition 4.14, the core is disconnected if and only if the two trees have a common refinement. This corresponds to collapse maps. On the graph of groups level this means there is an edge common in both quotient graphs. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradics our initial assumptions.
     \end{proof}
 \end{lem}
 
