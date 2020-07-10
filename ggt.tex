@@ -191,7 +191,16 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 
 \section{Problem Statement}
-We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
+
+\begin{thm}
+    If \(G\) has cohomological dimension 2 then there are at most two deforamtion spaces of finite type pairwise transverse \(G\)-trees.
+\end{thm}
+
+\begin{cor*}
+    If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
+\end{cor*}
+
+% We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
 
 \subsection{Dramatis Person\ae}
 \begin{itemize}
@@ -319,16 +328,16 @@ We want to show the following statement or similar: if a group is the fundamenta
 
 
 \section{Outlines}
-Our goal is to show that when we have three different actions there exists a well chosen cube complex that \(G\) acts on which has a quotient that is a graph of spaces decomposition for \(G\). Using properties of this splitting we will conclude that our group has dimension at least three which is impossible because we assumed it was VH.
+% Our goal is to show that when we have three different actions there exists a well chosen cube complex that \(G\) acts on which has a quotient that is a graph of spaces decomposition for \(G\). Using properties of this splitting we will conclude that our group has dimension at least three which is impossible because we assumed it was VH.
 
-    In terms of properties of the core we need three things: (1) hyperplanes are simply connected, (2) cocompact, (3) hierarchy of splittings. We will take the edge spaces of our graph of spaces to be a subset of the corridors of hyperplanes and the vertex spaces to be the components of the complement of the edge spaces.
+%     In terms of properties of the core we need three things: (1) hyperplanes are simply connected, (2) cocompact, (3) hierarchy of splittings. We will take the edge spaces of our graph of spaces to be a subset of the corridors of hyperplanes and the vertex spaces to be the components of the complement of the edge spaces.
 
 
-    Our main result is the following:
+%     Our main result is the following:
 
-    \begin{cor*}
-        Let \(G\) be the fundamental group of a compact VH-complex that doesn't satisfy {\em property A}. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to deformation these are the only two such actions. 
-    \end{cor*}
+%     \begin{cor*}
+%         Let \(G\) be the fundamental group of a compact VH-complex that doesn't satisfy {\em property A}. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to deformation these are the only two such actions. 
+%     \end{cor*}
 
 \subsection{Misc lemmas}
 
