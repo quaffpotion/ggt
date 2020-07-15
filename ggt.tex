@@ -119,10 +119,6 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 
 \subsection{Toy version of main result}
 
-\begin{thm}[F, ``On uniqueness...'', Thm 3.2]
-\label{thm:forester}
-Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are related by an elementary deformation if and only if they have the same elliptic subgroups.
-\end{thm}
 
 \subsubsection{Definitions}
 
@@ -174,7 +170,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. Guirardel gives us a simply-connected cocompact core \textcolor{blue}{(fix) needs connected implies simply connected} $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. Guirardel gives us a simply-connected cocompact core \textcolor{red}{(warning) needs connected implies simply connected} $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
@@ -340,6 +336,10 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 %     \end{cor*}
 
 \subsection{Misc lemmas}
+\begin{thm}[F, ``On uniqueness...'', Thm 3.2]
+\label{thm:forester}
+Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are related by an elementary deformation if and only if they have the same elliptic subgroups.
+\end{thm}
 
 \begin{lem}
     [core is connected]
@@ -359,12 +359,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
         By Guirardel Proposition 3.1, if they were in the same deformation space then they would have homothetic length functions i.e. one length function is a multiple of the other. Since elliptic elemenets fix a point, they have length zero. This means that \(X\) and \(Y\) have the same elliptic elements. From theorem 4.2 and corollary 4.3 in [F] we get that they have the same elliptic subgroups. This implies they lie in the same deformation space which contradicts our original assumption.
     \end{proof}
 \end{lem}
-
-\begin{defn}[morphism]
-A map $X\to Y$ between two trees is called a morphism if it sends vertices to vertices and edges to edges. 
-
-(Formally, there is something to say, however if you think of your edges as intervals of the real line then you might as well take the homeomorphisms to be linear maps. For our purposes, only combinatorial information is relevant. If the maps stretch or squish parts of edges we wouldn't care)
-\end{defn}
 
 
 
@@ -413,29 +407,35 @@ One way to prove the theorem is to first show that \(C\) is one dimensional fibe
 \end{thm}
 
 
-To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(K \subseteq \mathscr{T} \) by taking \(C = \sxyz\).  Here \(K\) is the cellular hull of \(J\), the image of \(f\). 
+To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(K \subseteq \mathscr{T} \) by taking \(C = \sxyz\).  
 
 
 
 
 
 
-\subsection{Required splitting properties}
+\subsection{Combining into main argument}
 Note first we establish that \(C\) is itself simply connected.
 \begin{lem}
     The core \(C\) is simply connected.
+    \begin{proof}
+        We observe that \(C\) is a graph of spaces, in particular it is a tree of simply connected spaces. Hence by scott and wall it's simply connected
+    \end{proof}
 \end{lem}
 
 Finally, having enough dimension will follow from some assumptions about our actions.
 With this splitting in hand we want to verify that it's made of successive graphs of groups of items of a certain dimension so we can apply Bieri.
 
-\begin{lem}
-    [Directional splittings are non-trivial]
-\end{lem}
-
-\begin{thm}
+\begin{defn}
     [Not All Trees]
-\end{thm}
+    \label{def:notalltrees} 
+    There is an iterated splitting that doesn't end in trees. (Ideally, we will show that this assumption only rules out Z x Z, less ideally a statement about parabolics, less ideally we just assume it)
+\end{defn}
+
+\begin{cor*}
+    Due to \ref{def:notalltrees} we get that we can apply the dimension argument using Bieri to complete our result.
+\end{cor*}
+
 
 \begin{lem}
     The action of \(G\) on \(T_1 \times T_{2} \) is free.
@@ -444,7 +444,17 @@ With this splitting in hand we want to verify that it's made of successive graph
     \end{proof}
 \end{lem}
 
-\subsection{Combining into main argument}
+\begin{lem}
+    [Cocompact beginning]
+    \label{lem:cocompactfactorbeginning} 
+    We directly show that our \(S_{ij}\) are cocompact x factor.
+
+\end{lem}
+\begin{lem}
+    [Cocompact factor after neighborhood]
+    \label{lem:cocompactfactor} 
+    K x T with K cocompact taking a neighborhood we get again K' x T with K' cocompact
+\end{lem}
 \begin{lem} 
 [Filling preserves cocompactness]
 \label{lem:fillingcocompact}

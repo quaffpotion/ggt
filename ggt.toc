@@ -11,9 +11,8 @@
 \contentsline {subsection}{\numberline {3.1}Misc lemmas}{8}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Main Equivariant Map Construction}{9}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Simply connected hyperplanes}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Required splitting properties}{10}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Combining into main argument}{10}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.4}Combining into main argument}{10}{subsection.3.4}
 \contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Wrap up lemmas}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1}Wrap up lemmas}{12}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Using Wrap-up lemmas to prove main statement}{12}{subsubsection.4.1.1}
 \contentsline {subsection}{\numberline {4.2}Planar Path Argument}{15}{subsection.4.2}
