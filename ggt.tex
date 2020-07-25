@@ -170,7 +170,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. Guirardel gives us a simply-connected cocompact core \textcolor{red}{(warning) needs connected implies simply connected} $C \subset X \times Y$. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
@@ -346,7 +346,7 @@ Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ 
     \label{lem:coreconnected} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then the core is connected.
     \begin{proof}
-        By Guirardel Proposition 4.14, the core is disconnected if and only if the two trees have a common refinement. This corresponds to collapse maps. On the graph of groups level this means there is an edge common in both quotient graphs. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradics our initial assumptions.
+        By Guirardel Proposition 4.14, the core is disconnected if and only if the two trees have a common refinement. This corresponds to collapse maps. This means there is an edge in the refinement that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradics our initial assumptions.
     \end{proof}
 \end{lem}
 
