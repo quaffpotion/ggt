@@ -220,7 +220,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 \begin{defn}
     [Property Setup]
-    \label{def:setup} 
+    \label{defn:setup} 
     We say that \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) satisfies property {\em setup} if:
     \begin{enumerate}
         \item \(T\) is a simplicial tree
@@ -243,7 +243,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 \begin{defn}
 	[bad edge snipping]
-    Let \(K\) satisfy property setup with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
+    Let \(K\) satisfy property setup \ref{defn:setup}  with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
 \end{defn}
 \subsubsection{Miscellaneous}
 \begin{lem}
@@ -285,7 +285,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
 \begin{claim*}
-    If \(K\) satisfies property setup then the first and last edge of \(\sigma\) are equal.
+    If \(K\) satisfies property setup \ref{defn:setup} then the first and last edge of \(\sigma\) are equal.
 \end{claim*}
 \begin{defn}
 	[Filling]
@@ -602,9 +602,9 @@ The implications are as follows:
  \label{lem:ppa} 
 \begin{lem}[Coloring Lemma]
     \label{lem:coloring} 
-    Let \(K\) satisfy property setup. Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\) and \(\lambda ( i ) \neq \lambda ( j )\).
+    Let \(K\) satisfy property setup \ref{defn:setup}. Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\) and \(\lambda ( i ) \neq \lambda ( j )\).
     \begin{proof}
-        Suppose the lemma were false. Then there exist counterexamples \(K\) satisfying property setup such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\). These \(K\) have bad edges and \(| \sigma | > 0 \). Now take a \(K\) such that \(| \sigma |\) is minimized. Let \(K'\) be the result of snipping a bad edge. By lemma \ref{lem:preservesetup}, \(K'\) has property setup so \(| \sigma ' | > 0\). If \(K'\) contained a multicolored path between \(x_{0}\) and some \(a'\) in \(A'\) then because the path \(\sigma\) in \(K\) an be obtained by inserting subpaths into \(\sigma '\), we have that \(A' \subseteq A\) and any edge that was multicolored stays multicolored. Therefore \(K'\) has no multicolored path, because that would force \(K\) to have one. Then the fact \(| \sigma' | < | \sigma |\) gives a contradiction because \(K\) was chosen to be minimal. 
+        Suppose the lemma were false. Then there exist counterexamples \(K\) satisfying property setup \ref{defn:setup} such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\). These \(K\) have bad edges and \(| \sigma | > 0 \). Now take a \(K\) such that \(| \sigma |\) is minimized. Let \(K'\) be the result of snipping a bad edge. By lemma \ref{lem:preservesetup}, \(K'\) has property setup so \(| \sigma ' | > 0\). If \(K'\) contained a multicolored path between \(x_{0}\) and some \(a'\) in \(A'\) then because the path \(\sigma\) in \(K\) an be obtained by inserting subpaths into \(\sigma '\), we have that \(A' \subseteq A\) and any edge that was multicolored stays multicolored. Therefore \(K'\) has no multicolored path, because that would force \(K\) to have one. Then the fact \(| \sigma' | < | \sigma |\) gives a contradiction because \(K\) was chosen to be minimal. 
         
         
     
@@ -616,7 +616,7 @@ The implications are as follows:
 \begin{lem}
     [Snip invariant]
  \label{lem:preservesetup} 
-    If \(K\) satisfies property setup then \(K'\) obtained from snipping a bad edge also satisfies property setup.
+    If \(K\) satisfies property setup \ref{defn:setup} then \(K'\) obtained from snipping a bad edge also satisfies property setup.
     \begin{proof}
         Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) in at most one of them. Because \(x_{0}\) has valence one, \(\sigma_{1}\) and \(\sigma_{N}\) share the edge containing \(x_{0}\); therefore \(e\) cannot be the common edge. The rest follows.
     \end{proof}
