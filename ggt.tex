@@ -530,9 +530,19 @@ The implications are as follows:
 
     \end{proof}
 \end{lem}
+
+
+\begin{defn}
+    [Connected in coordinate planes]
+    \label{defn:ccp} 
+    Let \(S\) be a subset of a product indexed by \(1 \leq k \leq N\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) is connected for all \(p \in X_{k}\) for all \(k\).
+    
+\end{defn}
+
+
 \begin{lem}
     [Statement 4]
-    Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
+    Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes \ref{defn:ccp}. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
     \begin{proof}
         Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we will show that there is a path in \(S_{x} \cap \pi_{2}^{-1} (p_{2} )\) between \(p\) and some point in \(S\).
        
