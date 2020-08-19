@@ -47,6 +47,24 @@
 \begin{document}
 \tableofcontents
 
+\section{Problem Statement}
+
+\begin{thm}
+    If \(G\) has cohomological dimension 2 then there are at most two deformation spaces of non-trivial finite type pairwise transverse \(G\)-trees.
+    \begin{proof}
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \(G\)-trees since the theorem statement is true for general \(G\)-trees if it is true for minimal \(G\)-trees. Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the action on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) with \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Then using \ref{lem:guirardel-extension} and the proof theoreof we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) Using \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+
+        Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since it is the image of a cocompact set under a continuous \(G\)-map it is cocompact and in fact is cocompact by factor \ref{defn:cocompactcrossfactor}. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Because filling respects cells \ref{pro:fillingrespectsslices} we get that \(S_{12}\) has property CCP \ref{defn:ccp}. 
+
+        Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(C:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. 
+
+        By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. Hence, it's slices are quadrant convex, and therefore simply connected. From this we get that \(C\) is a valid graph of spaces decomposition. Note that the edge spaces are simply connected and the underlying graph is a tree, hence by Scott and Wall \(C\) is simply connected. From the transverse \(G\)-trees we get that the action is free on pairs of trees and therefore \(G\) acts properly discontinuously on \(C\). Note that \(C\) is a VHD complex \ref{defn:vhd} and suppose the iterated splittings do not end in all trees. Then by the Bieri dimenson argument, \(G\) has dimenson 3 a contradiction.
+    \end{proof}
+\end{thm}
+
+\begin{cor*}
+    If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
+\end{cor*}
 \section{Toy Version}
 \subsection{Promote elliptic containment to equality}
 
@@ -190,35 +208,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \end{pro}
 
 
-\section{Problem Statement}
-
-\begin{lem}
-    [Cone extension]
-    \label{lem:coneextension} 
-    Given maps as ... as can extend by collapsing the top tree to a point
-\end{lem}
-
-\begin{defn}
-    [Cocompact by factor]
-    \label{defn:cocompactcrossfactor} 
-    looks like cocomapct cross factor
-\end{defn}
-
-\begin{pro}
-    [Filling respects slices]
-    \label{pro:fillingrespectsslices} 
-\end{pro}
-
-\begin{thm}
-    If \(G\) has cohomological dimension 2 then there are at most two deforamtion spaces of non-trivial finite type pairwise transverse \(G\)-trees.
-    \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \(G\)-trees since the theorem statement is true for general \(G\)-trees if it is true for minimal \(G\)-trees. Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the action on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) with \(\mathscr{F}_{123}\) respectively.  By \ref{lem:guirardel-extension} and the proof theoreof we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) Using \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \label{defn:ccp}, since it is the image of a cocompact set under a continuous \(G\)-map it is cocompact and in fact is cocompact by factor \ref{defn:cocompactcrossfactor}. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. By \ref{pro:fillingrespectsslices} we get that \(S_{12}\) has property CCP \ref{defn:ccp}. Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves ccp \ref{defn:ccp} to get that \(C:= S_{12}xyz\) is cocomapct and has ccp \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. Hence, it's slices are quadrant convex, and therefore simply connected. From this we get that \(C\) is a valid graph of spaces decomposition. Note that the edge spaces are simply connected and the underlying graph is a tree, hence by Scott and Wall \(C\) is simply connected. From the transverse \(G\)-trees we get that the action is free on pairs of trees and therefore \(G\) acts properly discontinuously on \(C\). Note that \(C\) is a VHD complex and suppose the iterated splittings do not end in all trees. Then by the Bieri dimenson argument, \(G\) has dimenson 3 a contradiction.
-    \end{proof}
-\end{thm}
-
-\begin{cor*}
-    If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
-\end{cor*}
 
 % We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
 
@@ -239,6 +228,31 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \end{itemize}
 
 \subsection{Definitions}
+
+
+\begin{lem}
+    [Cone extension]
+    \label{lem:coneextension} 
+    Call the original complex \(X\), pick out a subcomplex \(Y\) with non-overlapping orbits, take products with \([0,1]\), send the 1 factor copy of \(Y\) to somewhere in the \(\text{Im}(f)\) and extend using the product fibers and geodesics in the target tree.
+\end{lem}
+
+\begin{defn}
+    [Cocompact by factor]
+    \label{defn:cocompactcrossfactor} 
+    Given a diagonal action of \(G\) on a product, we say that a \(G\)-invariant subset \(S\) is cocompact by factor (with respect to some index \(\alpha\) in the product) if \(S \subseteq  S' \times X_{\alpha}\) where \(S'\) is a \(G\)-invariant subset of the product restricted to every index except \(\alpha\) and \(S'\) is cocompact.
+\end{defn}
+
+\begin{pro}
+    [Filling respects slices]
+    \label{pro:fillingrespectsslices} 
+\end{pro}
+
+\begin{defn}
+    [VHD complex]
+    \label{defn:vhd} 
+    A complex \(X\) is VHD if it's links are simplicial graphs and the edges of \(X\) can be partitioned into three sets such that 
+
+\end{defn}
 
 \begin{defn}
     [Property Setup]
@@ -507,12 +521,12 @@ With this splitting in hand we want to verify that it's made of successive graph
  \label{lem:fibershomeoplanes} 
 
 
-    Put \(f = \hat f_{1} \times \hat f_{2} \times \hat f_{3}: X^{+} \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({\hat f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
+    Put \(f =  f_{1} \times f_{2} \times f_{3}: X \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({ f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
     \begin{align*}
         p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
-        & \Longleftrightarrow \exists x \in X^{+} (f(x)=p \wedge \hat f_3(x)=z)\\
-        & \Longleftrightarrow \exists x \in X^{+} (f(x)=p \wedge x \in \hat f_3^{-1} (z))\\
-        & \Longleftrightarrow p \in \text{Im}_f(\hat f_3^{-1} (z))
+        & \Longleftrightarrow \exists x \in X (f(x)=p \wedge  f_3(x)=z)\\
+        & \Longleftrightarrow \exists x \in X (f(x)=p \wedge x \in f_3^{-1} (z))\\
+        & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z))
     \end{align*}
 \end{lem}
 
