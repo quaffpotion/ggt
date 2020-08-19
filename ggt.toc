@@ -6,10 +6,10 @@
 \contentsline {section}{\numberline {2}Problem Statement}{5}{section.2}
 \contentsline {subsection}{\numberline {2.1}Dramatis Person\ae }{5}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Definitions}{6}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Miscellaneous}{6}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1}Miscellaneous}{7}{subsubsection.2.2.1}
 \contentsline {section}{\numberline {3}Outlines}{8}{section.3}
 \contentsline {subsection}{\numberline {3.1}Misc lemmas}{8}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Main Equivariant Map Construction}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Main Equivariant Map Construction}{10}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Simply connected hyperplanes}{10}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Combining into main argument}{10}{subsection.3.4}
 \contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{11}{section.4}
