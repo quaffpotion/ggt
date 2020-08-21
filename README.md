@@ -5,6 +5,9 @@
 ## Todo
 
 - [ ] Post 2020-08-19 linear run
+- [ ] Carefully say why edge and vertex spaces are simply connected.
+  - More than simply declaring that they are quadrant convex
+  - [ ] Carefully relate cc of slices of core to those of the ambient tree product to hyperplanes keeping in mind the VHD property
 - [ ] Outline "Bieri Dimension Argument"
 - [ ] Define VHD complex
 - [ ] Details on parallel axes in a CAT(0) space
