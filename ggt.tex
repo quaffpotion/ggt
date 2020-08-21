@@ -50,9 +50,9 @@
 \section{Problem Statement}
 
 \begin{thm}
-    If \(G\) has cohomological dimension 2 then there are at most two deformation spaces of non-trivial finite type pairwise transverse \(G\)-trees.
+    If \(G\) has cohomological dimension 2 \ref{defn:cd}  then there are at most two deformation spaces of non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \(G\)-trees since the theorem statement is true for general \(G\)-trees if it is true for minimal \(G\)-trees. Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the action on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) with \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Then using \ref{lem:guirardel-extension} and the proof theoreof we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) Using \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \(G\)-trees since the theorem statement is true for general \(G\)-trees if it is true for minimal \(G\)-trees. \ref{lem:wlogmin}  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the action on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) with \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Then using \ref{lem:guirardel-extension} and the proof theoreof we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) Using \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
         Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since it is the image of a cocompact set under a continuous \(G\)-map it is cocompact and in fact is cocompact by factor \ref{defn:cocompactcrossfactor}. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Because filling respects cells \ref{pro:fillingrespectsslices} we get that \(S_{12}\) has property CCP \ref{defn:ccp}. 
 
@@ -67,6 +67,12 @@
 \end{cor*}
 \section{Toy Version}
 \subsection{Promote elliptic containment to equality}
+
+
+\begin{lem}
+    [Minimality Argument]
+    \label{lem:wlogmin} 
+\end{lem}
 
 \begin{defn}
     [Simplicial Map]
@@ -282,6 +288,18 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     Let \(K\) satisfy property setup \ref{defn:setup}  with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
 \end{defn}
 \subsubsection{Miscellaneous}
+
+
+\begin{defn}
+    [Cohomological Dimension]
+    \label{defn:cd} 
+    We are using the minimal resolution size over the integers
+\end{defn}
+
+\begin{rmk}
+    The only case when geo is not alg is possibly when geo=3 and alg=2
+\end{rmk}
+ 
 \begin{lem}
     [Geometric Condition]
     \label{lem:simpgeo} 
