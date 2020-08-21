@@ -4,6 +4,15 @@
 
 ## Todo
 
+- [ ] Post 2020-08-19 linear run
+- [ ] Outline "Bieri Dimension Argument"
+- [ ] Define VHD complex
+- [ ] Details on parallel axes in a CAT(0) space
+- [ ] Details on f121 and f122
+- [ ] Details on Standard 2-complex fibration
+- [ ] Check Switching section
+- [ ] Work out how deep the no tree assumption goes
+
 ## Meeting Notes
 
 ### 2020-08-19
