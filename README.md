@@ -4,14 +4,14 @@
 
 ## Todo
 
-- [ ] Post 2020-08-19 linear run
+- [x] Post 2020-08-19 linear run
 - [ ] Carefully say why edge and vertex spaces are simply connected.
   - More than simply declaring that they are quadrant convex
   - [ ] Carefully relate cc of slices of core to those of the ambient tree product to hyperplanes keeping in mind the VHD property
-- [x] Outline "Bieri Dimension Argument"
-- [ ] Pull in iterated splitting lemma from chalkboard
-- [ ] Define VHD complex
 - [ ] Details on parallel axes in a CAT(0) space
+- [ ] Pull in iterated splitting lemma from chalkboard
+- [x] Outline "Bieri Dimension Argument"
+- [ ] Define VHD complex
 - [ ] Details on f121 and f122
 - [ ] Details on Standard 2-complex fibration
 - [ ] Check Switching section
