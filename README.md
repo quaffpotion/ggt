@@ -5,9 +5,7 @@
 ## Todo
 
 - [x] Post 2020-08-19 linear run
-- [ ] Carefully say why edge and vertex spaces are simply connected.
-  - More than simply declaring that they are quadrant convex
-  - [ ] Carefully relate cc of slices of core to those of the ambient tree product to hyperplanes keeping in mind the VHD property
+- [ ] Outline why core is simply connected
 - [ ] Details on parallel axes in a CAT(0) space
 - [ ] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
@@ -30,3 +28,10 @@
 - For VHD define it so that links are tripartite simplicial graphs. Remark: Wise assumed NPC and attains bipartite simplicial. Lemma should imply that the parallel properties hold
 - Group for which the statement is false: ZxZ, Deformation spaces correspond to slopes correspond to homotopty types of s.c.c. on a torus
 - minimal crossings = squares in Guirardel core.
+
+### 2020-08-21
+
+- Went over using the CAT(0) property of the tree product and working with the quotient to get that the quotient is a graph of spaces and how this interacts with the cover to see that it is a tree of spaces.
+- In general for a CAT(0) cube complex we have that (1) hyperplanes are embedded and (2) hyperplanes are separating (both by Sageev)
+- Hyperplanes(subcomplex) = subcomplex intersect hyperplanes of ambient complex
+
