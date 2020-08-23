@@ -10,7 +10,7 @@
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
 - [ ] Details on parallel axes in a CAT(0) space
-- [ ] Pull in iterated splitting lemma from chalkboard
+- [x] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
 - [ ] Details on f121 and f122
 - [ ] Details on Standard 2-complex fibration
