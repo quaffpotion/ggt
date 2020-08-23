@@ -58,22 +58,18 @@
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(C:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
-        We need to verify that \(C\) is simply connected. To do this we will show that it is a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree. Take the hyperplanes of \(C\) that are transverse to the vertical edges as the edge spaces and the connected components of the pieces remaining after removing the corridors of the hyperplanes as the vertex spaces. Because \(C\) has connected 1-dimensional fibers, we get that the hyperplanes of \(C\) also do so that we can apply Guirardel to get that the hyperplanes are quadrant convex and therefore simply connected. 
+        By lemma \ref{lem:coresc} we have that \(C\) is simply connected and \(C/G\) comes with three splittings as a graph of spaces.
 
-        Hyperplanes are defined via extending along parallelism classes. 
-
-        Why vertex spaces simply connected?
-
-        The maps from edge spaces to vertex spaces are defined by the push map in \(C\) from the hyperplane to the two sides. 
-
-
-        Hence, it's slices are quadrant convex, and therefore simply connected. From this we get that \(C\) is a valid graph of spaces decomposition. Note that the edge spaces are simply connected and the underlying graph is a tree, hence by Scott and Wall \(C\) is simply connected. From the transverse \(G\)-trees we get that the action is free on pairs of trees and therefore \(G\) acts properly discontinuously on \(C\). Note that \(C\) is a VHD complex \ref{defn:vhd} and suppose the iterated splittings do not end in all trees. 
-
-        We have now verified that \(C\) is a graph of spaces in three different ways. We will now iterate the splitting process and then apply Bieri. To begin, by assumption each splitting is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the two trees coming from splittings of the VH-complexes by Wise. These last splittings are themselves splittings over trivial groups - but are they trivial splittings? Here we need to assume that one such iterated sequence of splittings ends in a graph with positive rank.
+        We will now iterate the splitting process and then apply Bieri. To begin, by assumption each splitting is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the two trees coming from splittings of the VH-complexes by Wise. These last splittings are themselves splittings over trivial groups - but are they trivial splittings? Here we need to assume that one such iterated sequence of splittings ends in a graph with positive rank.
         
         Then by the Bieri dimenson argument, \(G\) has dimenson 3 a contradiction.
     \end{proof}
 \end{thm}
+
+\begin{lem}
+    [Core is simply connected]
+    \label{lem:coresc} 
+\end{lem}
 
 \begin{cor*}
     If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
@@ -483,13 +479,6 @@ To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(
 
 
 \subsection{Combining into main argument}
-Note first we establish that \(C\) is itself simply connected.
-\begin{lem}
-    The core \(C\) is simply connected.
-    \begin{proof}
-        We observe that \(C\) is a graph of spaces, in particular it is a tree of simply connected spaces. Hence by scott and wall it's simply connected
-    \end{proof}
-\end{lem}
 
 Finally, having enough dimension will follow from some assumptions about our actions.
 With this splitting in hand we want to verify that it's made of successive graphs of groups of items of a certain dimension so we can apply Bieri.

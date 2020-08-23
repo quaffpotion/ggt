@@ -6,6 +6,7 @@
 
 - [x] Post 2020-08-19 linear run
 - [ ] Outline why core is simply connected
+  - [x] Send email and break out as a lemma
 - [ ] Details on parallel axes in a CAT(0) space
 - [ ] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
