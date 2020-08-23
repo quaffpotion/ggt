@@ -269,13 +269,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \end{pro}
 
 \begin{defn}
-    [VHD complex]
-    \label{defn:vhd} 
-    A complex \(X\) is VHD if it's links are simplicial graphs and the edges of \(X\) can be partitioned into three sets such that 
-
-\end{defn}
-
-\begin{defn}
     [Property Setup]
     \label{defn:setup} 
     We say that \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) satisfies property {\em setup} if:
@@ -305,6 +298,11 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \subsubsection{Miscellaneous}
 
 
+\begin{defn}
+    [VHD-complex]
+    \label{defn:vhd} 
+    We say a cube complex is VHD if it's edges can be partitioned into three sets each with a different color such that the the link of each vertex is a tripartite simplicial graph.
+\end{defn}
 \begin{defn}
     [Cohomological Dimension]
     \label{defn:cd} 
@@ -401,6 +399,16 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 %     \end{cor*}
 
 \subsection{Misc lemmas}
+
+\begin{lem}
+    [Parallel edges]
+    \label{lem:paralleledges} 
+    Suppose \(X\) is a VHD-complex. Then parallel edges have the same color and edges that share a vertex have different colors.
+
+    This is false, for a single cube see picture in phone taken on 2020-08-22
+    The only property we need is that every cube is colored VHD, so we can reference splittings dual to an edge and that the sides are VH complexes
+\end{lem}
+
 \begin{thm}[F, ``On uniqueness...'', Thm 3.2]
 \label{thm:forester}
 Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are related by an elementary deformation if and only if they have the same elliptic subgroups.

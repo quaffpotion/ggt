@@ -5,12 +5,13 @@
 ## Todo
 
 - [x] Post 2020-08-19 linear run
+- [x] Define VHD complex
+- [x] Compute example showing local condition is not enough to guarantee parallel classes of edges
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
 - [ ] Details on parallel axes in a CAT(0) space
 - [ ] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
-- [ ] Define VHD complex
 - [ ] Details on f121 and f122
 - [ ] Details on Standard 2-complex fibration
 - [ ] Check Switching section
