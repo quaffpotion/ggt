@@ -4,13 +4,16 @@
 
 ## Todo
 
-- [ ] Prove Transverse Lemma
-  - [ ] Details for (3) implies (2)
+- [ ] Prove Switching Lemma
+  - [ ] Linear reading
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
-- [x] Define VHD complex
+  - [ ] Write details of core being simply connected lemma
+- [ ] Define VHD complex
+- [ ] Prove Transverse Lemma
+  - [ ] Argue upstairs for (3) implies (2)
+  - [ ] Details on parallel axes in a CAT(0) space
 - [x] Compute example showing local condition is not enough to guarantee parallel classes of edges
-- [ ] Details on parallel axes in a CAT(0) space
 - [x] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
 - [ ] Details on f121 and f122
