@@ -5,7 +5,9 @@
 ## Todo
 
 - [ ] Prove Switching Lemma
-  - [ ] Linear reading
+  - [x] Read through Switching lemma outline
+  - [ ] Read through coloring lemma
+  - [ ] Read through planar switching lemma
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
   - [ ] Write details of core being simply connected lemma
