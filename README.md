@@ -6,7 +6,11 @@
 
 - [ ] Prove Switching Lemma
   - [x] Read through Switching lemma outline
-  - [ ] Read through coloring lemma
+  - [x] Read through coloring lemma
+  - [ ] Formally define snipping operation
+  - [ ] reduction to vertical subpath lemma seems fine, except for small technial details
+    - [ ] intervals or degenerate intervals in vertical reduction
+    - [ ] write down exactly why multicolored paths are enough
   - [ ] Read through planar switching lemma
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
@@ -20,7 +24,6 @@
 - [x] Outline "Bieri Dimension Argument"
 - [ ] Details on f121 and f122
 - [ ] Details on Standard 2-complex fibration
-- [ ] Check Switching section
 - [ ] Work out how deep the no tree assumption goes
 - [x] Post 2020-08-19 linear run
 
