@@ -4,6 +4,10 @@
 
 ## Todo
 
+- [ ] Prove Transverse Lemma
+  - [ ] Go over notes for this from last meeting
+  - [ ] Argue upstairs for (3) implies (2)
+  - [ ] Details on parallel axes in a CAT(0) space
 - [ ] Prove Switching Lemma
   - [x] Read through Switching lemma outline
   - [x] Read through coloring lemma
@@ -16,9 +20,6 @@
   - [x] Send email and break out as a lemma
   - [ ] Write details of core being simply connected lemma
 - [ ] Define VHD complex
-- [ ] Prove Transverse Lemma
-  - [ ] Argue upstairs for (3) implies (2)
-  - [ ] Details on parallel axes in a CAT(0) space
 - [x] Compute example showing local condition is not enough to guarantee parallel classes of edges
 - [x] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
