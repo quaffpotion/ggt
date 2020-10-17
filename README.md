@@ -11,14 +11,9 @@
 - [ ] Prove Switching Lemma
   - [x] Read through Switching lemma outline
   - [x] Read through coloring lemma
-  - [ ] Formally define snipping operation
-  - [ ] reduction to vertical subpath lemma seems fine, except for small technial details
-    - [x] think about if we truly need edge paths or at least what pathology we're avoiding
-    - [x] intervals or degenerate intervals in vertical reduction
-    - [ ] check claim that edgepaths implies preimage is finite union of closed connected sets (possibly degenerate when point is not a vertex)
-    - [ ] reform statement so that new path projects into closed direction
-    - [ ] write down exactly why multicolored paths are enough
-  - [ ] Read through planar switching lemma
+  - [ ] Prove reduction to vertical subpath lemma
+  - [ ] Prove multicolored lemma (using new technique without snipping)
+  - [x] Read through planar switching lemma
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
   - [ ] Write details of core being simply connected lemma
