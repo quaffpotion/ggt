@@ -1,18 +1,18 @@
 \contentsline {section}{\numberline {1}Problem Statement}{1}{section.1}
-\contentsline {section}{\numberline {2}Toy Version}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Promote elliptic containment to equality}{2}{subsection.2.1}
+\contentsline {section}{\numberline {2}Toy Version}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Promote elliptic containment to equality}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Toy version of main result}{4}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Definitions}{4}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Result}{4}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2}Result}{5}{subsubsection.2.2.2}
 \contentsline {subsection}{\numberline {2.3}Dramatis Person\ae }{6}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Definitions}{6}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Miscellaneous}{7}{subsubsection.2.4.1}
-\contentsline {section}{\numberline {3}Outlines}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Misc lemmas}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {2.4}Definitions}{7}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Miscellaneous}{8}{subsubsection.2.4.1}
+\contentsline {section}{\numberline {3}Outlines}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Misc lemmas}{10}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Main Equivariant Map Construction}{11}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Simply connected hyperplanes}{11}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Combining into main argument}{11}{subsection.3.4}
-\contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{12}{section.4}
+\contentsline {subsection}{\numberline {3.4}Combining into main argument}{12}{subsection.3.4}
+\contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{13}{section.4}
 \contentsline {subsection}{\numberline {4.1}Wrap up lemmas}{13}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Using Wrap-up lemmas to prove main statement}{13}{subsubsection.4.1.1}
-\contentsline {subsection}{\numberline {4.2}Planar Path Argument}{16}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.1.1}Using Wrap-up lemmas to prove main statement}{14}{subsubsection.4.1.1}
+\contentsline {subsection}{\numberline {4.2}Planar Path Argument}{17}{subsection.4.2}

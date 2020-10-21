@@ -24,6 +24,7 @@
 \newcommand{\rxy}{(R_x)_y}
 \newcommand{\ryx}{(R_y)_x}
 \newcommand{\Sxyz}[3]{((K_#1)_#2)_#3}
+\newcommand{\fix}[1]{\textcolor{blue}{(fix) #1}}
 
 \theoremstyle{mystyle}
 \newtheorem{thm}{Theorem}[section]
@@ -50,11 +51,13 @@
 \section{Problem Statement}
 
 \begin{thm}
-    If \(G\) has cohomological dimension 2 \ref{defn:cd}  then there are at most two deformation spaces of non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees.
+    If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \(G\)-trees since the theorem statement is true for general \(G\)-trees if it is true for minimal \(G\)-trees. \ref{lem:wlogmin}  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the action on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) with \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Then using \ref{lem:guirardel-extension} and the proof theoreof we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) Using \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Additional technical assumptions are handled here \ref{lem:measuredetc}. Then using \ref{lem:guirardel-extension} and the proof theoreof \ref{lem:shortcircuit} we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  
 
-        Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since it is the image of a cocompact set under a continuous \(G\)-map it is cocompact and in fact is cocompact by factor \ref{defn:cocompactcrossfactor}. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Because filling respects cells \ref{pro:fillingrespectsslices} we get that \(S_{12}\) has property CCP \ref{defn:ccp}. 
+        Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+
+        Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since it is the image of a cocompact set under a continuous \(G\)-map it is cocompact and is in fact cocompact by factor \ref{defn:cocompactcrossfactor} since the action is diagonal. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp}. 
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(C:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
@@ -67,13 +70,37 @@
 \end{thm}
 
 \begin{lem}
+    [Shortcircuit Guirardel Proof]
+    \label{lem:shortcircuit} 
+    Stopping after a certain point in Guirardel is beneficial.
+\end{lem}
+\begin{lem}
+    [Cell Respects Slices]
+    \label{lem:cellrespecslice} 
+    by set theory we are taking cell of a 2D thing and so connected really
+\end{lem}
+\begin{lem}
+    [Technical assumptions for Guirardel]
+    \label{lem:measuredetc} 
+    we use a result of leveitt and paulin for geomeric (see elsewhere) and prove the rest here
+
+\end{lem}
+
+\begin{lem}
     [Core is simply connected]
     \label{lem:coresc} 
+    Our \(C\) inherits a VHD structure from it's product structure and because the action is diagonal we also get that the quotient \(C/G\) is VHD. Because the action on the upstairs trees does not invert edges we get that the hyperplanes of \(C/G\) are two-sided. (Recall, a given hyperplane only touches a single parallelism class of edges) Next, we need the push maps from the hyperplanes to be injective on fundamental groups. The push map from a hyperplane to a vertex space (we necessarily send hyperplanes - itself a connected set - to a component i.e. a vertex space) followed by inclusion is the same (up to homotopy) as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the vertex to the edge is injective as needed. ( we need the technical part of the proof here) \fix{needs the complicated diagram part}
 \end{lem}
 
 \begin{cor*}
     If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
 \end{cor*}
+
+\begin{lem}
+    [Minimality is enough]
+    \label{lem:minenough} 
+    If the theroem is true for minimal trees then it is true for trees in general
+\end{lem}
 
 \begin{lem}
     [Iterated Splitting]
@@ -156,10 +183,23 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 
 
 
+
+
 \subsection{Toy version of main result}
 
 
 \subsubsection{Definitions}
+
+\begin{lem}
+    \label{lem:nonempty} 
+    [Core non-empty]
+\end{lem}
+
+\begin{defn}
+    [Deformation]
+    \label{defn:deformation} 
+    Definition of deformation moves and the corresponding equivalence classes.
+\end{defn}
 
 \begin{defn}[Finite Type]
     \label{defn:finitetype} 
@@ -213,7 +253,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. By \ref{lem:nonempty} the core is non-empty. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
     
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
