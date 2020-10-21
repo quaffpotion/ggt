@@ -5,7 +5,10 @@
 ## Todo
 
 - [ ] Linear Reading #3
-- [ ] Remember how cocompactness worked
+  - [x] initial run through
+  - [ ] depth first following of tree to first unsatisfied node
+- [ ] How did cocompactness work to begin the bootstrap
+  - [ ] Write this proof citing continuous, diagonal, product properties
 - [ ] Prove Switching Lemma
   - [x] Read through Switching lemma outline
   - [x] Read through coloring lemma
