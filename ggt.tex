@@ -87,9 +87,11 @@
 \end{lem}
 
 \begin{lem}
-    [Core is simply connected]
+    [Expanded Core is simply connected]
     \label{lem:coresc} 
-    Our \(C\) inherits a VHD structure from it's product structure and because the action is diagonal we also get that the quotient \(C/G\) is VHD. Because the action on the upstairs trees does not invert edges we get that the hyperplanes of \(C/G\) are two-sided. (Recall, a given hyperplane only touches a single parallelism class of edges) Next, we need the push maps from the hyperplanes to be injective on fundamental groups. The push map from a hyperplane to a vertex space (we necessarily send hyperplanes - itself a connected set - to a component i.e. a vertex space) followed by inclusion is the same (up to homotopy) as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the vertex to the edge is injective as needed. ( we need the technical part of the proof here) \fix{needs the complicated diagram part}
+    Our \(C\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so we get that the hyperplanes of \(C/G\) are two-sided. Recall, a given hyperplane only touches a single parallelism class of edges. 
+
+    Next, we need the push maps from the hyperplanes to be injective on fundamental groups. The push map from a hyperplane to a vertex space (we necessarily send hyperplanes - itself a connected set - to a component i.e. a vertex space) followed by inclusion is the same (up to homotopy) as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the vertex to the edge is injective as needed. \fix{needs details, see diagram tracking how we consider this set}
 \end{lem}
 
 \begin{cor*}
@@ -171,12 +173,32 @@
 Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
 \end{thm}
 
+\begin{lem}
+    [Minimal trees invariant under commensurability]
+    \label{lem:commensurableminimal} 
+    Suppose \(G\) acts on a tree \(X\) and \(H\) and \(K\) are commensurable subgroups. If \(H\) contains a hyperbolic element, then so does \(K\) and the minimal subtrees for \(H\) and for \(K\) are equal.
+\end{lem}
+
+\begin{lem}
+    [Local finiteness preserves hyperbolically]
+    \label{lem:localfinhyper} 
+    Suppose \(f:X \to Y\) is a \(G\)-map of \(G\)-trees which is onto, where \(Y\) is locally finite and not a single point. Then no element of \(G\) is hyperbolic for \(X\) and elliptic for \(Y\).
+\end{lem}
+
+\begin{rmk}
+    Note, if the above \(Y\) is minimal then we get surjectivity for free.
+\end{rmk}
+
 \begin{thm}
     [Elliptic containment implies equality]
+    \label{thm:ellipticimpliesequality} 
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
     \begin{proof}
+        \fix{this is now fixed due to "an easier way" email using \ref{lem:localfinhyper} and \ref{thm:ellipticimpliesequality}.}
+    \end{proof}
+    \begin{proof}
 
-        We first collapse our general \(G\)-map to a morphism. Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}. \textcolor{blue}{(fix) Add the final bit about the immersion, note that for trees immersions are inclusions. Note that if you're including Z into a tree you can think of the action of Z as the restriction of the action on the target tree. Just need to check that the axis stays... essentially because the entire tree stays}  
+        \fix{outdated: We first collapse our general \(G\)-map to a morphism (edges to to edges and vertices to vertices). Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}. \textcolor{blue}{(fix) Add the final bit about the immersion, note that for trees immersions are inclusions. Note that if you're including Z into a tree you can think of the action of Z as the restriction of the action on the target tree. Just need to check that the axis stays... essentially because the entire tree stays}  }
     \end{proof}
 \end{thm}
 
@@ -249,7 +271,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \begin{claim*}
     The action of $G_{x_0}$ on $Y$ is non-trivial.
     \begin{proof}
-        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{lem:promoteelliptic} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
+        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
@@ -500,31 +522,6 @@ The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. S
 \subsection{Main Equivariant Map Construction}
 Let \(X\) be a compact VH-complex and set \(G= \pi_{1} X\). Form the cover \(\widetilde{X} \to X\). Note that \(G\) acts on \(\widetilde X\) freely and PDC. Since \(X\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1}\) and \(f_{2}\) from the splitting. Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction \ref{lem:affineequivariantmap} to get an equivariant map \(f_{3} : \widetilde X \to T_{3}\). Using Guirardel 8.9 \ref{lem:guirardel-extension} we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. We also need the proof of lemma \ref{lem:guirardel-extension} to ensure certain properties hold. Then, in order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. The product of these extensions gives \(f\).
     
-    \subsection{Simply connected hyperplanes}
-    To be a valid decomposition we need that the edge spaces are injective on fundamental groups. For this we need the corollary below.
-\begin{cor*}
-    The hyperplanes of \(C\) are simply connected. 
-\end{cor*}
-
-Which will follow from:
-
-\begin{thm}
-    The hyperplanes of \(C\) are quadrant convex.    
-\end{thm}
-
-One way to prove the theorem is to first show that \(C\) is one dimensional fiberwise connected \ref{def:connfibers} and then apply Guirardel's lemma \ref{lem:guirardel} in each hyperplane to conclude that they're quadrant convex as needed.
-
-\begin{thm}
-    [Connected fibers]
-    The one dimensional fibers of \(C\) are connected.
-\end{thm}
-
-
-To achieve this, we'll build \(C\) from a suitable \(G\)-invariant subcomplex \(K \subseteq \mathscr{T} \) by taking \(C = \sxyz\).  
-
-
-
-
 
 
 \subsection{Combining into main argument}

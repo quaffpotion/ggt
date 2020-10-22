@@ -4,6 +4,11 @@
 
 ## Todo
 
+- [ ] Prove Transverse Lemma
+  - [ ] Argue upstairs for (3) implies (2)
+  - [ ] Add propositions from email subject "an easier way" to finish thm:ellipticimpliesequality.
+  - [ ] Go over notes for this from last meeting
+  - [ ] Details on parallel axes in a CAT(0) space
 - [ ] Linear Reading #3
   - [x] initial run through
   - [ ] depth first following of tree to first unsatisfied node
@@ -20,10 +25,6 @@
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
   - [ ] Write details of core being simply connected lemma
-- [ ] Prove Transverse Lemma
-  - [ ] Go over notes for this from last meeting
-  - [ ] Argue upstairs for (3) implies (2)
-  - [ ] Details on parallel axes in a CAT(0) space
 - [ ] Define VHD complex
 - [x] Compute example showing local condition is not enough to guarantee parallel classes of edges
 - [x] Pull in iterated splitting lemma from chalkboard
