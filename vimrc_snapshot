@@ -1,0 +1,468 @@
+" ### If there's a problem search *WARNING* first
+"### Changes listed most recent first below:
+"visually select some text, press : and vim will automatically put the range
+"in, then do s/foo/bar/g to replace all foos with bars in that range
+"when on a line: va' ... go to next import area
+"note: v + 2 a ( while in `( asdf ( asdfasdf ^ asdafsdf ))` will select around
+"2nd pair of parens, can also do v + 2 a b OR v + 2 a B
+"useful: tab help buffer, tabexplore, can keep folded view of file in a
+"separate tab and mark the buffer there (ma) then go back ('a) in the full
+"view tab
+"useful: :e . (opens a file browser)
+"Added ~/.vim/docs and surround.txt to it then ran :helptags ~/.vim/docs to
+"	generate new tags, can now type e.g. :help ys
+"visually select, S<character e.g. }> to surround selection
+"normal mode <C-^> goes to last buffer
+"command mode :Tex, :Sex to browse file system
+"command mode <C-R><register name> to put contents of register
+"dvj - deletes from cursor position until character below cursor b/c v forces
+"      characterwise motion
+"gc for commenting on visual mode, gcc for a line, >> to indent
+"
+"<C-r><register letter> paste contents of register into ex-mode command
+"
+
+
+"plugins
+"begin plugin comments
+" - quicktex uses function not available in older vim that comes w/ mac
+"end plugin comments
+"
+call plug#begin('~/.vim/plugged')
+"Added for neovim
+"Check if async is supported in nvim 2020-01-18
+"Plug 'jistr/vim-nerdtree-tabs' no longer actively developed
+Plug 'idris-hackers/idris-vim'
+Plug 'matthewsimo/angular-vim-snippets'
+Plug 'mattn/emmet-vim'
+Plug 'mbbill/undotree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'brennier/quicktex'
+Plug 'tpope/commentary'
+Plug 'tpope/vim-surround'
+Plug 'https://github.com/terryma/vim-expand-region'
+Plug 'https://github.com/leafgarland/typescript-vim'
+" Plug 'https://github.com/Quramy/tsuquyomi'
+call plug#end()
+"use :PlugInstall to install things
+"use :PlugUpdate to update things
+"
+"items sit in plugged and it automatically places things in the correct spot
+"to edit commands for quicktex look in .vim/plugged/quicktex/ftplugin/tex
+
+
+
+"coc extensions
+let g:coc_global_extensions = [
+    \ 'coc-snippets',
+    \ 'coc-pairs',
+    \ 'coc-tsserver',
+    \ 'coc-eslint',
+    \ 'coc-prettier',
+    \ 'coc-json',
+    \ 'coc-angular',
+    \ 'coc-python',
+    \ 'coc-markdownlint',
+    \ 'coc-go'
+    \]
+
+
+"NERDTree Settings
+"Show or hide the nerd tree
+nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-m> :NERDTreeMirror<CR>
+
+"ampersand tells vim its a config not just any old variable, -i for
+"interactive so it loads commands
+"works for ggc just fine but for compiling does not go back into vim
+
+"zsh -i (interactive mode) so we can use commands from our bashrc e.g. in vim
+"we can type in normal mode: :! custom-command-here
+"For certain commands we switch back to the usual /bin/bash shell (e.g.
+"<leader>c below)
+let zsh_interactive_shell='/usr/local/bin/zsh -i -c'
+
+"we also use default shell for e.g. !ls and r!ls (execute and execute and read
+"into vim respectively)
+let default_shell='/bin/bash'
+let &shell=zsh_interactive_shell
+
+
+"colorscheme zenburn
+colorscheme gruvbox
+syntax on
+
+
+
+"split settings
+set splitbelow
+set splitright
+
+"indent settings
+filetype plugin indent on 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set noautochdir  "This way our fzf fuzzy searches won't be starting in the e.g. component folder
+set relativenumber
+set hidden
+set wildmenu
+set wildmode=longest:full,full
+set ignorecase "ignore case, except when using capitals
+set smartcase
+set autoindent
+set ruler
+set hlsearch
+set confirm
+set statusline=%f%=
+set laststatus=2
+set cmdheight=2
+set number
+set notimeout ttimeout ttimeoutlen=200
+"set foldmethod=marker "use {{{n where n is a number to mark folds
+set noswapfile
+"set nohlsearch
+set incsearch
+set undofile
+set undodir=~/undodir
+
+
+
+"in insert mode use ;; to exit
+inoremap jk <Esc>
+
+
+
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+
+noremap <C-u>  <C-u><C-L>       
+
+" %:p is for full filename; otherwise pdflatex will compile in home directory
+let mapleader = ","
+nnoremap <leader>ev :e ~/.vimrc<CR>
+nnoremap <leader>sv :w<CR>:so $MYVIMRC<CR>
+nnoremap <leader>c :let &shell='/bin/bash'<CR>:w<CR>:mks! session.vim<CR>:!pdflatex %:p<CR>:let &shell=zsh_interactive_shell<CR> 
+nnoremap <leader>key :tabe ~/.vim/plugged/quicktex/ftplugin/tex/default_keywords.vim<CR>
+nnoremap <leader>bash :let &shell=default_shell<CR>
+nnoremap <leader>zsh :let &shell=zsh_interactive_shell<CR>
+
+"lists buffers and writes buffer goto command, b accepts both numbers and
+"partial filenames w/ tab completion!
+nnoremap gb :ls<CR>:b<space>
+
+"Ctrl+a shortcut for going to last edited buffer
+noremap <C-a> :b#<CR>
+
+"really, want to get this to work so I can type ,dd in insert mode and then
+"exectute the command grep STRING PATH_TO_DICTIONARY to get quick lookups of
+"things I forgot
+"nnoremap <leader>xxx :call execute("normal! i".input('Param: '))<CR>
+"nnoremap <leader>ttt :call execute("! echo ".input('Param: '))
+"nnoremap <leader>yyy :call execute("normal! ihello")
+
+
+"visual mode, surround in delimiters>
+vnoremap sp <Esc>`<i\left(<Esc>`>6la\right)<Esc>7h
+
+"note: <leader><leader>( makes user have to press another key to see it
+"execute. Vim still looking for more after the first (? two leader keys isn't
+"unique enough? update: possible bug, brennier
+"bug: breaks at beginning of lines
+
+"operator pending, use with commands like y, d, c
+"position cursor between \left( and \right) and type <operation>p e.g. dp to
+"delete
+onoremap p :<C-u>execute "normal! /\\\\right)\rhv?\\\\left(\r6l"<CR>  
+
+"e.g. aaaa_bbbbbb_aaaaaa.... type vi_ or ci_ or ca_ while in the b's
+" see also: https://github.com/paradigm/TextObjectify 
+for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
+  execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
+  execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
+  execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'
+  execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
+endfor
+
+" moving up and down with == to keep indents as per vim settings
+" nnoremap <Down> :m .+1<CR>==
+" nnoremap <Up> :m .-2<CR>==
+" inoremap <Down> <Esc>:m .+1<CR>==gi
+" inoremap <Up> <Esc>:m .-2<CR>==gi
+" vnoremap <Down> :m '>+1<CR>gv=gv
+" vnoremap <Up> :m '<-2<CR>gv=gv
+
+"moving up and down without the ==, moves as is, with tabs->spaces seems to
+"work best
+nnoremap <S-j> :m .+1<CR>
+nnoremap <S-k> :m .-2<CR>
+inoremap <Down> <Esc>:m .+1<CR>gi
+inoremap <Up> <Esc>:m .-2<CR>gi
+vnoremap <S-j> :m '>+1<CR>gv
+vnoremap <S-k> :m '<-2<CR>gv
+
+nnoremap <leader>imp ?@Component<CR>/implements/e+2<CR>i<space><esc>i
+
+
+
+nnoremap k gk
+nnoremap j gj
+vnoremap k gk
+vnoremap j gj
+
+
+
+"(The below is not compatible with vim sessions sadly)
+"Automatically save folds when you save
+" augroup AutoSaveFolds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent loadview
+" augroup END
+"
+"This is to make netrw / vinegar work properly and close buffers nicely
+augroup fileTypeCommands
+    autocmd!
+    autocmd FileType netrw setl bufhidden=wipe
+augroup end
+
+" hsdhas ( ( ajsdfa [ asdhsdja a( sdfasdf )] ) )
+map = <Plug>(expand_region_expand)
+map + <Plug>(expand_region_shrink)
+
+" asdfasda^^^^1^^^^sdf ( adsfasdf ( asdf(asdfasdf)asdf ) asdf )  asdfasdfasdf^^^^2^^^^as
+" With the cursor at 1, vin( selects the text between the outer parens
+" With the cursor at 2, vil( selects the next between the innermost parens
+onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+xnoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+
+onoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+xnoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+onoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+
+function! s:NextTextObject(motion, dir)
+    let c = nr2char(getchar())
+        if c ==# "b"
+            let c = "("
+        elseif c ==# "B"
+            let c = "{"
+        elseif c ==# "d"
+            let c = "["
+        endif
+    exe "normal! ".a:dir.c."v".a:motion.c
+endfunction
+
+nnoremap "p :reg <bar> exec 'normal! "'.input('>').'p'<CR>
+
+"fzf
+nnoremap <silent> <leader>o :Files<CR>
+nnoremap <silent> <leader>l :Ag<CR>
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+command! -bang -nargs=? -complete=dir GFiles
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+
+"make sessions
+"we close the NERDTree first so it doesn't mess with the saved windows
+nnoremap <leader>mk :NERDTreeClose<CR>:mks!<CR>
+nnoremap <leader>ss :so Session.vim<CR>
+
+" "Vim Prettier
+" let g:prettier#autoformat = 1
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+"NERDTree Settings
+let g:NERDTreeIgnore = ['^node_modules$']
+
+"coc settings
+
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> ,a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+"undo tree
+nnoremap <leader>u :UndotreeToggle<CR>
+
+" cycle through file extensions
+" If the current file is: `hello.ts` this will open `hello.css`
+" Probably doesn't escape spaces in filenames so be careful oh well
+" To do this manually try: `:execute 'edit' expand('%:p:r').".html"`
+function! s:Cycle()
+    let pr = expand('%:p:r')
+    let e = expand('%:e')
+        if e ==# "html"
+            let e = "ts"
+        elseif e ==# "ts"
+            let e = "css"
+        elseif e ==# "css"
+            let e = "html"
+        endif
+    execute 'edit' pr.".".e
+endfunction
+"Typing `cc` in normal mode will cycle files
+nnoremap cc :<c-u>call <SID>Cycle()<cr> 
+
+"Press Ctrl+C in visual mode with text selected to copy to system keyboard on
+"macOS
+vnoremap <C-c> :w !pbcopy<CR><CR>
+
+
+"coc-snippet settings
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+"coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+

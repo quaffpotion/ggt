@@ -1,0 +1,77 @@
+alias react='cd $REACT'
+alias rodion='cd $RODION'
+alias ggt='cd $GGT'
+REACT="$HOME/Documents/react/tasktimer"
+DATA="/etc/rodion"
+export RODION="$HOME/Documents/go/src/rodion"
+export GGT="/Users/anthonymartino/Dropbox/box/maxforester/ggt"
+
+export LSCOLORS="gxfxcxdxbxegedabagacad"
+
+
+
+Black='\[\e[0;30m\]' 
+Blue='\[\e[0;34m\]' 
+White='\[\e[0;97m\]' 
+LightBlue='\[\e[0;94m\]' 
+LightGray='\[\e[0;37m\]' 
+#set prompt: 
+#PS1="${Blue}\w${Black}: " 
+PS1="${LightBlue}\w${LightGray}: " 
+
+listtree() {
+	ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/';
+}
+
+# lsd() {
+# 	builtin ls -d */
+# }
+
+
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}:/Library/TeX/texbin:/usr/local/bin"
+export PATH
+
+CDPATH=".:~:~/Dropbox:$CDPATH"
+
+
+
+
+# # virtualenv and virtualenvwrapper
+ export WORKON_HOME=/Users/anthonymartino/.virtualenvs
+ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+ source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
+
+#fish
+
+
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/tools/bin
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+  
+
+# added by Miniconda3 installer
+export PATH="/Users/anthonymartino/miniconda3/bin:$PATH"
+
+export GOPATH="$HOME/Documents/go"
+
+export PATH=${PATH}:/usr/local/mysql/bin/
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+
+#This is so VSC has access to the haskell linter hlint
+export PATH=$PATH:~/.local/bin
+
+#This fixes the readprocesserror
+export PATH=$PATH:$(stack path --compiler-bin)
+
+#The last thing we do is source .bashrc file. Suggested by AppAcademy
+source ~/.bashrc
