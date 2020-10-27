@@ -6,12 +6,11 @@
 
 - [ ] Prove Transverse Lemma
   - [ ] Argue upstairs for (3) implies (2)
-  - [ ] Add propositions from email subject "an easier way" to finish thm:ellipticimpliesequality.
-  - [ ] Go over notes for this from last meeting
+  - [x] Add skeleton for propositions from email subject "an easier way" to finish thm:ellipticimpliesequality.
   - [ ] Details on parallel axes in a CAT(0) space
-- [ ] Linear Reading #3
+- [x] Linear Reading #3
   - [x] initial run through
-  - [ ] depth first following of tree to first unsatisfied node
+  - [x] depth first following of tree to first unsatisfied node
 - [ ] How did cocompactness work to begin the bootstrap
   - [ ] Write this proof citing continuous, diagonal, product properties
 - [ ] Prove Switching Lemma
