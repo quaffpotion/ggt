@@ -625,18 +625,20 @@ The implications are as follows:
 \begin{lem}
     [Reduction to vertical subpath]
     \label{lem:verticalsubpath} 
-    Let \(S\) be a subset of \(T_{1} \times T_{2}\) and let \(p,q,r \in S\) satisfy: 
+    Suppose \(S \subseteq T_{1} \times T_{2} \times T_{3} \) is a subcomplex with CCP. Let \(p,q,r \in S\) satisfy
     \begin{enumerate}
         \item \(r \not\in S\) 
         \item \(p,q \in S\) 
-        \item \(p_{2} = q_{2} = r_{2}\) 
-        \item \(r_{1} \in \text{cvxhull}_{T_{1}} (\{p_{1}, q_{1} \} )\) 
+        \item \(p_{2} = q_{2} = r_{2}\) and \(p_{3} = q_{3} =r_{3}\)
+        \item \(r \in \text{cvx}_{T_{1}} (\{p,q\}) \) 
     \end{enumerate}
-    Let \(\sigma : [0,1] \to S\) be a path from \(p\) to \(q\), then there exists a path \(\sigma '\) such that taking \(p,q:= \sigma '(0), \sigma '(1)\) satisfies properties (2)-(4) and \(\pi_{2} (\text{Im}( \sigma '\mid_{(0,1)} ))\) is contained in an open direction of \(T_{2}\) at \(r_{2}\).
-    \begin{proof}
-        Consider the inverse image of \(T_{1} \times \{r_{2}\} \) under \(\sigma\). After subdividing \([0,1]\) and noting that we're taking edge paths we get that this set is a finite union of closed intervals in \([0,1]\). We also have that it contains 0 and 1. Because \(r_{1}\) is separating in \(T_{1}\) we have that each closed interval lies within an open direction in \(T_{1}\) at \(r_{1}\). Also, because \(r_{1}\) lies in the convex hull of \(p_{1}\) and \(q_{1}\) we get that the number of interals is at least 2. Consider pairs of endpoints of the closed intervals making up the closure of the complement of the inverse image. If each pair is in the same direction in \(T_{1}\) at \(r_{1}\) then because closed intervals map to horizontal directions we would have that 0 and 1 were in the same direction which contradicts our assumptions; hence there exists a subpath \(\sigma '\) where only the endpoints map into \(T_{1} \times \{r_{2}\}\). Consider \(\sigma ' \mid_{(0,1)}\), it's image lies in a product of a finite subtree of \(T_{1}\) and a disjoint union of directions of \(T_{2}\) at \(r_{2}\). Because \(\sigma '\) is continuous it must lie in a single connected component and so projects to a single verticle direction of \(T_{2}\) at \(r_{2}\).
+    then there is a path \(\sigma: [0,1] \to S\) between \(p\) and \(q\) such that \(\sigma(t)\) is contained in \(S \cap (T_{1} \times \{r_{2}\} \times \delta)\) where \(\delta\) is an open direction in \(T_{3}\) at \(r_{3}\) provided \(t \neq 0,1\).
 
+    \begin{proof}
+        Proprty CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times \overline\delta)\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Project and take a preimage to get \((( \pi_{3} \sigma )^{-1} (\{r_{3}\}))\)  a closed set in \([0,1]\). The complement is a countable disjoint union of open intervals. 
     \end{proof}
+ 
+
 \end{lem}
 
 
