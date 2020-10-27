@@ -72,17 +72,28 @@
 \begin{lem}
     [Shortcircuit Guirardel Proof]
     \label{lem:shortcircuit} 
-    Stopping after a certain point in Guirardel is beneficial.
+    \begin{proof}
+        \fix{
+            (sketch) 
+            Stopping after a certain point in Guirardel is beneficial. Uses statements already in Guirardel
+        }
+    \end{proof}
 \end{lem}
 \begin{lem}
     [Cell Respects Slices]
     \label{lem:cellrespecslice} 
-    by set theory we are taking cell of a 2D thing and so connected really
+    \begin{proof}
+        \fix{
+            (sketch) By direct set theory 
+        }
+    \end{proof}
 \end{lem}
 \begin{lem}
     [Technical assumptions for Guirardel]
     \label{lem:measuredetc} 
-    we use a result of leveitt and paulin for geomeric (see elsewhere) and prove the rest here
+    \fix{
+        we use a result of leveitt and paulin for geomeric (see elsewhere) and prove the rest here, e.g. "measured foliations" follows from standard constructions
+    }
 
 \end{lem}
 
@@ -113,10 +124,6 @@
 \subsection{Promote elliptic containment to equality}
 
 
-\begin{lem}
-    [Minimality Argument]
-    \label{lem:wlogmin} 
-\end{lem}
 
 \begin{defn}
     [Simplicial Map]
@@ -194,11 +201,7 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     \label{thm:ellipticimpliesequality} 
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
     \begin{proof}
-        \fix{this is now fixed due to "an easier way" email using \ref{lem:localfinhyper} and \ref{thm:ellipticimpliesequality}.}
-    \end{proof}
-    \begin{proof}
-
-        \fix{outdated: We first collapse our general \(G\)-map to a morphism (edges to to edges and vertices to vertices). Then we use \ref{thm:folds} to factor the result as a sequence of folds (followed by an immersion if we're not assuming minimality). Then we use \ref{pro:foldfactor} and finite generation (of edge and vertex groups?) to get that same elliptic elements give us same elliptic subgroups which gives us same deformation space which means the second collapse was an elementary one (in theory possibly a sequence of expand and collapses) which means we keep local finiteness so we can repeatedly use \ref{lem:promoteelliptic}. \textcolor{blue}{(fix) Add the final bit about the immersion, note that for trees immersions are inclusions. Note that if you're including Z into a tree you can think of the action of Z as the restriction of the action on the target tree. Just need to check that the axis stays... essentially because the entire tree stays}  }
+        \fix{this is now fixed due to \ref{lem:localfinhyper} and \ref{thm:ellipticimpliesequality}.}
     \end{proof}
 \end{thm}
 
@@ -292,23 +295,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 
 
-% We want to show the following statement or similar: if a group is the fundamental group of a VH-complex, then there are at most two pairwise inequivalent actions on locally finite trees with FP vertex stabilizers. The following proof sketch uses or builds on VH-complexes introduced by Wise, Guirardel's core, and a theorem of Bieri. To start we have that \(G = \pi_1(K)\) where \(K\) is a VH-complex; according to Wise this comes with a vertical and horizontal splitting. For sake of a contradiction suppose there was a third tree as above. A generalization of Guirardel's core to three actions would imply that our \(G\) was the fundamental group of a VHD-complex (here ``D'' is for ``depth'') which would further imply, among other things, that our group splits along groups of cohomological dimension two. (This is analagous to Wise's work on VH-complexes) However, a theorem of Bieri and local finiteness forces the cohomological dimension of the resulting group to be dimension three which contradicts our original VH assumption so there are at most two such actions.
-
-\subsection{Dramatis Person\ae}
-\begin{itemize}
-    \item \(X\) a compact connected VH-complex
-    \item \(G = \pi_{1} (X)\) 
-    \item \(T_{1}\) the tree from the horizontal splitting of \(X\)
-    \item \(T_{2}\) the tree from the vertical splitting of \(X\) 
-    \item \(T_{3}\) an interloping locally finite \(G\)-tree with FP vertex stabilizers
-    \item \(\mathscr{T} = T_{1} \times T_{2} \times T_{3} \) 
-    \item \(X^{+}\) a certain complex containing \(X\)
-    \item \(f: X^{+} \to \mathscr{T}\) an equivariant map
-    \item \(\Gamma \) a certain compact connected subgraph of \(X^{(1)}\) the 1-skeleton of \(X\)
-    \item \(J = \text{Im}(f)\) 
-    \item \(K = \text{cell}(J)\) 
-    \item \(C = \text{fill}(K)\) the hero of our story, the simply-connected core on which \(G\) acts
-\end{itemize}
 
 \subsection{Definitions}
 
@@ -330,34 +316,8 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \label{pro:fillingrespectsslices} 
 \end{pro}
 
-\begin{defn}
-    [Property Setup]
-    \label{defn:setup} 
-    We say that \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) satisfies property {\em setup} if:
-    \begin{enumerate}
-        \item \(T\) is a simplicial tree
-        \item We have that \(x_{0}\) is a valence one vertex
-        \item \(\sigma\) is a concatenation of non-degenerate edgepaths
-        \item \(\sigma (t)=x_{0} \implies t \in \{0,1\}\) 
-        \item \(\lambda (1) \neq \lambda (N)\) 
-    \end{enumerate}
-\end{defn}
 
 
-\begin{defn}
-    [Bad]
-    Given \(K = (T, x_{0},\sigma=\sigma_{1}\cdots\sigma_{N},\lambda)\) we say that an edge is {\em bad} if:
-    \begin{enumerate}
-        \item The edge \(e\) separates the basepoint from some endpoint. i.e. \[e^{+} \cap \text{endpoints} \neq \varnothing\] where \(e^{+}\) is the halfspace of \(e\) not containing \(x_{0}\).
-        \item The edge \(e\) always has the same color. i.e. \(\left| \{\lambda (k) \mid e \subseteq \text{Im} \sigma_{k}\} \right|=1\).
-    \end{enumerate}
-\end{defn}
-
-\begin{defn}
-	[bad edge snipping]
-    \label{defn:snip} 
-    Let \(K\) satisfy property setup \ref{defn:setup}  with \(e\) a bad edge. Let \(\sigma_{i}\) and \(\sigma_{j}\) be the first and second subpaths of \(\sigma\) that use \(e\). Take \(\sigma '\) to be the concatenation of \(\sigma_{k}\) for \(k < i\) with the subpath denoted \(\sigma '_{ij}\) that is the concatentation of the largest initial subpath of \(\sigma_{i}\) not using \(e\) and the longest tail of \(\sigma_j\) not using \(e\) with \(\sigma_{k}\) for \(k > j\). The unmodified subpaths of \(\sigma\) in \(\sigma '\) receive the same colors as before and we take \(\sigma '_{ij}\) to have the color that \(\sigma_{i}\) and \(\sigma_{j}\) shared.
-\end{defn}
 \subsubsection{Miscellaneous}
 
 
@@ -414,9 +374,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
  \label{lem:guirardel} 
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
-\begin{claim*}
-    If \(K\) satisfies property setup \ref{defn:setup} then the first and last edge of \(\sigma\) are equal.
-\end{claim*}
+
 \begin{defn}
 	[Filling]
     Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}).\] 
@@ -478,7 +436,7 @@ Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ 
 \end{thm}
 
 \begin{lem}
-    [core is connected]
+    [Guirardel Core is connected]
     \label{lem:coreconnected} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then the core is connected.
     \begin{proof}
@@ -487,7 +445,7 @@ Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ 
 \end{lem}
 
 \begin{lem}
-    [core is nonempty]
+    [Guirarel Core is nonempty]
     \label{lem:corenonempty} 
     Let \(X\) and \(Y\) be two non-trivial actions of a finitely generated group \(G\) with finitely generated vertex groups that lie in different deformation spaces. Then the core of \(X\) and \(Y\) is non-empty.
     \begin{proof}
@@ -510,13 +468,13 @@ The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. S
 \end{proof}
 \end{lem}
 
-\begin{lem}
-    [Invariant to bounded distance]
-    Let \(A\) and \(B\) be invariant subcomplexes of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\) after restricting the action on \(X\). Then \(A\) and \(B\) are Hausdorff equivalent. 
-    \begin{proof}
-        Because we are dealing with cocompact actions on cell complexes for the action on \(A\) there exists a finite subcomplex \(F \subseteq A\) such that the orbit of \(F\) covers \(A\). We call \(F\) a fundamental domain. Let \(D_{1}\) be the diameter of \(F\). Pick some \(b_{0} \in B\) and let \(D_{2}\) be the distance from \(F\) to \(b_{0}\). Pick an arbitrary \(a \in A\). Because the orbit of \(F\) is \(A\) there exists some \(g \in G\) such that \(a \in gF\). Then \(a\) is within \(D_{1} + D_{2}\) of \(g y\). Hence, \(A\) is contained in the \(D_{1} + D_{2}\) neighborhood of \(B\). Switching \(A\) and \(B\) in this argument and taking the maximum of the distances shows that \(A\) and \(B\) are both contained in \(R\) neighborhoods of each other for some \(R\); that is they are Hausdorff equivalent.
-    \end{proof}
-\end{lem}
+% \begin{lem}
+%     [Invariant to bounded distance]
+%     Let \(A\) and \(B\) be invariant subcomplexes of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\) after restricting the action on \(X\). Then \(A\) and \(B\) are Hausdorff equivalent. 
+%     \begin{proof}
+%         Because we are dealing with cocompact actions on cell complexes for the action on \(A\) there exists a finite subcomplex \(F \subseteq A\) such that the orbit of \(F\) covers \(A\). We call \(F\) a fundamental domain. Let \(D_{1}\) be the diameter of \(F\). Pick some \(b_{0} \in B\) and let \(D_{2}\) be the distance from \(F\) to \(b_{0}\). Pick an arbitrary \(a \in A\). Because the orbit of \(F\) is \(A\) there exists some \(g \in G\) such that \(a \in gF\). Then \(a\) is within \(D_{1} + D_{2}\) of \(g y\). Hence, \(A\) is contained in the \(D_{1} + D_{2}\) neighborhood of \(B\). Switching \(A\) and \(B\) in this argument and taking the maximum of the distances shows that \(A\) and \(B\) are both contained in \(R\) neighborhoods of each other for some \(R\); that is they are Hausdorff equivalent.
+%     \end{proof}
+% \end{lem}
 
 
 \subsection{Main Equivariant Map Construction}
@@ -602,26 +560,6 @@ With this splitting in hand we want to verify that it's made of successive graph
     \end{align*}
 \end{lem}
 
-\subsection{Wrap up lemmas}
-The following is a list of statements, the goal is to prove enough of them to arrive at item number 1 for a suitably chosen core \(C\).
-\begin{enumerate}
-    \item \(C \subseteq \mathscr{T}\) has simply connected hyperplanes
-    \item \(C\) has hyperplanes that are (1) connected (2) quadrant convex
-    \item The hyperplanes and one dimensional fibers of \(C\) are connected
-    \item If \(S \subseteq \mathscr{T}\) connected in all coordinate planes, then so are \(S_{x}, S_{y},\) and \(S_{z}\).
-    \item If \(R \subseteq T_{1} \times T_{2}\) has convex fibers then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
-    \item If \(S \subseteq \mathscr{T}\) is connected in all coordinate planes then \(\sxyz\) is one dimensional fiberwise convex. 
-    \item \label{state:7} If \(S \subseteq \mathscr{T}\) and is connected in all coordinate planes then \( \left( S_{x} \right)_{y} = \left( S_{y} \right)_{x}\).
-    \item Guirardel's Lemma
-\end{enumerate}
-
-\subsubsection{Using Wrap-up lemmas to prove main statement}
-The implications are as follows:
-\begin{alignat}{3}
-    (4),(7) &\fbox{\(\label{eqn:filling}\Rightarrow\)}  (6) \Rightarrow (3) \Rightarrow (2)\Rightarrow (1) \\
-    (8) &\Rightarrow (4)\\
-    (5) &\Rightarrow (7)
-\end{alignat}
 \begin{lem}
     [Reduction to vertical subpath]
     \label{lem:verticalsubpath} 
@@ -653,7 +591,7 @@ The implications are as follows:
 
 
 \begin{lem}
-    [Statement 4]
+    [Switching]
     \label{lem:switching} 
     Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes \ref{defn:ccp}. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
     \begin{proof}
@@ -669,7 +607,7 @@ The implications are as follows:
 \end{lem}
 
 \begin{lem}
-    [Statement 5]
+    [Slice Switching]
     If \(R \subseteq T_{1} \times T_{2}\) is a connected subcomplex then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
     \begin{proof}
         We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge. Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
@@ -709,31 +647,7 @@ The implications are as follows:
 \begin{lem}
     [Boxed Implication]
  \label{lem:boximp} 
-    Repeatedly applying statement \ref{state:7} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
-\end{lem}
-\subsection{Planar Path Argument}
-
- \label{lem:ppa} 
-\begin{lem}[Coloring Lemma]
-    \label{lem:coloring} 
-    Let \(K\) satisfy property setup \ref{defn:setup}. Let \(A\) be the set of endpoints minus the basepoint \(x_{ 0}\). Then there exists some \(a \in A\) such that for all edges \(e\) in the geodesic \([x_{0} , a]\) there exist some \(i, j\) such that \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\) and \(\lambda ( i ) \neq \lambda ( j )\).
-    \begin{proof}
-        Suppose the lemma were false. Then there exist counterexamples \(K\) satisfying property setup \ref{defn:setup} such that for all \(a \in A\) there exists an edge \(e\) on \([x_{0} , a]\) such that \(\lambda (i)= \lambda (j)\) whenever \(\sigma_{i}\) and \(\sigma_{j}\) use \(e\). These \(K\) have bad edges and \(| \sigma | > 0 \). Now take a \(K\) such that \(| \sigma |\) is minimized. Let \(K'\) be the result of snipping a bad edge. By lemma \ref{lem:preservesetup}, \(K'\) has property setup so \(| \sigma ' | > 0\). If \(K'\) contained a multicolored path between \(x_{0}\) and some \(a'\) in \(A'\) then because the path \(\sigma\) in \(K\) an be obtained by inserting subpaths into \(\sigma '\), we have that \(A' \subseteq A\) and any edge that was multicolored stays multicolored. Therefore \(K'\) has no multicolored path, because that would force \(K\) to have one. Then the fact \(| \sigma' | < | \sigma |\) gives a contradiction because \(K\) was chosen to be minimal. 
-        
-        
-    
-        
-    \end{proof}
-\end{lem}
-
-
-\begin{lem}
-    [Snip invariant]
- \label{lem:preservesetup} 
-    If \(K\) satisfies property setup \ref{defn:setup} then \(K'\) obtained from snipping a bad edge also satisfies property setup.
-    \begin{proof}
-        Let \(e\) be a bad edge of \(K\), since \(\sigma_{1}\) and \(\sigma_{N}\) have different colors the edge \(e\) in at most one of them. Because \(x_{0}\) has valence one, \(\sigma_{1}\) and \(\sigma_{N}\) share the edge containing \(x_{0}\); therefore \(e\) cannot be the common edge. The rest follows.
-    \end{proof}
+    Repeatedly applying \ref{lem:switching} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
 \end{lem}
 
 \end{document}
