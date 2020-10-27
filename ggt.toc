@@ -14,4 +14,4 @@
 \contentsline {section}{\numberline {4}Core has quadrant convex hyperplanes}{13}{section.4}
 \contentsline {subsection}{\numberline {4.1}Wrap up lemmas}{13}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Using Wrap-up lemmas to prove main statement}{14}{subsubsection.4.1.1}
-\contentsline {subsection}{\numberline {4.2}Planar Path Argument}{16}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Planar Path Argument}{17}{subsection.4.2}

@@ -635,8 +635,10 @@ The implications are as follows:
     then there is a path \(\sigma: [0,1] \to S\) between \(p\) and \(q\) such that \(\sigma(t)\) is contained in \(S \cap (T_{1} \times \{r_{2}\} \times \delta)\) where \(\delta\) is an open direction in \(T_{3}\) at \(r_{3}\) provided \(t \neq 0,1\).
 
     \begin{proof}
-        Proprty CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times \overline\delta)\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Project and take a preimage to get \((( \pi_{3} \sigma )^{-1} (\{r_{3}\}))\)  a closed set in \([0,1]\). The complement is a countable disjoint union of open intervals. 
-    \end{proof}
+        Proprty CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times T_{3} )\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Consider the pre-image of \(T_{1} \times r_{2} \times r_{3}\) by \(\sigma\), call it \(K\). Note that the complement of \(K\) is a countable disjoint union of open intervals in \([0,1]\) -- we will choose one later. Each open interval is connected so considering projection and the fact that \(r_{3}\) is separating in \(T_{3}\) we have that under \(\sigma\) each open interval is mapped so the third coordinate lies in a single direction of \(T_{3}\) at \(r_{3}\). After identifying, \(K\) maps into \(T_{1}\). Color the points of \(K\) by which direction at \(r_1\) in \(T_{1}\) they map into. Here we use the fact that \(\sigma\) is a path that is disjoint from \(r\). In fact, because \(S\) is a subcomplex it is closed and so there is an open neighborhood of \(r\) that is disjoint from \(S\) and therefore also  \(\sigma\). Intersecting this neighborhood with \(T_{1} \times r_{2} \times r_{3}\) gives an open neighborhood in \(T_{1}\) that is disjoint from \(\sigma\). 
+
+        The upside is that each monocolored subset of \(K\) is closed by looking at the image of \(\sigma\) in the slice and taking intersections with a closed halfspace pointing away from \(r_{1}\). Take the smallest pairwise distance between the finite number of colored closed sets. Consider two points in \(K\) that achieve that distance. There cannot be any points of \(K\) between them because we chose the smallest distance. This picks out an interval with endpoints that map to different directions as needed.
+     \end{proof}
  
 
 \end{lem}
