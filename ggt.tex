@@ -73,27 +73,41 @@
     [Shortcircuit Guirardel Proof]
     \label{lem:shortcircuit} 
     \begin{proof}
-        \fix{
-            (sketch) 
-            Stopping after a certain point in Guirardel is beneficial. Uses statements already in Guirardel
-        }
+    
+        (sketch)
+        
+        We only need that $G$ is finitely presented. Then by page 42 of Guirardel, we don't need to consider anything past the coning.
     \end{proof}
 \end{lem}
 \begin{lem}
     [Cell Respects Slices]
+    If $A\subset B\subset T_1\times T_2\times T_3$ is CCP then $\text{cell}(A)$ is also CCP.
     \label{lem:cellrespecslice} 
+    
+    (sketch)
+        
+        Pick a $z \in \T_3$. Compare two sets: cell of A intersect the slice is the same as cell (of the induced 2 complex) of the projection of A intersect slice all cross $z$. The inner set is connected by assumption so cell of it is as well.
+    
     \begin{proof}
-        \fix{
-            (sketch) By direct set theory 
-        }
+    
     \end{proof}
 \end{lem}
 \begin{lem}
-    [Technical assumptions for Guirardel]
+    [Technical assumptions for Guirardel] We check the following properties:
+    \begin{enumerate}
+        \item geometric
+        \item measured foliation
+        \item ...
+    \end{enumerate}
     \label{lem:measuredetc} 
-    \fix{
-        we use a result of leveitt and paulin for geomeric (see elsewhere) and prove the rest here, e.g. "measured foliations" follows from standard constructions
-    }
+    
+    \begin{proof}
+    We use a result of leveitt and paulin for geomeric \ref{lem:simpgeo}
+       \fix{
+          and prove the rest here, e.g. "measured foliations" follows from standard constructions
+    } 
+    \end{proof}
+    
 
 \end{lem}
 
@@ -201,7 +215,9 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     \label{thm:ellipticimpliesequality} 
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
     \begin{proof}
-        \fix{this is now fixed due to \ref{lem:localfinhyper} and \ref{lem:commensurableminimal}.}
+    
+        (sketch) need to type this
+        this is now fixed due to \ref{lem:localfinhyper} and \ref{lem:commensurableminimal} see email
     \end{proof}
 \end{thm}
 
@@ -286,7 +302,9 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
     (sketch) 
     
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a basepoint $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$ composed entirely of vertical edges. Lifting this to $\widetilde{K}$ gives a path composed of vertical edges. Repeatedly applying $g$ gives an a combinatorial axis. Do the same for $y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent but because we're in a product metric and they exist in different factors this is impossobiel.
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a basepoint $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an edge path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+    
+    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent but because we're in a product metric and they exist in different factors this is impossible.
 
     (proof)
 
