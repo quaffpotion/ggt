@@ -5,7 +5,7 @@
 
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\thesubsection\ #1}}
-\fancyhf{}
+%\fancyhf{} page numbers
 \lhead{Research Outline}
 \rhead{Tony Martino}
 
@@ -119,9 +119,9 @@
     \begin{proof}
         We will show that $C$ is a graph of spaces where the edge spaces and the vertex spaces are simply connected and the underlying graph is a tree. The main difficulty is showing that the edge space maps are injective on fundamental groups.
     
-        Our \(C\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so we get that the hyperplanes of \(C/G\) are two-sided. Recall, a given hyperplane only touches a single parallelism class of edges. 
+        Our \(C\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so we get that the hyperplanes of \(C/G\) are two-sided. Recall, a given hyperplane only touches a single parallelism class of edges. This allows us to define the push maps \ref{defn:pushmaps}.  
 
-    Next, we need the push maps \ref{defn:pushmaps} from the hyperplanes to vertex spaces to be injective on fundamental groups in $C/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
+    Next, we need the push maps from the hyperplanes to vertex spaces to be injective on fundamental groups in $C/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
     
     A hyperplane of $C/G$ lifts to a hyperplane of $C$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $C$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
     
@@ -311,9 +311,9 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a basepoint $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_\overline{x}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an edge path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_\overline{x}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
     
-    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent but because we're in a product metric and they exist in different factors this is impossible.
+    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund] but because we're in a product metric and they exist in different factors this is impossible.
     
 \end{enumerate}
 \end{proof}
@@ -693,3 +693,40 @@ delete cursor to beginning of word: d/<type word here>
 	- works on multiple lines
 move down by display lines: prefix with g e.g. gj, gk, g0, g$
 start search backwards via ?
+
+% concatenation of paths ... think of lifting lollipops |___|___| and the ___ are the axis
+
+abstract maps between spaces appears as a homotopy in the total space
+
+-- when you have an embedded 2-sided hyperplane
+'union of cubes it touches ---- incusion map from hyp cross interval ... embedding on interior and ? on sides - 
+
+- open corridor
+- characterisic map from hype x [0,1]
+restrict this to a side and you get the map
+
+closed cell -----> X
+
+-- on push maps --
+We have a total space C
+edge spaces h
+vertex spaces are everythign after coridors are gone
+
+-- cw complex --
+cells + maps ==> space
+space + decomposition + maps ===> CW
+
+-- space --
+GOG ==> GOS
+GOS ==> partition maps ==> GOG
+
+-----
+union of midcubes = hyperplane
+midcube in some cube
+
+
+-----
+general picture of 2-sided
+circle x2 ..... annulus .... x2 circle
+push map becomes a 2x covering map
+upstairs it's a line to a line homeomorphism
