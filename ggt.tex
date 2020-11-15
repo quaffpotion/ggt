@@ -114,9 +114,19 @@
 \begin{lem}
     [Expanded Core is simply connected]
     \label{lem:coresc} 
-    Our \(C\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so we get that the hyperplanes of \(C/G\) are two-sided. Recall, a given hyperplane only touches a single parallelism class of edges. 
+    The expanded core $C$ is simply connected.
+    
+    \begin{proof}
+        We will show that $C$ is a graph of spaces where the edge spaces and the vertex spaces are simply connected and the underlying graph is a tree. The main difficulty is showing that the edge space maps are injective on fundamental groups.
+    
+        Our \(C\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so we get that the hyperplanes of \(C/G\) are two-sided. Recall, a given hyperplane only touches a single parallelism class of edges. 
 
-    Next, we need the push maps from the hyperplanes to be injective on fundamental groups. The push map from a hyperplane to a vertex space (we necessarily send hyperplanes - itself a connected set - to a component i.e. a vertex space) followed by inclusion is the same (up to homotopy) as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the vertex to the edge is injective as needed. \fix{needs details, see diagram tracking how we consider this set}
+    Next, we need the push maps \ref{defn:pushmaps} from the hyperplanes to vertex spaces to be injective on fundamental groups in $C/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
+    
+    A hyperplane of $C/G$ lifts to a hyperplane of $C$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $C$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
+    
+    \end{proof}
+    
 \end{lem}
 
 \begin{cor*}
@@ -299,22 +309,12 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
     
 \item $3\Rightarrow 2$: 
-
-    (sketch) 
     
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a basepoint $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an edge path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a basepoint $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_\overline{x}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an edge path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
     
     The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent but because we're in a product metric and they exist in different factors this is impossible.
-
-    (proof)
-
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Since $K$ is a VH-complex it has a decomposition as a graph of groups where the vertex spaces are connected subgraphs whose edges are all vertical. Each $x \in V(X)$ is in correspondence with the inclusion of a vertex space (composed entirely of vertical edges) into $K$. The inclusion of vertex spaces is always injective on fundamental groups. Lastly, after picking basepoints the image of the induced map is the stabilizer of $x$.
     
-    By Wise, we have that the universal cover of $K$ is contained in $X \times Y$. Because the action respects the product structure, and because vertex spaces (in our case, graphs) are covered by embedded copies of their own universal covers we have that the non-trivial element $g$ when represented by a loop in a vertex space lifts to a path with distinct endpoints in a tree consisting entirely of vertical edges in $X \times Y$. In fact, $G_x$ acts on $\{x\}\times Y$ and freely on $\widetilde{K} \cap (\{x\}\times Y)$ because the action on $\widetilde{K}$ is a covering space action. This means that $g$ acts hyperbolically on $Y$ and we get an axis in $Y$. This remains an axis in $X \times Y$.
-    
-    Thus from looking at the vertical splitting  we obtained an axis consisting entirely of vertical edges. Similarly, after looking at the horizontal splitting we obtain an axis consisting entirely of horizontal edges. 
-    
-    Finally, since $X \times Y$ is CAT(0) these axes would have to be parallel. This is a contradiction.
 \end{enumerate}
 \end{proof}
 \end{pro}
@@ -330,6 +330,12 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     \label{lem:coneextension} 
     Call the original complex \(X\), pick out a subcomplex \(Y\) with non-overlapping orbits, take products with \([0,1]\), send the 1 factor copy of \(Y\) to somewhere in the \(\text{Im}(f)\) and extend using the product fibers and geodesics in the target tree.
 \end{lem}
+
+\begin{defn}
+    [Push maps]
+    \label{defn:pushmaps}
+    ...
+\end{defn}
 
 \begin{defn}
     [Cocompact by factor]
