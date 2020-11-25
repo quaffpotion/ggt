@@ -53,7 +53,7 @@
 \begin{thm}
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote it's universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Additional technical assumptions are handled here \ref{lem:measuredetc}. Then using \ref{lem:guirardel-extension} and the proof theoreof \ref{lem:shortcircuit} we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote its universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Additional technical assumptions are handled here \ref{lem:measuredetc}. Then using \ref{lem:guirardel-extension} and the proof theoreof \ref{lem:shortcircuit} we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  
 
         Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
@@ -65,7 +65,7 @@
 
         We will now iterate the splitting process and then apply Bieri. To begin, by assumption each splitting is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the two trees coming from splittings of the VH-complexes by Wise. These last splittings are themselves splittings over trivial groups - but are they trivial splittings? Here we need to assume that one such iterated sequence of splittings ends in a graph with positive rank.
         
-        Then by the Bieri dimenson argument, \(G\) has dimenson 3 a contradiction.
+        Then by the Bieri dimenson argument, \(G\) has dimension 3 a contradiction.
     \end{proof}
 \end{thm}
 
@@ -93,11 +93,13 @@
     \end{proof}
 \end{lem}
 \begin{lem}
-    [Technical assumptions for Guirardel] We check the following properties:
+    [Technical assumptions for Guirardel \ref{lem:guirardel-extension}] We check the following properties:
     \begin{enumerate}
         \item geometric
         \item measured foliation
-        \item ...
+        \item free properly discontinuous cocompact
+        \item constant on leaves
+        \item isometric in restriction to transverse edges
     \end{enumerate}
     \label{lem:measuredetc} 
     
@@ -356,7 +358,7 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 \begin{defn}
     [VHD-complex]
     \label{defn:vhd} 
-    We say a cube complex is VHD if it's edges can be partitioned into three sets each with a different color such that the the link of each vertex is a tripartite simplicial graph.
+    We say a cube complex is VHD if it's edges can be partitioned into three sets each with a different color such that the the link of each vertex is a tripartite simplicial graph. (iirc this ends up not being enough, try a cube, ... just require parallelism classes)
 \end{defn}
 \begin{defn}
     [Cohomological Dimension]
