@@ -48,16 +48,34 @@
 \begin{document}
 \tableofcontents
 
+
+\section{Summary}
+
+For a precise statement, see the theorem below but essentially if $G$ has dimension two then there are at most two finite type transverse $G$-trees. Suppose for sake of a contradiction that we had three actions $T_1$, $T_2$ and $T_3$. The goal is to produce an object with high dimension that $G$ acts nicely on to contradict the dimension assumption. 
+
+The transverse assumption is used to create a 2-complex $X_{12}$ from $T_1$ and $T_2$ that $G$ acts on. There is a standard construction that creates a map $f$ from $\widetilde X_{12}$ to $T_3$. Eventually the Guirardel extension lemma can be used to extend $f$ to a new map $ f^+$ from $\widetilde X_{12}^+$ to $T_3$ with the additional property that it's fibers are connected.
+
+Right now, $G$ acts on the image of $f^+$ but this doesn't have enough dimension. Next, consider the Bass-Serre maps $g$ and $h$ from $\widetilde X_{12}$ to $T_1$ and $T_2$. These can be extended as well to $\widetilde X_{12}^+$ and will have connected fibers. Take the product of all these maps, call it $F = f\times g\times h$. This $F$ will map into $T_1 \times T_2 \times T_3$ which has enough space to create something of dimension 3.
+
+From here, we define $J:=\text{Im}(F)$, take a cellular neighborhood and fill in three directions. The special condition that makes this work is proving that $J$ is ``Connected in Coordiante Planes'' aka CCP. Call the resulting object $E$ for ``Extended Core''. Due to the switching, this will have connected 1-dimensional fibers which in the end leads to quadrant-convex (and so simply connected) hyperplanes which is the correct thing to show that $E$ is a simply connected by showing it's a tree of simply connected spaces.
+
+After this, we apply Bieri three times to get that $E$ has dimension 3 which is a contradiction.
+
+
 \section{Problem Statement}
 
 \begin{thm}
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote its universal cover. Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives a map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively.  Due to \ref{lem:simpgeo} we have geomeric actions. Additional technical assumptions are handled here \ref{lem:measuredetc}. Then using \ref{lem:guirardel-extension} and the proof theoreof \ref{lem:shortcircuit} we obtain \({\widetilde {X_{12}}}^{+} \), an extension  \(f_{123}^{+}\), and a fibration \(\mathscr{F}_{123}\).  
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        
+        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions \ref{lem:technicalconditions} for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
-        Next let  \(f_{121}\) and  \(f_{122}\)  denote the projection  maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (aka Bass-Serre maps) After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case everything is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical fibration $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
+        
+        After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
-        Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since it is the image of a cocompact set under a continuous \(G\)-map it is cocompact and is in fact cocompact by factor \ref{defn:cocompactcrossfactor} since the action is diagonal. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp}. 
+        Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact and is in fact cocompact by factor \ref{defn:cocompactcrossfactor} since the action is diagonal. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp}. 
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(C:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
@@ -69,14 +87,13 @@
     \end{proof}
 \end{thm}
 
+
 \begin{lem}
     [Shortcircuit Guirardel Proof]
-    \label{lem:shortcircuit} 
+    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then $\widehat X = (X_K, \mathscr{F}_K)$ i.e. when constructing $\widehat X$ we can stop after gluing the translates to $X$.
     \begin{proof}
-    
-        (sketch)
         
-        We only need that $G$ is finitely presented. Then by page 42 of Guirardel, we don't need to consider anything past the coning.
+        For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
     \end{proof}
 \end{lem}
 \begin{lem}
@@ -93,6 +110,7 @@
     \end{proof}
 \end{lem}
 \begin{lem}
+    \label{lem:technicalconditions}
     [Technical assumptions for Guirardel \ref{lem:guirardel-extension}] We check the following properties:
     \begin{enumerate}
         \item geometric
@@ -329,14 +347,20 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 \begin{lem}
     [Cone extension]
-    \label{lem:coneextension} 
-    Call the original complex \(X\), pick out a subcomplex \(Y\) with non-overlapping orbits, take products with \([0,1]\), send the 1 factor copy of \(Y\) to somewhere in the \(\text{Im}(f)\) and extend using the product fibers and geodesics in the target tree.
+    \label{lem:coneextension}
+    Start with a map $f$ from a complex $X$ to a tree $T$. This extension is exactly the same as the Guirardel Extension except instead of gluing one end of a product to the original space and quotienting the other end using $f$ we simply send the other end to a point in $T$ contained in \(\text{Im}(f)\). To extend $f$ we map the fibers of the product space that was glued on to geodesics in the tree $T$.
 \end{lem}
 
 \begin{defn}
     [Push maps]
     \label{defn:pushmaps}
-    ...
+    (originally these were brought in as the maps that came from an ambient homotopy but be ready to disregard this)
+\end{defn}
+
+\begin{defn}
+    [Basse-Serre maps]
+    \label{defn:basseserremaps}
+    (defined as part of the definitions of GOS)
 \end{defn}
 
 \begin{defn}
@@ -382,7 +406,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     Let \(S \subseteq X \times Y \times Z\). If \(S \cap \{\text{pt}_1\} \times \{\text{pt}_2\} \times Z\) and all similar sets as well as permutations are connected then we say \(S\) is one dimensional fiberwise connected.
 \end{defn}
 \begin{lem}
-    [Guirardel Extension]
     \label{lem:guirardel-extension}
     (Lemma 8.9 in Guirardel)
     Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
@@ -400,7 +423,8 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
         
         Lastly, for 2-cells we use the standard fibration from mapping triangles to tripods.
         
-        Part 2: Fibration details.
+        Part 2: Fibration details
+        Part 3: isometry on edges transverse
     \end{proof}
 \end{lem}
 \begin{lem}
@@ -418,15 +442,11 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 	A group is of type \(FP\) if it is (1) type \(FP_n\) for all \(n\) and (2) finite geometric cohomological dimension.
 \end{defn}
 
-\begin{defn}
-	[Finite Type] 
-	An action of {\em finite type} is one on a locally finite tree where  vertex stabilizers are of type FP.
-\end{defn}
 
 \begin{defn}[Open Direction] An open direction is a connected component of an \(\mathbb{R}\)-tree minus a point. 
 \end{defn}
 
-\begin{defn}[Closed Direction] A closed directon is a connected component of an \(\mathbb{R}\)-tree minus a point, union that point.
+\begin{defn}[Closed Direction] A closed direction is a connected component of an \(\mathbb{R}\)-tree minus a point, union that point.
 \end{defn}
 \begin{defn}[Open Halfspace] An open halfspace is an open direction obtained from deleting the midpoint of an edge.
 \end{defn}
@@ -442,27 +462,17 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 
 \section{Outlines}
-% Our goal is to show that when we have three different actions there exists a well chosen cube complex that \(G\) acts on which has a quotient that is a graph of spaces decomposition for \(G\). Using properties of this splitting we will conclude that our group has dimension at least three which is impossible because we assumed it was VH.
-
-%     In terms of properties of the core we need three things: (1) hyperplanes are simply connected, (2) cocompact, (3) hierarchy of splittings. We will take the edge spaces of our graph of spaces to be a subset of the corridors of hyperplanes and the vertex spaces to be the components of the complement of the edge spaces.
-
-
-%     Our main result is the following:
-
-%     \begin{cor*}
-%         Let \(G\) be the fundamental group of a compact VH-complex that doesn't satisfy {\em property A}. Let \(T_{v}\), and \(T_{h}\) be the vertical and horizontal splittings. Considering {\em nice} actions up to deformation these are the only two such actions. 
-%     \end{cor*}
 
 \subsection{Misc lemmas}
 
-\begin{lem}
+\begin{rmk}
     [Parallel edges]
-    \label{lem:paralleledges} 
+    (This was for an early attempt at a definition of VHD just using link of vertices. Not quite as pretty but we will simply require the parallelism classes of edges which to be fair is what Wise does for his two dimensional VH complexes)
     Suppose \(X\) is a VHD-complex. Then parallel edges have the same color and edges that share a vertex have different colors.
 
     This is false, for a single cube see picture in phone taken on 2020-08-22
     The only property we need is that every cube is colored VHD, so we can reference splittings dual to an edge and that the sides are VH complexes
-\end{lem}
+\end{rmk}
 
 \begin{thm}[F, ``On uniqueness...'', Thm 3.2]
 \label{thm:forester}
@@ -479,7 +489,7 @@ Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ 
 \end{lem}
 
 \begin{lem}
-    [Guirarel Core is nonempty]
+    [Guirardel Core is nonempty]
     \label{lem:corenonempty} 
     Let \(X\) and \(Y\) be two non-trivial actions of a finitely generated group \(G\) with finitely generated vertex groups that lie in different deformation spaces. Then the core of \(X\) and \(Y\) is non-empty.
     \begin{proof}
@@ -502,6 +512,7 @@ The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. S
 \end{proof}
 \end{lem}
 
+% we no longer need this because we no longer need different S12, S13, S23 and so we no longer need to do a bounded distance hausdorff equivalence kinda combination
 % \begin{lem}
 %     [Invariant to bounded distance]
 %     Let \(A\) and \(B\) be invariant subcomplexes of \(X\) with \(G\) acting cocompactly on both \(A\) and \(B\) after restricting the action on \(X\). Then \(A\) and \(B\) are Hausdorff equivalent. 
@@ -514,8 +525,6 @@ The containment says such a map is well-defined. Indeed, pick $x \in X^{(0)}$. S
 \subsection{Main Equivariant Map Construction}
 Let \(X\) be a compact VH-complex and set \(G= \pi_{1} X\). Form the cover \(\widetilde{X} \to X\). Note that \(G\) acts on \(\widetilde X\) freely and PDC. Since \(X\) is a VH-complex we get two actions of \(G\) on trees \(T_{1}\) and \(T_{2}\) along with invariant maps \(f_{1}\) and \(f_{2}\) from the splitting. Suppose we had a third action of \(G\) on a tree \(T_{3}\) with property {\em nice}. Given the covering space action and the action on \(T_{3}\) we use the affine construction \ref{lem:affineequivariantmap} to get an equivariant map \(f_{3} : \widetilde X \to T_{3}\). Using Guirardel 8.9 \ref{lem:guirardel-extension} we extend \(f_{3}\) to \(\widehat f_{3}\) a map with connected fibers. We also need the proof of lemma \ref{lem:guirardel-extension} to ensure certain properties hold. Then, in order to extend the \(f_{1}\) and \(f_{2}\) maps we use the coning off construction. The product of these extensions gives \(f\).
     
-
-
 \subsection{Combining into main argument}
 
 Finally, having enough dimension will follow from some assumptions about our actions.
@@ -531,7 +540,7 @@ With this splitting in hand we want to verify that it's made of successive graph
     Due to \ref{def:notalltrees} we get that we can apply the dimension argument using Bieri to complete our result.
 \end{cor*}
 
-
+% TODO is this still needed?
 \begin{lem}
     The action of \(G\) on \(T_1 \times T_{2} \) is free.
     \begin{proof}
@@ -539,12 +548,6 @@ With this splitting in hand we want to verify that it's made of successive graph
     \end{proof}
 \end{lem}
 
-\begin{lem}
-    [Cocompact beginning]
-    \label{lem:cocompactfactorbeginning} 
-    We directly show that our \(S_{ij}\) are cocompact x factor.
-
-\end{lem}
 \begin{lem}
     [Cocompact factor after neighborhood]
     \label{lem:cocompactfactor} 
@@ -619,6 +622,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 \begin{defn}
     [Connected in coordinate planes]
     \label{defn:ccp} 
+    % TODO reword so that it's specialized to our case of just having 3 dimensions and ve very clear about fixing a factor
     Let \(S\) be a subset of a product indexed by \(1 \leq k \leq N\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) is connected for all \(p \in X_{k}\) for all \(k\).
     
 \end{defn}
