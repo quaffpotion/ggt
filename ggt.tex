@@ -27,15 +27,17 @@
 \newcommand{\fix}[1]{\textcolor{blue}{(fix) #1}}
 
 \theoremstyle{mystyle}
+%\newtheorem{environment name}[optional: use same counter as this other environment name]{Display name}[optional: number this environment name within this type of environment e.g. if not specified will just count up, can also specify section or subsection to get e.g. 3.1, 3.2, 3.3 or 5.2.1, 5.2.2, respectively]
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{thm*}{Theorem}
-\newtheorem{lem}{Lemma}[section]
-\newtheorem{pro}{Proposition}[section]
-\newtheorem{defn}{Definition}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{pro}[thm]{Proposition}
+\newtheorem{defn}[thm]{Definition}
 \newtheorem*{defn*}{Definition}
 \newtheorem*{claim*}{Claim}
 \newtheorem*{lem*}{Lemma}
 \newtheorem*{cor*}{Corollary}
+\newtheorem{cor}[thm]{Corollary}
 
 
 \theoremstyle{remark}
@@ -62,12 +64,39 @@ From here, we define $J:=\text{Im}(F)$, take a cellular neighborhood and fill in
 After this, we apply Bieri three times to get that $E$ has dimension 3 which is a contradiction.
 
 
+\section{Used Definitions}
+\begin{defn}
+    [Algebraic Cohomological Dimension]
+    \label{defn:cd} 
+    (sketch, citation)
+    We say a group $G$ has algebraic cohomological dimension $n$ if $n$ is the length of the shortest projective resolution of the integers by $\mathbb{Z}G$-modules. 
+\end{defn}
+\begin{defn}
+    [Finite Type]
+    \label{defn:finitetype} 
+    We say a tree action is of \emph{finite type} if the action is non-trivial, the tree is locally finite, the vertex stabilizers have property FP, and the quotient is finite.
+\end{defn}
+\begin{defn}
+[Property FP]
+We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z}$ by finitely generated projective $\mathbb{Z}G$-modules.
+\end{defn}
+\begin{defn}
+    [Transverse]
+    \label{defn:transverse} 
+    We say that two tree actions $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two stabilizers, one for each tree, such that their intersection is FP.
+\end{defn}
+\begin{defn}
+    [Deformation]
+    \label{defn:deformation}
+    (sketch)
+    Definition of deformation moves and the corresponding equivalence classes. Should be in it's own section with the other GOS definitions
+\end{defn}
 \section{Problem Statement}
 
 \begin{thm}
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the tranverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
         Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions \ref{lem:technicalconditions} for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
@@ -266,17 +295,6 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     \label{lem:nonempty} 
 \end{lem}
 
-\begin{defn}
-    [Deformation]
-    \label{defn:deformation} 
-    Definition of deformation moves and the corresponding equivalence classes.
-\end{defn}
-
-\begin{defn}[Finite Type]
-    \label{defn:finitetype} 
-We say a tree action is of \emph{finite type} if the action is non-trivial, the tree is locally finite, and the vertex stabilizers are FP, with finite quotient graph.
-\end{defn}
-
 \begin{rmk}
     We will assume a group of dimension 2 and in that case Bieri gives that actions of finite type have vertex and edge stabilizers that are finitely generated free groups.
 \end{rmk}
@@ -285,10 +303,6 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
     Bieri gives us that if we have an action of finite type then the group is FP.
 \end{rmk}
 
-\begin{defn}[Transverse]
-    \label{defn:transverse} 
-    We say that two tree actions $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two stabilizers, one for each tree, such that their intersection is FP.
-\end{defn}
 
 \begin{rmk}
     The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces
@@ -378,16 +392,16 @@ We say a tree action is of \emph{finite type} if the action is non-trivial, the 
 
 \subsubsection{Miscellaneous}
 
-
 \begin{defn}
     [VHD-complex]
     \label{defn:vhd} 
     We say a cube complex is VHD if it's edges can be partitioned into three sets each with a different color such that the the link of each vertex is a tripartite simplicial graph. (iirc this ends up not being enough, try a cube, ... just require parallelism classes)
 \end{defn}
+
 \begin{defn}
-    [Cohomological Dimension]
-    \label{defn:cd} 
-    We are using the minimal resolution size over the integers
+    [Geometric Cohomological Dimension]
+    (sketch, citation)
+    The geometric cohomological dimension of a group $G$ is the smallest dimension needed to construct a $K(G,1)$.
 \end{defn}
 
 \begin{rmk}
