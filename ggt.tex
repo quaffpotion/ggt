@@ -38,7 +38,7 @@
 \newtheorem*{lem*}{Lemma}
 \newtheorem*{cor*}{Corollary}
 \newtheorem{cor}[thm]{Corollary}
-
+\newtheorem{claim}{Claim}
 
 \theoremstyle{remark}
 \newtheorem{rmk}{Remark}[section]
@@ -57,9 +57,9 @@ For a precise statement, see the theorem below but essentially if $G$ has dimens
 
 The transverse assumption is used to create a 2-complex $X_{12}$ from $T_1$ and $T_2$ that $G$ acts on. There is a standard construction that creates a map $f$ from $\widetilde X_{12}$ to $T_3$. Eventually the Guirardel extension lemma can be used to extend $f$ to a new map $ f^+$ from $\widetilde X_{12}^+$ to $T_3$ with the additional property that it's fibers are connected.
 
-Right now, $G$ acts on the image of $f^+$ but this doesn't have enough dimension. Next, consider the Bass-Serre maps $g$ and $h$ from $\widetilde X_{12}$ to $T_1$ and $T_2$. These can be extended as well to $\widetilde X_{12}^+$ and will have connected fibers. Take the product of all these maps, call it $F = f\times g\times h$. This $F$ will map into $T_1 \times T_2 \times T_3$ which has enough space to create something of dimension 3.
+Right now, $G$ acts on the image of $f^+$ but this doesn't have enough dimension. Next, consider the Bass-Serre maps $g$ and $h$ from $\widetilde X_{12}$ to $T_1$ and $T_2$. These can be extended as well to $\widetilde X_{12}^+$ and will have connected fibers. Take the product of all these maps, call it $Q = f\times g\times h$. This $Q$ will map into $T_1 \times T_2 \times T_3$ which has enough space to create something of dimension 3.
 
-From here, we define $J:=\text{Im}(F)$, take a cellular neighborhood and fill in three directions. The special condition that makes this work is proving that $J$ is ``Connected in Coordiante Planes'' aka CCP. Call the resulting object $E$ for ``Extended Core''. Due to the switching, this will have connected 1-dimensional fibers which in the end leads to quadrant-convex (and so simply connected) hyperplanes which is the correct thing to show that $E$ is a simply connected by showing it's a tree of simply connected spaces.
+From here, we define $J:=\text{Im}(Q)$, take a cellular neighborhood and fill in three directions. The special condition that makes this work is proving that $J$ is ``Connected in Coordiante Planes'' aka CCP. Call the resulting object $E$ for ``Extended Core''. Due to the switching, this will have connected 1-dimensional fibers which in the end leads to quadrant-convex (and so simply connected) hyperplanes which is the correct thing to show that $E$ is a simply connected by showing it's a tree of simply connected spaces.
 
 After this, we apply Bieri three times to get that $E$ has dimension 3 which is a contradiction.
 
@@ -78,12 +78,13 @@ After this, we apply Bieri three times to get that $E$ has dimension 3 which is 
 \end{defn}
 \begin{defn}
 [Property FP]
+\label{defn:propertyfp}
 We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z}$ by finitely generated projective $\mathbb{Z}G$-modules.
 \end{defn}
 \begin{defn}
     [Transverse]
     \label{defn:transverse} 
-    We say that two tree actions $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two stabilizers, one for each tree, such that their intersection is FP.
+    We say that two tree actions $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
 \begin{defn}
     [Deformation]
@@ -91,6 +92,21 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     (sketch)
     Definition of deformation moves and the corresponding equivalence classes. Should be in it's own section with the other GOS definitions
 \end{defn}
+\section{Used Lemmas}
+\begin{lem}
+    [Elliptic containment implies equality]
+    \label{thm:ellipticimpliesequality} 
+    If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
+\end{lem}
+\begin{proof}
+        (sketch) need to type this
+        this is now fixed due to \ref{lem:localfinhyper} and \ref{lem:commensurableminimal} see email
+\end{proof}
+\begin{lem}
+    [Minimality is enough]
+    \label{lem:minenough} 
+    If the theroem is true for minimal trees then it is true for trees in general
+\end{lem}
 \section{Problem Statement}
 
 \begin{thm}
@@ -116,6 +132,49 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \end{proof}
 \end{thm}
 
+\section{Transverse Construction}
+\begin{lem}
+    [Transverse Construction]
+    \label{pro:transverseconstruction} 
+ Let $G$ a group of cohomological dimension 2. If $X$ and $Y$ are non-trivial $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
+\begin{enumerate}
+    \item $X$, $Y$ transverse
+    \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
+    \item There exists a cocompact VH-complex $K$ with $\pi_1(K) = G$ whose horizontal and vertical splittings are $X$ and $Y$.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+\begin{enumerate}
+    \item $1\Rightarrow 2$: Fix $x_0 \in V(X)$ Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri to get:
+    \begin{align*}
+        2 &= dG\\
+          &= dG_{x_0}+1\\
+          &= d( G_{x_0} )_y+1+1\\
+          &= d(G_{x_0}\cap G_y)+2
+    \end{align*}
+    
+    Hence, $d(G_{x_0}\cap G_y)=0$ so $G_{x_0}\cap G_y$ is trivial.
+    
+    \begin{claim*}
+    The action of $G_{x_0}$ on $Y$ is non-trivial.
+    \begin{proof}
+        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
+    \end{proof}
+    \end{claim*}
+    \item $2\Rightarrow 1$: Trivial groups are FP.
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. By \ref{lem:nonempty} the core is non-empty. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    
+    It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
+    
+\item $3\Rightarrow 2$: 
+    
+
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_\overline{x}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+    
+    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund] but because we're in a product metric and they exist in different factors this is impossible.
+    
+\end{enumerate}
+\end{proof}
 
 \begin{lem}
     [Shortcircuit Guirardel Proof]
@@ -140,7 +199,7 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \end{lem}
 \begin{lem}
     \label{lem:technicalconditions}
-    [Technical assumptions for Guirardel \ref{lem:guirardel-extension}] We check the following properties:
+    [Technical assumptions for Guirardel \ref{lem:guirardel-extension}] We check the following properties for the map $f_{123}: \widetilde{X_{12}}\to T_3$.
     \begin{enumerate}
         \item geometric
         \item measured foliation
@@ -151,10 +210,13 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \label{lem:measuredetc} 
     
     \begin{proof}
-    We use a result of leveitt and paulin for geomeric \ref{lem:simpgeo}
-       \fix{
-          and prove the rest here, e.g. "measured foliations" follows from standard constructions
-    } 
+    \begin{enumerate}
+        \item Geometric: We use a result of Levitt and Paulin for geomeric \ref{lem:simpgeo}.
+        \item Measured foliation:
+        \item Constant on leaves:
+        \item isometric in restriction to transverse edges:
+        \item free properly discontinuous cocompact: follows the fact that we are working with a covering space (Here we get PD for free but later we will need to show E is acted upon PD which recall PD iff quotient map is a covering map. The action on E is PDC because the action on the product of trees is PDC.)
+    \end{enumerate}
     \end{proof}
     
 
@@ -163,30 +225,46 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \begin{lem}
     [Expanded Core is simply connected]
     \label{lem:coresc} 
-    The expanded core $C$ is simply connected.
+    The Expanded core $E$ is simply connected.
     
     \begin{proof}
-        We will show that $C$ is a graph of spaces where the edge spaces and the vertex spaces are simply connected and the underlying graph is a tree. The main difficulty is showing that the edge space maps are injective on fundamental groups.
     
-        Our \(C\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so we get that the hyperplanes of \(C/G\) are two-sided. Recall, a given hyperplane only touches a single parallelism class of edges. This allows us to define the push maps \ref{defn:pushmaps}.  
+        - It seems like we are trying to show E/G is a graph of spaces by leveraging E and then concluding that E is a graph of spaces.
+        - Is it just better to prove directly that E is a graph of spaces?
+        -- By claim 1 we know what the hyperplanes of E are, by claim 2 we know they are separating and so the underlying graph is a tree. The conceit is that cube complexes with two-sided hyperplanes have corridors that allow for a decomposition into a graph of spaces.
+        
+        - Later we still need to show that E/G is a graph of spaces so perhaps it's impossible to separate
+    
+        We will show that $E$ is a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree.
+    
+        Our \(E\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so hyperplanes of \(C/G\) are two-sided; indeed a given hyperplane only touches a single parallelism class of edges. 
 
-    Next, we need the push maps from the hyperplanes to vertex spaces to be injective on fundamental groups in $C/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(C/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
+        We can view the space $E$ as a graph of spaces where the edge spaces are hyperplanes, the vertex spaces comes from subtracting the corridors of hyperplanes, and the edge maps are maps from hyperplanes to vertex spaces defined by seeing where the push map homotopy takes a hyperplane. 
+        
+        We need these maps to be injective on fundamental groups in $E/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(E/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
     
-    A hyperplane of $C/G$ lifts to a hyperplane of $C$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $C$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
-    
+        A hyperplane of $E/G$ lifts to a hyperplane of $E$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $E$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
+
+        \begin{claim}
+        If C is a sub cube complex of a product cube complex then the hyperplanews of C are the connected components of the hyperplanes of the product cube complex intersect C itself - that is C intersect an object of the form (1/2) cross Y cross Z where pt is in X the first factor
+        \end{claim}
+        
+        \begin{claim}
+        (We need this so that our graph is a tree upstairs)
+        If C subset S and S' is separating in S then connected compoents of S' intersect C separate C.
+        \end{claim}
+        
+        *from sageev: When X is a product, the hyperplanes are preimages (under the natural
+projection maps) of the hyperplanes in each of the factors.
+ which checks out
+
     \end{proof}
-    
 \end{lem}
 
 \begin{cor*}
     If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
 \end{cor*}
 
-\begin{lem}
-    [Minimality is enough]
-    \label{lem:minenough} 
-    If the theroem is true for minimal trees then it is true for trees in general
-\end{lem}
 
 \begin{lem}
     [Iterated Splitting]
@@ -269,17 +347,6 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     Note, if the above \(Y\) is minimal then we get surjectivity for free.
 \end{rmk}
 
-\begin{thm}
-    [Elliptic containment implies equality]
-    \label{thm:ellipticimpliesequality} 
-    If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
-    \begin{proof}
-    
-        (sketch) need to type this
-        this is now fixed due to \ref{lem:localfinhyper} and \ref{lem:commensurableminimal} see email
-    \end{proof}
-\end{thm}
-
 
 
 
@@ -310,49 +377,6 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 
 \subsubsection{Result}
 
-\begin{pro}
-    [Transverse Construction]
-    \label{pro:transverseconstruction} 
- Let $G$ a group of cohomological dimension 2. If $X$ and $Y$ are non-trivial $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
-\begin{enumerate}
-    \item $X$, $Y$ transverse
-    \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
-    \item There exists a cocompact VH-complex $K$ with $\pi_1(K) = G$ whose horizontal and vertical splittings are $X$ and $Y$.
-\end{enumerate}
-\begin{proof}
-\begin{enumerate}
-    \item $1\Rightarrow 2$: Fix $x_0 \in V(X)$ Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri to get:
-    \begin{align*}
-        2 &= dG\\
-          &= dG_{x_0}+1\\
-          &= d( G_{x_0} )_y+1+1\\
-          &= d(G_{x_0}\cap G_y)+2
-    \end{align*}
-    
-    Hence, $d(G_{x_0}\cap G_y)=0$ so $G_{x_0}\cap G_y$ is trivial.
-    
-    \begin{claim*}
-    The action of $G_{x_0}$ on $Y$ is non-trivial.
-    \begin{proof}
-        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
-    \end{proof}
-    \end{claim*}
-    \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. By \ref{lem:nonempty} the core is non-empty. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
-    
-    It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
-    
-\item $3\Rightarrow 2$: 
-    
-
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_\overline{x}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
-    
-    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund] but because we're in a product metric and they exist in different factors this is impossible.
-    
-\end{enumerate}
-\end{proof}
-\end{pro}
-
 
 
 
@@ -368,7 +392,7 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 \begin{defn}
     [Push maps]
     \label{defn:pushmaps}
-    (originally these were brought in as the maps that came from an ambient homotopy but be ready to disregard this)
+    (Think about a Baumslag-Solitar group BS(2,2) to get an idea of the wrapping)
 \end{defn}
 
 \begin{defn}
@@ -407,7 +431,12 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 \begin{rmk}
     The only case when geo is not alg is possibly when geo=3 and alg=2
 \end{rmk}
- 
+ \begin{defn}
+     [Geometric Action]
+     \label{defn:geometricaction}
+     (sketch, cite)
+     Need to grab this from the Leveitt paper
+ \end{defn}
 \begin{lem}
     [Geometric Condition]
     \label{lem:simpgeo} 
