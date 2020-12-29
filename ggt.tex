@@ -50,7 +50,16 @@
 \begin{document}
 \tableofcontents
 
-
+\section{Background}
+\subsection{Graph of groups}
+\subsection{Graph of spaces}
+\subsection{Bass-Serre Theory}
+\begin{defn}
+    [Bass-Serre Map]
+    \label{defn:bsmap}
+    (sketch)
+    collapsing fibers upstairs
+\end{defn}
 \section{Summary}
 
 For a precise statement, see the theorem below but essentially if $G$ has dimension two then there are at most two finite type transverse $G$-trees. Suppose for sake of a contradiction that we had three actions $T_1$, $T_2$ and $T_3$. The goal is to produce an object with high dimension that $G$ acts nicely on to contradict the dimension assumption. 
@@ -66,25 +75,31 @@ After this, we apply Bieri three times to get that $E$ has dimension 3 which is 
 
 \section{Used Definitions}
 \begin{defn}
+    [Minimal Action]
+    \label{defn:minimal}
+    We say a $G$-tree is \emph{minimal} if there is no proper invariant subtree.
+\end{defn}
+\begin{defn}
     [Algebraic Cohomological Dimension]
-    \label{defn:cd} 
-    (sketch, citation)
+    \label{defn:cd}
+    (sketch, page 6 and 60 of Bieri)
     We say a group $G$ has algebraic cohomological dimension $n$ if $n$ is the length of the shortest projective resolution of the integers by $\mathbb{Z}G$-modules. 
 \end{defn}
 \begin{defn}
     [Finite Type]
     \label{defn:finitetype} 
-    We say a tree action is of \emph{finite type} if the action is non-trivial, the tree is locally finite, the vertex stabilizers have property FP, and the quotient is finite.
+    We say a $G$-tree is of \emph{finite type} if the action is non-trivial, the tree is locally finite, the vertex stabilizers have property FP, and the quotient is finite.
 \end{defn}
 \begin{defn}
 [Property FP]
 \label{defn:propertyfp}
+(sketch, bieri p19)
 We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z}$ by finitely generated projective $\mathbb{Z}G$-modules.
 \end{defn}
 \begin{defn}
     [Transverse]
     \label{defn:transverse} 
-    We say that two tree actions $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
+    We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
 \begin{defn}
     [Deformation]
@@ -110,21 +125,25 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \section{Problem Statement}
 
 \begin{thm}
+    \label{thm:mainresult}
+    (sketch: up to phrasing of definitions, this theorem statement is complete)
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.  Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
         Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions \ref{lem:technicalconditions} for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
-        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case everything is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical fibration $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
+        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case everything is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
         
         After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
-        Consider \(J := \text{Im}(f)\). By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact and is in fact cocompact by factor \ref{defn:cocompactcrossfactor} since the action is diagonal. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp}. 
+        Consider \(J := \text{Im}(f)\). We need $J$ to satisfy a few properties at the outset and they need to be preserved as we add material to $J$ to eventually obtain a kind of extended core $E$ which $G$ will act on. 
+        
+        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact and is in fact cocompact by factor \ref{defn:cocompactcrossfactor} since the action is diagonal. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp}. 
 
-        Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(C:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
+        Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
-        By lemma \ref{lem:coresc} we have that \(C\) is simply connected and \(C/G\) comes with three splittings as a graph of spaces.
+        So far we have that $E$ to $E/G$ is a covering. By lemma \ref{lem:coresc} we learn that \(E\) is simply connected and moreover \(E/G\) comes with three splittings as a graph of spaces.
 
         We will now iterate the splitting process and then apply Bieri. To begin, by assumption each splitting is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the two trees coming from splittings of the VH-complexes by Wise. These last splittings are themselves splittings over trivial groups - but are they trivial splittings? Here we need to assume that one such iterated sequence of splittings ends in a graph with positive rank.
         
@@ -136,7 +155,7 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \begin{lem}
     [Transverse Construction]
     \label{pro:transverseconstruction} 
- Let $G$ a group of cohomological dimension 2. If $X$ and $Y$ are non-trivial $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
+ Let $G$ a group of dimension 2. If $X$ and $Y$ are non-trivial $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
 \begin{enumerate}
     \item $X$, $Y$ transverse
     \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
@@ -178,7 +197,7 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 
 \begin{lem}
     [Shortcircuit Guirardel Proof]
-    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then $\widehat X = (X_K, \mathscr{F}_K)$ i.e. when constructing $\widehat X$ we can stop after gluing the translates to $X$.
+    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then in the notation of Guirardel $\widehat X = (X_K, \mathscr{F}_K)$ i.e. when constructing $\widehat X$ we can stop after gluing certain translates to $X$.
     \begin{proof}
         
         For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
@@ -386,6 +405,7 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 \begin{lem}
     [Cone extension]
     \label{lem:coneextension}
+    (sketch)
     Start with a map $f$ from a complex $X$ to a tree $T$. This extension is exactly the same as the Guirardel Extension except instead of gluing one end of a product to the original space and quotienting the other end using $f$ we simply send the other end to a point in $T$ contained in \(\text{Im}(f)\). To extend $f$ we map the fibers of the product space that was glued on to geodesics in the tree $T$.
 \end{lem}
 
