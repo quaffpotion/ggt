@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd, xcolor, mathrsfs,hyperref,cleveref}
+\usepackage{amsmath,amssymb,amsthm, fancyhdr, tikz-cd, xcolor, mathrsfs,hyperref,cleveref,graphicx}
 \definecolor{error}{rgb}{1,0 , 0}
 \swapnumbers
 
@@ -52,14 +52,46 @@
 
 \section{Background}
 \subsection{Graph of groups}
+\begin{defn}
+    [Deformation]
+    \label{defn:deformation}
+    (sketch)
+    Definition of deformation moves and the corresponding equivalence classes. Should be in it's own section with the other GOS definitions
+\end{defn}
 \subsection{Graph of spaces}
-\subsection{Bass-Serre Theory}
 \begin{defn}
     [Bass-Serre Map]
     \label{defn:bsmap}
     (sketch)
     collapsing fibers upstairs
 \end{defn}
+\subsection{Bass-Serre Theory}
+\subsection{VH-complexes}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=4cm]{square.jpg}
+    \caption{A 2-cell in a VH-complex}
+    \label{fig:square}
+\end{figure}
+
+\begin{defn}
+    [Squared Complex]
+    A \emph{squared complex} is a combinatorial 2-complex whose 2-cells are attached by combinatorial paths of length 4
+\end{defn}
+\begin{defn}
+    [VH-complex]
+    A squared complex $X$ is a \emph{VH-complex} if each edge is labelled vertical or horizontal and attaching maps alternate between each type. Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons.
+\end{defn}
+\begin{defn}
+    [Directed]
+    Consider a VH-complex $X$ with the addition of an orientation for it's vertical and horizontal skeletons $V_X$ and $H_X$. We say $X$ is \emph{directed} if the domains of the attaching maps are standard squares $I x I$ with horizontal edges oriented left to right and vertical edges oriented top to bottom and the attaching maps are orientation preserving.
+\end{defn}
+\begin{enumerate}
+    \item Barycentric subdivision of $X$ gives a directed VH-complex.
+    \item A fiber $V_x$ with $x$ in a horizontal edge is isomorphic to nearby $V_{x'}$ except possibly when the $VH$ complex is not horizontally directed and $x$ is the midpoint of a horizontal edge. In this case it can happen that $V_x$ is double covered by nearby fibers
+    \item Being directed is essentially a non-issue but Wise uses it along with NPC to ensure certain complexes are graphs of free groups
+\end{enumerate}
 \section{Summary}
 
 For a precise statement, see the theorem below but essentially if $G$ has dimension two then there are at most two finite type transverse $G$-trees. Suppose for sake of a contradiction that we had three actions $T_1$, $T_2$ and $T_3$. The goal is to produce an object with high dimension that $G$ acts nicely on to contradict the dimension assumption. 
@@ -74,6 +106,11 @@ After this, we apply Bieri three times to get that $E$ has dimension 3 which is 
 
 
 \section{Used Definitions}
+\begin{defn}
+    [Subgraph coning]
+    \label{defn:coneoff}
+    Consider an equivariant map $f: X \to T$ from a 2-complex $X$ to a tree $T$. Let $\Lambda(X,K,f)$ (or just $\Lambda(X)$) denote the space obtained by gluging $G$ translates of $(K \times I) / R$ to $X$ where $R$ is an equivalence relation that quotients one end of the product to $f(K)$.
+\end{defn}
 \begin{defn}
     [Minimal Action]
     \label{defn:minimal}
@@ -101,13 +138,55 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \label{defn:transverse} 
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
-\begin{defn}
-    [Deformation]
-    \label{defn:deformation}
-    (sketch)
-    Definition of deformation moves and the corresponding equivalence classes. Should be in it's own section with the other GOS definitions
-\end{defn}
 \section{Used Lemmas}
+\begin{lem}
+    [Cocompactness of Core]
+    See remark just after theorem 8.1 in Guirardel paper
+\end{lem}
+\begin{thm}
+\label{thm:guirardelcore}
+main theorem from guirardel that produces the core that we need in the X12 aka transverse consturction aka toy version
+\end{thm}
+\begin{thm}[Wise Graph Decomposition]
+\label{thm:wisegraph}
+Given an NPCCC VH we get two splittings. The NPC is used to get that maps are combinatorial immersions and so injective on fundamental group
+\end{thm}
+\begin{lem}
+    [Coning Connected Fibers]
+    \label{lem:confib} 
+    Let $f: L\to T$ be an equivariant map from a 2-complex to a tree. Let $X = \Lambda(L,f,\Gamma)$ a subgraph coning where $\Gamma$ is a subgraph of the 1-skeleton of $L$.
+     We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
+    \[ F(x,s) = 
+        \begin{cases} 
+            f(x)& s=0\\ 
+            t_{0} & s=1\\
+            \gamma_{f(x),t_{0}} (s | \gamma |)a & \text{else}
+        \end{cases}
+    \]
+    Then the map $F$ has connected fibers.
+    \begin{proof}
+        
+    
+    For \(p\) in \(\Gamma\times I\), let \(p'\) be the unique projection to $\Gamma$. Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0}\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
+    \end{proof}
+\end{lem}
+\begin{rmk}
+    (This remark is false, in the end even with extending the same graph you will get different copies of the images at the top of the cones. The issue is the suggested map is defined via sending fibers to geodesics so collapsing to a point no longer works - it would either create a discontinous map or you would have to redefine where the fibers go. You can quotient and then map fibers, but you cannot map and then quotient (changing where the top goes will create a discontinuity))
+    Why can't we get the connectedness directly from the Guirardel extension lemma? (One issue: cannot directly apply the lemma because the vertical and horizontal fibrations are not transverse to ALL edges. Where does Guirardel use the transverse fibers property?) Take the Bass-Serre maps, notice that they satisfy the assumptions even with the fibrations (even having subdivided the cubes, the e.g. vertical foliation is still transverse) Then you get this funny space with chunks of the graph glued on. You can even use the same graph as before. You should get different spaces still though because the image is different. But no matter, the map we want factors through the point-coning, but this can only make fibers more connected.
+\end{rmk}
+\begin{lem}
+    [Fibers homeomorphic to Coordinate planes]
+ \label{lem:fibershomeoplanes} 
+
+
+    Put \(f =  f_{1} \times f_{2} \times f_{3}: X \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({ f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
+    \begin{align*}
+        p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
+        & \Longleftrightarrow \exists x \in X (f(x)=p \wedge  f_3(x)=z)\\
+        & \Longleftrightarrow \exists x \in X (f(x)=p \wedge x \in f_3^{-1} (z))\\
+        & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z))
+    \end{align*}
+\end{lem}
 \begin{lem}
     [Elliptic containment implies equality]
     \label{thm:ellipticimpliesequality} 
@@ -126,7 +205,6 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 
 \begin{thm}
     \label{thm:mainresult}
-    (sketch: up to phrasing of definitions, this theorem statement is complete)
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
         Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.  Let \(\widetilde {X_{12}}\) denote its universal cover. 
@@ -137,9 +215,12 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
         
         After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
-        Consider \(J := \text{Im}(f)\). We need $J$ to satisfy a few properties at the outset and they need to be preserved as we add material to $J$ to eventually obtain a kind of extended core $E$ which $G$ will act on. 
+        Consider \(J := \text{Im}(f)\). We need $J$ to satisfy a few properties at the outset and they need to be preserved as we add material to $J$ to eventually obtain a kind of extended core $E$ which $G$ will act on.
         
-        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact and is in fact cocompact by factor \ref{defn:cocompactcrossfactor} since the action is diagonal. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact and therefore cocompact by factor \ref{defn:cocompactcrossfactor}. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp}. 
+        \fix{We start by proving that the action of $G$ on $J$ is PDC. [...]}
+        We use the fact that the actions are simplicial and so the diagonal action is cellular. This with freeness from being pairwise transverse implies PDC for subsets with the subset topology (In particular, we should not have to demand that $J$ be a subcomplex off the bat)
+        
+        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. 
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
@@ -181,9 +262,11 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. By \ref{lem:nonempty} the core is non-empty. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Apply the main theorem \ref{thm:guirardelcore} of a paper by Guirardel to obtain $C$ the core. By \ref{lem:nonempty} the core is non-empty. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
     
-    It remains to show that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
+    We also need that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
+    
+    Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map. This allows us to apply a result of Wise \ref{thm:wisegraph} to get the two splittings.
     
 \item $3\Rightarrow 2$: 
     
@@ -200,6 +283,12 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then in the notation of Guirardel $\widehat X = (X_K, \mathscr{F}_K)$ i.e. when constructing $\widehat X$ we can stop after gluing certain translates to $X$.
     \begin{proof}
         
+        \begin{figure}[htp]
+    \centering
+    \includegraphics[width=4cm]{guirardelextension.jpg}
+    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
+    \label{fig:guirardelextension}
+\end{figure}
         For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
     \end{proof}
 \end{lem}
@@ -234,7 +323,7 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
         \item Measured foliation:
         \item Constant on leaves:
         \item isometric in restriction to transverse edges:
-        \item free properly discontinuous cocompact: follows the fact that we are working with a covering space (Here we get PD for free but later we will need to show E is acted upon PD which recall PD iff quotient map is a covering map. The action on E is PDC because the action on the product of trees is PDC.)
+        \item free properly discontinuous cocompact: follows the fact that we are working with a covering space (We get this for free because we're dealing with a covering space. Later we will need to show that the action on the extended core $E$ is PDC.
     \end{enumerate}
     \end{proof}
     
@@ -633,32 +722,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 
 \section{Core has quadrant convex hyperplanes}
 
-\begin{lem}
-    [Coning Connected Fibers]
-    \label{lem:confib} 
-    Let \(p\) in \(X\) our 2-complex, let \(p'\) be the unique projection. Let \(\Gamma\) be a compact subgraph in our 2-complex \(X\).  Take \(T\) to be either \(T_{1}\) or \(T_{2}\). For now suppose we have defined a map \(f: \Gamma \to T\). We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
-    \[ F(x,s) = 
-        \begin{cases} 
-            f(x)& s=0\\ 
-            t_{0} & s=1\\
-            \gamma_{f(x),t_{0}} (s | \gamma |)a & \text{else}
-        \end{cases}
-    \]
-    Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0}\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
-\end{lem}
-\begin{lem}
-    [Fibers homeomorphic to Coordinate planes]
- \label{lem:fibershomeoplanes} 
 
-
-    Put \(f =  f_{1} \times f_{2} \times f_{3}: X \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({ f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
-    \begin{align*}
-        p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
-        & \Longleftrightarrow \exists x \in X (f(x)=p \wedge  f_3(x)=z)\\
-        & \Longleftrightarrow \exists x \in X (f(x)=p \wedge x \in f_3^{-1} (z))\\
-        & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z))
-    \end{align*}
-\end{lem}
 
 \begin{lem}
     [Reduction to vertical subpath]
