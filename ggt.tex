@@ -90,7 +90,7 @@
 \begin{enumerate}
     \item Barycentric subdivision of $X$ gives a directed VH-complex.
     \item A fiber $V_x$ with $x$ in a horizontal edge is isomorphic to nearby $V_{x'}$ except possibly when the $VH$ complex is not horizontally directed and $x$ is the midpoint of a horizontal edge. In this case it can happen that $V_x$ is double covered by nearby fibers
-    \item Being directed is essentially a non-issue but Wise uses it along with NPC to ensure certain complexes are graphs of free groups
+    \item Being directed is essentially a non-issue but Wise uses it along with NPC to ensure certain maps are injective on fundamental group and so certain complexes are graphs of free groups
 \end{enumerate}
 \section{Summary}
 
@@ -139,6 +139,11 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
 \section{Used Lemmas}
+\begin{lem}
+    [Properly discontinuous for subspace]
+    \label{lem:pdsubspace}
+    Consider $G$ a group acting on a topological space $X$ with $Y \subseteq X$ a subspace. If the action on $X$ is properly discontinuous then the action restricted to $Y$ with the subspace topology is also properly discontinuous. 
+\end{lem}
 \begin{lem}
     [Cocompactness of Core]
     See remark just after theorem 8.1 in Guirardel paper
@@ -215,12 +220,11 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
         
         After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
-        Consider \(J := \text{Im}(f)\). We need $J$ to satisfy a few properties at the outset and they need to be preserved as we add material to $J$ to eventually obtain a kind of extended core $E$ which $G$ will act on.
+        Consider \(J := \text{Im}(f)\). We need the action of $G$ on $J$ to be free and properly discontinuous with a compact quotient. We also need $J$ to have Property CCP. After establishing this we will add material to $J$ and prove that these properties are preserved at each step in order to obtain a sort of extended core denoted by $E$.
         
-        \fix{We start by proving that the action of $G$ on $J$ is PDC. [...]}
-        We use the fact that the actions are simplicial and so the diagonal action is cellular. This with freeness from being pairwise transverse implies PDC for subsets with the subset topology (In particular, we should not have to demand that $J$ be a subcomplex off the bat)
+        We use the fact that the tree actions are simplicial and so the diagonal action is cellular. This with freeness from being pairwise transverse implies the action is PDC, then \ref{lem:pdsubspace} gives PDC for subsets with the subset topology (In particular, we should not have to demand that $J$ be a subcomplex off the bat)
         
-        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. 
+        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. Technically, we apply \ref{lem:pdsubspace} again to get properly discontinuous.
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
@@ -773,9 +777,9 @@ With this splitting in hand we want to verify that it's made of successive graph
 
 \begin{lem}
     [Slice Switching]
-    If \(R \subseteq T_{1} \times T_{2}\) is a connected subcomplex then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
+    If \(R \subseteq T_{1} \times T_{2}\) is a connected \fix{(try to remove this assumption) subcomplex} then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
     \begin{proof}
-        We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge. Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
+        We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. \fix{Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge.} Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
         
         Suppose this were false, and that \(\ell \cap \rxy \neq \varnothing\) and \(r \cap \rxy \neq \varnothing\). We consider three cases: (1) \(\ell\) and \(r\) intersect \(R_{x}\) nontrivially (2) \(\ell\) and \(r\) don't intersect \(R_{x}\), and (3) exactly one of \(\ell\) or \(r\) intersects \(R_{x}\) nontrivially.
         \begin{enumerate}
