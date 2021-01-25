@@ -53,6 +53,11 @@
 \section{Background}
 \subsection{Graph of groups}
 \begin{defn}
+    [Graph of Groups]
+    (sketch)
+    Give the usual Serre graph plus groups definition
+\end{defn}
+\begin{defn}
     [Deformation]
     \label{defn:deformation}
     (sketch)
@@ -60,12 +65,27 @@
 \end{defn}
 \subsection{Graph of spaces}
 \begin{defn}
+    [Graph of Spaces]
+    Cite Scott and Wall paper more or less
+\end{defn}
+\begin{defn}
     [Bass-Serre Map]
     \label{defn:bsmap}
     (sketch)
     collapsing fibers upstairs
 \end{defn}
 \subsection{Bass-Serre Theory}
+
+\begin{thm}
+[Fundamental Bass-Serre Splitting Theorem]
+(sketch) give the HNN and Amalgamation versions
+\end{thm}
+
+\begin{cor}
+[Graph of Groups version]
+\end{cor}
+
+
 \subsection{VH-complexes}
 
 \begin{figure}[htp]
@@ -74,7 +94,7 @@
     \caption{A 2-cell in a VH-complex}
     \label{fig:square}
 \end{figure}
-
+ 
 \begin{defn}
     [Squared Complex]
     A \emph{squared complex} is a combinatorial 2-complex whose 2-cells are attached by combinatorial paths of length 4
@@ -85,31 +105,31 @@
 \end{defn}
 \begin{defn}
     [Directed]
-    Consider a VH-complex $X$ with the addition of an orientation for it's vertical and horizontal skeletons $V_X$ and $H_X$. We say $X$ is \emph{directed} if the domains of the attaching maps are standard squares $I x I$ with horizontal edges oriented left to right and vertical edges oriented top to bottom and the attaching maps are orientation preserving.
+    Consider a VH-complex $X$ with the addition of an orientation for it's vertical and horizontal skeletons $V_X$ and $H_X$. We say $X$ is \emph{directed} if the domains of the attaching maps are standard squares $I \times I$ with horizontal edges oriented left to right and vertical edges oriented top to bottom and the attaching maps are orientation preserving.
 \end{defn}
 \begin{enumerate}
     \item Barycentric subdivision of $X$ gives a directed VH-complex.
     \item A fiber $V_x$ with $x$ in a horizontal edge is isomorphic to nearby $V_{x'}$ except possibly when the $VH$ complex is not horizontally directed and $x$ is the midpoint of a horizontal edge. In this case it can happen that $V_x$ is double covered by nearby fibers
     \item Being directed is essentially a non-issue but Wise uses it along with NPC to ensure certain maps are injective on fundamental group and so certain complexes are graphs of free groups
 \end{enumerate}
-\section{Summary}
+% \section{Summary}
 
-For a precise statement, see the theorem below but essentially if $G$ has dimension two then there are at most two finite type transverse $G$-trees. Suppose for sake of a contradiction that we had three actions $T_1$, $T_2$ and $T_3$. The goal is to produce an object with high dimension that $G$ acts nicely on to contradict the dimension assumption. 
+% For a precise statement, see the theorem below but essentially if $G$ has dimension two then there are at most two finite type transverse $G$-trees. Suppose for sake of a contradiction that we had three actions $T_1$, $T_2$ and $T_3$. The goal is to produce an object with high dimension that $G$ acts nicely on to contradict the dimension assumption. 
 
-The transverse assumption is used to create a 2-complex $X_{12}$ from $T_1$ and $T_2$ that $G$ acts on. There is a standard construction that creates a map $f$ from $\widetilde X_{12}$ to $T_3$. Eventually the Guirardel extension lemma can be used to extend $f$ to a new map $ f^+$ from $\widetilde X_{12}^+$ to $T_3$ with the additional property that it's fibers are connected.
+% The transverse assumption is used to create a 2-complex $X_{12}$ from $T_1$ and $T_2$ that $G$ acts on. There is a standard construction that creates a map $f$ from $\widetilde X_{12}$ to $T_3$. Eventually the Guirardel extension lemma can be used to extend $f$ to a new map $ f^+$ from $\widetilde X_{12}^+$ to $T_3$ with the additional property that it's fibers are connected.
 
-Right now, $G$ acts on the image of $f^+$ but this doesn't have enough dimension. Next, consider the Bass-Serre maps $g$ and $h$ from $\widetilde X_{12}$ to $T_1$ and $T_2$. These can be extended as well to $\widetilde X_{12}^+$ and will have connected fibers. Take the product of all these maps, call it $Q = f\times g\times h$. This $Q$ will map into $T_1 \times T_2 \times T_3$ which has enough space to create something of dimension 3.
+% Right now, $G$ acts on the image of $f^+$ but this doesn't have enough dimension. Next, consider the Bass-Serre maps $g$ and $h$ from $\widetilde X_{12}$ to $T_1$ and $T_2$. These can be extended as well to $\widetilde X_{12}^+$ and will have connected fibers. Take the product of all these maps, call it $Q = f\times g\times h$. This $Q$ will map into $T_1 \times T_2 \times T_3$ which has enough space to create something of dimension 3.
 
-From here, we define $J:=\text{Im}(Q)$, take a cellular neighborhood and fill in three directions. The special condition that makes this work is proving that $J$ is ``Connected in Coordiante Planes'' aka CCP. Call the resulting object $E$ for ``Extended Core''. Due to the switching, this will have connected 1-dimensional fibers which in the end leads to quadrant-convex (and so simply connected) hyperplanes which is the correct thing to show that $E$ is a simply connected by showing it's a tree of simply connected spaces.
+% From here, we define $J:=\text{Im}(Q)$, take a cellular neighborhood and fill in three directions. The special condition that makes this work is proving that $J$ is ``Connected in Coordiante Planes'' aka CCP. Call the resulting object $E$ for ``Extended Core''. Due to the switching, this will have connected 1-dimensional fibers which in the end leads to quadrant-convex (and so simply connected) hyperplanes which is the correct thing to show that $E$ is a simply connected by showing it's a tree of simply connected spaces.
 
-After this, we apply Bieri three times to get that $E$ has dimension 3 which is a contradiction.
+% After this, we apply Bieri three times to get that $E$ has dimension 3 which is a contradiction.
 
 
 \section{Used Definitions}
 \begin{defn}
     [Subgraph coning]
     \label{defn:coneoff}
-    Consider an equivariant map $f: X \to T$ from a 2-complex $X$ to a tree $T$. Let $\Lambda(X,K,f)$ (or just $\Lambda(X)$) denote the space obtained by gluging $G$ translates of $(K \times I) / R$ to $X$ where $R$ is an equivalence relation that quotients one end of the product to $f(K)$.
+    Consider an equivariant map $f: X \to T$ from a 2-complex $X$ to a tree $T$. Let $\Lambda(X,K,f)$ denote the space obtained by gluging $G$ translates of $(K \times I) / R$ to $X$ where $R$ is an equivalence relation that quotients one end of the product to $f(K)$ and $K$ is a subgraph of the 1-skeleton of $X$.
 \end{defn}
 \begin{defn}
     [Minimal Action]
@@ -139,6 +159,98 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
 \section{Used Lemmas}
+
+
+
+\begin{lem}
+    [Expanded Core is simply connected]
+    \label{lem:coresc} 
+    The Expanded core $E$ is simply connected.
+    
+    \begin{proof}
+    
+        % - It seems like we are trying to show E/G is a graph of spaces by leveraging E and then concluding that E is a graph of spaces.
+        % - Is it just better to prove directly that E is a graph of spaces?
+        % -- By claim 1 we know what the hyperplanes of E are, by claim 2 we know they are separating and so the underlying graph is a tree. The conceit is that cube complexes with two-sided hyperplanes have corridors that allow for a decomposition into a graph of spaces.
+        
+        % - Later we still need to show that E/G is a graph of spaces so perhaps it's impossible to separate
+    
+        We will show that $E$ is a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree. The edge spaces are hyperplanes and the vertex spaces are the connected components of the complement of the corridors of the hyperplanes. Now, $E$ is a subset of a product so hyperplanes are embedded and two-sided and come with maps to each side of their corridor. 
+        
+        By Property CCP the hyperplanes of $E$ are connected. Since hyperplanes are the intersection of fibers (e.g. $\pi_1^{-1}(p)$) with $E$ we have that they are separating. This means the underlying graph is a tree. Because $E$ has connected 1-dimensional fibers the hyperplanes are quadrant convex by Guirardel and so are also simply connected. Hence, $E$ is a tree of simply connected spaces and is therefore simply connected.
+        
+        %Our \(E\) inherits a VHD structure from the product of three trees that it sits in. 
+        
+        % Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so hyperplanes of \(C/G\) are two-sided; indeed a given hyperplane only touches a single parallelism class of edges. 
+
+
+
+        % The edge spaces are hyperplanes, the vertex spaces come from subtracting the corridors of hyperplanes, and the edge maps are maps from hyperplanes to vertex spaces defined by seeing where the push map homotopy takes a hyperplane. 
+        
+        % We need these maps to be injective on fundamental groups in $E/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(E/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
+    
+        % A hyperplane of $E/G$ lifts to a hyperplane of $E$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $E$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
+
+    \end{proof}
+\end{lem}
+
+
+
+\begin{lem}
+    [Iterated Splitting]
+    \label{lem:iteratedsplitting} 
+    Suppose \(x\) were a vertex of \(T_{V}\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_H\). If \(K\) had a global fixed point in \(T_H\)  then by local finiteness of \(T_V\) every vertex group of \(T_V\) would as well. Then if you are elliptic for \(T_V\) you are elliptic for \(T_H\) which by a previous lemma in our setting gives that \(T_H\) and \(T_V\) are in the same deformation space; a contradiction.
+\end{lem}
+
+\begin{lem}
+    [Shortcircuit Guirardel Proof]
+    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then in the notation of Guirardel $\widehat X = \Lambda(X,K,f)$ \ref{defn:coneoff} i.e. when constructing $\widehat X$ we can stop after gluing certain translates to $X$.
+    \begin{proof}
+        
+        \begin{figure}[htp]
+    \centering
+    \includegraphics[width=4cm]{guirardelextension.jpg}
+    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
+    \label{fig:guirardelextension}
+\end{figure}
+        For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
+    \end{proof}
+\end{lem}
+\begin{lem}
+    [Cell Respects Slices]
+    If $A\subset B\subset T_1\times T_2\times T_3$ is CCP then $\text{cell}(A)$ is also CCP.
+    \label{lem:cellrespecslice} 
+    
+    (sketch)
+        
+        Pick a $z \in T_3$. Compare two sets: cell of A intersect the slice is the same as cell (of the induced 2 complex) of the projection of A intersect slice all cross $z$. The inner set is connected by assumption so cell of it is as well.
+    
+    \begin{proof}
+    
+    \end{proof}
+\end{lem}
+
+
+
+\begin{lem}
+[Technical assumptions for Guirardel]
+    \label{lem:technicalconditions}
+ \ref{lem:guirardel-extension} We check the following properties for the map $f_{123}: \widetilde{X_{12}}\to T_3$.
+    \begin{enumerate}
+        \item geometric
+        \item free properly discontinuous cocompact
+        
+    \end{enumerate}
+    \label{lem:measuredetc} 
+    
+    \begin{proof}
+    \begin{enumerate}
+        \item Geometric: We use a result of Levitt and Paulin for geometric \ref{lem:simpgeo}.
+        \item free properly discontinuous cocompact: follows the fact that we are working with a covering space (We get this for free because we're dealing with a covering space. Later we will need to show that the action on the extended core $E$ is PDC.
+    \end{enumerate}
+    \end{proof}
+\end{lem}
+
 \begin{lem}
     [Properly discontinuous for subspace]
     \label{lem:pdsubspace}
@@ -168,19 +280,19 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
             \gamma_{f(x),t_{0}} (s | \gamma |)a & \text{else}
         \end{cases}
     \]
-    Then the map $F$ has connected fibers.
+,    Then the map $F$ has connected fibers.
     \begin{proof}
         
     
     For \(p\) in \(\Gamma\times I\), let \(p'\) be the unique projection to $\Gamma$. Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0}\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
     \end{proof}
 \end{lem}
-\begin{rmk}
-    (This remark is false, in the end even with extending the same graph you will get different copies of the images at the top of the cones. The issue is the suggested map is defined via sending fibers to geodesics so collapsing to a point no longer works - it would either create a discontinous map or you would have to redefine where the fibers go. You can quotient and then map fibers, but you cannot map and then quotient (changing where the top goes will create a discontinuity))
-    Why can't we get the connectedness directly from the Guirardel extension lemma? (One issue: cannot directly apply the lemma because the vertical and horizontal fibrations are not transverse to ALL edges. Where does Guirardel use the transverse fibers property?) Take the Bass-Serre maps, notice that they satisfy the assumptions even with the fibrations (even having subdivided the cubes, the e.g. vertical foliation is still transverse) Then you get this funny space with chunks of the graph glued on. You can even use the same graph as before. You should get different spaces still though because the image is different. But no matter, the map we want factors through the point-coning, but this can only make fibers more connected.
-\end{rmk}
+% \begin{rmk}
+%     (This remark is false, in the end even with extending the same graph you will get different copies of the images at the top of the cones. The issue is the suggested map is defined via sending fibers to geodesics so collapsing to a point no longer works - it would either create a discontinous map or you would have to redefine where the fibers go. You can quotient and then map fibers, but you cannot map and then quotient (changing where the top goes will create a discontinuity))
+%     Why can't we get the connectedness directly from the Guirardel extension lemma? (One issue: cannot directly apply the lemma because the vertical and horizontal fibrations are not transverse to ALL edges. Where does Guirardel use the transverse fibers property?) Take the Bass-Serre maps, notice that they satisfy the assumptions even with the fibrations (even having subdivided the cubes, the e.g. vertical foliation is still transverse) Then you get this funny space with chunks of the graph glued on. You can even use the same graph as before. You should get different spaces still though because the image is different. But no matter, the map we want factors through the point-coning, but this can only make fibers more connected.
+% \end{rmk}
 \begin{lem}
-    [Fibers homeomorphic to Coordinate planes]
+    [Slices are connected]
  \label{lem:fibershomeoplanes} 
 
 
@@ -212,19 +324,19 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     \label{thm:mainresult}
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.  Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
-        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a fibration that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions \ref{lem:technicalconditions} for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
+        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
-        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case everything is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
+        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case everything is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
         
         After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
         Consider \(J := \text{Im}(f)\). We need the action of $G$ on $J$ to be free and properly discontinuous with a compact quotient. We also need $J$ to have Property CCP. After establishing this we will add material to $J$ and prove that these properties are preserved at each step in order to obtain a sort of extended core denoted by $E$.
         
-        We use the fact that the tree actions are simplicial and so the diagonal action is cellular. This with freeness from being pairwise transverse implies the action is PDC, then \ref{lem:pdsubspace} gives PDC for subsets with the subset topology (In particular, we should not have to demand that $J$ be a subcomplex off the bat)
+        We are acting on trees via simplicial automorphisms and the transverse condition implies vertex stabilizers are trivial. Hence, the action is properly discontinuous on the product and by \ref{lem:pdsubspace} is properly discontinuous on $J$. (don't worry about $J$ for now, use it on the one upped version)
         
-        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp}, since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. Technically, we apply \ref{lem:pdsubspace} again to get properly discontinuous.
+        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp} because fibers are connected - for $f_3$ this comes from Guirardel and for $f_1$ and $f_2$ we prove it in \ref{lem:confib}. Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. Technically, we apply \ref{lem:pdsubspace} again to get properly discontinuous.
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
@@ -275,114 +387,15 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_\overline{x}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
     
-    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund] but because we're in a product metric and they exist in different factors this is impossible.
+    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund]. Except, two unbounded sets each contained in a separate factor cannot be hausdorff equivalent.
     
 \end{enumerate}
 \end{proof}
 
-\begin{lem}
-    [Shortcircuit Guirardel Proof]
-    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then in the notation of Guirardel $\widehat X = (X_K, \mathscr{F}_K)$ i.e. when constructing $\widehat X$ we can stop after gluing certain translates to $X$.
-    \begin{proof}
-        
-        \begin{figure}[htp]
-    \centering
-    \includegraphics[width=4cm]{guirardelextension.jpg}
-    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
-    \label{fig:guirardelextension}
-\end{figure}
-        For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
-    \end{proof}
-\end{lem}
-\begin{lem}
-    [Cell Respects Slices]
-    If $A\subset B\subset T_1\times T_2\times T_3$ is CCP then $\text{cell}(A)$ is also CCP.
-    \label{lem:cellrespecslice} 
-    
-    (sketch)
-        
-        Pick a $z \in \T_3$. Compare two sets: cell of A intersect the slice is the same as cell (of the induced 2 complex) of the projection of A intersect slice all cross $z$. The inner set is connected by assumption so cell of it is as well.
-    
-    \begin{proof}
-    
-    \end{proof}
-\end{lem}
-\begin{lem}
-    \label{lem:technicalconditions}
-    [Technical assumptions for Guirardel \ref{lem:guirardel-extension}] We check the following properties for the map $f_{123}: \widetilde{X_{12}}\to T_3$.
-    \begin{enumerate}
-        \item geometric
-        \item measured foliation
-        \item free properly discontinuous cocompact
-        \item constant on leaves
-        \item isometric in restriction to transverse edges
-    \end{enumerate}
-    \label{lem:measuredetc} 
-    
-    \begin{proof}
-    \begin{enumerate}
-        \item Geometric: We use a result of Levitt and Paulin for geomeric \ref{lem:simpgeo}.
-        \item Measured foliation:
-        \item Constant on leaves:
-        \item isometric in restriction to transverse edges:
-        \item free properly discontinuous cocompact: follows the fact that we are working with a covering space (We get this for free because we're dealing with a covering space. Later we will need to show that the action on the extended core $E$ is PDC.
-    \end{enumerate}
-    \end{proof}
-    
-
-\end{lem}
-
-\begin{lem}
-    [Expanded Core is simply connected]
-    \label{lem:coresc} 
-    The Expanded core $E$ is simply connected.
-    
-    \begin{proof}
-    
-        - It seems like we are trying to show E/G is a graph of spaces by leveraging E and then concluding that E is a graph of spaces.
-        - Is it just better to prove directly that E is a graph of spaces?
-        -- By claim 1 we know what the hyperplanes of E are, by claim 2 we know they are separating and so the underlying graph is a tree. The conceit is that cube complexes with two-sided hyperplanes have corridors that allow for a decomposition into a graph of spaces.
-        
-        - Later we still need to show that E/G is a graph of spaces so perhaps it's impossible to separate
-    
-        We will show that $E$ is a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree.
-    
-        Our \(E\) inherits a VHD structure from the product of three trees that it sits in. Because the action is diagonal we also get that the quotient \(C/G\) is VHD. Our tree actions do not invert edges so hyperplanes of \(C/G\) are two-sided; indeed a given hyperplane only touches a single parallelism class of edges. 
-
-        We can view the space $E$ as a graph of spaces where the edge spaces are hyperplanes, the vertex spaces comes from subtracting the corridors of hyperplanes, and the edge maps are maps from hyperplanes to vertex spaces defined by seeing where the push map homotopy takes a hyperplane. 
-        
-        We need these maps to be injective on fundamental groups in $E/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(E/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
-    
-        A hyperplane of $E/G$ lifts to a hyperplane of $E$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $E$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
-
-        \begin{claim}
-        If C is a sub cube complex of a product cube complex then the hyperplanews of C are the connected components of the hyperplanes of the product cube complex intersect C itself - that is C intersect an object of the form (1/2) cross Y cross Z where pt is in X the first factor
-        \end{claim}
-        
-        \begin{claim}
-        (We need this so that our graph is a tree upstairs)
-        If C subset S and S' is separating in S then connected compoents of S' intersect C separate C.
-        \end{claim}
-        
-        *from sageev: When X is a product, the hyperplanes are preimages (under the natural
-projection maps) of the hyperplanes in each of the factors.
- which checks out
-
-    \end{proof}
-\end{lem}
-
-\begin{cor*}
-    If a VH-complex has horizontal and vertical splittings of finite type then up to deformation, these are the only such \(G\)-trees.
-\end{cor*}
 
 
-\begin{lem}
-    [Iterated Splitting]
-    \label{lem:iteratedsplitting} 
-    Suppose \(x\) were a vertex of \(T_{V}\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_H\). If \(K\) had a global fixed point in \(T_H\)  then by local finiteness of \(T_V\) every vertex group of \(T_V\) would as well. Then if you are elliptic for \(T_V\) you are elliptic for \(T_H\) which by a previous lemma in our setting gives that \(T_H\) and \(T_V\) are in the same deformation space; a contradiction.
-\end{lem}
 \section{Toy Version}
 \subsection{Promote elliptic containment to equality}
 
@@ -390,7 +403,7 @@ projection maps) of the hyperplanes in each of the factors.
 
 \begin{defn}
     [Simplicial Map]
-    A map between simplicial complexes is simplicial if the image of a set of vertices that spans a simplex also spans as simplex.
+    A map between simplicial complexes is simplicial if the image of a set of vertices that spans a simplex also spans a simplex.
 \end{defn}
 
 \begin{defn}
@@ -407,12 +420,12 @@ projection maps) of the hyperplanes in each of the factors.
     Replacing a connected subgraph in a graph of groups decomposition with a vertex group with the same group as the collapsed graph corresponds to collapsing an invariant forest to points.
 \end{pro}
 
-\begin{pro}
-    [Folds ``factor'' as an elementary collapse and a collapse map]
-    \label{pro:foldfactor} 
-    If \(X \to Y\) is a fold, then there exists a tree \(Z\) along with collapse maps to \(X\) and
-\(Y\). Moreover, the map to \(X\) is a collapse map corresponding to an elementary collapse.
-\end{pro}
+% \begin{pro}
+%     [Folds ``factor'' as an elementary collapse and a collapse map]
+%     \label{pro:foldfactor} 
+%     If \(X \to Y\) is a fold, then there exists a tree \(Z\) along with collapse maps to \(X\) and
+% \(Y\). Moreover, the map to \(X\) is a collapse map corresponding to an elementary collapse.
+% \end{pro}
 
 \begin{lem}
     [Hyperbolic elements are preserved]
@@ -509,21 +522,10 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 \end{defn}
 
 \begin{defn}
-    [Basse-Serre maps]
-    \label{defn:basseserremaps}
-    (defined as part of the definitions of GOS)
-\end{defn}
-
-\begin{defn}
     [Cocompact by factor]
     \label{defn:cocompactcrossfactor} 
     Given a diagonal action of \(G\) on a product, we say that a \(G\)-invariant subset \(S\) is cocompact by factor (with respect to some index \(\alpha\) in the product) if \(S \subseteq  S' \times X_{\alpha}\) where \(S'\) is a \(G\)-invariant subset of the product restricted to every index except \(\alpha\) and \(S'\) is cocompact.
 \end{defn}
-
-\begin{pro}
-    [Filling respects slices]
-    \label{pro:fillingrespectsslices} 
-\end{pro}
 
 
 
@@ -569,7 +571,7 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 \begin{lem}
     [Affine Equivariant Map]
     \label{lem:affineequivariantmap} 
-    Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where \(\mathscr{F}\) the connected components of the fibration from \(f\) is a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
+    Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where \(\mathscr{F}\) the connected components of the foliation from \(f\) is a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
     \begin{proof}
         Part 1: Construct an equivariant map.
 
@@ -736,14 +738,37 @@ With this splitting in hand we want to verify that it's made of successive graph
         \item \(r \not\in S\) 
         \item \(p,q \in S\) 
         \item \(p_{2} = q_{2} = r_{2}\) and \(p_{3} = q_{3} =r_{3}\)
-        \item \(r \in \text{cvx}_{T_{1}} (\{p,q\}) \) 
+        \item \(r_1 \in \text{cvx}_{T_{1}} (\{p_1,q_1\}) \) 
     \end{enumerate}
     then there is a path \(\sigma: [0,1] \to S\) between \(p\) and \(q\) such that \(\sigma(t)\) is contained in \(S \cap (T_{1} \times \{r_{2}\} \times \delta)\) where \(\delta\) is an open direction in \(T_{3}\) at \(r_{3}\) provided \(t \neq 0,1\).
 
     \begin{proof}
-        Proprty CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times T_{3} )\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Consider the pre-image of \(T_{1} \times r_{2} \times r_{3}\) by \(\sigma\), call it \(K\). Note that the complement of \(K\) is a countable disjoint union of open intervals in \([0,1]\) -- we will choose one later. Each open interval is connected so considering projection and the fact that \(r_{3}\) is separating in \(T_{3}\) we have that under \(\sigma\) each open interval is mapped so the third coordinate lies in a single direction of \(T_{3}\) at \(r_{3}\). After identifying, \(K\) maps into \(T_{1}\). Color the points of \(K\) by which direction at \(r_1\) in \(T_{1}\) they map into. Here we use the fact that \(\sigma\) is a path that is disjoint from \(r\). In fact, because \(S\) is a subcomplex it is closed and so there is an open neighborhood of \(r\) that is disjoint from \(S\) and therefore also  \(\sigma\). Intersecting this neighborhood with \(T_{1} \times r_{2} \times r_{3}\) gives an open neighborhood in \(T_{1}\) that is disjoint from \(\sigma\). 
+        Proprty CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times T_{3} )\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Consider the pre-image of \(T_{1} \times r_{2} \times r_{3}\) by \(\sigma\), call it \(K\). Note that the complement of \(K\) is a countable disjoint union of open intervals in \([0,1]\) -- we will choose one later. 
+        
+        \begin{figure}[htp]
+    \centering
+    \includegraphics[width=10cm]{planar_version.png}
+    \caption{Possible configuration when $T_1$ and $T_3$ are both $\mathbb{R}$. Note, interval length on the LHS may not correspond to path length on the RHS. The curve may not even be rectifiable. In general, the set on the LHS may not be discrete as drawn; it may include limit points or closed intervals.}
+    \label{fig:square}
+\end{figure}
+        
+        Each open interval is connected so considering projection and the fact that \(r_{3}\) is separating in \(T_{3}\) we have that under \(\sigma\) each open interval is mapped so the third coordinate lies in a single direction of \(T_{3}\) at \(r_{3}\). After identifying, \(K\) maps into \(T_{1}\). Color the points of \(K\) by which direction at \(r_1\) in \(T_{1}\) they map into. Here we use the fact that \(\sigma\) is a path that is disjoint from \(r\). In fact, because \(S\) is a subcomplex it is closed and so there is an open neighborhood of \(r\) that is disjoint from \(S\) and therefore also  \(\sigma\). Intersecting this neighborhood with \(T_{1} \times r_{2} \times r_{3}\) gives an open neighborhood in \(T_{1}\) that is disjoint from \(\sigma\). 
 
-        The upside is that each monocolored subset of \(K\) is closed by looking at the image of \(\sigma\) in the slice and taking intersections with a closed halfspace pointing away from \(r_{1}\). Take the smallest pairwise distance between the finite number of colored closed sets. Consider two points in \(K\) that achieve that distance. There cannot be any points of \(K\) between them because we chose the smallest distance. This picks out an interval with endpoints that map to different directions as needed.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=10cm]{path_away_r.png}
+    \caption{The path $\sigma$ avoids a neighborhood of $r$.}
+    \label{fig:square}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=6cm]{tree_version.png}
+    \caption{Sketch of a possible configuration for the general tree case. In actuality, the blue line would have to pass through the middle prongs in order to reach other directions.}
+    \label{fig:square}
+\end{figure}
+
+        The upside is that each monocolored subset of \(K\) is closed by looking at the image of \(\sigma\) in the slice and taking intersections with a closed halfspace pointing away from \(r_{1}\). Take the smallest pairwise distance between the finite number of colored closed sets. This distance is non-zero because \(\sigma\) is disjoint from a neighborhood of $r_1$ in $T_1$. Consider two points in \(K\) that achieve that distance. There cannot be any points of \(K\) between them because we chose the smallest distance. This picks out an interval with endpoints that map to different directions as needed.
      \end{proof}
  
 
@@ -762,13 +787,42 @@ With this splitting in hand we want to verify that it's made of successive graph
 \begin{lem}
     [Switching]
     \label{lem:switching} 
-    Let \(S \subseteq \mathscr{T}\) be a subcomplex that is connected in all coordinate planes \ref{defn:ccp}. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
+    Let \(S \subseteq T_1\times T_2\times T_3\) be a subcomplex that is connected in all coordinate planes \ref{defn:ccp}. Then \(S_{x}, S_{y},\) and \(S_{z}\) are as well. 
     \begin{proof}
+    
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=6cm]{switching.png}
+    \caption{The goal is to show the green interval contained in the $xy$-plane between $r$ and a point in $\sigma$ is in $S_x$. This connects points in $yz$-planes to $S$.}
+    \label{fig:square}
+\end{figure}
+    
         Without loss of generality, consider \(S_{ x}\), note that \(S_{x}\) will be connected in all \(xy\) and \(xz\) planes because \(S\) was. Consider the \(yz\)-planes in \(S_{x}\), if there were no new points added then the planes are connected and we are done. Suppose that \( p \in (S_{x} \smallsetminus S ) \cap \pi^{-1} _{1} (p_{1} )\), we need to connect \(p\) to a point in \(S\). We will show that there is a path in \(S_{x} \cap \pi_{2}^{-1} (p_{2} )\) between \(p\) and some point in \(p' \in S\).
        
         Since \(r\) is in \(S_x \smallsetminus S\) there exist distinct points \(p\) and \(q\) in \(S\) that agree in all coordinates except the first where we have that \(r_{1} \in \text{cvxhull}_{T_{1}}  (\{p_{1} , q_{1}\})\). Now, because \(S\) is connected in all coordinate planes there is a path \(\sigma\) from \(p\) to \(q\) that lies in \(S \cap \pi_{2}^{-1} (r_{2})\). In fact, we can take \(\sigma\) to be a path that begins at \(p\) and ends at \(q\) with \(T_{3}\) coordinates lying in exactly one closed direction of \(T_{3}\) at \(r_{3}\). We have factored out this situation into claim \ref{lem:verticalsubpath}.  
 
-        Take \(\sigma\) as in the claim \ref{lem:verticalsubpath}. Consider \(D = r_1 \times r_{2} \times \overline \delta\) a closed set. Let \(A\) be the set of points where \(\sigma\) crosses \(D\). This is a closed set so we can consider the preimage under \(\sigma\) and look at the complement in \([0,1]\). Color each interval by the direction in \(T_{1}\) at \(r_{1}\) that \(\pi_{1} \sigma\) takes it to. Now, identifying \(D\) with a closed direction at \(r_3\) in \(T_3\) we say that the colors at \(x \in D\) are the set of colors of intervals that the preimage of \(x\) under \(\pi_{3} \sigma\) hits.
+        Take \(\sigma\) as in the claim \ref{lem:verticalsubpath}. Consider \(D = r_1 \times r_{2} \times \overline \delta\) a closed set. Let \(A\) be the set of points where \(\sigma\) crosses \(D\). Note, $A$ does not include the root of $\delta$. This is a closed set so we can consider the preimage under \(\sigma\) and look at the complement in \([0,1]\). Color each interval by the direction in \(T_{1}\) at \(r_{1}\) that \(\pi_{1} \sigma\) takes it to. Now, identifying \(D\) with a closed direction at \(r_3\) in \(T_3\) we say that the colors at \(x \in D\) are the set of colors of intervals that the preimage of \(x\) under \(\pi_{3} \sigma\) hits.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=6cm]{interval_coloring.png}
+    \caption{A possible configuration}
+    \label{fig:square}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=6cm]{separation.png}
+    \caption{A finite number of monocolored points separating the root from $A$.}
+    \label{fig:square}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=6cm]{multicolored.png}
+    \caption{Matching the previous figure, notice the left branch is not multicolored. A particular multicolored path is highlighted.}
+    \label{fig:square}
+\end{figure}
+
 
         Our goal is to find a geodesic from the root of \(D\) to a point in \(A\) that is multicolored. Note, because points in trees are separating, if the image of a continuous map contains two points it also contains the geodesic between those points. Suppose the claim were false. Then between every point of \(A\) and the root there is a point that is monocolored. A finite number of these points suffices to separate all of \(A\) from the root. Consider the first interval, it must cross one of these points. There must be another interval that eventually leaves that half space and enters a halfspace not entered yet. Because the geodesics have one color, and we always cross a monocolored point upon leaving, each segment has the same color. Including the last segment that goes back to the root. But this is impossible because we assumed the path begins and ends in different directions in \(T_{1}\) at \(r_{1}\).
 
