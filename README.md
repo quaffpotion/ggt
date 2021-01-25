@@ -3,7 +3,15 @@
 - Search "QQ" for questions
 
 ## Todo
-
+- [ ] Read through Forester paper, take down relevant algebraic graph of group definitions
+- [ ] Outline why core is simply connected
+  - [x] Send email and break out as a lemma
+  - [ ] Write details of core being simply connected lemma
+- [ ] Write up email that avoids folding
+- [ ] Define VHD complex
+- [ ] Details on f121 and f122
+- [ ] Details on Standard 2-complex fibration
+- [ ] Work out how deep the no tree assumption goes
 - [x] Prove Transverse Lemma
   - [x] Argue upstairs for (3) implies (2)
   - [x] Add skeleton for propositions from email subject "an easier way" to finish thm:ellipticimpliesequality.
@@ -21,16 +29,9 @@
   - [x] Read through planar switching lemma
   - [x] Write reduction to vertical subpath lemma
   - [x] Write multicolored lemma (using new technique without snipping)
-- [ ] Outline why core is simply connected
-  - [x] Send email and break out as a lemma
-  - [ ] Write details of core being simply connected lemma
-- [ ] Define VHD complex
 - [x] Compute example showing local condition is not enough to guarantee parallel classes of edges
 - [x] Pull in iterated splitting lemma from chalkboard
 - [x] Outline "Bieri Dimension Argument"
-- [ ] Details on f121 and f122
-- [ ] Details on Standard 2-complex fibration
-- [ ] Work out how deep the no tree assumption goes
 - [x] Post 2020-08-19 linear run
 
 ## Meeting Notes
