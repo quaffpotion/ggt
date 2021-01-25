@@ -4,23 +4,23 @@
 
 ## Todo
 
-- [ ] Prove Transverse Lemma
-  - [ ] Argue upstairs for (3) implies (2)
+- [x] Prove Transverse Lemma
+  - [x] Argue upstairs for (3) implies (2)
   - [x] Add skeleton for propositions from email subject "an easier way" to finish thm:ellipticimpliesequality.
-  - [ ] Details on parallel axes in a CAT(0) space
+  - [x] Details on parallel axes in a CAT(0) space
 - [x] Linear Reading #3
   - [x] initial run through
   - [x] depth first following of tree to first unsatisfied node
-- [ ] How did cocompactness work to begin the bootstrap
-  - [ ] Write this proof citing continuous, diagonal, product properties
-- [ ] Prove Switching Lemma
+- [x] How did cocompactness work to begin the bootstrap
+  - [x] Write this proof citing continuous, diagonal, product properties
+- [x] Prove Switching Lemma
   - [x] Read through Switching lemma outline
   - [x] Read through coloring lemma
   - [x] Prove reduction to vertical subpath lemma
   - [x] Prove multicolored lemma (using new technique without snipping)
   - [x] Read through planar switching lemma
-  - [ ] Write reduction to vertical subpath lemma
-  - [ ] Write multicolored lemma (using new technique without snipping)
+  - [x] Write reduction to vertical subpath lemma
+  - [x] Write multicolored lemma (using new technique without snipping)
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
   - [ ] Write details of core being simply connected lemma
