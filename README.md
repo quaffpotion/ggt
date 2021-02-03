@@ -2,20 +2,29 @@
 
 - Search "QQ" for questions
 
+E is a hierarchy of splittings ... so by bieri ... the group has larger and larger algebraic dimension ... end on 3 .... alg dim <= geo dim
+... we're just showing that the algebraic dimension of E/G is 3 (though it is true that E has the intuitively correct geometric dimension, we only use 3 cells)
+
 ## Todo
-- [ ] Read through Forester paper, take down relevant algebraic graph of group definitions
+- [ ] Lemma: axes of a given hyeperbolic elment are hausdorff equivalent
+- [ ] When we get the two trees, keep in mind we start iwth the bs trees X x Y and get a subset from guirardel, and then we get a VH complex, TLDR we don't actually use the fact that a general VH-complex universal cover sits in tree x tree.
+- [ ] Work out how deep the no tree assumption goes
+- [x] Read through Forester paper, take down relevant algebraic graph of group definitions
 - [ ] Outline why core is simply connected
   - [x] Send email and break out as a lemma
-  - [ ] Write details of core being simply connected lemma
+  - [x] Write details of core being simply connected lemma
 - [ ] Write up email that avoids folding
 - [ ] Define VHD complex
 - [ ] Details on f121 and f122
+  - [x] define bass-serre maps as quotient of unviersal cover of GOS
 - [ ] Details on Standard 2-complex fibration
-- [ ] Work out how deep the no tree assumption goes
-- [x] Prove Transverse Lemma
+  - Not that it's an isometry on edges, but rather if it happens to be transverse on an edge then it's an isometry
+  - Ours will be transverse on edges
+- [ ] Prove Transverse Lemma
   - [x] Argue upstairs for (3) implies (2)
   - [x] Add skeleton for propositions from email subject "an easier way" to finish thm:ellipticimpliesequality.
   - [x] Details on parallel axes in a CAT(0) space
+  - [ ] Lemma: axes of a given hyeperbolic elment are hausdorff equivalent
 - [x] Linear Reading #3
   - [x] initial run through
   - [x] depth first following of tree to first unsatisfied node
