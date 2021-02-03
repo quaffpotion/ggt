@@ -6,7 +6,7 @@ E is a hierarchy of splittings ... so by bieri ... the group has larger and larg
 ... we're just showing that the algebraic dimension of E/G is 3 (though it is true that E has the intuitively correct geometric dimension, we only use 3 cells)
 
 ## Todo
-- [ ] Lemma: axes of a given hyeperbolic elment are hausdorff equivalent
+- [ ] Lemma: axes of a given hyeperbolic elment are hausdorff equivalent (we don't need combinatorial anything, it holds in general)
 - [ ] When we get the two trees, keep in mind we start iwth the bs trees X x Y and get a subset from guirardel, and then we get a VH complex, TLDR we don't actually use the fact that a general VH-complex universal cover sits in tree x tree.
 - [ ] Work out how deep the no tree assumption goes
 - [x] Read through Forester paper, take down relevant algebraic graph of group definitions
