@@ -6,6 +6,8 @@ E is a hierarchy of splittings ... so by bieri ... the group has larger and larg
 ... we're just showing that the algebraic dimension of E/G is 3 (though it is true that E has the intuitively correct geometric dimension, we only use 3 cells)
 
 ## Todo
+- [ ] discussion of non examples for bieri like the HMM shift and the gluing of F infinities into an F2. 
+- [ ] discussion of examples of our theorem are hard to write down since you have to verify the intersection of so many stabilitzers is FP 
 - [ ] Lemma: axes of a given hyeperbolic elment are hausdorff equivalent (we don't need combinatorial anything, it holds in general)
 - [ ] When we get the two trees, keep in mind we start iwth the bs trees X x Y and get a subset from guirardel, and then we get a VH complex, TLDR we don't actually use the fact that a general VH-complex universal cover sits in tree x tree.
 - [ ] Work out how deep the no tree assumption goes
