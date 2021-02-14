@@ -6,6 +6,7 @@ E is a hierarchy of splittings ... so by bieri ... the group has larger and larg
 ... we're just showing that the algebraic dimension of E/G is 3 (though it is true that E has the intuitively correct geometric dimension, we only use 3 cells)
 
 ## Todo
+- [ ] look over Guirardel proof of proposition 8.10 for details on foliations on complexes
 - [ ] discussion of non examples for bieri like the HMM shift and the gluing of F infinities into an F2. 
 - [ ] discussion of examples of our theorem are hard to write down since you have to verify the intersection of so many stabilitzers is FP 
 - [x] Lemma: axes of a given hyeperbolic elment are hausdorff equivalent (we don't need combinatorial anything, it holds in general)
