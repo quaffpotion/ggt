@@ -53,26 +53,44 @@
 \section{Background}
 \subsection{Graph of groups}
 \begin{defn}
+    [Graph]
+    A graph $A$ is a pair of sets $V(A)$ and $E(A)$ called vertices and edges with a fixed point free involution $e\to \bar{e}$ and boundary maps $\partial_0,\partial_1$ that satisfy $\partial_{i}(\bar{e})=\partial_{1-i}(e)$ for every $e \in E(A)$.
+\end{defn}
+\begin{defn}
     [Graph of Groups]
-    (sketch)
-    Give the usual Serre graph plus groups definition
+    A graph of groups is a triple $(A,\mathscr A, \alpha)$ where $A$ is a connected graph, $\mathscr A$ is a set of groups indexed by edges and vertices such that $\mathscr A_e=\mathscr A_{\bar e}$ for $e\in E(A)$, and $\alpha$ is a set of injective homomorphisms indexed by edges $\alpha_e: \mathscr A_e\to \mathscr A_{\partial_0 e}$.
+\end{defn}
+\begin{defn}
+    [Collapse]
+    (sketch) You have a G-tree with a vertex and an edge where the vertex and edge groups are the equal AND the edge is not a loop in T/G. From the graph of groups perspective, this corresponds to taking $A*_C C$ to $A$. From the $G$-tree perspective we are collapsing an orbit of edges.
+\end{defn}
+\begin{defn}
+    [Expansion]
+    (sketch) reverse of a collapse move
 \end{defn}
 \begin{defn}
     [Deformation]
     \label{defn:deformation}
     (sketch)
-    Definition of deformation moves and the corresponding equivalence classes. Should be in it's own section with the other GOS definitions
+    We say that two $G$-trees are in the same deformation space if they are related by a sequence of collapse and expansion moves
 \end{defn}
 \subsection{Graph of spaces}
 \begin{defn}
     [Graph of Spaces]
-    Cite Scott and Wall paper more or less
+    Given a graph of spaces $(A,\mathscr A, \alpha)$ choose spaces $X_e$ and $X_v$ with $e\in E(A)$ and $v\in V(A)$ and maps $f_e: X_e\to X_{\parial e}$ and quotient \[ \cup (X_e \times I) \cup X_v \] via  \(X_e \times I \to X_{\bar{e}} \times I\) defined by \((x,t)\to(x,1-t)\) and \(X_e\times 0\to X_{\partial_0 e}\) defined by \( (x,0)\to f_e(x)\) where the $X_e$ and the $X_v$ have fundamental groups that match the corresponding $\mathscr A_e$ and $\mathscr A_v$.
 \end{defn}
+
+\begin{pro}
+    [Reasonable Graph of Spaces]
+    (sketch) take aspherical spaces, cell complexes, mapping cylinders, etc. Strictly speaking, this is not necessary 
+\end{pro}
+    
 \begin{defn}
     [Bass-Serre Map]
     \label{defn:bsmap}
+    
     (sketch)
-    collapsing fibers upstairs
+    the universal cover of a graph of spaces is a tree of spaces, this map takes $X_v$ to a point and $X_e \times I$ to an edge
 \end{defn}
 \subsection{Bass-Serre Theory}
 
@@ -124,6 +142,17 @@
 
 % After this, we apply Bieri three times to get that $E$ has dimension 3 which is a contradiction.
 
+\subsection{CAT(0) Cube Complexes}
+\subsubsection {General definitions}
+\begin{defn}
+    [Isometry]
+\end{defn}
+\begin{defn}
+    [axis]
+\end{defn}
+\begin{defn}
+    [Types of isometries]
+\end{defn}
 
 \section{Used Definitions}
 \begin{defn}
@@ -160,7 +189,22 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \end{defn}
 \section{Used Lemmas}
 
+\begin{lem}
+    [Axes are hausdorff equivalent]
+    Any two axes for a given hyperbolic isometry of a geodesic metric space are Hausdorff equivalent.
+    
+\end{lem}
+\begin{proof}
 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=4cm]{axis-hausdorff.jpg}
+    \caption{To show the axes are close, we translate two closest points until they are near an arbitrary point and then apply the triangle inequality}
+    \label{fig:axis-hausdorff}
+\end{figure}
+
+    Let $X$ be a geodesic metric space and $g$ a hyperbolic isometry with translation length $a$. Suppose $\ell_1$ and $\ell_2$ are axes for $g$. Let $D:= d(\ell_1,\ell_2)$ denote the distance between the closed sets $\ell_1$ and $\ell_2$. Suppose that $x_0\in\ell_1$ and $y_0\in\ell_2$ realize that distance. Let $x\in\ell_1$ be arbitrary. Because the translation length of $g$ is $a$ there is some integer $m$ such that $g^mx_0$ is within $a$ of $x$. The isometry preserves distances so $g^mx_0$ and $g^my_0$ are $D$ far apart. Hence, $$d(x, g^my_0)\leq d(x, g^mx_0) + d(g^mx_0, g^my_0)\leq a+D$$ so $\ell_1$ is within the $a+D$ neighborhood of $\ell_2$. By symmetry, the axes $\ell_1$ and $\ell_2$ are Hausdorff equivalent.
+\end{proof}
 
 \begin{lem}
     [Expanded Core is simply connected]
@@ -332,11 +376,13 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
         
         After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
 
-        Consider \(J := \text{Im}(f)\). We need the action of $G$ on $J$ to be free and properly discontinuous with a compact quotient. We also need $J$ to have Property CCP. After establishing this we will add material to $J$ and prove that these properties are preserved at each step in order to obtain a sort of extended core denoted by $E$.
+  We are acting on trees via simplicial automorphisms and the transverse condition implies vertex stabilizers for the action on the product of the three trees are trivial. Hence, the action is properly discontinuous on the product and by \ref{lem:pdsubspace} is properly discontinuous on subspaces.
+
+        Consider \(J := \text{Im}(f)\). We need the action of $G$ on $J$ to be free and cocompact. We also need $J$ to have Property CCP. After establishing this we will add material to $J$ and prove that these properties are preserved at each step in order to obtain a sort of extended core denoted by $E$.
         
-        We are acting on trees via simplicial automorphisms and the transverse condition implies vertex stabilizers are trivial. Hence, the action is properly discontinuous on the product and by \ref{lem:pdsubspace} is properly discontinuous on $J$. (don't worry about $J$ for now, use it on the one upped version)
+      
         
-        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp} because fibers are connected - for $f_3$ this comes from Guirardel and for $f_1$ and $f_2$ we prove it in \ref{lem:confib}. Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. Technically, we apply \ref{lem:pdsubspace} again to get properly discontinuous.
+        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp} because fibers are connected - for $f_3$ this comes from Guirardel and for $f_1$ and $f_2$ we prove it in \ref{lem:confib}. Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well.
 
         Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
 
@@ -387,7 +433,7 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. (We could tighten to geodesics loops and lift or tighten afterwards) Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
     
     The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund]. Except, two unbounded sets each contained in a separate factor cannot be hausdorff equivalent.
     
