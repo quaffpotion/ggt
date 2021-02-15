@@ -61,11 +61,11 @@
     A graph of groups is a triple $(A,\mathscr A, \alpha)$ where $A$ is a connected graph, $\mathscr A$ is a set of groups indexed by edges and vertices such that $\mathscr A_e=\mathscr A_{\bar e}$ for $e\in E(A)$, and $\alpha$ is a set of injective homomorphisms indexed by edges $\alpha_e: \mathscr A_e\to \mathscr A_{\partial_0 e}$.
 \end{defn}
 \begin{defn}
-    [Collapse]
+    [Collapse Move]
     (sketch) You have a G-tree with a vertex and an edge where the vertex and edge groups are the equal AND the edge is not a loop in T/G. From the graph of groups perspective, this corresponds to taking $A*_C C$ to $A$. From the $G$-tree perspective we are collapsing an orbit of edges.
 \end{defn}
 \begin{defn}
-    [Expansion]
+    [Expansion Move]
     (sketch) reverse of a collapse move
 \end{defn}
 \begin{defn}
@@ -74,6 +74,22 @@
     (sketch)
     We say that two $G$-trees are in the same deformation space if they are related by a sequence of collapse and expansion moves
 \end{defn}
+
+\begin{defn}
+    [Refinement Map]
+    For simplicial $G$-trees we say that $X$ is a refinement of $Y$ if there exists a continuous equivariant map $X\to Y$ such the the preimage of a connected set is connected.
+\end{defn}
+\begin{pro}
+    [refinement maps come from collapsing a forest to points]
+    (sketch)
+    ...
+\end{pro}
+\begin{pro}
+    [Subgraph Crush]
+    (sketch)
+    Replacing a connected subgraph in a graph of groups decomposition with a vertex group (and redefining edge maps) with the same group as the collapsed graph corresponds to collapsing an invariant forest to points which corresponds to the existence of a refinement map
+\end{pro}
+
 \subsection{Graph of spaces}
 \begin{defn}
     [Graph of Spaces]
@@ -191,6 +207,7 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 
 \begin{lem}
     [Axes are hausdorff equivalent]
+    \label{lem:axeshausdorff}
     Any two axes for a given hyperbolic isometry of a geodesic metric space are Hausdorff equivalent.
     
 \end{lem}
@@ -309,7 +326,7 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 main theorem from guirardel that produces the core that we need in the X12 aka transverse consturction aka toy version
 \end{thm}
 \begin{thm}[Wise Graph Decomposition]
-\label{thm:wisegraph}
+\label{thm:wisegraph}[Wise, Thm 2.16 from \cite{wisecsc}]
 Given an NPCCC VH we get two splittings. The NPC is used to get that maps are combinatorial immersions and so injective on fundamental group
 \end{thm}
 \begin{lem}
@@ -398,16 +415,18 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \begin{lem}
     [Transverse Construction]
     \label{pro:transverseconstruction} 
- Let $G$ a group of dimension 2. If $X$ and $Y$ are non-trivial $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
+ Let $G$ be a group of cohomological dimension 2. If $X$ and $Y$ are non-trivial minimal $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
 \begin{enumerate}
     \item $X$, $Y$ transverse
     \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
-    \item There exists a cocompact VH-complex $K$ with $\pi_1(K) = G$ whose horizontal and vertical splittings are $X$ and $Y$.
+    \item There exists a compact VH-complex $K$ with $\pi_1(K) \cong G$ whose horizontal and vertical splittings are $X$ and $Y$.
 \end{enumerate}
 \end{lem}
 \begin{proof}
-\begin{enumerate}
-    \item $1\Rightarrow 2$: Fix $x_0 \in V(X)$ Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri to get:
+\begin{itemize}
+    \item
+    
+    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri to get:
     \begin{align*}
         2 &= dG\\
           &= dG_{x_0}+1\\
@@ -420,24 +439,36 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     \begin{claim*}
     The action of $G_{x_0}$ on $Y$ is non-trivial.
     \begin{proof}
-        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$ $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$ which contradicts the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
+        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$, $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$  contradicting the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
     \end{proof}
     \end{claim*}
     \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. Apply the main theorem \ref{thm:guirardelcore} of a paper by Guirardel to obtain $C$ the core. By \ref{lem:nonempty} the core is non-empty. Condition (2) says that $G$ acts freely on $X\times Y$. By \ref{lem:coreconnected} the core is connected. By the remark after Proposition 4.17 in Guirardel the core is simply connected. The action is also free on subsets of $X \times Y$. Since the action is cellular and free it's a covering space action. (We avoid situations like irrational rotations on a circle that are free but not covering space actions) 
+    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. We first check a few conditions in order to apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper}. 
     
-    We also need that $C/G$ is VH. Is it enough to say that the action respects the tree factors. (The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges)
+    First note that $X$ and $Y$ are minimal $G$-trees. 
     
-    Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map. This allows us to apply a result of Wise \ref{thm:wisegraph} to get the two splittings.
+    If our trees had homothetic length functions (i.e. the length functions were a constant multiple of each other) then they would vanish on the same elements, which would imply they had the same elliptic elements. For trees of finite-type this is enough to conclude using results from \cite{foresterdeformationrigidity}  that the actions have the same elliptic subgroups and therefore both lie in the same deformation space, a contradiction. Therefore, $X$ and $Y$ have non-homothetic length functions.
+    
+    Lastly, by \ref{lem:nocommonrefinement} our trees are not refinements of a common non-trivial simplicial $G$-tree.
+    
+    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. Condition (2) says that $G$ acts freely on the product $X\times Y$ and therefore also on the core, a subset of $X \times Y$. Since the tree actions are simplicial, and the product action is free, the product action is a covering space action.
+    
+    We also need that $C/G$ is VH. Is it enough to observe that the diagonal action respects the tree factors. The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges as needed.
+    
+    Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the combinatorial Gromov NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map. This allows us to apply a result of Wise \ref{thm:wisegraph} to get the two splittings. 
+    
+    \fix{(TODO We have X and Y, we make X x Y, we get C inside X x Y. We form C/G and see it's VH, NPCCC, compact. Blinding applying the wise result we get that C/G is a graph of spaces where the spaces are graphs. This implies that C is itself a tree of trees. I think slightly more is needed to say that all the trees are the same (in which case it is all of X x Y) or all trees are "X, Y, or a subset theorof" to allow for cases where we do not have a complete square complex) -- the point being, once you know this then you have that: original X is the same tree as the tree the quotient map goes to}
     
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which contains a combinatorial axis composed of vertical edges in $\widetilde{K}$. (We could tighten to geodesics loops and lift or tighten afterwards) Doing the same for $y$ gives a combinatorial axis composed of horizontal edges. 
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. 
     
-    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$. Because $X\times Y$ is CAT(0) the combinatorial axes are hausdorff equivalent [Haglund]. Except, two unbounded sets each contained in a separate factor cannot be hausdorff equivalent.
+    %(We could tighten to geodesics loops and lift or tighten afterwards)
     
-\end{enumerate}
+    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$ by Wise. \fix{(TODO we seem to need wise here to know our cover sits in a product)} By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets each contained in a separate factor cannot be Hausdorff equivalent under the product metric.
+    
+\end{itemize}
 \end{proof}
 
 
@@ -456,15 +487,6 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     [Morphism]
     We say a simplicial map between trees is a morphism if edges go to edges.
 \end{defn}
-
-\begin{defn}
-    [Collapse Map]
-    Given a \(G\)-tree, collapsing components of an invariant forest to points gives a \(G\)-map.
-\end{defn}
-\begin{pro}
-    [Subgraph Collapse]
-    Replacing a connected subgraph in a graph of groups decomposition with a vertex group with the same group as the collapsed graph corresponds to collapsing an invariant forest to points.
-\end{pro}
 
 % \begin{pro}
 %     [Folds ``factor'' as an elementary collapse and a collapse map]
@@ -678,26 +700,17 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     The only property we need is that every cube is colored VHD, so we can reference splittings dual to an edge and that the sides are VH complexes
 \end{rmk}
 
-\begin{thm}[F, ``On uniqueness...'', Thm 3.2]
+\begin{thm}[Forester, Thm 4.2 in \cite{foresterdeformationrigidity}]
 \label{thm:forester}
-Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are related by an elementary deformation if and only if they have the same elliptic subgroups.
+Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are in the same deformation space (i.e. $X\sim Y$) if and only if they have the same elliptic subgroups.
 \end{thm}
 
 \begin{lem}
-    [Guirardel Core is connected]
-    \label{lem:coreconnected} 
-    Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then the core is connected.
+    [No common refinement]
+    \label{lem:nocommonrefinement} 
+    Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then $X$ and $Y$ are not refinements of a common non-trivial simplicial $G$-tree.
     \begin{proof}
-        By Guirardel Proposition 4.14, the core is disconnected if and only if the two trees have a common refinement. This corresponds to collapse maps. This means there is an edge in the refinement that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradics our initial assumptions.
-    \end{proof}
-\end{lem}
-
-\begin{lem}
-    [Guirardel Core is nonempty]
-    \label{lem:corenonempty} 
-    Let \(X\) and \(Y\) be two non-trivial actions of a finitely generated group \(G\) with finitely generated vertex groups that lie in different deformation spaces. Then the core of \(X\) and \(Y\) is non-empty.
-    \begin{proof}
-        By Guirardel Proposition 3.1, if they were in the same deformation space then they would have homothetic length functions i.e. one length function is a multiple of the other. Since elliptic elemenets fix a point, they have length zero. This means that \(X\) and \(Y\) have the same elliptic elements. From theorem 4.2 and corollary 4.3 in [F] we get that they have the same elliptic subgroups. This implies they lie in the same deformation space which contradicts our original assumption.
+        Having a common refinement corresponds to collapse maps. This means there is an edge in the refinement that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
     \end{proof}
 \end{lem}
 
@@ -744,7 +757,7 @@ With this splitting in hand we want to verify that it's made of successive graph
     Due to \ref{def:notalltrees} we get that we can apply the dimension argument using Bieri to complete our result.
 \end{cor*}
 
-% TODO is this still needed?
+\fix{ TODO is this still needed?}
 \begin{lem}
     The action of \(G\) on \(T_1 \times T_{2} \) is free.
     \begin{proof}
@@ -824,7 +837,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 \begin{defn}
     [Connected in coordinate planes]
     \label{defn:ccp} 
-    % TODO reword so that it's specialized to our case of just having 3 dimensions and ve very clear about fixing a factor
+    \fix{ TODO reword so that it's specialized to our case of just having 3 dimensions and ve very clear about fixing a factor}
     Let \(S\) be a subset of a product indexed by \(1 \leq k \leq N\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) is connected for all \(p \in X_{k}\) for all \(k\).
     
 \end{defn}
@@ -919,6 +932,34 @@ With this splitting in hand we want to verify that it's made of successive graph
     Repeatedly applying \ref{lem:switching} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
 \end{lem}
 
+\begin{thebibliography}{9}
+
+\bibitem{wisecsc}
+Wise complete square complexes
+
+\bibitem{guirardelcorepaper}
+Guirardel
+
+\bibitem{foresterdeformationrigidity}
+Forester deformation and rigidity
+
+
+\bibitem{latexcompanion} 
+Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+\textit{The \LaTeX\ Companion}. 
+Addison-Wesley, Reading, Massachusetts, 1993.
+
+\bibitem{einstein} 
+Albert Einstein. 
+\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+[\textit{On the electrodynamics of moving bodies}]. 
+Annalen der Physik, 322(10):891–921, 1905.
+
+\bibitem{knuthwebsite} 
+Knuth: Computers and Typesetting,
+\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\end{thebibliography}
+
 \end{document}
 
 #justVimThings
@@ -967,3 +1008,8 @@ general picture of 2-sided
 circle x2 ..... annulus .... x2 circle
 push map becomes a 2x covering map
 upstairs it's a line to a line homeomorphism
+
+====
+
+non-examples for proper discontinuity:
+(We avoid situations like irrational rotations on a circle that are free but not covering space actions. While we're here: the non-example for proper discontinuity is rotating a disk) 
