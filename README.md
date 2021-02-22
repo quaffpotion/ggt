@@ -2,10 +2,11 @@
 
 - Search "QQ" for questions
 
-E is a hierarchy of splittings ... so by bieri ... the group has larger and larger algebraic dimension ... end on 3 .... alg dim <= geo dim
+## Todo
+- [ ] Make sure this point is clear in the writing:
+  > E is a hierarchy of splittings ... so by bieri ... the group has larger and larger algebraic dimension ... end on 3 .... alg dim <= geo dim
 ... we're just showing that the algebraic dimension of E/G is 3 (though it is true that E has the intuitively correct geometric dimension, we only use 3 cells)
 
-## Todo
 - [ ] look over Guirardel proof of proposition 8.10 for details on foliations on complexes
 - [ ] discussion of non examples for bieri like the HMM shift and the gluing of F infinities into an F2. 
 - [ ] discussion of examples of our theorem are hard to write down since you have to verify the intersection of so many stabilitzers is FP 
