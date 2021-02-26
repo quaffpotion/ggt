@@ -54,11 +54,11 @@
 \subsection{Graph of groups}
 \begin{defn}
     [Graph]
-    A graph $A$ is a pair of sets $V(A)$ and $E(A)$ called vertices and edges with a fixed point free involution $e\to \bar{e}$ and boundary maps $\partial_0,\partial_1$ that satisfy $\partial_{i}(\bar{e})=\partial_{1-i}(e)$ for every $e \in E(A)$.
+    A graph $A$ is a pair of sets $V(A)$ and $E(A)$ called vertices and edges with a fixed point free involution on $E(A)$ denoted $e\mapsto \bar{e}$ and boundary maps $\partial_0,\partial_1: E(A)\to V(A)$ that satisfy $\partial_{i}(\bar{e})=\partial_{1-i}(e)$ for every $e \in E(A)$.
 \end{defn}
 \begin{defn}
     [Graph of Groups]
-    A graph of groups is a triple $(A,\mathscr A, \alpha)$ where $A$ is a connected graph, $\mathscr A$ is a set of groups indexed by edges and vertices such that $\mathscr A_e=\mathscr A_{\bar e}$ for $e\in E(A)$, and $\alpha$ is a set of injective homomorphisms indexed by edges $\alpha_e: \mathscr A_e\to \mathscr A_{\partial_0 e}$.
+    A graph of groups is a triple $(A,\mathscr A, \alpha)$ where $A$ is a connected graph, $\mathscr A$ is a set of groups indexed by edges and vertices such that $\mathscr A_e=\mathscr A_{\bar e}$ for $e\in E(A)$, and $\alpha$ is a set of injective homomorphisms indexed by edges that satisfy $\alpha_e: \mathscr A_e\to \mathscr A_{\partial_0 e}$.
 \end{defn}
 \begin{defn}
     [Collapse Move]
@@ -77,7 +77,7 @@
 
 \begin{defn}
     [Refinement Map]
-    For simplicial $G$-trees we say that $X$ is a refinement of $Y$ if there exists a continuous equivariant map $X\to Y$ such the the preimage of a connected set is connected.
+    For simplicial $G$-trees we say that $X$ is a refinement of $Y$ if there exists an  equivariant \fix{simplicial} map $X\to Y$ such the the preimage of a connected set is connected.
 \end{defn}
 \begin{pro}
     [refinement maps come from collapsing a forest to points]
@@ -365,19 +365,77 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
         & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z))
     \end{align*}
 \end{lem}
+
+\begin{pro}
+    [Hyperbolic gives unique minimal tree]
+    \label{pro:uniquemintree}
+    If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
+\end{pro}
+\begin{proof}
+    take as writ
+\end{proof}
+\begin{pro}
+    [Commensurable groups have the same minimal tree]
+    \label{pro:commintree}
+    Suppose $G$ acts on a tree $X$ and $H$ and $K$ are commensurable subgroups. If $H$ contains a hyperbolic element, then so does $K$ and the minimal subtrees for $H$ and $K$ are equal.
+\end{pro}
+\begin{proof}
+    Use \ref{pro:uniquemintree} or cite "Covering theory for graphs of groups" corollary 7.7 by Bass
+\end{proof}
+
+\begin{pro}
+    [Preserve Hyperbolicity]
+    \label{pro:preservehyperbolicity}
+    Suppose $f: X\to Y$ is a $G$-map of $G$-trees which is onto, where $Y$ is locally finite and not a single point. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
+\end{pro}
+\begin{proof}
+
+For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$ so it fixes some vertex $y\in Y$. Consider the stabilizer $G_y$ of $y\in Y$; it contains $g$. Now let $G_y$ act on $X$, the set $f^{-1}(y)$ is invariant because the map is a $G$-map and we are acting by automorphisms. This means the minimal subtree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$.
+
+Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $y\neq z$. As before, $G_z$ stabilizes $f^{-1}(z)$ which is disjoint from $f^{-1}(y)$.
+
+By local finiteness, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the connected minimal tree for $G_y$ is contained in two disjoint sets, a contradiction.
+
+\fix{TODO: draw nice pictures}
+\end{proof}
+
 \begin{lem}
     [Elliptic containment implies equality]
     \label{thm:ellipticimpliesequality} 
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
 \end{lem}
 \begin{proof}
-        (sketch) need to type this
-        this is now fixed due to \ref{lem:localfinhyper} and \ref{lem:commensurableminimal} see email
+        Suppose EX subet EY. By \fix{TODO proposition} this is equivalent to the existence of a G-map from X to Y. 
+        
+        proposition: Y to X G-map iff EY subset EX
+        proof:
+        Say we have a G-map from Y to X. Consider Gy. Say K is G-invariant i.e. g.K = K. We also have, f(gy)=g.f(y)
+        Consider f(K). Let z in f(K). Look at g.z = g.f(y') = f(gy')
+        So images of G-inv sets are G-inv
+        
+        So y is Gy-invariant, so f(y) is Gy-invaraint
+        So EY subset EX.
+        
+        Now going the other way, if EY subset EX. Send the vertices anywhere, then map geos to geos after picking a basepoint.
+        
+        ===
+        
+        We want to use the fact that for nice trees \ref{cor:foresterelementcontainment} applies.
+        
+        EX subset EY. ==> X to Y G-map. This + finite type implies same ell elements. This plus cor from ofrester means same deformation space so same EX=EY.
+        
+        ===
+        
+        In one breath. EX subset EY gives you a G-map X to Y. By \ref{pro:preservehyperbolicity} X and Y partition G into the same ell/hyp parts, so \ref{cor:foresterelementcontainment} gives deformation which by \ref{thm:forester} gives EX=EY.
+        
+        
+        
+        
 \end{proof}
 \begin{lem}
     [Minimality is enough]
     \label{lem:minenough} 
-    If the theroem is true for minimal trees then it is true for trees in general
+    If the main theroem is true for minimal trees then it is true for trees in general
 \end{lem}
 \section{Problem Statement}
 
@@ -455,9 +513,9 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     
     We also need that $C/G$ is VH. Is it enough to observe that the diagonal action respects the tree factors. The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges as needed.
     
-    Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the combinatorial Gromov NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map. This allows us to apply a result of Wise \ref{thm:wisegraph} to get the two splittings. 
+    Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the combinatorial Gromov NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map.
     
-    \fix{(TODO We have X and Y, we make X x Y, we get C inside X x Y. We form C/G and see it's VH, NPCCC, compact. Blinding applying the wise result we get that C/G is a graph of spaces where the spaces are graphs. This implies that C is itself a tree of trees. I think slightly more is needed to say that all the trees are the same (in which case it is all of X x Y) or all trees are "X, Y, or a subset theorof" to allow for cases where we do not have a complete square complex) -- the point being, once you know this then you have that: original X is the same tree as the tree the quotient map goes to}
+    \fix{TODO we are using minimal trees so projecting to X gives an onto map, it follows from minimality that the splitting from C/G is the same as the original action on X}
     
 \item $3\Rightarrow 2$: 
     
@@ -466,7 +524,7 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     
     %(We could tighten to geodesics loops and lift or tighten afterwards)
     
-    The action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$ by Wise. \fix{(TODO we seem to need wise here to know our cover sits in a product)} By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets each contained in a separate factor cannot be Hausdorff equivalent under the product metric.
+    By Wise, the action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$. By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets each contained in a separate factor cannot be Hausdorff equivalent under the product metric.
     
 \end{itemize}
 \end{proof}
@@ -705,12 +763,18 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are in the same deformation space (i.e. $X\sim Y$) if and only if they have the same elliptic subgroups.
 \end{thm}
 
+\begin{cor}
+[Element containment gives elliptic containment, Forester, Cor 4.3 in \cite{foresterdeformationrigidity}]
+\label{cor:foresterelementcontainment}
+Let $G$ be a group. Let $X$ and $Y$ be cocompact $G$-trees whose vertex stabilizers have property (E). TFAE: (1) X and Y are related by an elementary deformation (2) X and Y define the same parition of $G$ into elliptic and hyperbolic element (3) the length functions of X and Y vanish at the same elements of $G$.
+\end{cor}
+
 \begin{lem}
     [No common refinement]
     \label{lem:nocommonrefinement} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then $X$ and $Y$ are not refinements of a common non-trivial simplicial $G$-tree.
     \begin{proof}
-        Having a common refinement corresponds to collapse maps. This means there is an edge in the refinement that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since the trees are all locally finite, we have that all vertex groups of all trees involved are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
+        This means there is an edge in the collapsed tree that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since $X$ and $Y$ are locally finite, we have that the vertex groups of $X$ and $Y$ are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
     \end{proof}
 \end{lem}
 
