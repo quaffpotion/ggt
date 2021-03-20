@@ -75,6 +75,8 @@
     We say that two $G$-trees are in the same deformation space if they are related by a sequence of collapse and expansion moves
 \end{defn}
 
+
+
 \begin{defn}
     [Refinement Map]
     For simplicial $G$-trees we say that $X$ is a refinement of $Y$ if there exists an  equivariant \fix{simplicial} map $X\to Y$ such the the preimage of a connected set is connected.
@@ -86,6 +88,7 @@
 \end{pro}
 \begin{pro}
     [Subgraph Crush]
+    \fix{TODO maybe can remove}
     (sketch)
     Replacing a connected subgraph in a graph of groups decomposition with a vertex group (and redefining edge maps) with the same group as the collapsed graph corresponds to collapsing an invariant forest to points which corresponds to the existence of a refinement map
 \end{pro}
@@ -369,10 +372,11 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \begin{pro}
     [Hyperbolic gives unique minimal tree]
     \label{pro:uniquemintree}
+    
     If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
 \end{pro}
 \begin{proof}
-    take as writ
+    take as writ \fix{TODO maybe cite trees or the bass paper, or culler morgan, the r-tree paper length functinos for gorups acting on r-trees}
 \end{proof}
 \begin{pro}
     [Commensurable groups have the same minimal tree]
@@ -390,13 +394,33 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \end{pro}
 \begin{proof}
 
-For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$ so it fixes some vertex $y\in Y$. Consider the stabilizer $G_y$ of $y\in Y$; it contains $g$. Now let $G_y$ act on $X$, the set $f^{-1}(y)$ is invariant because the map is a $G$-map and we are acting by automorphisms. This means the minimal subtree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$.
+For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The set $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
 
-Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $y\neq z$. As before, $G_z$ stabilizes $f^{-1}(z)$ which is disjoint from $f^{-1}(y)$.
 
-By local finiteness, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the connected minimal tree for $G_y$ is contained in two disjoint sets, a contradiction.
+Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$.
 
-\fix{TODO: draw nice pictures}
+\fix{TODO: keep in mind, we can stabilize empty sets but it means nothing, for the minimal cnotainmet to be true we need a non-empty invariant set, .... we want int of all inv-trees = minimal tree}
+
+By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
+
+\fix{TODO: draw nice pictures}\\
+\fix{TODO:make the OS statement a proposition}\\
+
+\end{proof}
+
+\begin{pro}
+[Equivariant Map equivalent to elliptic subgroup containment]
+\label{pro:gmapfromsubset}
+Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
+\begin{enumerate}
+    \item \(\mathcal{E}(X) \subseteq \mathcal{E}(Y)\)
+    \item There exists a simplicial $G$-map from a subdivision of $X$ to $Y$.
+\end{enumerate}
+\end{pro}
+\begin{proof}
+    For (1)$\Rightarrow$(2) we will construct a $G$-map \fix{TODO}
+    
+    For (2)$\Rightarrow$(1), suppose $f:X\to Y$ was a simplicial $G$-map. Consider a vertex group of $X$, say $G_x$. Let $g\in G_x$, then $g\cdot f(x)=f(g\cdot x)=f(x)$ a vertex in $Y$ since the map is simplicial. Hence, $G_x$ also fixes the vertex $f(x)\in Y$. Hence, every vertex group for $X$ fixes a vertex of $Y$. Therefore, every elliptic subgroup for $X$ is also elliptic for $Y$.
 \end{proof}
 
 \begin{lem}
@@ -405,30 +429,7 @@ By local finiteness, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} 
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
 \end{lem}
 \begin{proof}
-        Suppose EX subet EY. By \fix{TODO proposition} this is equivalent to the existence of a G-map from X to Y. 
-        
-        proposition: Y to X G-map iff EY subset EX
-        proof:
-        Say we have a G-map from Y to X. Consider Gy. Say K is G-invariant i.e. g.K = K. We also have, f(gy)=g.f(y)
-        Consider f(K). Let z in f(K). Look at g.z = g.f(y') = f(gy')
-        So images of G-inv sets are G-inv
-        
-        So y is Gy-invariant, so f(y) is Gy-invaraint
-        So EY subset EX.
-        
-        Now going the other way, if EY subset EX. Send the vertices anywhere, then map geos to geos after picking a basepoint.
-        
-        ===
-        
-        We want to use the fact that for nice trees \ref{cor:foresterelementcontainment} applies.
-        
-        EX subset EY. ==> X to Y G-map. This + finite type implies same ell elements. This plus cor from ofrester means same deformation space so same EX=EY.
-        
-        ===
-        
-        In one breath. EX subset EY gives you a G-map X to Y. By \ref{pro:preservehyperbolicity} X and Y partition G into the same ell/hyp parts, so \ref{cor:foresterelementcontainment} gives deformation which by \ref{thm:forester} gives EX=EY.
-        
-        
+        Suppose \(\mathcal{E}(X) \subseteq \mathcal{E}(Y)\). By \ref{pro:gmapfromsubset} this is equivalent to the existence of a $G$-map from $X$ to $Y$. By \ref{pro:preservehyperbolicity} $X$ and $Y$ partition G into the same elliptic and hyperbolic elements so \ref{cor:foresterelementcontainment} gives that $X$ and $Y$ are related by an elementary deformation which by \ref{thm:forester} gives \(\mathcal{E}(X)=\mathcal{E}(Y)\).
         
         
 \end{proof}
@@ -437,13 +438,18 @@ By local finiteness, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} 
     \label{lem:minenough} 
     If the main theroem is true for minimal trees then it is true for trees in general
 \end{lem}
+\begin{proof}
+    \fix{TODO !!}
+\end{proof}
 \section{Problem Statement}
+
+tree has finite quotient graph then can make minimal
 
 \begin{thm}
     \label{thm:mainresult}
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. By \ref{lem:minenough} without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees by performing a deformation since their quotients are finite.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
         Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
@@ -1077,3 +1083,30 @@ upstairs it's a line to a line homeomorphism
 
 non-examples for proper discontinuity:
 (We avoid situations like irrational rotations on a circle that are free but not covering space actions. While we're here: the non-example for proper discontinuity is rotating a disk) 
+
+=====
+
+    working on the EX=EY lemma
+
+        proposition: Y to X G-map iff EY subset EX
+        proof:
+        Say we have a G-map from Y to X. Consider Gy. Say K is G-invariant i.e. g.K = K. We also have, f(gy)=g.f(y)
+        Consider f(K). Let z in f(K). Look at g.z = g.f(y') = f(gy')
+        So images of G-inv sets are G-inv
+        
+        So y is Gy-invariant, so f(y) is Gy-invaraint
+        So EY subset EX.
+        
+        Now going the other way, if EY subset EX. Send the vertices anywhere, then map geos to geos after picking a basepoint.
+        
+        ===
+        
+        We want to use the fact that for nice trees \ref{cor:foresterelementcontainment} applies.
+        
+        EX subset EY. ==> X to Y G-map. This + finite type implies same ell elements. This plus cor from ofrester means same deformation space so same EX=EY.
+        
+        ===
+        
+        In one breath. EX subset EY gives you a G-map X to Y. By \ref{pro:preservehyperbolicity} X and Y partition G into the same ell/hyp parts, so \ref{cor:foresterelementcontainment} gives deformation which by \ref{thm:forester} gives EX=EY.
+        
+        
