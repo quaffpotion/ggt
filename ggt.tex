@@ -24,7 +24,7 @@
 \newcommand{\rxy}{(R_x)_y}
 \newcommand{\ryx}{(R_y)_x}
 \newcommand{\Sxyz}[3]{((K_#1)_#2)_#3}
-\newcommand{\fix}[1]{\textcolor{blue}{(fix) #1}}
+\newcommand{\fix}[1]{\textcolor{red}{(fix) #1}}
 
 \theoremstyle{mystyle}
 %\newtheorem{environment name}[optional: use same counter as this other environment name]{Display name}[optional: number this environment name within this type of environment e.g. if not specified will just count up, can also specify section or subsection to get e.g. 3.1, 3.2, 3.3 or 5.2.1, 5.2.2, respectively]
@@ -174,6 +174,11 @@
 \end{defn}
 
 \section{Used Definitions}
+\begin{defn}
+	[Filling]
+	\label{defn:filling}
+    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r\in S\, \forall j\in K: j\neq k \Rightarrow \Left(p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\})\Right)\] 
+\end{defn}
 \begin{defn}
     [Subgraph coning]
     \label{defn:coneoff}
@@ -456,7 +461,7 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
         
         By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp} because fibers are connected - for $f_3$ this comes from Guirardel and for $f_1$ and $f_2$ we prove it in \ref{lem:confib}. Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well.
 
-        Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(C\) has connected 1-dimensional fibers. 
+        Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(E\) has connected 1-dimensional fibers. 
 
         So far we have that $E$ to $E/G$ is a covering. By lemma \ref{lem:coresc} we learn that \(E\) is simply connected and moreover \(E/G\) comes with three splittings as a graph of spaces.
 
@@ -715,10 +720,6 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
 \end{lem}
 
 \begin{defn}
-	[Filling]
-    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r \in S: \forall j \neq k: p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}).\] 
-\end{defn}
-\begin{defn}
 	[Type \(FP\) ]
 	A group is of type \(FP\) if it is (1) type \(FP_n\) for all \(n\) and (2) finite geometric cohomological dimension.
 \end{defn}
@@ -951,7 +952,7 @@ With this splitting in hand we want to verify that it's made of successive graph
 
 \begin{lem}
     [Slice Switching]
-    If \(R \subseteq T_{1} \times T_{2}\) is a connected \fix{(try to remove this assumption) subcomplex} then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\).
+    If \(R \subseteq T_{1} \times T_{2}\) is a connected \fix{(try to remove this assumption) subcomplex} then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\) where $x$ corresponds to $T_1$ and $y$ corresponds to $T_2$ in the definition of filling \ref{defn:filling}.
     \begin{proof}
         We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. \fix{Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge.} Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
         
