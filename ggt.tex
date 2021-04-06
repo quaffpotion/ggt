@@ -950,9 +950,34 @@ With this splitting in hand we want to verify that it's made of successive graph
     \end{proof}
 \end{lem}
 
+\begin{prop}
+\label{prop:sliceunion}
+T1 x T2 minus (T1 x x2) = union over (d in D(x2)) T1 x d
+\end{prop}
+
+\begin{prop}
+\label{prop:directionunion}
+T1 x x2 = union over (d in D(x1)) closed(d) x x2
+\end{prop}
+
 \begin{lem}
     [Slice Switching]
-    If \(R \subseteq T_{1} \times T_{2}\) is a connected \fix{(try to remove this assumption) subcomplex} then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\) where $x$ corresponds to $T_1$ and $y$ corresponds to $T_2$ in the definition of filling \ref{defn:filling}.
+    If \(R \subseteq T_{1} \times T_{2}\) is connected then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\) where $x$ corresponds to $T_1$ and $y$ corresponds to $T_2$ in the definition of filling \ref{defn:filling}.
+    \begin{proof}
+        The set Rxy has connected x-fibers, this follows from the definition of filling in the y-direction. That is, Rxy cap x0 x T2 is connected for all x0 in T1. It remains to show that Rxy has connected y-fibers.
+        
+        For sake of a contradiction, suppose Rxy had a disconnected y-fiber at y0, denoted F. That is, there exists y0 such that F = Rxy cap T1 x y0 is disconnected. Because we are working in a tree we can find  x0   a point in T1 such that (x0,y0) separates F. Using \ref{prop:directionunion} we proceed by cases on how many directions meet Rx i.e. Subtracting (x0,y0) from both sides of \ref{prop:directunion} and then intersecting with F we obtain F = union (d in D(x1)) d x x2
+        
+        Case 1: Intersect 0 directions
+            i.e. (d x y0) cap Rx = empty for all d in D(x0), the by \ref{prop:directionunion}, Rx cap F = empty. However, the fiber is still disconnected so must intersect some of Rxy. This means there exists p in F cap Rxy\Rx. That is, p was obtained by filling in the vertical direction. There exist d^1, d^2 in D(y0) such that p1 x d^1, p1 x d^2 cap Rx != empty. By \ref{prop:sliceunion} F cap p1 x d^1 and F cap p1 x d^2 are disjoint. Pick out points in each direction, since they were in Rx we can find other points in the same direction at x so we have: (z1,z2) in T1 x d^1 and (zz1,zz2) in T1 x d^2 which must be in different components of R since slices are separating. However, R is connected, a contradiction.
+            
+        Case 2: Intersect Intersect at least 2 directions
+            If Rx intersects at least 2 directions at x0 then it must intersect x0 because Rx is y-fiber convex by definition. Or if you like, hitting Rx in the x-direction produces new points in R that get you the contradicton that x0 is in Rx, but x0 was supposed to witness the disconnection
+            
+        Case 3: Intersect exactly 1 direction
+            Say d x y0 intersectis Rx, then it intersects R. Consider the direction x0 x d for d in D(y0), at most one of x0 x d intersects Rx. If more than one did then the y-filling would give us (x0,y0). Call this direction d^y. Say d_1 x y0 cap Rxy is non-empty, there must be one such direction because of the disconnect. Since there are no Rx here, only Rxy\Rx we have have points "above" in Rx cap directions that is we get Rx points in p1 x d' and p1 x d''. WLOG pick d' != d^y. Then moving in the x-plane we get an element of R in d_1 x d'. Note, bondary of this is a "corner" which does not intersect Rx and so not R, and so it separates R. contradiction.
+            
+    \end{proof}
     \begin{proof}
         We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. \fix{Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge.} Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
         
