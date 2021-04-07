@@ -950,74 +950,58 @@ With this splitting in hand we want to verify that it's made of successive graph
     \end{proof}
 \end{lem}
 
-\begin{prop}
-\label{prop:sliceunion}
-T1 x T2 minus (T1 x x2) = union over (d in D(x2)) T1 x d
-\end{prop}
+\begin{defn}
+[Directions]
+Let $T$ be a tree and $x\in T$. Define $D(x)$ to be the set of connected components of $T\smallsetminus\{x\}$; that is the set of open directions of $T$ based at $x$.
+\end{defn}
 
-\begin{prop}
+\begin{pro}
+\label{prop:sliceunion}
+Let $T_1$ and $T_2$ be trees then $$T1\times T2 \smallsetminus (T_1\times \{x_2\}) = \bigcup_{\delta \in D(x_2)} T_1\times \delta.$$
+\end{pro}
+
+\begin{pro}
 \label{prop:directionunion}
-T1 x x2 = union over (d in D(x1)) closed(d) x x2
-\end{prop}
+Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{\delta \in D(x_1)} \overline{\delta}\times \{x_2\}.$$
+\end{pro}
 
 \begin{lem}
     [Slice Switching]
+    \label{lem:sliceswitching}
     If \(R \subseteq T_{1} \times T_{2}\) is connected then \( \left( R_{x} \right)_{y} = \left( R_{y} \right)_{x}\) where $x$ corresponds to $T_1$ and $y$ corresponds to $T_2$ in the definition of filling \ref{defn:filling}.
     \begin{proof}
-        The set Rxy has connected x-fibers, this follows from the definition of filling in the y-direction. That is, Rxy cap x0 x T2 is connected for all x0 in T1. It remains to show that Rxy has connected y-fibers.
+        We first show that $\rxy$ has connected 1-dimensional fibers. The set $\rxy$ has connected $x$-fibers, this follows from the definition of filling in the $y$-direction. That is, $\left( R_{x} \right)_{y} \cap \{x_0\} \times T_2$ is connected for all $\{x_0\}$ in $T_1$. It remains to show that \(\rxy\) has connected $y$-fibers.
         
-        For sake of a contradiction, suppose Rxy had a disconnected y-fiber at y0, denoted F. That is, there exists y0 such that F = Rxy cap T1 x y0 is disconnected. Because we are working in a tree we can find  x0   a point in T1 such that (x0,y0) separates F. Using \ref{prop:directionunion} we proceed by cases on how many directions meet Rx i.e. Subtracting (x0,y0) from both sides of \ref{prop:directunion} and then intersecting with F we obtain F = union (d in D(x1)) d x x2
+        For sake of a contradiction, suppose \(\rxy\) had a disconnected $y$-fiber at $y_0$, denoted $F$. That is, there exists $y_0$ such that \(F = \left( R_{x} \right)_{y}\cap T_1 \times \{y_0\}\) is disconnected. Because we are working in a tree we can find a point \(x_0\in T_1\)  such that \((x_0,y_0)\)  separates \(F\). Using \ref{prop:directionunion} we proceed by cases on how many directions meet $R_x$. Specifically, subtract \((x_0,y_0)\) from both sides of \ref{prop:directionunion} to obtain a disjoint union of sets and ask how many intersect $F \cap R_x$.
         
-        Case 1: Intersect 0 directions
-            i.e. (d x y0) cap Rx = empty for all d in D(x0), the by \ref{prop:directionunion}, Rx cap F = empty. However, the fiber is still disconnected so must intersect some of Rxy. This means there exists p in F cap Rxy\Rx. That is, p was obtained by filling in the vertical direction. There exist d^1, d^2 in D(y0) such that p1 x d^1, p1 x d^2 cap Rx != empty. By \ref{prop:sliceunion} F cap p1 x d^1 and F cap p1 x d^2 are disjoint. Pick out points in each direction, since they were in Rx we can find other points in the same direction at x so we have: (z1,z2) in T1 x d^1 and (zz1,zz2) in T1 x d^2 which must be in different components of R since slices are separating. However, R is connected, a contradiction.
-            
-        Case 2: Intersect Intersect at least 2 directions
-            If Rx intersects at least 2 directions at x0 then it must intersect x0 because Rx is y-fiber convex by definition. Or if you like, hitting Rx in the x-direction produces new points in R that get you the contradicton that x0 is in Rx, but x0 was supposed to witness the disconnection
-            
-        Case 3: Intersect exactly 1 direction
-            Say d x y0 intersectis Rx, then it intersects R. Consider the direction x0 x d for d in D(y0), at most one of x0 x d intersects Rx. If more than one did then the y-filling would give us (x0,y0). Call this direction d^y. Say d_1 x y0 cap Rxy is non-empty, there must be one such direction because of the disconnect. Since there are no Rx here, only Rxy\Rx we have have points "above" in Rx cap directions that is we get Rx points in p1 x d' and p1 x d''. WLOG pick d' != d^y. Then moving in the x-plane we get an element of R in d_1 x d'. Note, bondary of this is a "corner" which does not intersect Rx and so not R, and so it separates R. contradiction.
-            
-    \end{proof}
-    \begin{proof}
-        We will first show that \(\rxy\) has connected fibers. Note, it already has connected \(y\)-fibers, so it remains to show that it has connected \(x\)-fibers. Suppose that \(\rxy \cap ( T_{1} \times \{y_{0}\} )\) were a disconnected \(x\)-fiber. \fix{Then because \(\rxy\) is a subcomplex we have that the fiber is separated by some edge.} Let \(x_{0}\) be the midpoint of this edge. Let \(\ell\) and \(r\) denote the left and right closed halfspaces of \(T_{1} \times \{y_{0}\}\) at the midpoint \(x_{0}\). We will show that either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\), applying this to all such \(x_{0}\) will show \(\rxy\) has connected \(x\)-fibers.
-        
-        Suppose this were false, and that \(\ell \cap \rxy \neq \varnothing\) and \(r \cap \rxy \neq \varnothing\). We consider three cases: (1) \(\ell\) and \(r\) intersect \(R_{x}\) nontrivially (2) \(\ell\) and \(r\) don't intersect \(R_{x}\), and (3) exactly one of \(\ell\) or \(r\) intersects \(R_{x}\) nontrivially.
         \begin{enumerate}
-            \item Case 1: If both \(\ell\) and \(r\) intersect \(R_{x}\) then both contain points of \(R\) because we filled in the \(x\)-fiber, but then \(x_{0} \times y_{0}  \in R_{x}\) a contradiction.
-            \item Case 2: Pick a point \(x^+\) in \(r \cap \rxy \smallsetminus R_{x} \). Let \(q^{+}\) and \(q^-\) be points above and below \(x^+\) in \(R_{x}\). These points are either in \(R\) already, or because we filled in the \(x\)-fiber there exist points above and below the line \(\ell \cup r\) but this is a contradiction since \(R\) is connected.
-            \item Case 3: Without loss of generality, suppose \(\ell \cap R_{x} = \varnothing\) and \(r \cap R_{x} \neq \varnothing\). This implies there is some \(s \in R \cap r\), we will get a contradiction by separating this point from another point in \(R\). 
-                
-                Let \(u\) and \(d\) be directions of \(x_{0} \times T_{2}\) at \(x_{0} \times y_{0}\). If both intersected \(R_{x}\) then \(x_{0} \times y_{0} \in R \) a contradiction so without loss of generality, suppose \(d \cap R_{x} \neq \varnothing \). Now let \(x^-\) be a point in \(\ell\), by assumption \(x^- \in \rxy \smallsetminus R_{x} \). This gives a point \(q^-\) below \(\ell\) in \(R_{x}\) which is already in \(R\) or there exists a point \(t^- \in R\) to the left of \(q^-\); but this is a contradiction since \(\ell \cup d\) separates these points from \(s \in R\).
+            \item zero: Suppose \(F\cap R_x \cap (\delta \times y_0)=\varnothing\) for all \(\delta\in D(x_0)\) then by \ref{prop:directionunion}, $R_x \cap F=\varnothing$. However, the fiber is still disconnected so must intersect some of $\rxy$. This means there exists $p\in (F\cap \rxy)\smallsetminus R_x$. That is, $p$ was obtained by filling in the vertical ($y$, $T_2$) direction. There exist $\eta_1, \eta_2\in D(y_0)$ such that $F\cap R_x \cap (p_1 \times \eta_k) \neq \varnothing$ for $k=1,2$. By \ref{prop:sliceunion} \(F\cap R_x \cap (p_1 \times \eta_1)\subset T_1\times \eta_1\) and \(F \cap R_x \cap (p_1 \times \eta_2)\subset T_1\times \eta_2\) are disjoint. Pick out points in each, since they are in $R_x$ they are either already in $R$ or were obtained by filling in the $x$-direction. Hence, $F\cap R_x \cap (T_1\times \eta_1)$ and $F\cap R_x \cap (T_1\times \eta_2)$ both intersect $R$. However, these are disjoint and $R$ is connected a contradiction.
+            \item at least two: Suppose \(F\cap R_x\cap(\delta_k \times y_0)\neq\varnothing\) for $k=1,2$ with $\delta_k\in D(x_0)$. Then because $R_x$ has connected $y$-fibers we have that $(x_0,y_0)\in R_x\subset \rxy$ which is a contradiction since $(x_0,y_0)$ separates $F$.
+            \item exactly one: Suppose \(F\cap R_x\cap(\delta_0 \times y_0)\neq\varnothing\) and $\varnothing$ for all $\delta_k\in D(x_0)$ where $k\neq 0$. Since $\delta_0\times y_0$ intersects $R_x$ it also intersects $R$. Consider the sets $(x_0\times \eta)$ for $\eta\in D(y_0)$, at most one intersects $R_x$. If more than one did then because $\rxy$ has connected $x$-fibers we would have $(x_0,y_0)\in\rxy$ a contradiction since $(x_0,y_0)$ separates $F$. Because $F$ is disconnected, there exists $\delta_1\in D(x_0)$ with $\delta_1\neq d_0$ and $(\delta_1\times y_0)\cap F\neq \varnothing$. Combined with our assumption, pick a point $p\in (\delta_1\times y_0)\cap F\smallsetminus R_x$. Now, $p\in\rxy\smallsetminus R_x$ so there exist directions $\eta_1,\eta_2\in D(y_0)$ such that $(p_1\times \eta_i)\cap R_x\neq\varnothing$ for $i=1,2$. From above, take $\eta_1$ to be one of the directions such that $(x_0\times \eta_1)\cap R_x =\varnothing$. Suppose $q\in (p_1\times \eta_1)\cap R_x$. If $q\in R$ take $x'=q_1$. If $q\not\in R$ then we use the fact that $q\in R_x\smallsetminus R$ to find a point in $R$. We can take $x'\in \omega$ where $\omega$ denotes a direction in $D(p_1)=D(q_1)$ that does not contain $\delta_0$ with the property that $(x',q_2)\in R$. Then $(x', q_2)\in \delta_1\times \eta_1$ and $(x',q_2)\in R$, however the boundary of the quadrant $(\delta_1\times y_0)\cup (x_0\times \eta_1)$ does not intersect $R_x$ and so separates $(x',q_2)\in R$ from a point in $R\cap (\delta_0\times y_0)$. This is a contradiction since $R$ is connected.
         \end{enumerate}
-
-                Hence, either \(\ell \cap \rxy = \varnothing\) or \(r \cap \rxy = \varnothing\) as needed, so \(\rxy\) has connected \(x\)-fibers. Similarly, \(\ryx\) also has connected fibers. Hence by \ref{lem:guirardel} their complements are unions of quadrants and so they contain \(QH(R)\). It remains to show that they are contained within \(QH(R)\). 
-
-                \begin{claim*}
-                    \(\rxy \subseteq QH(R)\) 
-                    \begin{proof}
-                        (sketch) The idea is to show that for every point \(p \in \rxy\) that for every quadrant \(Q\) containing \(p\) (i.e. that would be attempting to remove it) we can find a point \(r \in R \cap Q\). Picking an open quadrant containing \(p\) amounts to picking a point \(q = (q_{1}, q_2)\) with halfspaces at each coordinate that contain the corresponding \(p_{i}\). The hard case is where \(p \in \rxy \smallsetminus R_x\) - so you pick a point in a vertical direction at \(p\) pointing towards \(p\), because this point is only there due to filling there's another vertical direction that you're grabbing that contains some \(R_x\). Then you pick a horizintal place and point towards \(p_1\), this must contain at least one of the directions with \(R\) in it.
-                    \end{proof}
-
-                    \begin{proof}
-                        We will show for every point \(p \in \rxy\) and every open quadrant \(Q\) with \(p \in Q\) that there exists some \(r \in R \cap Q\). Let \(q=(q_1,q_2)\) be the point where \(Q\) is based and label the halfspaces so that \(Q=q_1^{+} \times q_{2}^{+}\).
-
-                        Case 1 \(p \in R_x \smallsetminus R\): Let \(p \in R_x \smallsetminus R\): Let \(\ell = (\ell_1,p_2)\) and \(u=(u_1,p_2)\) be points in \(R\) that cause the vertical filling. Now, \(q_1^+\) contains all but one direction at \(p_1\) and so must contain either \(\ell_1\) or \(u_1\). Since \(q_2^+\) must contain \(p_2\) we get that \(Q=q_1^+ \times q_2^+\) contains a point of \(R\).
-
-
-                        Case 2 \(p \in \rxy \smallsetminus R_x\): Let \(u=(p_1,u_2)\) and \(d=(p_1,d_2)\) be points that cause the vertical filling. Now, \(q_2^+\) contains all but one direction at \(p_2\) and so must contain either \(u_2\) or \(d_2\). Without loss of generality, suppose it contains \(u_2\). If \(u \in R\) then we are done. Suppose \(u \in R_x \smallsetminus R\). Then we can find \(u'=(p',u_2)\) and \(u''=(p'',u_2)\) with \(p'\) and \(p''\) in different directions at \(p_1\). Now, \(q_1^+\) contains all but one direction at \(p_1\) and so must contain either \(p'\) or \(p''\). Suppose without loss of generality that it contains \(p'\), then \(Q\) contains \(p' \times u_2 \in R\).
-                    \end{proof}
-                \end{claim*}
-
-
+        Hence, the set $\rxy$ has connected 1-dimensional fibers. By Guirardel \ref{lem:guirardel} then the complement of $\rxy$ is a union of quadrants and so $\text{QH}(R)\subset \rxy\subset \text{QH}(\rxy)$. Next note that $\text{QH}((R_y)_x)=\text{QH}(R_y)=\text{QH}(R)=\text{QH}(R_x)=\text{QH}((R_x)_y)$. Therefore, $\rxy =\text{QH}(R)=\ryx$.
+        
+        
+        
+        \begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{slice_lemma_case3.png}
+    \caption{Illustrating case 3 of Lemma \ref{lem:sliceswitching}}
+    \label{fig:square}
+\end{figure}
+        
+        
+        
+                  
     \end{proof}
-
 \end{lem}
-
-\begin{lem}
+    
+        \begin{lem}
     [Boxed Implication]
  \label{lem:boximp} 
     Repeatedly applying \ref{lem:switching} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
 \end{lem}
+
 
 \begin{thebibliography}{9}
 
