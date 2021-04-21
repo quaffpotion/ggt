@@ -341,8 +341,7 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \begin{lem}
     [Coning Connected Fibers]
     \label{lem:confib} 
-    Let $f: L\to T$ be an equivariant map from a 2-complex to a tree. Let $X = \Lambda(L,f,\Gamma)$ a subgraph coning \ref{defn:coneoff} where $\Gamma$ is a subgraph of the 1-skeleton of $L$.
-     We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
+     Let $f:K\to T$ be an equivariant map from a 2-complex $K$ to a simplicial tree $T$ with connected fibers. Let $\Gamma$ be a connected subgraph of $K^{(1)}$, the 1-skeleton of $K$. Pick $t_0\in f(\Gamma)$. Define $F:\Gamma\times I\to T$ by,
     \[ F(x,s) = 
         \begin{cases} 
             f(x)& s=0\\ 
@@ -350,11 +349,23 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
             \gamma_{f(x),t_{0}} (s | \gamma |) & \text{else}
         \end{cases}
     \]
-,    Then the map $F$ has connected fibers.
+    where $\gamma_{x,y}$ is a reparameterized geodesic in $T$ from $[0,1]$ if $x\neq y$ and a constant path at $f(x)$ if $x=y$. The map $F$ is continuous and has connected fibers.
     \begin{proof}
-        
+            Fix $t_0\in T$. Let $t\in f(\Gamma)$. Let $(x,s)\in F^{-1}(t)$. We need to show that $(x,s)$ is connected to $F^{-1}(t)\cap K\times\{0\}$ via a path in $F^{-1}(t)$. If true, then because $f$ has connected fibers and $(x,s)$ was an arbitrary point in a fiber we get that $F^{-1}(t)$ is connected.
+            \begin{enumerate}
+                \item 1. $s = 0$ Then $(x,s)$ is already in a fiber of $f(x)$ more or less which are connected.
+                \item 2. $s > 0$
+                \begin{enumerate}
+                    \item 2.1. $f(x)=t_0$. Then we get a constant path for $\gamma_{f(x),t_0}$ and so a column of $\Gamma\times I$ goes to $t_0$. This column includes $(x,s)$ as well.
+                    \item 2.2. $f(x)\neq t_0$. By the definition of $\gamma$, $t:=F(x,s)$ is between $f(x)$ and $t_0$. Hence, $t\in f(K)$ so there exists some  $(x',0)\in F^{-1}(t)\cap K\times\{0\}\neq\varnothing$. Now, $t=F(x',0)\neq F(x,0)$ hence $x\neq x'$. Draw a path $\eta$ in the graph $\Gamma$ between $x$ and $x'$. Define $a(\eta (k))/(a(\eta (k))+b)$ where $k\in [0,1]$ and $a(\eta(k))$ is the distance between $f(\eta (k))$ and $t$ in $T$ and $b$ is the distance in the tree between $t$ and $t_0$.
+                    \begin{enumerate}
+                        \item \fix{This section needs to be rewritten carefully}
+                        \item 2.2.1 $b=d_T(t_0,t)\neq 0$. Then we are done by seeing that the graph of $a/b(t)$ as a function on $\Gamma$ is in $F^{-1}(t)$. The numerator can be 0 but that's OK, corresponds to the graph connecting early
+                        \item 2.2.2 $b=d_T(t_0,t) = 0$. We are still in the case where $s > 0$. For now suppose that $0 < s < 1$. When $s$ is strictly between 0 and 1 we can use $\gamma$ to define our map. In particular, this means $F$ is injective on $\{x\}\times I$. This is a contradiction since $t=t_0$. Therefore, we must have $s = 1$.
+                    \end{enumerate}
+                \end{enumerate}
+            \end{enumerate}
     
-    For \(p\) in \(\Gamma\times I\), let \(p'\) be the unique projection to $\Gamma$. Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0})\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
     \end{proof}
 \end{lem}
 % \begin{rmk}
