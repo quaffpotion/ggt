@@ -51,6 +51,7 @@
 \tableofcontents
 
 \section{Background}
+\subsection{Explanation of what can happen in dimension 2, reminders about free group intersections being wonky, fg free being a gog of infinite rank stuff}
 \subsection{Graph of groups}
 \begin{defn}
     [Graph]
@@ -340,20 +341,20 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \begin{lem}
     [Coning Connected Fibers]
     \label{lem:confib} 
-    Let $f: L\to T$ be an equivariant map from a 2-complex to a tree. Let $X = \Lambda(L,f,\Gamma)$ a subgraph coning where $\Gamma$ is a subgraph of the 1-skeleton of $L$.
+    Let $f: L\to T$ be an equivariant map from a 2-complex to a tree. Let $X = \Lambda(L,f,\Gamma)$ a subgraph coning \ref{defn:coneoff} where $\Gamma$ is a subgraph of the 1-skeleton of $L$.
      We will define a map \(F: \Gamma \times I \to T\). Choose an arbitrary \(t_{0} \in f(\Gamma) \) and define: 
     \[ F(x,s) = 
         \begin{cases} 
             f(x)& s=0\\ 
             t_{0} & s=1\\
-            \gamma_{f(x),t_{0}} (s | \gamma |)a & \text{else}
+            \gamma_{f(x),t_{0}} (s | \gamma |) & \text{else}
         \end{cases}
     \]
 ,    Then the map $F$ has connected fibers.
     \begin{proof}
         
     
-    For \(p\) in \(\Gamma\times I\), let \(p'\) be the unique projection to $\Gamma$. Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0}\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
+    For \(p\) in \(\Gamma\times I\), let \(p'\) be the unique projection to $\Gamma$. Let \(k_{0} \in \Gamma \cap F^{-1} (F(x,s))\) be the nearest point to \(p'\). Put \(\gamma_{p',k_{0}}\). Then define \(g: \text{Im} (\gamma_{p',k_{0}}) \to I\) by \(g(t) = \frac{a(t)}{a(t)+b}\) where \(a(t) = d(f(t), F(x,s))\) and \(b = d(F(x,s), t_{0})\). Then we compute \(F(t,g(t))=F(x,s)\) so \(\text{Graph}(g) \subseteq F^{-1} (x,s)\). Now, \(g\) is continuous so \(\text{Graph}(g)\) is connected. Hence, \((x,s)\) is connected to \((k_{0} ,0)\) in \(F^{-1} (F(x,s))\) as needed.
     \end{proof}
 \end{lem}
 % \begin{rmk}
