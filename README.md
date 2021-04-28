@@ -60,8 +60,12 @@
 - Group for which the statement is false: ZxZ, Deformation spaces correspond to slopes correspond to homotopty types of s.c.c. on a torus
 - minimal crossings = squares in Guirardel core.
 
-### 2020-08-21
+### 2020-08-20
 
 - Went over using the CAT(0) property of the tree product and working with the quotient to get that the quotient is a graph of spaces and how this interacts with the cover to see that it is a tree of spaces.
 - In general for a CAT(0) cube complex we have that (1) hyperplanes are embedded and (2) hyperplanes are separating (both by Sageev)
 - Hyperplanes(subcomplex) = subcomplex intersect hyperplanes of ambient complex
+
+### 2020-04-21
+Connected Fiber Lemma
+Sketch: Talk about sending fibers of the square to the tree via embedded paths of uniform speed. Said this way it includes the constant path and also means the original case by case definition can be reduced to one case. Also helps to organize the logic by selecting something in the square and connecting it to the base since it is in some preimage after all. Then we need a path in the graph from x to x' (that's f(x) to t0 in T) We need a + b = d( f(x), t0 ) to be satisfied while moving points along the path. (Looks like the path can wander a bit but we need it on the geo from f(x) to t0. Taking the nearest point in K the graph, gives us that our path won't wander past t0. Need to look into this carefully. As for continuity of F, we recognize there is something to prove but won't be giving details) 
