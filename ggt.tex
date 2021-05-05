@@ -25,6 +25,7 @@
 \newcommand{\ryx}{(R_y)_x}
 \newcommand{\Sxyz}[3]{((K_#1)_#2)_#3}
 \newcommand{\fix}[1]{\textcolor{red}{(fix) #1}}
+\newcommand{\Imm}{\text{Im}}
 
 \theoremstyle{mystyle}
 %\newtheorem{environment name}[optional: use same counter as this other environment name]{Display name}[optional: number this environment name within this type of environment e.g. if not specified will just count up, can also specify section or subsection to get e.g. 3.1, 3.2, 3.3 or 5.2.1, 5.2.2, respectively]
@@ -215,10 +216,14 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \section{Used Lemmas}
 
 \begin{lem}
+    [Finite Type closed under elementary deformations]
+    \label{lem:ftdef}
+\end{lem}
+
+\begin{lem}
     [Axes are hausdorff equivalent]
     \label{lem:axeshausdorff}
     Any two axes for a given hyperbolic isometry of a geodesic metric space are Hausdorff equivalent.
-    
 \end{lem}
 \begin{proof}
 
@@ -341,31 +346,15 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \begin{lem}
     [Coning Connected Fibers]
     \label{lem:confib} 
-     Let $f:K\to T$ be an equivariant map from a 2-complex $K$ to a simplicial tree $T$ with connected fibers. Let $\Gamma$ be a connected subgraph of $K^{(1)}$, the 1-skeleton of $K$. Pick $t_0\in f(\Gamma)$. Define $F:\Gamma\times I\to T$ by,
+     Let $f:K\to T$ be a map from a 2-complex $K$ to a simplicial tree $T$ with connected fibers. Let $\Gamma$ be a connected subgraph of $K^{(1)}$, the 1-skeleton of $K$. Pick $t_0\in f(\Gamma)$. Define $F:\Gamma\times I\to T$ by,
     \[ F(x,s) = 
-        \begin{cases} 
-            f(x)& s=0\\ 
-            t_{0} & s=1\\
-            \gamma_{f(x),t_{0}} (s | \gamma |) & \text{else}
-        \end{cases}
+            \gamma_{f(x),t_{0}} (s ) 
     \]
-    where $\gamma_{x,y}$ is a reparameterized geodesic in $T$ from $[0,1]$ if $x\neq y$ and a constant path at $f(x)$ if $x=y$. The map $F$ is continuous and has connected fibers.
+    where $\gamma_{x,y}$ is the embedded path between $x,y\in T$ with domain $[0,1]$ of constant speed or a constant map if $x=y$. Then the map $F$ is continuous and points have connected preimages.
     \begin{proof}
-            Fix $t_0\in T$. Let $t\in f(\Gamma)$. Let $(x,s)\in F^{-1}(t)$. We need to show that $(x,s)$ is connected to $F^{-1}(t)\cap K\times\{0\}$ via a path in $F^{-1}(t)$. If true, then because $f$ has connected fibers and $(x,s)$ was an arbitrary point in a fiber we get that $F^{-1}(t)$ is connected.
-            \begin{enumerate}
-                \item 1. $s = 0$ Then $(x,s)$ is already in a fiber of $f(x)$ more or less which are connected.
-                \item 2. $s > 0$
-                \begin{enumerate}
-                    \item 2.1. $f(x)=t_0$. Then we get a constant path for $\gamma_{f(x),t_0}$ and so a column of $\Gamma\times I$ goes to $t_0$. This column includes $(x,s)$ as well.
-                    \item 2.2. $f(x)\neq t_0$. By the definition of $\gamma$, $t:=F(x,s)$ is between $f(x)$ and $t_0$. Hence, $t\in f(K)$ so there exists some  $(x',0)\in F^{-1}(t)\cap K\times\{0\}\neq\varnothing$. Now, $t=F(x',0)\neq F(x,0)$ hence $x\neq x'$. Draw a path $\eta$ in the graph $\Gamma$ between $x$ and $x'$. Define $a(\eta (k))/(a(\eta (k))+b)$ where $k\in [0,1]$ and $a(\eta(k))$ is the distance between $f(\eta (k))$ and $t$ in $T$ and $b$ is the distance in the tree between $t$ and $t_0$.
-                    \begin{enumerate}
-                        \item \fix{This section needs to be rewritten carefully}
-                        \item 2.2.1 $b=d_T(t_0,t)\neq 0$. Then we are done by seeing that the graph of $a/b(t)$ as a function on $\Gamma$ is in $F^{-1}(t)$. The numerator can be 0 but that's OK, corresponds to the graph connecting early
-                        \item 2.2.2 $b=d_T(t_0,t) = 0$. We are still in the case where $s > 0$. For now suppose that $0 < s < 1$. When $s$ is strictly between 0 and 1 we can use $\gamma$ to define our map. In particular, this means $F$ is injective on $\{x\}\times I$. This is a contradiction since $t=t_0$. Therefore, we must have $s = 1$.
-                    \end{enumerate}
-                \end{enumerate}
-            \end{enumerate}
-    
+        Let $(x,s)$ be an arbitrary point in $\Gamma \times I$. Put $t:=F(x,s)$. We will show there is a path in $\Gamma\times I$ from $(x,s)$ to some $(x',0)\in \Gamma\times I$ that stays inside of the preimage of a point $F^{-1}(t)$. This is enough because $f$ already has connected preimages in $K$.
+        
+        Consider the image of $x\times I$, a fiber of the product $\Gamma \times I$, under $F$. Denote the map $\gamma_{f(x),t_0}$ by $\gamma$. From the definition of $\gamma$, the fiber $x\times I$ is either sent to a single point or goes injectively to $T$. In the former, we take the straight line path from $(x,s)$ to $(x,0)$ and set $x'=x$ and we are done. Suppose the fiber $x\times I$ goes injectively to $T$. In this case, $F(x\times I) = \Imm(\gamma)$, recall $\gamma$ is a reparameterized geodesic between two points in $\Imm(f)$ which by the continuity of $f$ is both connected and convex in $T$. Hence, $t \in \Imm(f)$ by convexity. This means $f^{-1}(t)$ is a non-empty closed subset of $K$. Let $x'\in f^{-1}(t)$ be a point that minimizes $d_K(x,x')$. If the distance is zero then $F(x,0)=F(x',0)=F(x,s)=t$ but $F$ is injective on fibers so we must have $s=0$ and therefore the constant path works. Now suppose the distance is positive. Take $\eta$ to be an embedded path. Because $\eta$ is an embedding and $x'$ is distance minimizing $f(\eta(0))\neq f(\eta(1))=t$. Because $t$ is separating in $T$ and $\eta$ and $f$ are continuous we have that the image of $f\eta$ is contained within the closed direction at $t$ which contains $f(x)=\f\eta(0)$. Hence on $[0,1)$, the geodesic from $f\eta(r)$ to $t_0$ crosses $t$. In fact, $d_T(f(k), t)+d_T(t, t_0) = d_T(f(k), t_0)$ for $k\in\Imm(\eta)$. Define a function $g:\Imm(\eta)\to I$ by $g(k)=d_T(f(k), t)/d_T(f(k), t_0)$ for $k\neq x'$ and $g(k)=0$ when $k=x'$. \fix{I believe the following is an alternative that gives functions that are equal but it's more clear how to see they are continuous because there are no cases within the function definitions. Calling the numerator $a$ and the denominator $a+b$ we could break this into two cases. If $t=t_0$ then take $g=a$ (defined everywhere on $\Imm(\eta)$) and if $t\neq t_0$ take $g=a/(a+b)$ (defined everywhere on $\Imm(\eta)$ including at $x'$, which is not true for the original defn above where we declare it to be 0 at $x'$.)}The function $g$ is continuous and so the graph of $g$ is connected, contained in $F^{-1}(t)$, and contains $(x,s)$ and $(x',0)$. That is, the path $\eta(r)\times g(\eta(r))$ connects our preimage point to a connected fiber below.
     \end{proof}
 \end{lem}
 % \begin{rmk}
@@ -457,7 +446,7 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     \label{thm:mainresult}
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees by performing a deformation since their quotients are finite.  Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations. Transversality is preserved by deformations and finite quotients ensure our trees remain of finite type \ref{lem:ftdef}. Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
         Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
