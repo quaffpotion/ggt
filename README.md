@@ -3,8 +3,8 @@
 - Search "QQ" for questions
 
 ## Todo
-- [ ] Linear Reading 2021-05-02
-- [ ] Writeup connected fibers lemma
+- [ ] Writeup Connected Fibers Lemma
+- [ ] Writeup Filling Preserves Cocompactness Lemma
 
 ## Meeting Notes
 
