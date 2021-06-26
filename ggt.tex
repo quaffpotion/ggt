@@ -52,7 +52,9 @@
 \tableofcontents
 
 \section{Background}
-\subsection{Explanation of what can happen in dimension 2, reminders about free group intersections being wonky, fg free being a gog of infinite rank stuff}
+\subsection{Context}
+Explanation of what can happen in dimension 2,
+reminders about free group intersections being wonky e.g. stallings example, HNN shift example, fg free being a gog of infinite rank stuff, property FP being nice
 \subsection{Graph of groups}
 \begin{defn}
     [Graph]
@@ -81,7 +83,7 @@
 
 \begin{defn}
     [Refinement Map]
-    For simplicial $G$-trees we say that $X$ is a refinement of $Y$ if there exists an  equivariant \fix{simplicial} map $X\to Y$ such the the preimage of a connected set is connected.
+    For simplicial $G$-trees we say that $X$ is a refinement of $Y$ if there exists an equivariant simplicial map $X\to Y$ such the the preimage of a connected set is connected.
 \end{defn}
 \begin{pro}
     [refinement maps come from collapsing a forest to points]
@@ -216,9 +218,12 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
 \section{Used Lemmas}
 
 \begin{lem}
-    [Finite Type closed under elementary deformations]
-    \label{lem:ftdef}
+    [Deformation preserves local finiteness of minimal subtree]
+    Let $X$ be a simplicial $G$-tree. The property of having a locally finite minimal subtree is invariant under deformations.
 \end{lem}
+\begin{proof}
+    We claim that both expansion and collapse moves produce $G$-trees with a locally finite 
+\end{proof}
 
 \begin{lem}
     [Axes are hausdorff equivalent]
@@ -352,9 +357,19 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     \]
     where $\gamma_{x,y}$ is the embedded path between $x,y\in T$ with domain $[0,1]$ of constant speed or a constant map if $x=y$. Then the map $F$ is continuous and points have connected preimages.
     \begin{proof}
-        Let $(x,s)$ be an arbitrary point in $\Gamma \times I$. Put $t:=F(x,s)$. We will show there is a path in $\Gamma\times I$ from $(x,s)$ to some $(x',0)\in \Gamma\times I$ that stays inside of the preimage of a point $F^{-1}(t)$. This is enough because $f$ already has connected preimages in $K$.
+        Let $(x,s)$ be an arbitrary point in $\Gamma \times I$. Put $t:=F(x,s)$. We will show there is a path in $\Gamma\times I$ from $(x,s)$ to some $(x',0)\in \Gamma\times I$ that stays inside of the point preimage $F^{-1}(t)$. This is enough because $f$ already has connected preimages in $K$ and $F(x,0)=f(x)$.
         
-        Consider the image of $x\times I$, a fiber of the product $\Gamma \times I$, under $F$. Denote the map $\gamma_{f(x),t_0}$ by $\gamma$. From the definition of $\gamma$, the fiber $x\times I$ is either sent to a single point or goes injectively to $T$. In the former, we take the straight line path from $(x,s)$ to $(x,0)$ and set $x'=x$ and we are done. Suppose the fiber $x\times I$ goes injectively to $T$. In this case, $F(x\times I) = \Imm(\gamma)$, recall $\gamma$ is a reparameterized geodesic between two points in $\Imm(f)$ which by the continuity of $f$ is both connected and convex in $T$. Hence, $t \in \Imm(f)$ by convexity. This means $f^{-1}(t)$ is a non-empty closed subset of $K$. Let $x'\in f^{-1}(t)$ be a point that minimizes $d_K(x,x')$. If the distance is zero then $F(x,0)=F(x',0)=F(x,s)=t$ but $F$ is injective on fibers so we must have $s=0$ and therefore the constant path works. Now suppose the distance is positive. Take $\eta$ to be an embedded path. Because $\eta$ is an embedding and $x'$ is distance minimizing $f(\eta(0))\neq f(\eta(1))=t$. Because $t$ is separating in $T$ and $\eta$ and $f$ are continuous we have that the image of $f\eta$ is contained within the closed direction at $t$ which contains $f(x)=\f\eta(0)$. Hence on $[0,1)$, the geodesic from $f\eta(r)$ to $t_0$ crosses $t$. In fact, $d_T(f(k), t)+d_T(t, t_0) = d_T(f(k), t_0)$ for $k\in\Imm(\eta)$. Define a function $g:\Imm(\eta)\to I$ by $g(k)=d_T(f(k), t)/d_T(f(k), t_0)$ for $k\neq x'$ and $g(k)=0$ when $k=x'$. \fix{I believe the following is an alternative that gives functions that are equal but it's more clear how to see they are continuous because there are no cases within the function definitions. Calling the numerator $a$ and the denominator $a+b$ we could break this into two cases. If $t=t_0$ then take $g=a$ (defined everywhere on $\Imm(\eta)$) and if $t\neq t_0$ take $g=a/(a+b)$ (defined everywhere on $\Imm(\eta)$ including at $x'$, which is not true for the original defn above where we declare it to be 0 at $x'$.)}The function $g$ is continuous and so the graph of $g$ is connected, contained in $F^{-1}(t)$, and contains $(x,s)$ and $(x',0)$. That is, the path $\eta(r)\times g(\eta(r))$ connects our preimage point to a connected fiber below.
+        If $s=0$ then the constant path at $(x,s)$ suffices. 
+        
+        If $s=1$ then \(t=F(x,s)=F(x,1)=\gamma_{f(x),t_0}(1)=t_0\). We can take a path that runs along the top of $\Gamma\times I$ and then goes down using a vertical fiber. Since $t_0\in f(\Gamma)$ there exists some $z\in \Gamma$ such that $F(z,0)=t_0=t$. Take $g$ to be the concatenation of a path from $(x,1)$ to $(z,1)$ contained in $\Gamma\times \{1\}$ and the path $(z,1)$ to $(z,0)$ given by $t\to (z,1-t)$. When restricted to a vertical fiber, $F$ is either injective or a constant map. Since $F(z,0)=F(z,1)=t_0=t$ we have the image of our path lies in $F^{-1}(t)$ as desired.
+        
+        Suppose $0 < s < 1$. Consider the image of $x\times I$, a fiber of the product $\Gamma \times I$, under $F$. Denote the map $\gamma_{f(x),t_0}$ by $\gamma$. From the definition of $\gamma$, the fiber $x\times I$ is either sent to a single point or goes injectively to $T$. In the former, we take $g$ to be the straight path from $(x,s)$ to $(x,0)$.
+        
+        Finally, suppose the fiber $x\times I$ goes injectively to $T$. In this case, $F(x\times I) = \Imm(\gamma)$, recall $\gamma$ is a reparameterized geodesic between two points in $\Imm(f)$ which by the continuity of $f$ is both connected and convex in $T$. Hence, $t \in \Imm(f)$ by convexity. This means $f^{-1}(t)$ is a non-empty closed subset of $K$. Let $x'\in f^{-1}(t)$ be a point that minimizes $d_K(x,x')$. The distance cannot be zero because our fiber goes injectively. Hence, the distance is positive, so $x\neq x'$. 
+        
+        Take $\eta$ to be an geodesic path in $K$ from $x$ to $x'$. The image of $\eta$ is disjoint from $f^{-1}(t)$.
+        
+        Hence for $r \in [0,1]$, the geodesic from $f\eta(r)$ to $t_0$ contains $t$. In fact, $d_T(f(k), t)+d_T(t, t_0) = d_T(f(k), t_0)$ for $k\in\Imm(\eta)$. Define a function $g:\Imm(\eta)\to I$ by $g(k)=d_T(f(k), t)/d_T(f(k), t_0)$. The function $g$ is continuous and so the graph of $g$ is connected, contained in $F^{-1}(t)$, and contains $(x,s)$ and $(x',0)$. That is, the path $\eta(r)\times g(\eta(r))$ connects our preimage point to a connected fiber below.
     \end{proof}
 \end{lem}
 % \begin{rmk}
@@ -381,8 +396,7 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     
     If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
 \end{pro}
-\begin{proof}
-    take as writ \fix{TODO maybe cite trees or the bass paper, or culler morgan, the r-tree paper length functinos for gorups acting on r-trees}
+\begin{proof} (See Proposition 3.1 from Group Actions on $\mathbb{R}$-trees by Culler and Morgan)
 \end{proof}
 \begin{pro}
     [Commensurable groups have the same minimal tree]
@@ -390,29 +404,45 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
     Suppose $G$ acts on a tree $X$ and $H$ and $K$ are commensurable subgroups. If $H$ contains a hyperbolic element, then so does $K$ and the minimal subtrees for $H$ and $K$ are equal.
 \end{pro}
 \begin{proof}
-    Use \ref{pro:uniquemintree} or cite "Covering theory for graphs of groups" corollary 7.7 by Bass
+    (This follows from \ref{pro:uniquemintree} for details see Corollary 7.7 from Covering theory for graphs of groups by Bass)
 \end{proof}
 
 \begin{pro}
-    [Preserve Hyperbolicity]
+    [Folding preserves properties]
+    Suppose $X$ and $Y$ are $G$-trees. In addition suppose $Y$ has a minimal subtree that is not a point. Let $\phi:X\to Y$ be a type A fold. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
+    
+    \begin{proof}
+        For the fold $\phi$ pick two edges $e$ and $e'$ that are folded and adjacent to some $v$. The element $g$ is hyperbolic and so comes with an axis that has a positive translation length, hence $Gv$, the orbit of $v$ is infinite. Because $\phi$ is a fold, $\phi G v$ is taken injectively to $Y$. That is, $G\phi v$ is infinite. If $G \phi v$ intersects $Y_\text{min}$ then $G \phi v$ is entirely contained in $Y_\text{min}$ because minimal trees are $G$-invariant. However, $g$ is elliptic in $Y$ and we are acting by isometries so the infinte set $G\phi v$ lies within a bounded distance of $\phi v$ in $Y_\text{min}$; but this is impossible becauase $Y_\text{min}$ is locally finite. That is, $G\phi v\subset Y\smallsetminus Y_\text{min}$. 
+        
+        Consider the images of the folded edges $e$ and $e'$ along with their orbits. 
+        Folds preserve adjacency so every edge in $G\phi e$ and $G\phi e'$ is adjacent to a vertex in $G \phi v$. In particular, this means at least one vertex of each edge in $G\phi e$ and $G\phi e'$ is outside of $Y_\text{min}$. 
+        Therefore, $G\phi e$ and $G\phi e'$ are both disjoint from $Y_\text{min}$. 
+        \fix{todo: we are allowing one vertex of a folded edge to touch $Y_\text{min}$}
+        \fix{todo: if our formalism really is $(V,E)$ as Serre does it then edges are literally disjoint, if we're doing graphs then the open edge is disjiont, it's fine -- we just need the edge to not be fully contained in the minimal tree}
+        Said differently, $\phi( Ge\cup Ge')$ is disjoint from $Y_\text{min}$.
+        
+        Finally, since $Y_\text{min}$ is not a point, it contains an edge, call it $f$. Consider an edge $\hat{f}$ that maps to $f$. Since $f$ is contained in $Y_\text{min}$ it is disjoint from $\phi( Ge\cup Ge')$ and therefore $\hat{f}$ is not part of a fold and therefore goes injectively. But this is impossible because then $Gf$ is an infinite set within a bounded distance of a single point in a locally finite tree.
+    \end{proof}
+\end{pro}
+
+\begin{pro}
+    [Collapse Preserves Hyperbolicity]
     \label{pro:preservehyperbolicity}
-    Suppose $f: X\to Y$ is a $G$-map of $G$-trees which is onto, where $Y$ is locally finite and not a single point. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
+    Suppose $f: X\to Y$ is a collapse map beteween  $G$-trees $X$ and $Y$ which is onto, where $Y$ is locally finite and not a single point. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
 \end{pro}
 \begin{proof}
 
-For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The set $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
+For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The tree $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
 
 
-Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$.
-
-\fix{TODO: keep in mind, we can stabilize empty sets but it means nothing, for the minimal cnotainmet to be true we need a non-empty invariant set, .... we want int of all inv-trees = minimal tree}
-
-By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
-
-\fix{TODO: draw nice pictures}\\
-\fix{TODO:make the OS statement a proposition}\\
-
+Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
 \end{proof}
+
+\begin{pro} fact about how the number of edges relates to valence in tree: that is the size of the orbit of a stabilizer on an edge gives you the index of the corresponding edge stabilizer
+\begin{proof}
+    \fix{TODO} Apply orbit stabilizer via Gv/Ge biject Gv orbit of e
+\end{proof}
+\end{pro}
 
 \begin{pro}
 [Equivariant Map equivalent to elliptic subgroup containment]
@@ -838,8 +868,8 @@ With this splitting in hand we want to verify that it's made of successive graph
 \label{lem:fillingcocompact}
     Let $T_1,T_2,T_3$ be simplicial $G$-trees that are pairwise transverse and $S\subset T_1\times T_2\times T_3$ an invariant cocompact subcomplex. Then $S_x$ is also cocompact.
 \begin{proof}
-    Observe that $S\subseteq T_1\times B$ where $B=\pi_2(S)\times \pi_3(S)$. Under the product action $B$ is an invariant set. We are acting by simplicial automorphisms and $pi_i$ are continuous maps so $B$ is cocompact. Next, consider a slice of $S$ that is $S' := S\cap (T_1\times \{b\})$ where $b\in B$ is a vertex. Because $T_2$ and $T_3$ are transverse the stabilizer of $b$ is trivial. Hence, the quotient map on the slice $S'$ is an injection into a compact set $S/G$. Hence, $S'$ is compact. For each vertex $b\in B$ consider the slice $S\cap (T_1\times \{b\})$, the action in $T_1$ is by simplicial automorphisms so distances are preserved. Hence, every slice in a slice orbit has the same finite diameter. Because $B$ is cocompact there are a finite number of vertex orbits and therefore a universal bound on the diameters of vertex slices. After identifying a slice with $T_1$ we see that each vertex of $S_x$ is contained in the convex hull of some slice (i.e. $v\in S_x$ then $v_1\in \text{cvx}(\pi_1(S\cap(T_1\times \{b\})))$.) Because $S$ was a subcomplex, $S_x$ is also a subcomplex and moreover it has a finite number of vertices. Hence, $S_x$ is cocompact as needed. (We are relying on $S_x$ being a subcomplex so that we can prove that it is cocompact by saying there are a finite number of vertex orbits in $B$ and each element of an orbit has a universally bounded number of vetices) ((Could also argue that this si cocompact by saying in the product metric - really just one factor - it's a subcomplex contained in a bounded neibhorhood))
-
+    Observe that $S\subseteq T_1\times B$ where $B=\pi_2(S)\times \pi_3(S)$. Under the product action $B$ is an invariant set. We are acting by simplicial automorphisms and the $\pi_i$ are continuous maps so $B$ is cocompact. Next, consider a slice of $S$ above a point, that is $S' := S\cap (T_1\times \{b\})$ where $b\in B$ is a vertex. Because $T_2$ and $T_3$ are transverse the stabilizer of $b$ is trivial. Hence, the quotient map on the slice $S'$ is an embedding into a compact set $S/G$. Hence, $S'$ is compact. For each vertex $b\in B$ consider the slice $S\cap (T_1\times \{b\})$, the action in $T_1$ is by simplicial automorphisms so distances are preserved. Hence, every slice in a slice orbit has the same finite diameter. Because $B$ is cocompact there are a finite number of vertex orbits and therefore a universal bound on the diameters of slices above vertices. After identifying a slice with $T_1$ we see that each vertex of $S_x$ is obtained by filling in the convex hull of some slice; more precisely, if $v\in S_x$ then for some $b\in B$ a vertex, $v_1\in \text{cvx}(\pi_1(S\cap(T_1\times \{b\})))$ where $v_1$ is the first coordinate of $v$.) In particular, $S_x$ is contained within a bounded neighborhood of $S$ with the product metric. Since $S$ was a subcomplex, so is $S_x$. Hence, $S_x$ is cocompact.
+    % (We are relying on $S_x$ being a subcomplex so that we can prove that it is cocompact by saying there are a finite number of vertex orbits in $B$ and each element of an orbit has a universally bounded number of vetices) ((Could also argue that this si cocompact by saying in the product metric - really just one factor - it's a subcomplex contained in a bounded neibhorhood))
 \end{proof}
 \end{lem}
 
