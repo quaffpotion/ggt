@@ -34,3 +34,5 @@ Sketch: Talk about sending fibers of the square to the tree via embedded paths o
 Connected Fiber Lemma
 Finalized the cases. See corresponding screenshot.
 
+### Update
+Using jamboard: https://jamboard.google.com/d/1rXCxLm7_wBvPaLKzonfn8VUqr0bpo5hwedxQcpqRiAo/viewer?f=0
