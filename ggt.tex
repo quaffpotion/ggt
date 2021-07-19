@@ -177,7 +177,33 @@ reminders about free group intersections being wonky e.g. stallings example, HNN
     [Types of isometries]
 \end{defn}
 
+\section{Cited Definitions}
+Terminology for $VH$-complexes. Let $X$ be a $VH$-complex, with an edge partition $\{V,H\}$. Use $V_X=V\cup X^0$ and $H_X=H=H\cup X^0$ to denote the vertical and horizontal skeletons. Let $V_x$ and $H_y$ denote vertical and horizontal leafs in the foliations determined by extending the folioation on any square. Call the quotient of $X$ by the vertical leaf space $\Gamma_X$. Think of directed $VH$-complex as a sufficiently subdivided one where there are no singular leaves and all leaves indexed by points along an edge including the vertices are isomorphic by sliding.
+
+The vertex spaces will be connected components of $V_X$ which you can think of as being picked out by vertices in $X^0$. The edge spaces are the connected components of $X-V_X$.
+
+NPC will imply that the 
+
 \section{Used Definitions}
+
+FP => FP_infinity => FP_1 => finitely generated (this is a statement about modules over ZG)
+
+GOG made of FP_infinity things 
+(note cor 9 and 10 hold for FP as well, but he is using FPinfinity since it's technicalyl more general, he is using the fact that infty+1 = infinity in the conclusion for FPinfinity)
+
+
+A resolution of $M$ is a sequence of modules or $(P_k)_{0\leq k\leq \infty}$ such that $$\cdots \to P_0\to M\to 0$$ is exact. A partial resolution is a non-empty segment of a resolution. (i.e. $(P_k)_{0\leq k\leq 7}$) We write $P\twoheadrightarrow M$ to refer to a (partial) resolution of $M$. A resolution is of finite-type if all modules in the sequence are finitely generated. (Similarly for a partial resolution) We say a resolution $$\cdots\to 0\to P_n\to\cdots P_0\to M\to 0$$ has length $n$. 
+
+ The infimum of lengths of projective resolutions is the projective dimension of $M$. If $G$ is a group and we consider modules over $\mathbb{Z}G$ in particular the trivial ZG module Z and it's projective dimension over ZG is cd
+
+\begin{defn}
+Finiteness conditions for a module $M$
+\begin{enumerate}
+    \item 
+\end{enumerate}
+\end{defn}
+
+
 \begin{defn}
 	[Filling]
 	\label{defn:filling}
@@ -215,14 +241,22 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \label{defn:transverse} 
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
-\section{Used Lemmas}
+\section{Cited Lemmas}
+\begin{thm}[Factoring as folds, from Bestvina paper, p455]
+    \label{thm:folds} 
+Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
+\end{thm}
 
+\section{Used Lemmas}
+\begin{pro}
+    If $X\to Y$ is a collapse map between $G$-trees and $X$ is cocompact then $Y$ is cocompact
+\end{pro}
 \begin{lem}
     [Deformation preserves local finiteness of minimal subtree]
     Let $X$ be a simplicial $G$-tree. The property of having a locally finite minimal subtree is invariant under deformations.
 \end{lem}
 \begin{proof}
-    We claim that both expansion and collapse moves produce $G$-trees with a locally finite 
+    We need to check this for collapse and expansion moves.
 \end{proof}
 
 \begin{lem}
@@ -409,13 +443,13 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 
 \begin{pro}
     [Folding preserves properties]
-    Suppose $X$ and $Y$ are $G$-trees. In addition suppose $Y$ has a minimal subtree that is not a point. Let $\phi:X\to Y$ be a type A fold. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
+    Suppose $X$ and $Y$ are $G$-trees. In addition suppose $Y$ has a locally finite minimal subtree that is not a point. Let $\phi:X\to Y$ be a type A fold. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
     
     \begin{proof}
-        For the fold $\phi$ pick two edges $e$ and $e'$ that are folded and adjacent to some $v$. The element $g$ is hyperbolic and so comes with an axis that has a positive translation length, hence $Gv$, the orbit of $v$ is infinite. Because $\phi$ is a fold, $\phi G v$ is taken injectively to $Y$. That is, $G\phi v$ is infinite. If $G \phi v$ intersects $Y_\text{min}$ then $G \phi v$ is entirely contained in $Y_\text{min}$ because minimal trees are $G$-invariant. However, $g$ is elliptic in $Y$ and we are acting by isometries so the infinte set $G\phi v$ lies within a bounded distance of $\phi v$ in $Y_\text{min}$; but this is impossible becauase $Y_\text{min}$ is locally finite. That is, $G\phi v\subset Y\smallsetminus Y_\text{min}$. 
+        For the fold $\phi$ pick two edges $e$ and $e'$ that are folded and adjacent to some $v$. The element $g$ is hyperbolic and so comes with an axis that has a positive translation length, hence $Gv$, the orbit of $v$ is infinite. Because $\phi$ is a type A fold, $\phi G v$ is taken injectively to $Y$. That is, $G\phi v$ is infinite. If $G \phi v$ intersects $Y_\text{min}$ then $G \phi v$ is entirely contained in $Y_\text{min}$ because minimal trees are $G$-invariant. However, $g$ is elliptic in $Y$ and we are acting by isometries so the infinte set $G\phi v$ lies within a bounded distance of $\phi v$ in $Y_\text{min}$; but this is impossible becauase $Y_\text{min}$ is locally finite. That is, $G\phi v\subset Y\smallsetminus Y_\text{min}$. 
         
         Consider the images of the folded edges $e$ and $e'$ along with their orbits. 
-        Folds preserve adjacency so every edge in $G\phi e$ and $G\phi e'$ is adjacent to a vertex in $G \phi v$. In particular, this means at least one vertex of each edge in $G\phi e$ and $G\phi e'$ is outside of $Y_\text{min}$. 
+        Folds preserve adjacency so every edge in $G\phi e$ (which is equal to $G\phi e'$) is adjacent to a vertex in $G \phi v$. In particular, this means at least one vertex of each edge in $G\phi e$ and $G\phi e'$ is outside of $Y_\text{min}$. 
         Therefore, $G\phi e$ and $G\phi e'$ are both disjoint from $Y_\text{min}$. 
         \fix{todo: we are allowing one vertex of a folded edge to touch $Y_\text{min}$}
         \fix{todo: if our formalism really is $(V,E)$ as Serre does it then edges are literally disjoint, if we're doing graphs then the open edge is disjiont, it's fine -- we just need the edge to not be fully contained in the minimal tree}
@@ -426,7 +460,7 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \end{pro}
 
 \begin{pro}
-    [Collapse Preserves Hyperbolicity]
+    [Collapse Preserves hyperbolic elements]
     \label{pro:preservehyperbolicity}
     Suppose $f: X\to Y$ is a collapse map beteween  $G$-trees $X$ and $Y$ which is onto, where $Y$ is locally finite and not a single point. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
 \end{pro}
@@ -466,14 +500,13 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
 \end{lem}
 \begin{proof}
         Suppose \(\mathcal{E}(X) \subseteq \mathcal{E}(Y)\). By \ref{pro:gmapfromsubset} this is equivalent to the existence of a $G$-map from $X$ to $Y$. By \ref{pro:preservehyperbolicity} $X$ and $Y$ partition G into the same elliptic and hyperbolic elements so \ref{cor:foresterelementcontainment} gives that $X$ and $Y$ are related by an elementary deformation which by \ref{thm:forester} gives \(\mathcal{E}(X)=\mathcal{E}(Y)\).
-        
-        
 \end{proof}
 
 \section{Problem Statement}
 
 \begin{thm}
     \label{thm:mainresult}
+    (note, we are including the .... G has no such things... since cd saysnothing about the f.g. of modules)
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
         Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations. Transversality is preserved by deformations and finite quotients ensure our trees remain of finite type \ref{lem:ftdef}. Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
@@ -542,13 +575,19 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     
     Lastly, by \ref{lem:nocommonrefinement} our trees are not refinements of a common non-trivial simplicial $G$-tree.
     
-    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. Condition (2) says that $G$ acts freely on the product $X\times Y$ and therefore also on the core, a subset of $X \times Y$. Since the tree actions are simplicial, and the product action is free, the product action is a covering space action.
+    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. The core $C$ has convex fibers. Condition (2) says that $G$ acts freely on the product $X\times Y$ and therefore also on the core, a subset of $X \times Y$. Since the tree actions are simplicial, and the product action is free, the product action is a covering space action.
     
     We also need that $C/G$ is VH. Is it enough to observe that the diagonal action respects the tree factors. The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges as needed.
     
     Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the combinatorial Gromov NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map.
     
-    \fix{TODO we are using minimal trees so projecting to X gives an onto map, it follows from minimality that the splitting from C/G is the same as the original action on X}
+    Because $C\subseteq X\times Y$ the leaves of $C$ coming from the vertical foliation as a square complex are equal to the connected components of the fibers of projecting $C$ to the $X$ coordinate, however by Guirardel the latter are connected. Collapsing leaves then is the same as collapsing fibers which is the same as projection to the $X$ factor. Because we have a product action projection is a $G$-invariant map. By continuity we get a connected subtree of X. note the image is $G$ invariant and the action is minimal and so we get the entire tree $X$.
+    
+    The above means the BS tree of the horizontal splitting of C/G (not the $G$-tree X yet) is isomorphic to the $G$-tree X
+    
+    Here $X$ is the original $G$-tree and we are comparing it to the horizontal splitting (cut along horizontal fibers and collapse the vertical fibers) of $C/G$ whose Bass-Serre tree is the same as the horizontal splitting of $C$.
+    
+    
     
 \item $3\Rightarrow 2$: 
     
@@ -608,11 +647,6 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     By Proposition 2.6, Theorem 4.2, and Corollary 4.3 of [F, deformation and rigidity].
     \end{proof}
     
-\end{thm}
-
-\begin{thm}[Factoring as folds, from Bestvina paper, p455]
-    \label{thm:folds} 
-Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
 \end{thm}
 
 \begin{lem}
