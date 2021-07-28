@@ -100,7 +100,7 @@ reminders about free group intersections being wonky e.g. stallings example, HNN
 \subsection{Graph of spaces}
 \begin{defn}
     [Graph of Spaces]
-    Given a graph of spaces $(A,\mathscr A, \alpha)$ choose spaces $X_e$ and $X_v$ with $e\in E(A)$ and $v\in V(A)$ and maps $f_e: X_e\to X_{\parial e}$ and quotient \[ \cup (X_e \times I) \cup X_v \] via  \(X_e \times I \to X_{\bar{e}} \times I\) defined by \((x,t)\to(x,1-t)\) and \(X_e\times 0\to X_{\partial_0 e}\) defined by \( (x,0)\to f_e(x)\) where the $X_e$ and the $X_v$ have fundamental groups that match the corresponding $\mathscr A_e$ and $\mathscr A_v$.
+    Given a graph of spaces $(A,\mathscr A, \alpha)$ choose spaces $X_e$ and $X_v$ with $e\in E(A)$ and $v\in V(A)$ and maps $f_e: X_e\to X_{\partial e}$ and quotient \[ \cup (X_e \times I) \cup X_v \] via  \(X_e \times I \to X_{\bar{e}} \times I\) defined by \((x,t)\to(x,1-t)\) and \(X_e\times 0\to X_{\partial_0 e}\) defined by \( (x,0)\to f_e(x)\) where the $X_e$ and the $X_v$ have fundamental groups that match the corresponding $\mathscr A_e$ and $\mathscr A_v$.
 \end{defn}
 
 \begin{pro}
@@ -186,10 +186,15 @@ NPC will imply that the
 
 \section{Used Definitions}
 
-FP => FP_infinity => FP_1 => finitely generated (this is a statement about modules over ZG)
+% \begin{rmk}
+%     FP => FP_infinity => FP_1 => finitely generated (this is a statement about modules over ZG)
+% \end{rmk}
 
-GOG made of FP_infinity things 
-(note cor 9 and 10 hold for FP as well, but he is using FPinfinity since it's technicalyl more general, he is using the fact that infty+1 = infinity in the conclusion for FPinfinity)
+% \begin{rmk}
+% GOG made of FP_infinity things 
+% (note cor 9 and 10 hold for FP as well, but he is using FPinfinity since it's technicalyl more general, he is using the fact that infty+1 = infinity in the conclusion for FPinfinity)    
+% \end{rmk}
+
 
 
 A resolution of $M$ is a sequence of modules or $(P_k)_{0\leq k\leq \infty}$ such that $$\cdots \to P_0\to M\to 0$$ is exact. A partial resolution is a non-empty segment of a resolution. (i.e. $(P_k)_{0\leq k\leq 7}$) We write $P\twoheadrightarrow M$ to refer to a (partial) resolution of $M$. A resolution is of finite-type if all modules in the sequence are finitely generated. (Similarly for a partial resolution) We say a resolution $$\cdots\to 0\to P_n\to\cdots P_0\to M\to 0$$ has length $n$. 
@@ -207,7 +212,13 @@ Finiteness conditions for a module $M$
 \begin{defn}
 	[Filling]
 	\label{defn:filling}
-    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: \[p \in S_{k} \iff \exists \,q,r\in S\, \forall j\in K: j\neq k \Rightarrow \Left(p_{j} = q_{j} = r_{j} \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\})\Right)\] 
+    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: 
+    \[
+        p \in S_{k} \iff \exists 
+        \,q,r\in S\, \forall j\in K: j\neq k 
+        \Longrightarrow ( p_{j} = q_{j} = r_{j}
+        \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}))
+    \] 
 \end{defn}
 \begin{defn}
     [Subgraph coning]
@@ -228,7 +239,7 @@ Finiteness conditions for a module $M$
 \begin{defn}
     [Finite Type]
     \label{defn:finitetype} 
-    We say a $G$-tree is of \emph{finite type} if the action is non-trivial, the tree is locally finite, the vertex stabilizers have property FP, and the quotient is finite.
+    We say a $G$-tree is of \emph{finite type} if the tree is locally finite, the vertex stabilizers have property FP, and the quotient is finite.
 \end{defn}
 \begin{defn}
 [Property FP]
@@ -375,8 +386,16 @@ Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simpl
     See remark just after theorem 8.1 in Guirardel paper
 \end{lem}
 \begin{thm}
-\label{thm:guirardelcore}
-main theorem from guirardel that produces the core that we need in the X12 aka transverse consturction aka toy version
+    [Guirardel Core Theorem]
+    \label{thm:guirardelcore}
+    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, or being irreducible. Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
+
+
+
+
+
+
+
 \end{thm}
 \begin{thm}[Wise Graph Decomposition]
 \label{thm:wisegraph}[Wise, Thm 2.16 from \cite{wisecsc}]
@@ -509,7 +528,7 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     (note, we are including the .... G has no such things... since cd saysnothing about the f.g. of modules)
     If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations. Transversality is preserved by deformations and finite quotients ensure our trees remain of finite type \ref{lem:ftdef}. Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations. Transversality is preserved by deformations and finite quotients ensure our trees remain of finite type. Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
         Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
