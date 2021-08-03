@@ -50,20 +50,31 @@
 
 \begin{document}
 \tableofcontents
+\section{Unsorted but used}
+\begin{defn}
+    [Graph]
+    A {\em graph} $A$ is a pair of sets $V(A)$ and $E(A)$ called vertices and edges together with a fixed point free involution on $E(A)$ denoted $e\mapsto \bar{e}$ and boundary maps $\partial_0,\partial_1: E(A)\to V(A)$ that satisfy $\partial_{i}(\bar{e})=\partial_{1-i}(e)$ for every $e \in E(A)$.
+\end{defn}
+\begin{defn}
+    [Graph of Groups]
+    A {\em graph of groups} is a triple $(A,\mathscr A, \alpha)$ where $A$ is a connected graph, $\mathscr A$ is a set of groups indexed by edges and vertices such that $\mathscr A_e=\mathscr A_{\bar e}$ for $e\in E(A)$, and $\alpha$ is a set of injective homomorphisms indexed by edges that satisfy $\alpha_e: \mathscr A_e\to \mathscr A_{\partial_0 e}$.
+\end{defn}
+\begin{thm}[Factoring as folds, from Bestvina paper, p455]
+    \label{thm:folds} 
+    Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
+\end{thm}
+\begin{pro}
+    If $X\to Y$ is a $G$-invariant collapse map between $G$-trees with $X$ cocompact, then $Y$ is also cocompact.
+\begin{proof}
+    (sketch) Cocompact means finite number of edge and vertex orbits. Should essentially be the observation that if you start with a finite number of edge orbits in $X$ and collapse some to get $Y$ then you'll still have a finite number of edge orbits
+\end{proof}
+\end{pro}
 
 \section{Background}
 \subsection{Context}
 Explanation of what can happen in dimension 2,
 reminders about free group intersections being wonky e.g. stallings example, HNN shift example, fg free being a gog of infinite rank stuff, property FP being nice
 \subsection{Graph of groups}
-\begin{defn}
-    [Graph]
-    A graph $A$ is a pair of sets $V(A)$ and $E(A)$ called vertices and edges with a fixed point free involution on $E(A)$ denoted $e\mapsto \bar{e}$ and boundary maps $\partial_0,\partial_1: E(A)\to V(A)$ that satisfy $\partial_{i}(\bar{e})=\partial_{1-i}(e)$ for every $e \in E(A)$.
-\end{defn}
-\begin{defn}
-    [Graph of Groups]
-    A graph of groups is a triple $(A,\mathscr A, \alpha)$ where $A$ is a connected graph, $\mathscr A$ is a set of groups indexed by edges and vertices such that $\mathscr A_e=\mathscr A_{\bar e}$ for $e\in E(A)$, and $\alpha$ is a set of injective homomorphisms indexed by edges that satisfy $\alpha_e: \mathscr A_e\to \mathscr A_{\partial_0 e}$.
-\end{defn}
 \begin{defn}
     [Collapse Move]
     (sketch) You have a G-tree with a vertex and an edge where the vertex and edge groups are the equal AND the edge is not a loop in T/G. From the graph of groups perspective, this corresponds to taking $A*_C C$ to $A$. From the $G$-tree perspective we are collapsing an orbit of edges.
@@ -252,16 +263,8 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \label{defn:transverse} 
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
-\section{Cited Lemmas}
-\begin{thm}[Factoring as folds, from Bestvina paper, p455]
-    \label{thm:folds} 
-Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
-\end{thm}
 
 \section{Used Lemmas}
-\begin{pro}
-    If $X\to Y$ is a collapse map between $G$-trees and $X$ is cocompact then $Y$ is cocompact
-\end{pro}
 \begin{lem}
     [Deformation preserves local finiteness of minimal subtree]
     Let $X$ be a simplicial $G$-tree. The property of having a locally finite minimal subtree is invariant under deformations.
