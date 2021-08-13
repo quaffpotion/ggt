@@ -51,6 +51,18 @@
 \begin{document}
 \tableofcontents
 \section{Unsorted but used}
+\begin{pro}
+    [Bieri dimension plus one]
+    \label{pro:bireridimension}
+    (Exercise p.93) in \cite{bieribook}
+    For a cocompact locally finite \(G\)-tree with \(FP_\infty\) vertex and edge groups we have that the dimension of \(G\) is exactly one more than the dimension of a vertex or edge group.
+\end{pro}
+\begin{defn}
+    [Bass-Serre Map]
+    \label{defn:bsmap}
+    (sketch)
+    the universal cover of a graph of spaces is a tree of spaces, this map takes $X_v$ to a point and $X_e \times I$ to an edge
+\end{defn}
 \begin{defn}
     [Graph]
     A {\em graph} $A$ is a pair of sets $V(A)$ and $E(A)$ called vertices and edges together with a fixed point free involution on $E(A)$ denoted $e\mapsto \bar{e}$ and boundary maps $\partial_0,\partial_1: E(A)\to V(A)$ that satisfy $\partial_{i}(\bar{e})=\partial_{1-i}(e)$ for every $e \in E(A)$.
@@ -118,14 +130,6 @@ reminders about free group intersections being wonky e.g. stallings example, HNN
     [Reasonable Graph of Spaces]
     (sketch) take aspherical spaces, cell complexes, mapping cylinders, etc. Strictly speaking, this is not necessary 
 \end{pro}
-    
-\begin{defn}
-    [Bass-Serre Map]
-    \label{defn:bsmap}
-    
-    (sketch)
-    the universal cover of a graph of spaces is a tree of spaces, this map takes $X_v$ to a point and $X_e \times I$ to an edge
-\end{defn}
 \subsection{Bass-Serre Theory}
 
 \begin{thm}
@@ -569,10 +573,8 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
 \end{enumerate}
 \end{lem}
 \begin{proof}
-\begin{itemize}
-    \item
-    
-    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri to get:
+
+    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri \ref{pro:bireridimension} to get:
     \begin{align*}
         2 &= dG\\
           &= dG_{x_0}+1\\
@@ -588,39 +590,34 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
         Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$, $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$  contradicting the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
     \end{proof}
     \end{claim*}
-    \item $2\Rightarrow 1$: Trivial groups are FP.
-    \item $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. We first check a few conditions in order to apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper}. 
+$2\Rightarrow 1$: Trivial groups are FP.
+
+$2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $Y$ correspond to horizontal and vertical edges respectively. We first check a few conditions in order to apply Guirardel's main theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper}. 
     
-    First note that $X$ and $Y$ are minimal $G$-trees. 
+    First note that $X$ and $Y$ are minimal $G$-trees by assumption.
     
-    If our trees had homothetic length functions (i.e. the length functions were a constant multiple of each other) then they would vanish on the same elements, which would imply they had the same elliptic elements. For trees of finite-type this is enough to conclude using results from \cite{foresterdeformationrigidity}  that the actions have the same elliptic subgroups and therefore both lie in the same deformation space, a contradiction. Therefore, $X$ and $Y$ have non-homothetic length functions.
+    If our trees had homothetic length functions (i.e. the length functions were a constant multiple of each other) then they would vanish on the same elements, which would imply they had the same elliptic elements. Our trees are cocompact with FP vertex groups, and FP implies finitely generated so we can apply the main theorem 1.1 of \cite{foresterdeformationrigidity} which says in this case having the same elliptic elements is enough to conclude that the elliptic subgroups are also the same. Hence, both trees lie in the same deformation space, a contradiction. Therefore, \(X\) and \(Y\) have non-homothetic length functions.
     
     Lastly, by \ref{lem:nocommonrefinement} our trees are not refinements of a common non-trivial simplicial $G$-tree.
     
-    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. The core $C$ has convex fibers. Condition (2) says that $G$ acts freely on the product $X\times Y$ and therefore also on the core, a subset of $X \times Y$. Since the tree actions are simplicial, and the product action is free, the product action is a covering space action.
+    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. The core \(C\) has convex fibers. It's also CAT(0). Our \(G\)-trees are simplicial so \(C\) is a subcomplex. Condition (2) says that $G$ acts freely on the vertices of the product $X\times Y$ and therefore also on the the vertices of the core, a subset of $X \times Y$. Since the \(G\)-trees are simplicial and the product action is free on vertices, the product action on the cell complex \(C\) will be a covering space action.
     
-    We also need that $C/G$ is VH. Is it enough to observe that the diagonal action respects the tree factors. The edge partition on the cover descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges as needed.
+    We also need that $C/G$ is VH. Is it enough to observe that the product action respects the tree factors. The edge partition on the cover \(C\) descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges as needed.
     
-    Lastly, the space $X \times Y$ is the product of two CAT(0) spaces and is therefore CAT(0). For 2-complexes, the combinatorial Gromov NPC condition descends to subcomplexes. Hence, $C$ is NPC and so is $C/G$ since being NPC is a local condition and we have a covering map.
+    From Guirardel, \(C\) is CAT(0) and therefore NPC. However, NPC is a local condition and under a covering map it descends to \(C/G\). Following Wise in \cite{wisethesis} the VH-complex \(C/G\) has a decompoistion into vertex and edge spaces. The NPC condition ensures the attaching maps are \(\pi_1\)-injective, hence \(C/G\) is a graph of spaces with horizontal and vertical splittings.
     
-    Because $C\subseteq X\times Y$ the leaves of $C$ coming from the vertical foliation as a square complex are equal to the connected components of the fibers of projecting $C$ to the $X$ coordinate, however by Guirardel the latter are connected. Collapsing leaves then is the same as collapsing fibers which is the same as projection to the $X$ factor. Because we have a product action projection is a $G$-invariant map. By continuity we get a connected subtree of X. note the image is $G$ invariant and the action is minimal and so we get the entire tree $X$.
-    
-    The above means the BS tree of the horizontal splitting of C/G (not the $G$-tree X yet) is isomorphic to the $G$-tree X
-    
-    Here $X$ is the original $G$-tree and we are comparing it to the horizontal splitting (cut along horizontal fibers and collapse the vertical fibers) of $C/G$ whose Bass-Serre tree is the same as the horizontal splitting of $C$.
-    
+    Because $C\subseteq X\times Y$ the leaves of $C$ coming from the vertical foliation as a square complex are equal to the connected components of the fibers from projecting $C$ to the $X$ coordinate, however by Guirardel the latter are connected. Collapsing leaves then is the same as collapsing connected fibers which gives projection to the $X$ factor. On the other hand, as \(C\) is a cover of \(C/G\) we get that \(C\) is also a graph of spaces. In this case, the edge and vertex spaces of \(C\) correspond to certain fibers from the foliation. Therefore, the Bass-Serre map from \(C\) given by collapsing vertex spaces to a point and mapping edge spaces to edges is the restriction of the projection map. With the product action projection is \(G\)-invariant and \(X\) is minimal so the image of the Bass-Serre map is all of \(X\). Hence, the \(G\)-tree \(X\) matches the Bass-Serre tree for the horizontal splitting of \(C/G\) where we collapse the vertical fibers.
     
     
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is an geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. 
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is a geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. 
     
     %(We could tighten to geodesics loops and lift or tighten afterwards)
     
-    By Wise, the action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$. By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets each contained in a separate factor cannot be Hausdorff equivalent under the product metric.
+    By Wise, the action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$. By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets from separate factors cannot be Hausdorff equivalent under the product metric.
     
-\end{itemize}
 \end{proof}
 
 
@@ -859,7 +856,7 @@ Let $G$ be a group. Let $X$ and $Y$ be cocompact $G$-trees whose vertex stabiliz
     \label{lem:nocommonrefinement} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then $X$ and $Y$ are not refinements of a common non-trivial simplicial $G$-tree.
     \begin{proof}
-        This means there is an edge in the collapsed tree that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since $X$ and $Y$ are locally finite, we have that the vertex groups of $X$ and $Y$ are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
+        \fix{ Add a bit about ... g fixes e1 in X then since it's not collapsed g fixes phi(e1) in K, but phi(e1) has something e2 above it in Y, but this is injective and so again the element g is in the stab of that edge e2 in Y. Ten apply local finiteness } If our actions were both trival then they would be in the same deformation space, so the actions are non-trivial and each quotient graph contains an edge. Suppose there was a common refinement. This would mean there is an edge in the collapsed tree that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since $X$ and $Y$ are locally finite, we have that the vertex groups of $X$ and $Y$ are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
     \end{proof}
 \end{lem}
 
@@ -1087,6 +1084,8 @@ Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{
 
 
 \begin{thebibliography}{9}
+\bibitem{bieribook}
+\bibitem{wisethesis}
 
 \bibitem{wisecsc}
 Wise complete square complexes
