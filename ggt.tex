@@ -25,6 +25,7 @@
 \newcommand{\ryx}{(R_y)_x}
 \newcommand{\Sxyz}[3]{((K_#1)_#2)_#3}
 \newcommand{\fix}[1]{\textcolor{red}{(fix) #1}}
+\newcommand{\new}[1]{\textcolor{blue}{(new) #1}}
 \newcommand{\Imm}{\text{Im}}
 
 \theoremstyle{mystyle}
@@ -50,13 +51,84 @@
 
 \begin{document}
 \tableofcontents
+\section{Proof Outline}
+\subsection{Setup}
+
+Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Transversality and finite quotients are preserved by deformations. Therefore, without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations.
+
+\subsection{Construct square complex with two splittings and given fundamental group}
+
+Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.) 
+
+\subsection{Construct a set with property CCP}
+
+Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        
+        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
+
+        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
+        
+        After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+        
+        Consider \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\).
+        
+\subsubsection{Show the action has the expected topological properties}
+
+
+    
+        
+        The transverse condition \ref{pro:transverseconstruction} tells us that the action on the vertices of a product of any two trees is free; hence free on the vertices of the product of all three trees. Acting by simplicial automorphisms with finite vertex stabilizers (in this case trivial) gives a PD action. 
+        
+        For a cube of any dimension, if you fix a point on it's interior then that cube is taken to itself.
+        
+        Being a product action rules out rotations of cubes or squares and disallowing edge inversions rules out reflections.
+        
+        Hence, no non-trivial element takes a cube to itself. Thus, the action is free. This implies that the action is a covering space action.
+        
+        [PD + free ===> covering space action; see hatcher]
+        
+        Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact.
+
+\subsubsection{Show set has property CCP}
+        
+        By lemma \ref{lem:fibershomeoplanes} we get that \(J\) has property CCP \ref{defn:ccp} because fibers are connected - for $f_3$ we get connected fibers from Guirardel \ref{lem:guirardel-extension} and for $f_1$ and $f_2$ we prove it in \ref{lem:confib}.
+
+\subsection{Show procedures preserve properties}
+
+We will add material to $J$ and prove that these properties are preserved at each step in order to obtain a sort of extended core denoted by $E$.
+
+Let \(S_{12}\) denote the cellular neighborhood of \(J\), because this set is defined in an invariant way as the smallest such complex with a property it is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(S_{12}\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(S_{12}\) has property CCP \ref{defn:ccp} as well. The property of being a covering space action also holds for invariant subsets.
+        
+
+\subsection{Construct cube complex from procedures}
+
+Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP \ref{defn:ccp} by construction to get that \(E:= S_{12}xyz\) is cocomapct and has CCP \ref{defn:ccp}. By switching \ref{lem:switching} \(E\) has connected 1-dimensional fibers. 
+
+\subsection{Show cube complex is a simply connected cover of a compact set with three splittings}
+
+So far we have that $E$ to $E/G$ is a covering. By lemma \ref{lem:coresc} we learn that \(E\) is simply connected and moreover \(E/G\) comes with three splittings as a graph of spaces.
+
+\subsection{Apply Bieri to iterated splittings}
+We will now iterate the splitting process and then apply Bieri. To begin, by assumption each splitting is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the two trees coming from splittings of the VH-complexes by Wise. These last splittings are themselves splittings over trivial groups - but are they trivial splittings? Here we need to assume that one such iterated sequence of splittings ends in a graph with positive rank.
+        
+Then by the Bieri dimenson argument, \(G\) has dimension 3 a contradiction.
+
+
 \section{Unsorted but used}
 \begin{pro}
+    [Finite index and intersections]
+    \label{pro:fiint}
+    Let \(G\) a group with subgroups \(H, K, K'\) where \(K' < K\) is finite index. Then \((H\cap K') < (H\cap K)\) is finite index.
+    \begin{proof}
+        its' fine, the point is you can disregard the empty cosets and pick reps in $H$.
+    \end{proof}
+\end{pro}
+\begin{thm}
     [Bieri dimension plus one]
     \label{pro:bireridimension}
-    (Exercise p.93) in \cite{bieribook}
-    For a cocompact locally finite \(G\)-tree with \(FP_\infty\) vertex and edge groups we have that the dimension of \(G\) is exactly one more than the dimension of a vertex or edge group.
-\end{pro}
+    (Exercise p.93 from \cite{bieribook})
+    For a cocompact locally finite simplicial \(G\)-tree with \(FP_\infty\) vertex and edge groups we have that the dimension of \(G\) is exactly one more than the dimension of a vertex or edge group.
+\end{thm}
 \begin{defn}
     [Bass-Serre Map]
     \label{defn:bsmap}
@@ -89,6 +161,7 @@ reminders about free group intersections being wonky e.g. stallings example, HNN
 \subsection{Graph of groups}
 \begin{defn}
     [Collapse Move]
+    \new{use the defn from DEFORMATION SPACES OF G–TREES AND AUTOMORPHISMS OF BAUMSLAG–SOLITAR GROUPS}
     (sketch) You have a G-tree with a vertex and an edge where the vertex and edge groups are the equal AND the edge is not a loop in T/G. From the graph of groups perspective, this corresponds to taking $A*_C C$ to $A$. From the $G$-tree perspective we are collapsing an orbit of edges.
 \end{defn}
 \begin{defn}
@@ -115,7 +188,7 @@ reminders about free group intersections being wonky e.g. stallings example, HNN
 \end{pro}
 \begin{pro}
     [Subgraph Crush]
-    \fix{TODO maybe can remove}
+    \new{TODO maybe can remove}
     (sketch)
     Replacing a connected subgraph in a graph of groups decomposition with a vertex group (and redefining edge maps) with the same group as the collapsed graph corresponds to collapsing an invariant forest to points which corresponds to the existence of a refinement map
 \end{pro}
@@ -201,6 +274,21 @@ NPC will imply that the
 
 \section{Used Definitions}
 
+\begin{enumerate}
+    \item bieri: G is FP1 \(\iff\) G f.g., FP2 not the same as finitely presented, but (finitely presented \(\Rightarrow\) FP2) 
+\end{enumerate}
+
+\begin{enumerate}
+    \item \(\text{cd} G = \text{proj dim}_{\mathbb{Z}G}\mathbb{Z}=\text{inf}\{n: \mathbb{Z}\text{ admits a projective resolution of length }n\}\)
+    \item A module is of type \(FP_n\) \(0\leq n\leq \infty\) if there exists a projective resolution where \(P_i\) is finitely generated for $i\leq n$.
+    \item \(FP_0\) if and only if module is finitely generated
+    \item \(FP_1\) if and only if module is finitely presented
+    \item \(FP_1\) if and only if group is finitely generated (note the off by one, is how it is)
+    \item A group is of type \(FP_n\) if the trivial \(G\)-module \(\mathbb{Z}\) is \(FP_n\) as a \(\mathbb{Z}G\)-module
+    \item A module is of type \(FP\) if there exists a finitely generated projective resolution of finite length. i.e. if and only if (1) \(FP_\infty\) and (2) finite proj dim
+\end{enumerate}
+
+
 % \begin{rmk}
 %     FP => FP_infinity => FP_1 => finitely generated (this is a statement about modules over ZG)
 % \end{rmk}
@@ -212,7 +300,7 @@ NPC will imply that the
 
 
 
-A resolution of $M$ is a sequence of modules or $(P_k)_{0\leq k\leq \infty}$ such that $$\cdots \to P_0\to M\to 0$$ is exact. A partial resolution is a non-empty segment of a resolution. (i.e. $(P_k)_{0\leq k\leq 7}$) We write $P\twoheadrightarrow M$ to refer to a (partial) resolution of $M$. A resolution is of finite-type if all modules in the sequence are finitely generated. (Similarly for a partial resolution) We say a resolution $$\cdots\to 0\to P_n\to\cdots P_0\to M\to 0$$ has length $n$. 
+A resolution of $M$ is a sequence of modules denoted $(P_k)_{0\leq k\leq \infty}$ such that $$\cdots \to P_0\to M\to 0$$ is exact. A partial resolution is a non-empty segment of a resolution. (i.e. $(P_k)_{0\leq k\leq 7}$) We write $P\twoheadrightarrow M$ to refer to a (partial) resolution of $M$. A resolution is of finite-type if all modules in the sequence are finitely generated. (cf. Bieri p54) (Similarly for a partial resolution) We say a resolution $$\cdots\to 0\to P_n\to\cdots P_0\to M\to 0$$ has length $n$. 
 
  The infimum of lengths of projective resolutions is the projective dimension of $M$. If $G$ is a group and we consider modules over $\mathbb{Z}G$ in particular the trivial ZG module Z and it's projective dimension over ZG is cd
 
@@ -268,7 +356,21 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP \ref{defn:propertyfp}.
 \end{defn}
 
+\begin{rmk}
+    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces. \new{From the definition of transverse one gets that \(G_x\cap G_y\) is FP for a specific \(x\) and \(y\). Consider \(G_{x'}\). Locally finite trees imply that \(G_{x'}\) and \(G_x\) are commensurate so they share a finite index subgroup. Taking the subgroup diagram and intersecting everything with \(G_y\) and checking the inclusions are still of finite index \ref{pro:fiint} gives that \(G_{x'}\cap G_y\) is commensurable with \(G_x\cap G_y\) and so also must be FP. A similar argument works for vertices \(y'\) in the second tree.
+    An elementary deformation either pulls a subgroup out into a new vertex group or pushes one back in. In either case, the tree remains transverse to the same trees.}
+\end{rmk}
+
 \section{Used Lemmas}
+\begin{lem}
+    [Bass finitely generated conditions]
+    \label{lem:bassfgcon}
+    Consider a group \(G\) acting on a tree \(X\)
+    \begin{enumerate}
+        \item If \(X/G\) is finite and \(G_x\) is finitely generated for all \(x\in X\) then \(G\) is finitely generated
+        \item If \(G\) is finitely generated and acts minimally on \(X\) then \(X/G\) is finite
+    \end{enumerate}
+\end{lem}
 \begin{lem}
     [Deformation preserves local finiteness of minimal subtree]
     Let $X$ be a simplicial $G$-tree. The property of having a locally finite minimal subtree is invariant under deformations.
@@ -383,11 +485,11 @@ We say a group $G$ has Property FP if there is a finite resolution of $\mathbb{Z
     \end{proof}
 \end{lem}
 
-\begin{lem}
+\begin{pro}
     [Properly discontinuous for subspace]
     \label{lem:pdsubspace}
     Consider $G$ a group acting on a topological space $X$ with $Y \subseteq X$ a subspace. If the action on $X$ is properly discontinuous then the action restricted to $Y$ with the subspace topology is also properly discontinuous. 
-\end{lem}
+\end{pro}
 \begin{lem}
     [Cocompactness of Core]
     See remark just after theorem 8.1 in Guirardel paper
@@ -476,9 +578,7 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
         
         Consider the images of the folded edges $e$ and $e'$ along with their orbits. 
         Folds preserve adjacency so every edge in $G\phi e$ (which is equal to $G\phi e'$) is adjacent to a vertex in $G \phi v$. In particular, this means at least one vertex of each edge in $G\phi e$ and $G\phi e'$ is outside of $Y_\text{min}$. 
-        Therefore, $G\phi e$ and $G\phi e'$ are both disjoint from $Y_\text{min}$. 
-        \fix{todo: we are allowing one vertex of a folded edge to touch $Y_\text{min}$}
-        \fix{todo: if our formalism really is $(V,E)$ as Serre does it then edges are literally disjoint, if we're doing graphs then the open edge is disjiont, it's fine -- we just need the edge to not be fully contained in the minimal tree}
+        Therefore, $G\phi e$ and $G\phi e'$ are not contained in $Y_\text{min}$. 
         Said differently, $\phi( Ge\cup Ge')$ is disjoint from $Y_\text{min}$.
         
         Finally, since $Y_\text{min}$ is not a point, it contains an edge, call it $f$. Consider an edge $\hat{f}$ that maps to $f$. Since $f$ is contained in $Y_\text{min}$ it is disjoint from $\phi( Ge\cup Ge')$ and therefore $\hat{f}$ is not part of a fold and therefore goes injectively. But this is impossible because then $Gf$ is an infinite set within a bounded distance of a single point in a locally finite tree.
@@ -498,7 +598,7 @@ For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elli
 Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
 \end{proof}
 
-\begin{pro} fact about how the number of edges relates to valence in tree: that is the size of the orbit of a stabilizer on an edge gives you the index of the corresponding edge stabilizer
+\begin{pro} The index of an edge stabilizer in the stabilizer of a terminal vertex is the size of the edge orbit in the star at the terminal vertex
 \begin{proof}
     \fix{TODO} Apply orbit stabilizer via Gv/Ge biject Gv orbit of e
 \end{proof}
@@ -532,10 +632,9 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
 
 \begin{thm}
     \label{thm:mainresult}
-    (note, we are including the .... G has no such things... since cd saysnothing about the f.g. of modules)
-    If \(G\) has algebraic cohomological dimension 2 \ref{defn:cd}  then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation \ref{defn:deformation}.
+    If \(G\) has cohomological dimension 2 then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation.
     \begin{proof}
-        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations. Transversality is preserved by deformations and finite quotients ensure our trees remain of finite type. Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
+        Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Without loss of generality, we may assume that these are minimal \ref{defn:minimal} \(G\)-trees after performing a sequence of elementary deformations. Transversality and finite quotients are preserved by deformations so our trees remain of finite type. Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ and has fundamental group $G$.)  Let \(\widetilde {X_{12}}\) denote its universal cover. 
         
         Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
@@ -574,15 +673,16 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
 \end{lem}
 \begin{proof}
 
-    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we apply Bieri \ref{pro:bireridimension} to get:
+    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. 
+    
+    We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we want to apply Bieri \ref{pro:bireridimension} twice. \new{In the third equality below in order to apply Bieri we need a finite quotient. Without loss of generality we can restrict to the minimal tree in the \(G_{x_0}\) action on \(Y\) in order to apply \ref{lem:bassfgcon} which gives the finite quotient. [A group can act minimally on a tree but a subgroup like \(\langle g\rangle\) might fix an axis]}
     \begin{align*}
         2 &= dG\\
           &= dG_{x_0}+1\\
           &= d( G_{x_0} )_y+1+1\\
           &= d(G_{x_0}\cap G_y)+2
     \end{align*}
-    
-    Hence, $d(G_{x_0}\cap G_y)=0$ so $G_{x_0}\cap G_y$ is trivial.
+    The equation shows that $d(G_{x_0}\cap G_y)=0$ so $G_{x_0}\cap G_y$ is trivial.
     
     \begin{claim*}
     The action of $G_{x_0}$ on $Y$ is non-trivial.
@@ -600,7 +700,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     
     Lastly, by \ref{lem:nocommonrefinement} our trees are not refinements of a common non-trivial simplicial $G$-tree.
     
-    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. The core \(C\) has convex fibers. It's also CAT(0). Our \(G\)-trees are simplicial so \(C\) is a subcomplex. Condition (2) says that $G$ acts freely on the vertices of the product $X\times Y$ and therefore also on the the vertices of the core, a subset of $X \times Y$. Since the \(G\)-trees are simplicial and the product action is free on vertices, the product action on the cell complex \(C\) will be a covering space action.
+    Apply theorem \ref{thm:guirardelcore} from \cite{guirardelcorepaper} by Guirardel to obtain $C$ a certain subset of $X \times Y$ that we call the core. The core \(C\) has convex fibers. It's also CAT(0). Our \(G\)-trees are simplicial so \(C\) is a subcomplex. Condition (2) says that $G$ acts freely on the vertices of the product $X\times Y$ and therefore also on the the vertices of the core, a subset of $X \times Y$. Since the \(G\)-trees are simplicial and the product action is free on vertices, and the VH property rules out rotating a square by 90 degrees, and the product action prevents rotations by 180 degrees (a rotation by 180 degrees would invert an edge in the projection) we get that the product action on the cell complex \(C\) will be a covering space action.
     
     We also need that $C/G$ is VH. Is it enough to observe that the product action respects the tree factors. The edge partition on the cover \(C\) descends to a well-defined edge partition on the quotient and attaching maps constructed in the standard way for the quotient alternate between vertical and horizontal edges as needed.
     
@@ -707,10 +807,6 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     Bieri gives us that if we have an action of finite type then the group is FP.
 \end{rmk}
 
-
-\begin{rmk}
-    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces
-\end{rmk}
 
 \subsubsection{Result}
 
@@ -852,11 +948,11 @@ Let $G$ be a group. Let $X$ and $Y$ be cocompact $G$-trees whose vertex stabiliz
 \end{cor}
 
 \begin{lem}
-    [No common refinement]
+    [not refinements of a common tree]
     \label{lem:nocommonrefinement} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then $X$ and $Y$ are not refinements of a common non-trivial simplicial $G$-tree.
     \begin{proof}
-        \fix{ Add a bit about ... g fixes e1 in X then since it's not collapsed g fixes phi(e1) in K, but phi(e1) has something e2 above it in Y, but this is injective and so again the element g is in the stab of that edge e2 in Y. Ten apply local finiteness } If our actions were both trival then they would be in the same deformation space, so the actions are non-trivial and each quotient graph contains an edge. Suppose there was a common refinement. This would mean there is an edge in the collapsed tree that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since $X$ and $Y$ are locally finite, we have that the vertex groups of $X$ and $Y$ are commensurable. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
+        Suppose the two trees were refinements of a common non-trivial simplicial $G$-tree. This would mean there is an edge in the common tree that has an edge above it in both trees. Let \(K\) be the stabilizer of this edge. It appears in all three trees. Since $X$ and $Y$ are locally finite, the vertex groups of $X$ are commensurable to each other, similarly for $Y$. But the property of fixing a point is invariant under commensurability. Therefore, all vertex groups of the first tree are elliptic in the second tree and vice versa. Hence, both actions have the same elliptic subgroups which means they are in the same deformation space which contradicts our initial assumptions.
     \end{proof}
 \end{lem}
 
@@ -902,14 +998,6 @@ With this splitting in hand we want to verify that it's made of successive graph
 \begin{cor*}
     Due to \ref{def:notalltrees} we get that we can apply the dimension argument using Bieri to complete our result.
 \end{cor*}
-
-\fix{ TODO is this still needed?}
-\begin{lem}
-    The action of \(G\) on \(T_1 \times T_{2} \) is free.
-    \begin{proof}
-        ...look in section II.6 of BH... Need enough facts to avoid non-proper spaces, get a semisimple action, and axes.
-    \end{proof}
-\end{lem}
 
 \begin{lem}
     [Cocompact factor after neighborhood]
