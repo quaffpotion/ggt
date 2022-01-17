@@ -715,18 +715,16 @@ Let \(G=G_1\ast_{H,\phi}\) be an HNN extension where \(G_1\) is of type \(FP_\in
 
     \begin{proof}
     
-    Without loss of generality let \(z\) in \(T_3\). Consider the slice \(S = \text{cell}(A) \cap T_1 \times T_2 \times \{z\}\). We need to show that \(S\) is connected. Let \(p, q \in S\). Using the cell structure we can find a point \(p'\in A\) such that \(p\) is contained in the closure of a cell containing \(p'\). For a product of trees, this means we can find a closed \(n\)-cube called \(P\) containing \(p\) and \(p'\). Similarly for \(q\), \(q'\) and \(Q\).
     
+    Without loss of generality let \(z\) in \(T_3\). Consider the slice \(S = \text{cell}(A) \cap T_1 \times T_2 \times \{z\}\). We need to show that \(S\) is connected. Let \(p, q \in S\). Using the cell structure we can find a point \(p'\in A\) such that \(p\in\text{cell}(A)\) is contained in the cellular closure of a cell containing \(p'\). For a product of trees, this means we can find a closed \(n\)-cube called \(P\) containing \(p\) and \(p'\) where \(p'\) does not lie on the boundary of \(P\). Similarly for \(q\), \(q'\) and \(Q\).
     
-    Consider the projection of \(P\) and \(Q\) to \(T_3\). Closed \(n\)-cubes project to edges or vertices in \(T_3\). Now, \(p,q\) have the same \(T_3\) coordinate; so \(z\) is contained in \(\pi_3(P) \cap \pi_3(Q)\). Therefore, the union \(\pi_3(P) \cup \pi_3(Q)\) is connected and \(d_{T_3}(z,p'_3), d_{T_3}(z,q'_3) \leq 1\).
-    
-    
+    Consider the projection of \(P\) and \(Q\) to \(T_3\). Closed \(n\)-cubes project to edges or vertices in \(T_3\). Now, \(p,q\) have the same \(T_3\) coordinate; so \(z\) is contained in \(\pi_3(P) \cap \pi_3(Q)\). Therefore, the union \(\pi_3(P) \cup \pi_3(Q)\) is connected and \(d_{T_3}(z,p'_3), d_{T_3}(z,q'_3) < 1\) because \(p'\) does not lie on the boundary of \(P\).
     
      We have \(p', q'\in A\) with \(A\) connected. We need a path between \(p\) and \(q\) that lies in \(S\). Note, \(p_3=q_3=z\). Start with a path \(\gamma\) in \(A\) between \(p'\) and \(q'\). We will construct a path in \(A\) that lies in a narrow enough corridor to ensure \(\text{cell}(A)\) picks up enough cells so we can find a new path that lies in the slice.
     
     If \(p'_3 = q'_3\) then using the fact that \(A\) is CCP, draw a path between \(p'\) and \(q'\) that lies in \(A \cap T_1\times T_2\times \{p'_3\}\). Call this new path \(\eta\).
     
-    If \(p'_3 \neq  q'_3\) then without loss of generality we have, 
+    If \(p'_3 \neq  q'_3\) without loss of generality we have, 
     \[0 = t'_0 < t'_1 < t''_0 < t''_1 = 1\]
     where \(t'_0, t'_1\) are the first and last times \(\gamma\) enters and leaves the closed set \(T_1\times T_3\times \{p'_3\}\) and similarly for \(t''_0, t''_1\) and \(q'_3\).
     
