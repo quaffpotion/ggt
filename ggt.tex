@@ -731,40 +731,20 @@ Let \(G=G_1\ast_{H,\phi}\) be an HNN extension where \(G_1\) is of type \(FP_\in
     If $A\subset T_1\times T_2\times T_3$ is CCP and \(A\) is connected then $\text{cell}(A)$ is also CCP.
 
     \begin{proof}
-    
-    Pick p, q in cell(A) intersect a slice.
-    
-    For a product of trees, the closure of a cell is a subcomplex.
-    
-    For all p in cell(A) there exists a cell P and a point p' in A such that p' in P and p in the topological closure of P.
-    
-    Similarly for q, q', and Q.
-    
-    Since p and p' are contained in a closed n-cube but p in P, we have that the Lsup distance between p and p' is less than 1
-    
-    Note, closed cubes project to closed cubes when projected to T3, and since p3=q3 (= z)
-    the projections of cl(P) and cl(Q) are closed cubes in T3 both containing z.
-    
-    X==========X
-    z===q'=====X
-    p'
-    
-    X==========X
-    z===p'=====X
-    q'
-    
-    X==========X
-    z===q'=====X
-    p'
-    
-    X==========X
-    z===q'=====X
+        Let \(z\in T_3\). Pick \(p,q\in \text{cell}(A)\cap (T_1\times T_2\times \{z\})\). For a product of trees, the closure of a cell is a subcomplex. For all \(p\) in \(\text{cell}(A)\) there exists a cell \(P\) and a point \(p'\in A\) such that \(p' \in P\) and \(p\) is in the topological closure of \(P\). Similarly for \(q\), \(q'\), and \(Q\). Since \(p\) and \(p'\) are contained in a closed \(n\)-cube but \(p\) in \(P\), we have that \(d_{T_3}(p_3,p'_3)<1\). Throughout, remember that if \(p'_3\) is a vertex, then \(p'_3 = z\). Similarly for \(q'_3\). This ensures that later when points are pushed along an edge the result remains within \(\text{cell}(A)\). (???  Note, closed cubes project to closed cubes in \(T_3\). Since \(p3=q3=z\) the projections of \(\text{cl}(P)\) and \(\text{cl}(Q)\) are closed cubes in \(T_3\) both containing \(z\).
+        
+        Let $\eta'$ be a path in \(A\) from \(p'\) to \(q'\). The goal is to create a modified path \(\eta\) such that \(d_{T_3}(\pi_3\eta(t), z) <1\). Points in \(\pi_3\eta'\) that are not vertices of \(T_3\) but lie in \(A\) can be pushed to a new path \(\eta\) in \(\text{cell}(A)\cap(T_1\times T_2\times \{z\})\). 
+        
+        Using the CCP property of \(A\), for a given point \(r\in T_3\) we can note the first and last time a path enters the slice \(T_1\times T_2\times \{r\}\) and replace that (possibly degenerate) segment by a path contained in \(A\cap T_1\times T_2\times \{r\}\). Call this a path snip. (For the degenerate case, concatenate paths instead)
+        
+        Consider the following cases.
+        \begin{enumerate}
+            \item \(p'_3=q'_3\): Use the CCP property of \(A\) to draw a path \(\eta\) contained in the slice \(A\cap (T_1\times T_2\times \{z\})\).
+            \item \(p'_3\neq q'_3\) and \(z=p'_3\) or \(z=q'_3\): Snip at \(p'_3\) and at \(q'_3\). This limits the path to one edge and prevents it from wandering when \(z\) is a vertex of \(T_3\).
+            \item \(p'_3\neq q'_3\) and \(z\in [p'_3,q'_3]\smallsetminus\{p'_3,q'_3\}\): As before, begin by snipping at \(p'_3\) and \(q'_3\). This case includes the situation where \(z\) is a vertex of \(T_3\) lying between \(p'_3\) and \(q'_3\). This allows a path to wander arbitrarily far from \(z\) in \(T_3\). To prevent this, we also snip at \(z\).
+        \end{enumerate}
 
-Using the CCP property of \(A\), for a given point \(r\in T_3\) we can note the first and last time a path enters the slice \(T_1\times T_2\times \{r\}\) and replace that (possibly degenerate) segment by a path contained in \(A\cap T_1\times T_2\times \{r\}\).
-
-Take the convex hull in the tree. If z is an extreme point then we can draw a path from p’ to q’ and only have to snip twice. If z is not an extreme point then it is in the middle and we will have to snip three times as vertices in T3 allow a path to wander arbitrarily far in the product metric. 
-
-Once complete, the new path goes from p' to q', is contained in \(A\), and projects to within distance 1 of \(z\). If necessary, use the open cells containing p' and q', to draw paths to create a new path from p to q. Denote this path by \(\eta\) and form \(t\to (\eta_1(t), \eta_2(t), z)\) a path from p to q contained in \(\text{cell}(A)\) as \(\eta\) was contained in \(A\) and remained close to \(z\).
+If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to \(p\) and \(q\). Require the interior of their domains to map to \(P\) and \(Q\) respectively so their \(T_3\) coordinates remain close to \(z\). Concatenate with \(\eta'\) to create a new path from \(p\) to \(q\). Denote this path by \(\tau\) and form \(t\to (\tau_1(t), \tau_2(t), z)\) a path from p to q contained in \(\text{cell}(A)\) as \(\tau\) was contained in \(A\) and remained close to \(z\).
     
     \end{proof}
     
