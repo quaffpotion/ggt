@@ -444,8 +444,12 @@ non-example: torus has infinitely many such decompositions
 \begin{thm}
     [Guirardel Core Theorem]
     \label{thm:guirardelcore}
-    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, or being irreducible. Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
+    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, (2022-03-07 ??? why does Guirardel say this) or being irreducible. Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
 \end{thm}
+
+\begin{rmk}
+    (??? clean up) Once you assume you have a minimal tree action (without inversions) there are only a few possibilities: point, line, exactly one fixed end e.g. BS(1,2), 2 hyperbolic axes with compact intersection (the typical case) -- there is no reduction operation, it's just a name. The two axes also get you a non-abelian free group inside G.
+\end{rmk}
 
 \begin{lem}
     \label{lem:guirardel-extension}
@@ -462,27 +466,45 @@ non-example: torus has infinitely many such decompositions
 
 \begin{dfn}
     [VH-complex]
-    A squared complex $X$ is a \emph{VH-complex} if each edge is labelled vertical or horizontal and attaching maps alternate between each type. Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons.
+    A squared complex $X$ is a \emph{VH-complex} if the link at each vertex is simplicial and each edge is labelled vertical or horizontal and attaching maps alternate between each type. Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons.
 \end{dfn}
 
+\begin{rmk}
+(??? clean up) Note that the link of every VH-complex is a bipartite graph; this follows from the definition, see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience and because it generalizes to an object we need later called a VHD-complex.
+    
+\end{rmk}
+
+
+The following is a restatement of theorem 2.16 \cite{wisethesis} from Wise:
 \begin{thm}[Wise Graph Decomposition]
-\label{thm:wisegraph}[Wise, Thm 2.16 from Wise complete square complexes]
-Given an NPCCC VH we get two splittings. The NPC is used to get that maps are combinatorial immersions and so injective on fundamental group
+\label{thm:wisegraph}
+Given a VH-complex we get two splittings. (Add full statement ???) (The NPC is used to get that maps are combinatorial immersions and so injective on fundamental group)
 \end{thm}
 
 \section{Actions on Trees}
 
+
+\begin{dfn}
+    [Folding]
+    \label{defn:folding}
+    Cite culler and morgan for type A folding stuff
+    See also Matt Clay
+\end{dfn}
+
+\begin{dfn}
+    [Reduced]
+    \label{defn:reduced}
+\end{dfn}
+
  \begin{dfn}
      [Geometric Action]
      \label{defn:geometricaction}
-     \cite{levitt}
-     Need to grab this from the Leveitt paper
+     See \cite{levitt} for the full definition. In the same paper Levitt gives an alternate condition \ref{lem:simpgeo} that applies in our situation.
  \end{dfn}
 \begin{lem}
     [Geometric Condition]
     \label{lem:simpgeo} 
-    (???)
-    (Theorem 0.6 in LP97)
+    (Theorem 0.6 in \cite{levitt})
     A minimal simplicial action of a finitely generated group is geometric if and only if all edge groups are finitely generated.
 \end{lem}
 
@@ -490,34 +512,35 @@ Given an NPCCC VH we get two splittings. The NPC is used to get that maps are co
 \begin{lem}
     [Affine Equivariant Map]
     \label{lem:affineequivariantmap} 
-    Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where \(\mathscr{F}\) the connected components of the foliation from \(f\) is a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
+    Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where the connected components of the fibers of \(f\) are the leaves of a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
     \begin{proof}
-        Part 1: Construct an equivariant map.
+        Construct an equivariant map.
 
-        We start by defining \(f\) on \(K^{(0)}\) the 1-skeleton. By equivariance it is enough to define the map on a single vertex in each vertex orbit. These choices can be arbitrary. Next we check that the resulting map is well-defined. Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so \[ f(v)=g^{-1}h f(v)=g^{-1} f(hv) \] but then \[ f(gv)=gf(v)=f(hv).\] 
+        We start by defining \(f\) on \(K^{(0)}\) the 0-skeleton. By equivariance it is enough to define the map on a single vertex in each vertex orbit. These choices can be arbitrary. Next we check that the resulting map is well-defined. 
         
-        Next we define the map on edges. If \(vw\) is an edge, map it to the geodesic \([f(v),g(w)]\). 
+        Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so
         
-        Lastly, for 2-cells we use the standard fibration from mapping triangles to tripods.
+        \[ f(gv) = gf(v) = g(g^{-1}h)f(v) = hf(v) = f(hv) \]
         
-        Part 2: Fibration details (??? details we almost get for free)
-        Part 3: isometry on edges transverse (??? details we almost get for free)
+        Next we define the map on the 1-skeleton by mapping each edge. If \(vw\) is an edge, map it to the geodesic \([f(v), f(w)]\). 
+        
+        Lastly, for 2-cells we use the standard fibration from mapping triangles to tripods. See figures \ref{fig:guirardelextension} and \ref{fig:guirardelextension}. (??? actually add the cases, there are 4 for the triangles getting squished down) The transverse measure assigns a length to small arcs \(\alpha\) that are transverse to the leaves. The length is defined to be the length of \(f(\alpha)\) in the tree. Hence, by construction \(f\) is an isometry on edges transverse to \(F\).
     \end{proof}
 \end{lem}
 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=6cm]{transversefoliation.png}
-    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
-    \label{fig:guirardelextension}
-\end{figure}
+% \begin{figure}[htp]
+%     \centering
+%     \includegraphics[width=6cm]{transversefoliation.png}
+%     \caption{(??? need new pictures!) A simplex with a foliation that is transverse to two edges and tangent to one edge}
+%     \label{fig:guirardelextension}
+% \end{figure}
 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=4cm]{typicalfoliatedsimplex.png}
-    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
-    \label{fig:guirardelextension}
-\end{figure}
+% \begin{figure}[htp]
+%     \centering
+%     \includegraphics[width=4cm]{typicalfoliatedsimplex.png}
+%     \caption{Typical result from the constructed foliation; the foliation is transverse to every edge}
+%     \label{fig:guirardelextension}
+% \end{figure}
 
 \begin{dfn}
     [Bass-Serre Map]
@@ -540,14 +563,18 @@ Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ 
 \begin{prop}
 [Equivariant Map equivalent to elliptic subgroup containment]
 \label{pro:gmapfromsubset}
-Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
+Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalent:
 \begin{enumerate}
     \item \(\mathcal{E}(X) \subseteq \mathcal{E}(Y)\)
     \item There exists a simplicial $G$-map from a subdivision of $X$ to $Y$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-    For (1)$\Rightarrow$(2) we will construct a $G$-map 
+    For (1)$\Rightarrow$(2) we will construct a $G$-map. As in \ref{lem:affineequivariantmap} we define a map on representatives of ...
+    
+    (??? similar to previous but the difference is instead of arbitrarily choosing \(f(v)\) you take it to be a vertex that the stabilizer of \(v\) stabilizes in \(Y\). Then instead of using the fact that \(g^{-1}h\) is identity we use that it's in the correct stabilizer. Once defined on vertices, define on edges by saying if e is sent to a path of length k, subdivide the original edge e, if endpoints of e go to the same vertex, send the entire edge there)
+    
+    
     
     For (2)$\Rightarrow$(1), suppose $f:X\to Y$ was a simplicial $G$-map. Consider a vertex group of $X$, say $G_x$. Let $g\in G_x$, then $g\cdot f(x)=f(g\cdot x)=f(x)$ a vertex in $Y$ since the map is simplicial. Hence, $G_x$ also fixes the vertex $f(x)\in Y$. Hence, every vertex group for $X$ fixes a vertex of $Y$. Therefore, every elliptic subgroup for $X$ is also elliptic for $Y$.
 \end{proof}
@@ -564,7 +591,8 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     
     If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
 \end{prop}
-\begin{proof} (See Proposition 3.1 from Group Actions on $\mathbb{R}$-trees by Culler and Morgan)
+\begin{proof}
+See Proposition 3.1 from [2].
 \end{proof}
 \begin{prop}
     [Commensurable groups have the same minimal tree]
@@ -572,7 +600,7 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     Suppose $G$ acts on a tree $X$ and $H$ and $K$ are commensurable subgroups. If $H$ contains a hyperbolic element, then so does $K$ and the minimal subtrees for $H$ and $K$ are equal.
 \end{prop}
 \begin{proof}
-    (This follows from \ref{pro:uniquemintree} for details see Corollary 7.7 from Covering theory for graphs of groups by Bass)
+    This follows from \ref{pro:uniquemintree}, for details see Corollary 7.7 from \cite{hymanbass}.
 \end{proof}
 
 \begin{lem}
@@ -590,12 +618,6 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     \label{thm:folds} 
     Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
 \end{thm}
-
-
-\begin{rmk}
-    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces. \new{From the definition of transverse one gets that \(G_x\cap G_y\) is FP for a specific \(x\) and \(y\). Consider \(G_{x'}\). Locally finite trees imply that \(G_{x'}\) and \(G_x\) are commensurate so they share a finite index subgroup. Taking the subgroup diagram and intersecting everything with \(G_y\) and checking the inclusions are still of finite index gives that \(G_{x'}\cap G_y\) is commensurable with \(G_x\cap G_y\) and so also must be FP. A similar argument works for vertices \(y'\) in the second tree.
-    An elementary deformation either pulls a subgroup out into a new vertex group or pushes one back in. In either case, the tree remains transverse to the same trees.}
-\end{rmk}
 
 \section{Bespoke Definitions}
 
@@ -631,9 +653,14 @@ Suppose $X$ and $Y$ are simplicial trees. Then the following are equivalent:
     We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP.
 \end{dfn}
 
+\begin{rmk}
+    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces. \new{From the definition of transverse one gets that \(G_x\cap G_y\) is FP for a specific \(x\) and \(y\). Consider \(G_{x'}\). Locally finite trees imply that \(G_{x'}\) and \(G_x\) are commensurate so they share a finite index subgroup. Taking the subgroup diagram and intersecting everything with \(G_y\) and checking the inclusions are still of finite index gives that \(G_{x'}\cap G_y\) is commensurable with \(G_x\cap G_y\) and so also must be FP. A similar argument works for vertices \(y'\) in the second tree.
+    An elementary deformation either pulls a subgroup out into a new vertex group or pushes one back in. In either case, the tree remains transverse to the same trees.}
+\end{rmk}
+
 \section{Algebra}
 
-We write \(A\) to mean an arbitrary ring with a unit. Take \(R\) to be a non-zero commutative ring with a unit. A resolution of a module \(M\) is a sequence of modules denoted \((P_k)_{0\leq k\leq \infty}\) where \[\cdots \to P_0\to M\] is exact. We say a resolution \[\cdots 0\to P_n\to \cdots\to P_0 \to M\] where \(n\) is the greatest integer such that \(P_n\) is a non-zero module has length \(n\).
+We write \(A\) to mean an arbitrary ring with a unit. Take \(R\) to be a non-zero commutative ring with a unit. A resolution of a module \(M\) is a sequence of modules denoted \((P_k)_{0\leq k\leq \infty}\) where \[\cdots \to P_0\to M\] is exact. We say a resolution \[\cdots 0\to P_n\to \cdots\to P_0 \to M\] has length \(n\) if \(n\) is the greatest integer such that \(P_n\) is a non-zero module.
 
 \begin{dfn}
 [Cohomological Dimension]
@@ -695,9 +722,14 @@ Let \(G=G_1\ast_{H,\phi}\) be an HNN extension where \(G_1\) is of type \(FP_\in
 \section{Lemmas}
 
 \begin{lem}
+    \label{lem:gmapfactor}
+    Every \(G\)-map between trees factors as a collapse map, followed by a morphism, followed by an immersion
+\end{lem}
+
+\begin{lem}
 [Technical assumptions for Guirardel]
     \label{lem:technicalconditions}
- We check the following properties for the map $f_{123}: \widetilde{X_{12}}\to T_3$ from \ref{lem:affineequivariantmap}. (Compare to \ref{lem:guirardel-extension})
+ The following properties hold for \(\widetilde{ X_{12} }\) and the map \(f_{123}: \widetilde{ X_{12}}\to T_3\) from \ref{lem:affineequivariantmap}. (Compare to \ref{lem:guirardel-extension})
     \begin{enumerate}
         \item geometric action
         \item free properly discontinuous cocompact
@@ -731,7 +763,7 @@ Let \(G=G_1\ast_{H,\phi}\) be an HNN extension where \(G_1\) is of type \(FP_\in
     If $A\subset T_1\times T_2\times T_3$ is CCP and \(A\) is connected then $\text{cell}(A)$ is also CCP.
 
     \begin{proof}
-        Let \(z\in T_3\). Pick \(p,q\in \text{cell}(A)\cap (T_1\times T_2\times \{z\})\). For a product of trees, the closure of a cell is a subcomplex. For all \(p\) in \(\text{cell}(A)\) there exists a cell \(P\) and a point \(p'\in A\) such that \(p' \in P\) and \(p\) is in the topological closure of \(P\). Similarly for \(q\), \(q'\), and \(Q\). Since \(p\) and \(p'\) are contained in a closed \(n\)-cube but \(p\) in \(P\), we have that \(d_{T_3}(p_3,p'_3)<1\). Throughout, remember that if \(p'_3\) is a vertex, then \(p'_3 = z\). Similarly for \(q'_3\). This ensures that later when points are pushed along an edge the result remains within \(\text{cell}(A)\). (???  Note, closed cubes project to closed cubes in \(T_3\). Since \(p3=q3=z\) the projections of \(\text{cl}(P)\) and \(\text{cl}(Q)\) are closed cubes in \(T_3\) both containing \(z\).
+        Let \(z\in T_3\). Pick \(p,q\in \text{cell}(A)\cap (T_1\times T_2\times \{z\})\). For a product of trees, the closure of a cell is a subcomplex. For all \(p\) in \(\text{cell}(A)\) there exists a cell \(P\) and a point \(p'\in A\) such that \(p' \in P\) and \(p\) is in the topological closure of \(P\). Similarly for \(q\), \(q'\), and \(Q\). Since \(p\) and \(p'\) are contained in a closed \(n\)-cube but \(p\) in \(P\), we have that \(d_{T_3}(p_3,p'_3)<1\). Throughout, remember that if \(p'_3\) is a vertex, then \(p'_3 = z\). Similarly for \(q'_3\). This ensures that later when points are pushed along an edge the result remains within \(\text{cell}(A)\).  Note, closed cubes project to closed cubes in \(T_3\). Since \(p3=q3=z\) the projections of \(\text{cl}(P)\) and \(\text{cl}(Q)\) are closed cubes in \(T_3\) both containing \(z\).
         
         Let $\eta'$ be a path in \(A\) from \(p'\) to \(q'\). The goal is to create a modified path \(\eta\) such that \(d_{T_3}(\pi_3\eta(t), z) <1\). Points in \(\pi_3\eta'\) that are not vertices of \(T_3\) but lie in \(A\) can be pushed to a new path \(\eta\) in \(\text{cell}(A)\cap(T_1\times T_2\times \{z\})\). 
         
@@ -752,7 +784,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{lem}
 
 \begin{lem}
-    [not refinements of a common tree]
+    [Not refinements of a common tree]
     \label{lem:nocommonrefinement} 
     Let \(X\) and \(Y\) be two locally finite \(G\)-trees that lie in different deformation spaces. Then $X$ and $Y$ are not refinements of a common non-trivial simplicial $G$-tree.
     \begin{proof}
@@ -763,7 +795,10 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \begin{lem}
     [Iterated Splitting]
     \label{lem:iteratedsplitting} 
-    Suppose \(x\) were a vertex of \(T_{V}\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_H\). If \(K\) had a global fixed point in \(T_H\)  then by local finiteness of \(T_V\) every vertex group of \(T_V\) would as well. Then if you are elliptic for \(T_V\) you are elliptic for \(T_H\) which by a previous lemma in our setting gives that \(T_H\) and \(T_V\) are in the same deformation space; a contradiction.
+    Let \(T_1\) and \(T_2\) be two locally finite \(G\)-trees in different deformation spaces. Then the vertex groups of each tree act non-trivially on the other tree.
+    \begin{proof}
+        Suppose \(x\) were a vertex of \(T_1\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_2\). If \(K\) had a global fixed point in \(T_2\)  then by local finiteness of \(T_1\) every vertex group of \(T_1\) would as well. Then by \ref{thm:ellipticimpliesequality} \(T_1\) and \(T_2\) are in the same deformation space; a contradiction.
+    \end{proof}
 \end{lem}
 
 \begin{lem}
@@ -796,7 +831,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     
         We will show that $E$ is a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree. The edge spaces are hyperplanes and the vertex spaces are the connected components of the complement of the corridors of the hyperplanes. Now, $E$ is a subset of a product so hyperplanes are embedded and two-sided and come with maps to each side of their corridor. 
         
-        By Property CCP the hyperplanes of $E$ are connected. Since hyperplanes are the intersection of fibers (e.g. $\pi_1^{-1}(p)$) with $E$ we have that they are separating. This means the underlying graph is a tree. Because $E$ has connected 1-dimensional fibers the hyperplanes are quadrant convex by Guirardel and so are also simply connected. Hence, $E$ is a tree of simply connected spaces and is therefore simply connected.
+        By Property CCP the intersection of $E$ with hyperplanes are connected. Since hyperplanes are the intersection of fibers (e.g. $\pi_1^{-1}(p)$) with $E$ we have that they are separating. This means the underlying graph is a tree. Because $E$ has connected 1-dimensional fibers the hyperplanes are quadrant convex by Guirardel (??? find reference!) and so are also simply connected. Hence, $E$ is a tree of simply connected spaces and is therefore simply connected.
         
         %Our \(E\) inherits a VHD structure from the product of three trees that it sits in. 
         
@@ -841,11 +876,19 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{lem}
 
 \begin{lem}
-    [Hyperbolic elements are preserved]
-    \label{lem:promoteelliptic} 
-    Suppose \(X \to Y\) is a collapse map bewteen locally finite \(G\)-trees. Suppose \(Y\) is not a single point. Then, if an element is hyperbolic for \(X\) it is also hyperbolic for \(Y\).
+    [Collapse map preserves hyperbolic elements]
+    \label{lem:preservehyperbolicity}
+    Suppose \(X \to Y\) is a collapse map with \(Y\) locally finite. Suppose \(Y\) is not a single point. Then, if an element is hyperbolic for \(X\) it is also hyperbolic for \(Y\).
     \begin{proof}
-        Suppose for sake of a contradiction that \(g\in G\) were hyperbolic for \(X\) and elliptic for \(Y\). Let \(y \in Y\) be some vertex fixed by the elliptic element \(g\) and \(G_y\) it's stabilizer. Since \(Y\) is not a single point, there is another vertex \(y\neq z \in Y\). Because \(Y\) is locally finite, \(G_y\) and \(G_z\) are commensurable. For \(G\)-maps, pre-images are invariant. By the construction of a collapse map, the preimage of vertices are connected and non-empty. Putting these together we have that the preimages of vertices are invariant trees. This means that the minimal subtrees of \(G_y\) and \(G_z\) acting on \(X\) are contained in the disjoint preimages of \(y\) and \(z\) respectively. However, since they are commensurable and \(G_y\) contains the hyperbolic element \(g\), these minimal trees are non-empty and equal. This is a contradiction.
+        (Proof in Style 1)
+        Suppose for sake of a contradiction that \(g\in G\) were hyperbolic for \(X\) and elliptic for \(Y\). Let \(y \in Y\) be some vertex fixed by the elliptic element \(g\) and \(G_y\) it's stabilizer. Since \(Y\) is not a single point, there is another vertex \(y\neq z \in Y\). Because \(Y\) is locally finite, \(G_y\) and \(G_z\) are commensurable. For \(G\)-maps, pre-images are invariant. By the construction of a collapse map, the preimage of vertices are connected and non-empty. Putting these together we have that the preimages of vertices are invariant trees. This means that the minimal subtrees of \(G_y\) and \(G_z\) acting on \(X\) are contained in the disjoint preimages of \(y\) and \(z\) respectively. However, since they are commensurable and \(G_y\) contains the hyperbolic element \(g\), these minimal trees are non-empty and equal by \ref{pro:commintree}. This is a contradiction.
+    \end{proof}
+    \begin{proof}
+        (Proof in Style 2)
+        For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The tree $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
+        
+        
+        Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
     \end{proof}
 \end{lem}
 
@@ -859,7 +902,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     \end{enumerate}
 
     \begin{proof}
-    By Proposition 2.6, Theorem 4.2, and Corollary 4.3 of [F, deformation and rigidity].
+    By Proposition 2.6, Theorem 4.2, and Corollary 4.3 of \cite{foresterdeformationrigidity}.
     \end{proof}
     
 \end{thm}
@@ -889,7 +932,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     \end{proof}
 \end{lem}
 
-\begin{lem}
+\begin{rmk}
     [Slices are connected]
  \label{lem:fibershomeoplanes} 
 
@@ -901,10 +944,11 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
         & \Longleftrightarrow \exists x \in X (f(x)=p \wedge x \in f_3^{-1} (z))\\
         & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z))
     \end{align*}
-\end{lem}
+\end{rmk}
 
 \begin{prop}
     [Folding preserves properties]
+    \label{lem:foldingpreserveshyp}
     Suppose $X$ and $Y$ are $G$-trees. In addition suppose $Y$ has a locally finite minimal subtree that is not a point. Let $\phi:X\to Y$ be a type A fold. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
     
     \begin{proof}
@@ -915,22 +959,26 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
         Therefore, $G(\phi (e))$ and $G(\phi (e'))$ are not contained in $Y_\text{min}$. 
         Said differently, $\phi( Ge\cup Ge')$ is disjoint from $Y_\text{min}$.
         
-        Finally, since $Y_\text{min}$ is not a point, it contains an edge, call it $f$. Consider an edge $\hat{f}$ that maps to $f$. Since $f$ is contained in $Y_\text{min}$ it is disjoint from $\phi( Ge\cup Ge')$ and therefore $\hat{f}$ is not part of a fold and therefore \(G\hat{f}\) (???) goes injectively. But this is impossible because then $Gf$ is an infinite set within a bounded distance of a single point in a locally finite tree.
+        Finally, since $Y_\text{min}$ is not a point, it contains an edge, call it $f$. Consider an edge $\hat{f}$ that maps to $f$. Since $f$ is contained in $Y_\text{min}$ it is disjoint from $\phi( Ge\cup Ge')$ and therefore $\hat{f}$ is not part of a fold and therefore \(G\hat{f}\) goes injectively. But this is impossible because then $Gf$ is an infinite set within a bounded distance of a single point in a locally finite tree.
     \end{proof}
 \end{prop}
 
-\begin{prop}
-    [Collapse Preserves hyperbolic elements]
-    \label{pro:preservehyperbolicity}
-    Suppose $f: X\to Y$ is a collapse map beteween  $G$-trees $X$ and $Y$ which is onto, where $Y$ is locally finite and not a single point. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
-\end{prop}
-\begin{proof}
+\begin{lem}
+    \label{invariantell}
+    [Restatement of lemma 2.2 item 1 from \cite{draftpaper}] 
+    If \(X'\) is an invariant subtree of \(X\) then \(\mathcal{E}(X') = \mathcal{E}(X)\).
+\end{lem}
 
-For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The tree $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
+\begin{lem}
+    \label{reducedcocompact}
+    (??? where did this get used, why can't we just get by with \ref{invariantell} when trying to reduce to WLOG minimal trees)
+    If \(X\) is a \(G\)-tree that is reduced and cocompact then it is minimal
+\end{lem}
 
-
-Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
-\end{proof}
+\begin{lem}
+    (??? where did this get used, supposed to be used when applying \ref{lem:foldingpreserveshyp})
+    If \(X\) and \(Y\) are in the same deformation space and \(Y_\text{min}\) is is locally finite then \(X_\text{min}\) is also locally finite
+\end{lem}
 
 \begin{lem}
     [Elliptic containment implies equality]
@@ -938,7 +986,8 @@ Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y
     If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
 \end{lem}
 \begin{proof}
-        Suppose \(\mathcal{E}(X) \subseteq \mathcal{E}(Y)\). By \ref{pro:gmapfromsubset} this is equivalent to the existence of a $G$-map from $X$ to $Y$. By \ref{pro:preservehyperbolicity} $X$ and $Y$ partition G into the same elliptic and hyperbolic elements so \ref{cor:foresterelementcontainment} gives that $X$ and $Y$ are related by an elementary deformation which by \ref{thm:forester} gives \(\mathcal{E}(X)=\mathcal{E}(Y)\).
+
+    Let \(X\) and \(Y\) as in the hypotheses. It follows from \ref{invariantell} that without loss of generality we may assume that \(X\) and \(Y\) are minimal. By \ref{pro:gmapfromsubset} there exists a \(G\)-map from \(X\) to \(Y\). This \(G\)-map is onto because \(Y\) is minimal and the image of a \(G\)-map is an invariant set. Using \ref{lem:gmapfactor} we can factor the \(G\)-map into a collapse map followed by a morphism. We can disregard the immersion since the map is onto. Apply \ref{thm:folds} to factor the morphism into a finite sequence of folds. From a remark in \cite{boundingcomplexity} after possibly subdividing we can take all of the folds to be of type A. Finally, using \ref{lem:preservehyperbolicity} and \ref{lem:foldingpreserveshyp} we see each stage of the composition preserves the property of hyperbolicity for an element \(g\in G\). Hence, \(X\) and \(Y\) partition \(G\) into the same elliptic and hyperbolic elements. Under our setup \ref{thm:ellelesubgroups} applies, thefore \(X\) and \(Y\) have the same elliptic subgroups as needed.
 \end{proof}
 
 \section{Transverse Construction}
@@ -1230,6 +1279,21 @@ Gilbert Levitt.
 \textit{Geometric group actions on trees}
 American Journal of Mathematics, Volume 119, Number 1, February 1997, pp83-102
 
+\bibitem{draftpaper}
+Forester and Martino
+\textit{Bounding complexity}
+some journal
+
+\bibitem{cullerandmorgan}
+Culler and Morgan
+\textit{Group Actions on $\mathbb{R}$-trees}
+Journal, Volume, Number, Dates (???)
+
+\bibitem{hymanbass}
+Hyman Bass.
+\textit{Covering theory for graphs of groups}
+Journal, Volume, Number, Dates (???)
+
 \bibitem{bieribook}
 \bibitem{wisethesis}
 
@@ -1242,6 +1306,12 @@ Guirardel
 \bibitem{foresterdeformationrigidity}
 Forester deformation and rigidity
 
+\bibitem{wisethesis}
+Wise Thesis
+
+\bibitem{boundingcomplexity}
+Bounding the complexity of simpliciail group actions
+on trees 
 
 
 \bibitem{latexcompanion} 
