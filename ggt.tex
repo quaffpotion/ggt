@@ -444,7 +444,7 @@ non-example: torus has infinitely many such decompositions
 \begin{thm}
     [Guirardel Core Theorem]
     \label{thm:guirardelcore}
-    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, (2022-03-07 ??? why does Guirardel say this) or being irreducible. Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
+    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, or being irreducible. Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
 \end{thm}
 
 \begin{rmk}
@@ -475,18 +475,24 @@ non-example: torus has infinitely many such decompositions
 
 \begin{dfn}
     [VH-complex]
-    A squared complex $X$ is a \emph{VH-complex} if the link at each vertex is simplicial and each edge is labelled vertical or horizontal and attaching maps alternate between each type. Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons.
+    A squared complex $X$ is a \emph{VH-complex} if the following hold,
+    \begin{enumerate}
+        \item the link at each vertex is simplicial;
+        \item each edge is labelled vertical or horizontal;
+        \item attaching maps alternate between each type of edge.
+    \end{enumerate}
+    Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons. 
 \end{dfn}
 
 \begin{rmk}
-Note that the link of every VH-complex is a bipartite graph; this follows from the definition, see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience and because it generalizes to an object we need later called a VHD-complex.
+Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience and because it generalizes to an object we need later called a VHD-complex.
     
 \end{rmk}
 
 \begin{dfn}
-    [decomposition graph]
+    [Decomposition Graph]
     \label{dfn:decompositiongraph}
-    (??? clean up but this just needs to be lifted from Wise's thesis; the \(\Gamma_X\))
+    Given a directed VH-complex \(X\) we define a map \(\rho: X\to \Gamma_X\) from \(X\) to a graph. The vertices of \(\Gamma_X\) are defined to be the connected components of \(V_X\) which we call gates and the edges are given by the connected components of \(X\smallsetminus V_X\) which we call corridors. After foliating each square with vertical segments, given \(x\in X\) define \(V_x\) to be the smallest subset of \(X\) that contains \(x\) and any vertical segment that it intersects. Because \(X\) is directed there are no singular leaves and \(V_a\) and \(V_b\) are translates of each other if \(a\) and \(b\) lie in the interior of the same horizontal edge. The set of all \(V_x\) then gives a foliation of \(X\). Collapsing each leaf of the foliation is enough to define a map to \(\Gamma_X\) viewed as a 1-dimensional cell complex. 
 \end{dfn}
 
 
@@ -731,6 +737,7 @@ Let \(G=G_1\ast_H G_2\) be an amalgamated product of groups of type \(FP_\infty\
 Let \(G=G_1\ast_{H,\phi}\) be an HNN extension where \(G_1\) is of type \(FP_\infty\) over \(R\) with subgroups \(H\) and \(\phi(H)\) of finite index in \(G_1\). Then \[\text{cd}_R(G) = \text{cd}_R(G_1)+1.\]
 \end{lem}
 
+The proof does not follow directly from the previous lemmas, but Bieri is able to run the argument again to obtain a similar result for general graphs of groups.
 \begin{thm}
     [Bieri dimension plus one]
     \label{pro:bireridimension}
