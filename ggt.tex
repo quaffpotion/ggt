@@ -645,20 +645,20 @@ See Proposition 3.1 from [2].
 \begin{dfn}
 	[Filling]
 	\label{defn:filling}
-    Let \(\{X_{k}\}_{k \in K}\) be a family of spaces where one can take convex hulls. Given \(S \subseteq X := \prod X_{k}\) define \(S_{k}\) for \(k \in K\) via: 
+    Given \(S \subseteq X := X_1\times X_2\times X_3\) define \(S_{k}\) for \(k \in \{1,2,3\}\) via: 
     \[
         p \in S_{k} \iff \exists 
         \,q,r\in S\, \forall j\in K: j\neq k 
         \Longrightarrow ( p_{j} = q_{j} = r_{j}
         \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}))
     \] 
+    where \(\text{cvxhull}_k\) is the convex hull operation on subsets of \(X_k\).
 \end{dfn}
 
 \begin{dfn}
     [Connected in coordinate planes]
     \label{defn:ccp} 
-    (??? reword so that it's specialized to our case of just having 3 dimensions and ve very clear about fixing a factor)
-    Let \(S\) be a subset of a product indexed by \(1 \leq k \leq N\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) is connected for all \(p \in X_{k}\) for all \(k\).
+    Let \(S \subseteq X_1\times X_2\times X_3\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) is connected for all \(p \in X_{k}\) for all \(k\in \{1,2,3\}\).
     
 \end{dfn}
 
