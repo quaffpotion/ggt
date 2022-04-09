@@ -459,17 +459,11 @@ non-example: torus has infinitely many such decompositions
 
 \begin{lem}
     [Shortcircuit Guirardel Proof] 
-    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then \(X'\) from the conclusion \ref{lem:guirardel-extension} can be taken to be a subgraph cone \ref{dfn:subgraphconing} denoted \(\Lambda(f,K)\) for certain choices of \(K\).
+    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then \(X'\) from the conclusion \ref{lem:guirardel-extension} can be taken to be a subgraph cone \ref{dfn:subgraphconing}, denoted \(\Lambda(f,K)\) for certain choices of \(K\).
     \begin{proof}
-        
-        \begin{figure}[htp]
-    \centering
-    \includegraphics[width=4cm]{guirardelextension.jpg}
-    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
-    \label{fig:guirardelextension}
-\end{figure}
-        For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
+        In the proof of \ref{lem:guirardel-extension} from \cite{guirardelcorepaper} the space \(\Lambda(f,K)\) has a free PDC action, hence the orbit map gives a cover. Moreover, when \(G\) is finitely presented the subgraph \(K\) can be chosen to make \(\Lambda(f,K)\) a simply connected cover. Combined with theorem 8.5 from \cite{guirardelcorepaper} we can take \(X' = \Lambda(f,K)\).
     \end{proof}
+
 \end{lem}
 
 \section{VH-complexes}
@@ -485,15 +479,21 @@ non-example: torus has infinitely many such decompositions
 \end{dfn}
 
 \begin{rmk}
-(??? clean up) Note that the link of every VH-complex is a bipartite graph; this follows from the definition, see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience and because it generalizes to an object we need later called a VHD-complex.
+Note that the link of every VH-complex is a bipartite graph; this follows from the definition, see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience and because it generalizes to an object we need later called a VHD-complex.
     
 \end{rmk}
+
+\begin{dfn}
+    [decomposition graph]
+    \label{dfn:decompositiongraph}
+    (??? clean up but this just needs to be lifted from Wise's thesis; the \(\Gamma_X\))
+\end{dfn}
 
 
 The following is a restatement of theorem 2.16 \cite{wisethesis} from Wise:
 \begin{thm}[Wise Graph Decomposition]
 \label{thm:wisegraph}
-Given a VH-complex we get two splittings. (Add full statement ???) (The NPC is used to get that maps are combinatorial immersions and so injective on fundamental group)
+Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition graphs \ref{dfn:decompositiongraph} each determine a splitting of \(\pi_1(X)\) as a graph of free groups. 
 \end{thm}
 
 \section{Actions on Trees}
