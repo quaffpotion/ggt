@@ -457,6 +457,21 @@ non-example: torus has infinitely many such decompositions
     Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
 \end{lem}
 
+\begin{lem}
+    [Shortcircuit Guirardel Proof] 
+    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then \(X'\) from the conclusion \ref{lem:guirardel-extension} can be taken to be a subgraph cone \ref{dfn:subgraphconing} denoted \(\Lambda(f,K)\) for certain choices of \(K\).
+    \begin{proof}
+        
+        \begin{figure}[htp]
+    \centering
+    \includegraphics[width=4cm]{guirardelextension.jpg}
+    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
+    \label{fig:guirardelextension}
+\end{figure}
+        For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
+    \end{proof}
+\end{lem}
+
 \section{VH-complexes}
 
 \begin{dfn}
@@ -620,6 +635,12 @@ See Proposition 3.1 from [2].
 \end{thm}
 
 \section{Bespoke Definitions}
+
+\begin{dfn}
+    [Subgraph Coning]
+    \label{dfn:subgraphconing}
+    Let \(X\) be a 2-complex with a \(G\)-action. Let \(T\) be a simplicial \(G\)-tree. Let \(f:X\to T\) be a map. Let \(K\) be a subgraph of the 1-skeleton of \(X\). Then the subgraph cone of \(f\) with \(K\) denoted \(\Lambda(f, K)\) is the set \[X \bigsqcup \left(G\times C_K\right)\] modulo the relation sending \((g, (x,0))\) to \(g\cdot x\) where \(C_K\) is the set \[ K\times [0,1]\] modulo the relation that glues \((x,1)\) to \((f(x), 1)\). 
+\end{dfn}
 
 \begin{dfn}
 	[Filling]
@@ -798,21 +819,6 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     Let \(T_1\) and \(T_2\) be two locally finite \(G\)-trees in different deformation spaces. Then the vertex groups of each tree act non-trivially on the other tree.
     \begin{proof}
         Suppose \(x\) were a vertex of \(T_1\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_2\). If \(K\) had a global fixed point in \(T_2\)  then by local finiteness of \(T_1\) every vertex group of \(T_1\) would as well. Then by \ref{thm:ellipticimpliesequality} \(T_1\) and \(T_2\) are in the same deformation space; a contradiction.
-    \end{proof}
-\end{lem}
-
-\begin{lem}
-    [Shortcircuit Guirardel Proof] 
-    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then in the notation of Guirardel $\widehat X = \Lambda(X,K,f)$ \ref{defn:coneoff} i.e. when constructing $\widehat X$ we can stop after gluing certain translates to $X$.
-    \begin{proof}
-        
-        \begin{figure}[htp]
-    \centering
-    \includegraphics[width=4cm]{guirardelextension.jpg}
-    \caption{A picture of $\widehat X$, here $K$ is a compact subgraph of the 1-skeleton large enough to generate $G$ that is coned off to a copy of the image $f(K)$ in $T$}
-    \label{fig:guirardelextension}
-\end{figure}
-        For this to work we only need that $G$ is finitely presented. Apply the Guirardel extension lemma. Then by page 42 of Guirardel, we don't need to consider anything past the coning. In his notation, the final product is $(X_K, \mathscr{F}_K)$ - which is the result of gluing $G$ translates onto $X$. (When we use this fact, replace $X$ with $\widetilde{X_{12}}$)
     \end{proof}
 \end{lem}
 
