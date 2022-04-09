@@ -178,6 +178,14 @@
 %\fancyfoot{} %clear all footer fields
 %\fancyfoot[RO, LE]{Revision date: \today}   
 
+
+
+
+\newcommand{\sxyz}{((K_x)_y)_z}
+\newcommand{\rxy}{(R_x)_y}
+\newcommand{\ryx}{(R_y)_x}
+\newcommand{\Sxyz}[3]{((K_#1)_#2)_#3}
+
 \begin{document}
 
 %\nocite{*}
@@ -411,14 +419,8 @@ give the standard Bass-Serre example about SL2Z etc
 \begin{exa}
 Spell out the standard picture where FH, FL, FP sort of correspond to the module situation with ZG ... \(ZG^k\) where k is the number of cells and the slot is the dimension of cells
 
-cellular chain complex
-
-X...
-
-X~
-
-has a cellular chain complex ... free Z modules infinite rank
-group into copies of ZG ...
+...has a cellular chain complex ... free Z modules infinite rank
+...group into copies of ZG ...
 
 
 
@@ -1007,8 +1009,8 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{prop}
 
 \begin{lem}
-    \label{invariantell}
     [Restatement of lemma 2.2 item 1 from \cite{draftpaper}] 
+    \label{invariantell}
     If \(X'\) is an invariant subtree of \(X\) then \(\mathcal{E}(X') = \mathcal{E}(X)\).
 \end{lem}
 
