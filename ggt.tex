@@ -432,7 +432,20 @@ group into copies of ZG ...
 \end{exa}
 
 \begin{exa}
-non-example: torus has infinitely many such decompositions
+Non-example: The Torus has infinitely many decompositions all in different deformation spaces
+
+The torus is Z x Z, or if you like it's Z with the generator glued to itself via the identity (the HNN version). 
+From the Z x Z perspective, a pair of different extended (i.e. include infinity) rationals p/q and r/s correspond to a basis for Z x Z
+
+Z x Z isom pi1(torus) isom HNN of < (p,q) > over < (p,q) >
+
+Some topological / basepoint details to realize the correspondence bw rationals and deformation spaces
+
+It's easy to see that the one vertex group is different because it's just powers of a single element in ZxZ; the (p,q).
+
+Conjecturally, this is sort of the only non-example
+
+
 \end{exa}
 
 
@@ -492,9 +505,26 @@ Note that the link of every VH-complex is a bipartite graph; this follows from c
 \begin{dfn}
     [Decomposition Graph]
     \label{dfn:decompositiongraph}
+    
+    (??? possibly some definitions around singular, but this should be enough to explain how we will be using the graphs in practice, the point is that the mobius band realized as a VH-complex with 1 square and 4 edges has a singular fiber in the center and the quotient would not correspond to gates and corridors because one of the edges is getting folded or if you like fibers near the center double cover the center)
+    
     Given a directed VH-complex \(X\) we define a map \(\rho: X\to \Gamma_X\) from \(X\) to a graph. The vertices of \(\Gamma_X\) are defined to be the connected components of \(V_X\) which we call gates and the edges are given by the connected components of \(X\smallsetminus V_X\) which we call corridors. After foliating each square with vertical segments, given \(x\in X\) define \(V_x\) to be the smallest subset of \(X\) that contains \(x\) and any vertical segment that it intersects. Because \(X\) is directed there are no singular leaves and \(V_a\) and \(V_b\) are translates of each other if \(a\) and \(b\) lie in the interior of the same horizontal edge. The set of all \(V_x\) then gives a foliation of \(X\). Collapsing each leaf of the foliation is enough to define a map to \(\Gamma_X\) viewed as a 1-dimensional cell complex. 
 \end{dfn}
 
+\begin{rmk}
+    (??? commentary using relatively basic groups, should be used as a running example when defining items along with the non-example of a mobius band and the example of a properly subdivided mobius band)
+    
+    It's useful to trace the path from an abstract group to a representation as a VH-complex. Following Wise from [ riches to raags ], the groups \(F_2 *_\mathbb{Z} F_2\) can be realized as the fundamental group a cylinder with it's boundaries glued to figure eights. As written there isn't much structure, so give everything the usual cell structure e.g. 2 1-cells and 1 0-cell for the figure-eights. At least the object is now a cell complex. To get a square complex, it's always possible to subdivide the vertex and cylinder boundary components so that the attaching maps to both vertex graphs have the same number of edges. The result is a square complex!
+    
+    (??? other items mostly beyond scope and hard to bring to the reader's attention without being overwhelming but perhaps bringing up burger-mozes because people like infinite torsion free simple groups)
+    
+    \begin{enumerate}
+        \item  csc (attaching maps are covers gets you complete graphs gets you universal cover is tree product)
+        \item  clean (attaching maps are combinatorial embeddings, wise has ways of getting clean or getting a finite index clean for reasons)
+        \item if you have a thing that decomposes as graphs and glued (graph x product) + immersions then you get graphs of free groups
+        \item  if X is compact VH (in our case, these are NPC by defn) then X or it's double cover splits as a GOG
+    \end{enumerate}
+\end{rmk} 
 
 The following is a restatement of theorem 2.16 \cite{wisethesis} from Wise:
 \begin{thm}[Wise Graph Decomposition]
@@ -781,7 +811,7 @@ The proof does not follow directly from the previous lemmas, but Bieri is able t
 \begin{lem}
     [Cone extension]
     \label{lem:coneextension}
-    (??? just need to flesh out)
+    (??? I think this will get deleted. We can define this kind of thing inline, it's only used as a quick way to see that a map can be defined in a compatible way)
     Start with a map $f$ from a complex $X$ to a tree $T$. This extension is exactly the same as the Guirardel Extension except instead of gluing one end of a product to the original space and quotienting the other end using $f$ we simply send the other end to a point in $T$ contained in \(\text{Im}(f)\). To extend $f$ we map the fibers of the product space that was glued on to geodesics in the tree $T$.
 \end{lem}
 
@@ -1265,10 +1295,7 @@ We will now iterate the splitting process and then apply Bieri. To begin, by ass
 Then by the Bieri dimenson argument, \(G\) has dimension 3 a contradiction.
 
 \noindent
-\begin{thm}
-\label{main}
-Let $A$ and $B$ be locally indicable, cubulable groups, $w$ a word in $A*B$ which is not conjugate into $A$ or $B$, and $n\geq 4$. Then $G=A*B/\nc{w^n}$ is cubulable.
-\end{thm}
+
 
 
 These groups are also hyperbolic relative to $\{A,B\}$, and perhaps it is conceivable that a suitable theory of quasiconvex hierarchies in the relatively hyperbolic setting could be used to tackle this question as well.
