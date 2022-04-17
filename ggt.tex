@@ -463,7 +463,7 @@ Conjecturally, this is sort of the only non-example
 \end{thm}
 
 \begin{rmk}
-    (??? clean up) Once you assume you have a minimal tree action (without inversions) there are only a few possibilities: point, line, exactly one fixed end e.g. BS(1,2), 2 hyperbolic axes with compact intersection (the typical case) -- there is no reduction operation, it's just a name. The two axes also get you a non-abelian free group inside G.
+    (??? clean up) Once you assume you have a minimal tree action (without inversions) there are only a few possibilities: point, line, exactly one fixed end e.g. BS(1,2), 2 hyperbolic axes with compact intersection (the typical case) -- there is no reduction operation, it's just a name. The two axes also get you a non-abelian free group inside G. So irreducible is the typical interesting case
 \end{rmk}
 
 \begin{lem}
@@ -512,21 +512,6 @@ Note that the link of every VH-complex is a bipartite graph; this follows from c
     
     Given a directed VH-complex \(X\) we define a map \(\rho: X\to \Gamma_X\) from \(X\) to a graph. The vertices of \(\Gamma_X\) are defined to be the connected components of \(V_X\) which we call gates and the edges are given by the connected components of \(X\smallsetminus V_X\) which we call corridors. After foliating each square with vertical segments, given \(x\in X\) define \(V_x\) to be the smallest subset of \(X\) that contains \(x\) and any vertical segment that it intersects. Because \(X\) is directed there are no singular leaves and \(V_a\) and \(V_b\) are translates of each other if \(a\) and \(b\) lie in the interior of the same horizontal edge. The set of all \(V_x\) then gives a foliation of \(X\). Collapsing each leaf of the foliation is enough to define a map to \(\Gamma_X\) viewed as a 1-dimensional cell complex. 
 \end{dfn}
-
-\begin{rmk}
-    (??? commentary using relatively basic groups, should be used as a running example when defining items along with the non-example of a mobius band and the example of a properly subdivided mobius band)
-    
-    It's useful to trace the path from an abstract group to a representation as a VH-complex. Following Wise from [ riches to raags ], the groups \(F_2 *_\mathbb{Z} F_2\) can be realized as the fundamental group a cylinder with it's boundaries glued to figure eights. As written there isn't much structure, so give everything the usual cell structure e.g. 2 1-cells and 1 0-cell for the figure-eights. At least the object is now a cell complex. To get a square complex, it's always possible to subdivide the vertex and cylinder boundary components so that the attaching maps to both vertex graphs have the same number of edges. The result is a square complex!
-    
-    (??? other items mostly beyond scope and hard to bring to the reader's attention without being overwhelming but perhaps bringing up burger-mozes because people like infinite torsion free simple groups)
-    
-    \begin{enumerate}
-        \item  csc (attaching maps are covers gets you complete graphs gets you universal cover is tree product)
-        \item  clean (attaching maps are combinatorial embeddings, wise has ways of getting clean or getting a finite index clean for reasons)
-        \item if you have a thing that decomposes as graphs and glued (graph x product) + immersions then you get graphs of free groups
-        \item  if X is compact VH (in our case, these are NPC by defn) then X or it's double cover splits as a GOG
-    \end{enumerate}
-\end{rmk} 
 
 The following is a restatement of theorem 2.16 \cite{wisethesis} from Wise:
 \begin{thm}[Wise Graph Decomposition]
@@ -783,8 +768,9 @@ The proof does not follow directly from the previous lemmas, but Bieri is able t
 
 \begin{lem}
     \label{lem:gmapfactor}
-    Every \(G\)-map between trees factors as a collapse map, followed by a morphism, followed by an immersion
+    Every surjective \(G\)-map between trees factors as a collapse map, followed by a morphism.
 \end{lem}
+% really it's collapse, morphism, immersion but who cares we just need the onto case
 
 \begin{lem}
 [Technical assumptions for Guirardel]
@@ -1008,20 +994,19 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     \end{proof}
 \end{prop}
 
-\begin{lem}
-    [Restatement of lemma 2.2 item 1 from \cite{draftpaper}] 
-    \label{invariantell}
-    If \(X'\) is an invariant subtree of \(X\) then \(\mathcal{E}(X') = \mathcal{E}(X)\).
-\end{lem}
+% \begin{lem}
+%     [Restatement of lemma 2.2 item 1 from \cite{draftpaper}] 
+%     \label{invariantell}
+%     If \(X'\) is an invariant subtree of \(X\) then \(\mathcal{E}(X') = \mathcal{E}(X)\).
+% \end{lem}
 
 \begin{lem}
     \label{reducedcocompact}
-    (??? where did this get used, why can't we just get by with \ref{invariantell} when trying to reduce to WLOG minimal trees)
     If \(X\) is a \(G\)-tree that is reduced and cocompact then it is minimal
 \end{lem}
 
 \begin{lem}
-    (??? where did this get used, supposed to be used when applying \ref{lem:foldingpreserveshyp})
+    (??? get proof from other paper)
     If \(X\) and \(Y\) are in the same deformation space and \(Y_\text{min}\) is is locally finite then \(X_\text{min}\) is also locally finite
 \end{lem}
 
@@ -1032,7 +1017,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{lem}
 \begin{proof}
 
-    Let \(X\) and \(Y\) as in the hypotheses. It follows from \ref{invariantell} that without loss of generality we may assume that \(X\) and \(Y\) are minimal. By \ref{pro:gmapfromsubset} there exists a \(G\)-map from \(X\) to \(Y\). This \(G\)-map is onto because \(Y\) is minimal and the image of a \(G\)-map is an invariant set. Using \ref{lem:gmapfactor} we can factor the \(G\)-map into a collapse map followed by a morphism. We can disregard the immersion since the map is onto. Apply \ref{thm:folds} to factor the morphism into a finite sequence of folds. From a remark in \cite{boundingcomplexity} after possibly subdividing we can take all of the folds to be of type A. Finally, using \ref{lem:preservehyperbolicity} and \ref{lem:foldingpreserveshyp} we see each stage of the composition preserves the property of hyperbolicity for an element \(g\in G\). Hence, \(X\) and \(Y\) partition \(G\) into the same elliptic and hyperbolic elements. Under our setup \ref{thm:ellelesubgroups} applies, thefore \(X\) and \(Y\) have the same elliptic subgroups as needed.
+    Let \(X\) and \(Y\) as in the hypotheses. Without loss of generality we may assume that \(X\) and \(Y\) are reduced and therefore minimal by \ref{reducedcocompact}. By \ref{pro:gmapfromsubset} there exists a \(G\)-map from \(X\) to \(Y\). This \(G\)-map is onto because \(Y\) is minimal and the image of a \(G\)-map is an invariant set. Using \ref{lem:gmapfactor} we can factor the \(G\)-map into a collapse map followed by a morphism. Apply \ref{thm:folds} to factor the morphism into a finite sequence of folds. From a remark in \cite{boundingcomplexity} after possibly subdividing we can take all of the folds to be of type A. (??? remark here, collapse and folds preserve property of fg stabs) (just a note that you need 2.1.17 to bring back the local finiteness) Finally, using \ref{lem:preservehyperbolicity} and \ref{lem:foldingpreserveshyp} we see each stage of the composition preserves the property of hyperbolicity for an element \(g\in G\). Hence, \(X\) and \(Y\) partition \(G\) into the same elliptic and hyperbolic elements. Under our setup \ref{thm:ellelesubgroups} applies, thefore \(X\) and \(Y\) have the same elliptic subgroups as needed.
 \end{proof}
 
 \section{Transverse Construction}
@@ -1380,3 +1365,10 @@ Knuth: Computers and Typesetting,
 %URL: \texttt{\href{http://benstuc.ky}{http://benstuc.ky}}
 
 \end{document}
+
+
+%%% Fun facts
+
+immersion = locally injective
+for trees immersions are injective
+elementary collapse moves are quasi-isometries thanks to old forester paper
