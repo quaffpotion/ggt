@@ -521,6 +521,12 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 
 \section{Actions on Trees}
 
+\begin{dfn}
+    [Fibers in trees]
+    \label{dfn:treefibers}
+    A fiber of a product of trees is the inverse image of a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A one-dimensional fiber of a product of three trees is the inverse image a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
+    
+\end{dfn}
 
 \begin{dfn}
     [Folding]
@@ -901,7 +907,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \label{lem:fillingcocompact}
     Let $T_1,T_2,T_3$ be simplicial $G$-trees that are pairwise transverse and $S\subset T_1\times T_2\times T_3$ an invariant cocompact subcomplex. Then $S_x$ is also cocompact.
 \begin{proof}
-    Observe that $S\subseteq T_1\times B$ where $B=\pi_{23}(S)$. Under the product action $B$ is an invariant set. Projection is a continuous map so $B$ is cocompact. Next, consider a slice of $S$ above a point, that is $S' := S\cap (T_1\times \{b\})$ where $b\in B$ is a vertex. Because $T_2$ and $T_3$ are transverse the stabilizer of $b$ is trivial. Hence, the quotient map on the slice $S'$ is an embedding into a compact set $S/G$. Hence, $S'$ is compact. For each vertex $b\in B$ consider the slice $S\cap (T_1\times \{b\})$, the action in $T_1$ is by simplicial automorphisms so distances are preserved. Hence, every slice in a slice orbit has the same finite diameter. Because $B$ is cocompact there are a finite number of vertex orbits and therefore a universal bound on the diameters of slices above vertices. After identifying a slice with $T_1$ we see that each vertex of $S_x$ is obtained by filling in the convex hull of some slice; more precisely, if $v\in S_x$ then for some $b\in B$ a vertex, $v_1\in \text{cvx}(\pi_1(S\cap(T_1\times \{b\})))$ where $v_1$ is the first coordinate of $v$.) In particular, $S_x$ is contained within a bounded neighborhood of $S$ with the product metric. Since $S$ was a subcomplex, so is $S_x$. Hence, $S_x$ is cocompact.
+    Observe that $S\subseteq T_1\times B$ where $B=\pi_{23}(S)$. Under the product action $B$ is an invariant set. Projection is a continuous map so $B$ is cocompact. Next, consider a one-dimensional fiber of $S$ above a point, that is $S' = S\cap (T_1\times \{b\})$ where $b\in B$ is a vertex. Because $T_2$ and $T_3$ are transverse the stabilizer of $b$ is trivial. Hence, the quotient map on the one-dimensional fiber $S'$ is an embedding into a compact set $S/G$. Hence, $S'$ is also compact. For each vertex $b\in B$ consider the one-dimensional fiber $S\cap (T_1\times \{b\})$, the action in $T_1$ is by simplicial automorphisms so distances are preserved. Hence, every one-dimensional fiber in an orbit has the same finite diameter. Because $B$ is cocompact there are a finite number of vertex orbits and therefore a universal bound on the diameters of one-dimensional fibers above vertices. After identifying a one-dimensional fiber with $T_1$ we see that each vertex of $S_x$ is obtained by filling in the convex hull of some one-dimensional fiber; more precisely, if $v\in S_x$ then for some $b\in B$ a vertex, $v_1\in \text{cvx}(\pi_1(S\cap(T_1\times \{b\})))$ where $v_1$ is the first coordinate of $v$.) In particular, $S_x$ is contained within a bounded neighborhood of $S$ with the product metric. Since $S$ was a subcomplex, so is $S_x$. Hence, $S_x$ is cocompact.
     % (We are relying on $S_x$ being a subcomplex so that we can prove that it is cocompact by saying there are a finite number of vertex orbits in $B$ and each element of an orbit has a universally bounded number of vetices) ((Could also argue that this si cocompact by saying in the product metric - really just one factor - it's a subcomplex contained in a bounded neibhorhood))
 \end{proof}
 \end{lem}
