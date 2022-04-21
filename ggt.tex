@@ -1006,7 +1006,8 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{lem}
 
 \begin{lem}
-    (??? get proof from other paper)
+    (??? follows from Lemma 2.10 from complexity paper and defn of minimal subtree)
+    \label{lem:pullbacklocallyfinite}
     If \(X\) and \(Y\) are in the same deformation space and \(Y_\text{min}\) is is locally finite then \(X_\text{min}\) is also locally finite
 \end{lem}
 
@@ -1017,7 +1018,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{lem}
 \begin{proof}
 
-    Let \(X\) and \(Y\) as in the hypotheses. Without loss of generality we may assume that \(X\) and \(Y\) are reduced and therefore minimal by \ref{reducedcocompact}. By \ref{pro:gmapfromsubset} there exists a \(G\)-map from \(X\) to \(Y\). This \(G\)-map is onto because \(Y\) is minimal and the image of a \(G\)-map is an invariant set. Using \ref{lem:gmapfactor} we can factor the \(G\)-map into a collapse map followed by a morphism. Apply \ref{thm:folds} to factor the morphism into a finite sequence of folds. From a remark in \cite{boundingcomplexity} after possibly subdividing we can take all of the folds to be of type A. (??? remark here, collapse and folds preserve property of fg stabs) (just a note that you need 2.1.17 to bring back the local finiteness) Finally, using \ref{lem:preservehyperbolicity} and \ref{lem:foldingpreserveshyp} we see each stage of the composition preserves the property of hyperbolicity for an element \(g\in G\). Hence, \(X\) and \(Y\) partition \(G\) into the same elliptic and hyperbolic elements. Under our setup \ref{thm:ellelesubgroups} applies, thefore \(X\) and \(Y\) have the same elliptic subgroups as needed.
+    Let \(X\) and \(Y\) as in the hypotheses. Without loss of generality we may assume that \(X\) and \(Y\) are reduced and therefore minimal by \ref{reducedcocompact}. By \ref{pro:gmapfromsubset} there exists a \(G\)-map from \(X\) to \(Y\). This \(G\)-map is onto because \(Y\) is minimal and the image of a \(G\)-map is an invariant set. Using \ref{lem:gmapfactor} we can factor the \(G\)-map into a collapse map followed by a morphism. Apply \ref{thm:folds} to factor the morphism into a finite sequence of folds. From a remark in \cite{boundingcomplexity} after possibly subdividing we can take all of the folds to be of type A. Collapse maps and folds preserve the finite generation of vertex and edge stabilizers. In the next step we repeatedly apply \ref{lem:pullbacklocallyfinite}. Using \ref{lem:preservehyperbolicity} and \ref{lem:foldingpreserveshyp} we see each stage of the composition starting from the right preserves the property of hyperbolicity for an element \(g\in G\).  Hence, \(X\) and \(Y\) partition \(G\) into the same elliptic and hyperbolic elements. Under our setup \ref{thm:ellelesubgroups} applies, therefore \(X\) and \(Y\) have the same elliptic subgroups as needed.
 \end{proof}
 
 \section{Transverse Construction}
