@@ -36,3 +36,27 @@ Finalized the cases. See corresponding screenshot.
 
 ### Update
 Using jamboard: https://jamboard.google.com/d/1rXCxLm7_wBvPaLKzonfn8VUqr0bpo5hwedxQcpqRiAo/viewer?f=0
+
+
+### Forester Edits 22-05-2022
+pg1:
+> These correspond to finite-index [fixed from: locally finite] graphs of finite rank free groups
+Here the finite-index refers to the image subgroups from the homomorphisms
+
+Remember, we are forcing locally finite trees but the finite-index comes from the edge orbits being finite, not the number of incident edges
+
+pg3:
+skipping edits to quoted Guirardel theorem
+Remark 2.1.5 on pg4 should explain the irreducible
+
+pg6:
+Removed open/closed directions, topologically directions are already open and the topological closure is what one expects. TODO: do we ever need the distinction bw directions at a vertex and directions at a midpoint?
+
+pg7:
+do we use overset for maps or something else?
+
+pg9:
+TODO: defer defn of "directed" for later; need to spell out the summary
+
+pg15:
+Expand on the fix an axis comment
