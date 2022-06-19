@@ -20,6 +20,8 @@
 \usepackage{float}
 %\usepackage{mathtools}
 
+
+
 \usepackage{sansmathfonts}
 \usepackage[T1]{fontenc}
 %\usepackage{geometry}
@@ -428,7 +430,7 @@ We conjecture that primitive VHD complexes all have a fundamental group of \(\ma
 
 \chapter{Preliminaries}
 \section{Cited results}
-
+(??? find a better name for this section or integrate the citations) 
 
 \begin{prop}
     [Hyperbolic gives unique minimal tree]
@@ -459,8 +461,6 @@ See Proposition 3.1 from [2].
     \end{enumerate}
 \end{lem}
 
-(??? find a better name for this section or integrate the citations) 
-
 \begin{thm}
     [Guirardel Core Theorem]
     \label{thm:guirardelcore}
@@ -477,7 +477,7 @@ See Proposition 3.1 from [2].
     Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
 \end{lem}
 \begin{rmk}
-    For our purposes we only need that the map \(X_{12}^+\to T_3\) have connected fibers. From Guirardel, if \(G\) is finitely presented we can choose \(X_{12}^+\) to be simply connected. (??? Add some intuition about choosing \(K\) a suitable compact graph that carries all of the fundamental group)
+    For our purposes we only need that the map \(X_{12}^+\to T_3\) have connected fibers. From Guirardel, if \(G\) is finitely presented we can choose \(X_{12}^+\) to be simply connected. (??? Add some intuition about choosing \(K\) a suitable compact graph that carries all of the fundamental group; this remark will supercede \ref{lem:shortcircuit})
 \end{rmk}
 
 \section{Actions on Trees}
@@ -1137,6 +1137,60 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \section{Cocompactness of orthant hulls}
 \chapter{Proof of main theorem}
 
+\section{Setup}
+
+Suppose for sake of a contradiction that there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that are pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Transversality and finite quotients are preserved by deformations. Therefore, by \ref{reducedcocompact}, without loss of generality we may assume that these are minimal \(G\)-trees after performing a sequence of elementary deformations. 
+
+\section{Construct square complex with two splittings and given fundamental group}
+
+Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ with fundamental group $G$.) 
+
+\section{Construct CCP set}
+
+        Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\). 
+        
+        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions 
+        \ref{lem:technicalconditions} for us to apply the Guirardel Extension Lemma \ref{lem:guirardel-extension} to obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
+
+        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. 
+        
+        \begin{rmk}
+            
+        In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map
+        \end{rmk}
+        
+        (??? where is this map defined, originally we referenced \ref{lem:coneextension} but it's not a real lemma) After coning off  we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+        
+        Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\).
+        
+    \subsection{Check that action has the correct topological properties}
+        The transverse condition \ref{pro:transverseconstruction} tells us that the action on the vertices of a product of any two trees is free; hence free on the vertices of the product of all three trees. Acting by simplicial automorphisms with finite vertex stabilizers (in our case trivial) gives a PD action. 
+        
+        For a cube of any dimension, if you fix a point on it's interior then that cube is taken to itself.
+        
+        Being a product action rules out rotations of cubes or squares and disallowing edge inversions rules out reflections.
+        
+        Hence, no non-trivial element takes a cube to itself. Thus, the action is free. This implies that the action is a covering space action.
+        
+        Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact.
+        
+        \begin{rmk}
+            Properly discontinuous free actions on Hausdorff spaces are covering space actions cf: ch1 ex23 in Hatcher
+        \end{rmk}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Next, define \(K := \text{cell}(J)\) 
+
 \section{Construction of Extended Core}
 
 \begin{dfn}
@@ -1355,52 +1409,17 @@ Conjecturally, this is sort of the only non-example
 \section{Core has quadrant convex hyperplanes}
 
 
-\section{Proof of main theorem}
+\section{Proof of main theorem (old)}
 
 \begin{thm}
     \label{thm:mainresult}
     If \(G\) has cohomological dimension 2 then there are at most two non-trivial finite type \ref{defn:finitetype} pairwise transverse \ref{defn:transverse} \(G\)-trees up to deformation.
 \end{thm}
 
-\subsection{Setup}
-
-Suppose for sake of a contradiction there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that were pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Transversality and finite quotients are preserved by deformations. Therefore, without loss of generality, we may assume that these are minimal \(G\)-trees after performing a sequence of elementary deformations as our trees are cocompact. 
-
-\subsection{Construct square complex with two splittings and given fundamental group}
-
-Applying the transverse construction lemma \ref{pro:transverseconstruction} we obtain \(X_{12}\). (For now think of $X_{12}$ as a square complex that encodes the two $G$-trees $T_1$ and $T_2$ with fundamental group $G$.) 
-
 \subsection{Construct a set with property CCP}
-
-Let \(\widetilde {X_{12}}\) denote its universal cover. 
-        
-        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions 
-        \ref{lem:technicalconditions} for us to apply a special case \ref{lem:shortcircuit} of the Guirardel Extension Lemma \ref{lem:guirardel-extension} and obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
-
-        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. (In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map)
-        
-        After coning off as described in \ref{lem:coneextension} we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
-        
-        Consider \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\).
         
 \subsubsection{Show the action has the expected topological properties}
 
-
-    
-        
-        The transverse condition \ref{pro:transverseconstruction} tells us that the action on the vertices of a product of any two trees is free; hence free on the vertices of the product of all three trees. Acting by simplicial automorphisms with finite vertex stabilizers (in our case trivial) gives a PD action. 
-        
-        For a cube of any dimension, if you fix a point on it's interior then that cube is taken to itself.
-        
-        Being a product action rules out rotations of cubes or squares and disallowing edge inversions rules out reflections.
-        
-        Hence, no non-trivial element takes a cube to itself. Thus, the action is free. This implies that the action is a covering space action.
-        
-        Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact.
-        
-        \begin{rmk}
-            Properly discontinuous free actions on Hausdorff spaces are covering space actions cf: ch1 ex23 in Hatcher
-        \end{rmk}
 
 \subsubsection{Show set has property CCP}
         
