@@ -412,7 +412,7 @@ From a topological perspective we want to look at groups that are fundamental gr
 
 Once you have a graph of groups one can get a new one by collapsing an edge that corresponds to \(A*_CC\) to a vertex \(A\). Such a move or it's reverse is called an elementary deformation. A deformation space is defined to be the space of all graphs of groups obtained by a finite sequence of elementary deformations. Graphs of groups where there are no remaining elementary deformations are called reduced.
 
-Graphs of groups where the vertex and edge spaces are trivial yield free groups. Allowing abelian free groups gives what are called Generalized Baumslag-Solitar groups which include special cases like BS(1,2) and BS(p,q) which serve as interesting examples and counterexamples in their own right. For this paper we work with groups of cohomological dimension 2 with locally finite trees and finitely generated vertex and edge groups. These correspond to locally finite graphs of finite rank free groups. The space itself will involve products and therefore becomes a square complex. We will see some conditions to guarantee that a certain square complex can be decomposed into a graph of free groups.
+Graphs of groups where the vertex and edge groups are trivial yield free groups. Allowing abelian free groups gives what are called Generalized Baumslag-Solitar groups which include special cases like BS(1,2) and BS(p,q) which serve as interesting examples and counterexamples in their own right. For this paper we work with groups of cohomological dimension 2 with locally finite trees and finitely generated vertex and edge groups. These correspond to finite-index graphs of finite rank free groups. The space itself will involve products and therefore becomes a square complex. We will see some conditions to guarantee that a certain square complex can be decomposed into a graph of free groups.
 
 \begin{thm}
     [Main Theorem]
@@ -529,7 +529,9 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \begin{dfn}
     [Directions and Halfspaces]
     \label{dfn:directionhalfspaces}
-    A direction based at a point \(p\in T\) where \(T\) is a tree is a connected component of \(T\smallsetminus p\). If \(p\) is on an edge of a simplicial tree we call the resulting directions open direction. A closed direction is the closure of an open halfspace. A halfspace of a product of trees is a preimage of a halfspace of a tree by projection. A quadrant in \(T_1\times T_2\) based at \((x,y)\) is the product of two directions at \(x\) and \(y\) respectively or equivalently the intersection of two halfspaces. Similarly for orthants in a product of three trees
+    A \emph{direction} based at a point \(p\in T\) where \(T\) is a tree is a connected component of \(T\smallsetminus p\).
+    
+    A halfspace of a product of trees is a preimage of a direction of a tree by projection. A quadrant in \(T_1\times T_2\) based at \((x,y)\) is the product of two directions at \(x\) and \(y\) respectively or equivalently the intersection of two halfspaces. Similarly for orthants in a product of three trees
 \end{dfn}
 
 
@@ -607,7 +609,17 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \section{Cohomological Dimension and Groups of Type FP}
 
 
-We write \(A\) to mean an arbitrary ring with a unit. Take \(R\) to be a non-zero commutative ring with a unit. A resolution of a module \(M\) is a sequence of modules denoted \((P_k)_{0\leq k\leq \infty}\) where \[\cdots \to P_0\to M\] is exact. We say a resolution \[\cdots 0\to P_n\to \cdots\to P_0 \to M\] has length \(n\) if \(n\) is the greatest integer such that \(P_n\) is a non-zero module.
+We write \(A\) to mean an arbitrary ring with a unit. Take \(R\) to be a non-zero commutative ring with a unit. A resolution of a module \(M\) is a sequence of modules \((P_k)_{0\leq k\leq \infty}\) and homomorphisms \((\phi_k)_{0\leq k\leq \infty}\) where \[\cdots \to P_0 \overset{\phi_0}{\to} M\] is exact. We say a resolution \[\cdots 0\to P_n\to \cdots\to P_0 \to M\] has length \(n\) if \(n\) is the greatest integer such that \(P_n\) is a non-zero module.
+
+\begin{dfn}
+    [Projective Module]
+    A module \(P\) is projective if for every surjective module homomorphism \(f: N\to M\) and for every module homomorphism \(g: P\to M\) there exists a module homomorphism \(h: P\to N\) such that \(fh = g\).
+\end{dfn}
+
+\begin{dfn}
+    [Projective Resolution]
+    A \emph{projective resolution} \((P_k)_{0\leq k\leq \infty}\) of a module \(M\) is a resolution of \(M\) where all the \(P_k\) are projective modules.
+\end{dfn}
 
 \begin{dfn}
 [Cohomological Dimension]
@@ -692,15 +704,15 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 \end{lem}
 
 
-\begin{lem}
+\begin{thm}
     [Elliptic containment implies equality]
     \label{thm:ellipticimpliesequality} 
-    If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
+    If \(X\) and \(Y\) are locally finite cocompact \(G\)-trees with finitely generated vertex and edge stabilizers and \(Y\) has no global fixed point then \(\mathcal{E}(X) \subseteq \mathcal{E}(Y) \Longrightarrow \mathcal{E}(X) = \mathcal{E}(Y) \). 
 \begin{proof}
 
     Let \(X\) and \(Y\) as in the hypotheses. Without loss of generality we may assume that \(X\) and \(Y\) are reduced and therefore minimal by \ref{reducedcocompact}. By \ref{pro:gmapfromsubset} there exists a \(G\)-map from \(X\) to \(Y\). This \(G\)-map is onto because \(Y\) is minimal and the image of a \(G\)-map is an invariant set. Using \ref{lem:gmapfactor} we can factor the \(G\)-map into a collapse map followed by a morphism. Apply \ref{thm:folds} to factor the morphism into a finite sequence of folds. From a remark in \cite{boundingcomplexity} after possibly subdividing we can take all of the folds to be of type A. Collapse maps and folds preserve the finite generation of vertex and edge stabilizers. In the next step we repeatedly apply \ref{lem:pullbacklocallyfinite}. Using \ref{lem:preservehyperbolicity} and \ref{lem:foldingpreserveshyp} we see each stage of the composition starting from the right preserves the property of hyperbolicity for an element \(g\in G\).  Hence, \(X\) and \(Y\) partition \(G\) into the same elliptic and hyperbolic elements. Under our setup \ref{thm:ellelesubgroups} applies, therefore \(X\) and \(Y\) have the same elliptic subgroups as needed.
 \end{proof}
-\end{lem}
+\end{thm}
 
 \begin{lem}
     [Collapse map preserves hyperbolic elements]
@@ -737,11 +749,11 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 \begin{dfn}
     [Transverse]
     \label{defn:transverse} 
-    We say that two $G$-trees $X$ and $Y$ are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP.
+    We say that two locally finite \(G\)-trees \(X\) and \(Y\) are \emph{transverse} if they are not in the same deformation space and there exist two vertex stabilizers, one for each tree, such that their intersection has Property FP.
 \end{dfn}
 
 \begin{rmk}
-    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces. \new{From the definition of transverse one gets that \(G_x\cap G_y\) is FP for a specific \(x\) and \(y\). Consider \(G_{x'}\). Locally finite trees imply that \(G_{x'}\) and \(G_x\) are commensurate so they share a finite index subgroup. Taking the subgroup diagram and intersecting everything with \(G_y\) and checking the inclusions are still of finite index gives that \(G_{x'}\cap G_y\) is commensurable with \(G_x\cap G_y\) and so also must be FP. A similar argument works for vertices \(y'\) in the second tree.
+    The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation spaces. \new{From the definition of transverse one gets that \(G_x\cap G_y\) is FP for a specific \(x\) and \(y\). Consider \(G_{x'}\). Locally finite trees imply that \(G_{x'}\) and \(G_x\) are commensurable so they share a finite index subgroup. Taking the subgroup diagram and intersecting everything with \(G_y\) and checking the inclusions are still of finite index gives that \(G_{x'}\cap G_y\) is commensurable with \(G_x\cap G_y\) and so also must be FP. A similar argument works for vertices \(y'\) in the second tree.
     An elementary deformation either pulls a subgroup out into a new vertex group or pushes one back in. In either case, the tree remains transverse to the same trees.}
 \end{rmk}
 
@@ -773,10 +785,10 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 \end{lem}
 
 
-\begin{lem}
+\begin{thm}
     [Transverse Construction]
     \label{pro:transverseconstruction} 
- Let $G$ be a group of cohomological dimension 2. If $X$ and $Y$ are non-trivial minimal $G$-trees of finite type that are in different deformation spaces then the following are equivalent:
+ Let \(G\) be a group of cohomological dimension 2. If \(X\) and \(Y\) are non-trivial minimal \(G\)-trees of finite type that are in different deformation spaces then the following are equivalent:
 \begin{enumerate}
     \item $X$, $Y$ transverse
     \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
@@ -798,7 +810,7 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
     \begin{claim*}
     The action of $G_{x_0}$ on $Y$ is non-trivial.
     \begin{proof}
-        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$, $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by theorem \ref{thm:forester} gives $X \sim Y$  contradicting the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
+        Suppose the action were trivial. That is, there exists some $y\in V(Y)$ such that $(G_{x_0})_y=G_{x_0}$. Hence, $G_{x_0}$ is elliptic for the action of $G$ on $Y$. By the local finiteness of $Y$, for all $x\in V(X)$, $G_x$ acts elliptically on $Y$. Hence, $\mathcal{E}(X)\subset \mathcal{E}(Y)$. Again by local finiteness we can promote this using \ref{thm:ellipticimpliesequality} to $\mathcal{E}(X) = \mathcal{E}(Y)$ which by Theorem \ref{thm:forester} gives $X \sim Y$  contradicting the fact that $X$ and $Y$ were assumed to be in different deformation spaces.
     \end{proof}
     \end{claim*}
 $2\Rightarrow 1$: Trivial groups are FP.
@@ -830,7 +842,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     By Wise, the action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$. By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets from separate factors cannot be Hausdorff equivalent under the product metric.
     
 \end{proof}
-\end{lem}
+\end{thm}
 
 
 \chapter{Notions of convexity in products of trees}
@@ -838,18 +850,13 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 
 \begin{dfn}
     [Quadrant Convex]
-    A subset \(S \subset T_1\times \T_2\) is quadrant convex if the complement is the union of quadrants. The quadrant hull of a set \(S\) is the smallest quadrant convex subset containing \(S\) or it's the intersection of all quadrant convex subsets containing \(S\) or it's the complement of the union of all quadrants disjoint from \(S\). 
-\end{dfn}
-
-\begin{dfn}
-    [Quadrant Slice Convex]
-    A subset of the product of two trees is quadrant slice convex if all fibers are connected
+    A subset \(S \subset T_1\times T_2\) is quadrant convex if the complement is the union of quadrants. The quadrant hull of a set \(S\) is the smallest quadrant convex subset containing \(S\) or it's the intersection of all quadrant convex subsets containing \(S\). Equivalently, it's the complement of the union of all quadrants disjoint from \(S\). 
 \end{dfn}
 
 \begin{thm}
-    [Guirardel Slice Convex]
+    [Guirardel Quadrant Convex from Fibers]
     \label{thm:guirardelsliceconvex}
-    Let \(X\) and \(Y\) be two simplicial trees and \(F\subset X\times Y\) a closed subset. Then \(F\) is quadrant convex if and only if it is quadrant slice convex.
+    Let \(X\) and \(Y\) be two simplicial trees and \(F\subset X\times Y\) a closed subset. Then \(F\) is quadrant convex if and only if all of it's fibers are connected.
     \begin{proof}
         Follows immediately from Lemma 5.4 and Corollary 5.5 from \cite{guirardelcorepaper} and note that being quadrant convex implies connected fibers \cite{guirardelcorepaper}.
     \end{proof}
@@ -868,7 +875,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 \begin{dfn}
     [Fibers in trees]
     \label{dfn:treefibers}
-    A fiber of a product of trees is the inverse image of a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A one-dimensional fiber of a product of three trees is the inverse image a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
+    A fiber of a product of trees is the inverse image of a point under a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A one-dimensional fiber of a product of three trees is the inverse image of a point under a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
     
 \end{dfn}
 
@@ -968,7 +975,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \begin{dfn}
     [Subgraph Coning]
     \label{dfn:subgraphconing}
-    Let \(X\) be a 2-complex with a \(G\)-action. Let \(T\) be a simplicial \(G\)-tree. Let \(f:X\to T\) be a map. Let \(K\) be a subgraph of the 1-skeleton of \(X\). Then the subgraph cone of \(f\) with \(K\) denoted \(\Lambda(f, K)\) is the set \[X \bigsqcup \left(G\times C_K\right)\] modulo the relation sending \((g, (x,0))\) to \(g\cdot x\) where \(C_K\) is the set \[ K\times [0,1]\] modulo the relation that glues \((x,1)\) to \((f(x), 1)\). 
+    Let \(X\) be a 2-complex with a \(G\)-action. Let \(T\) be a simplicial \(G\)-tree. Let \(f:X\to T\) be a map. Let \(K\) be a subgraph of the 1-skeleton of \(X\). Then the subgraph cone of \(f\) with \(K\) denoted \(\Lambda(f, K)\) is the set \[X \bigsqcup \left(G\times C_K\right)\] modulo the relation sending \((g, (x,0))\) to \(g\cdot x\) where \(C_K\) is the set \[ K\times [0,1]\] modulo the relation that glues \((x,1)\) to \((x', 1)\) if and only if \(f(x) = x'\). 
 \end{dfn}
 
 \begin{dfn}
@@ -985,7 +992,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{dfn}
 
 \begin{dfn}
-    [Connected in coordinate planes]
+    [Property CCP: Connected in coordinate planes]
     \label{defn:ccp} 
     Let \(S \subseteq X_1\times X_2\times X_3\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) is connected for all \(p \in X_{k}\) for all \(k\in \{1,2,3\}\).
 \end{dfn}
@@ -1032,7 +1039,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     then there is a path \(\sigma: [0,1] \to S\) between \(p\) and \(q\) such that \(\sigma(t)\) is contained in \(S \cap (T_{1} \times \{r_{2}\} \times \delta)\) where \(\delta\) is an open direction in \(T_{3}\) at \(r_{3}\) provided \(t \neq 0,1\).
 
     \begin{proof}
-        Proprty CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times T_{3} )\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Consider the pre-image of \(T_{1} \times r_{2} \times r_{3}\) by \(\sigma\), call it \(K\). Note that the complement of \(K\) is a countable disjoint union of open intervals in \([0,1]\) -- we will choose one later. 
+        Property CCP implies that \(S \cap (T_{1} \times \{r_{2}\} \times T_{3} )\) is connected. Let \(\sigma\) be a path in that set from \(p\) to \(q\). Consider the pre-image of \(T_{1} \times r_{2} \times r_{3}\) by \(\sigma\), call it \(K\). Note that the complement of \(K\) is a countable disjoint union of open intervals in \([0,1]\) -- we will choose one later. 
 \begin{figure}[htp]
     \centering
     \includegraphics[width=10cm]{planar_version.png}
@@ -1235,7 +1242,7 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
 \subsection{Finding original trees in extended core}
 We want to state that the VHD complex \(E\) has three splittings which correspond exactly to the original trees.
 
-Earlier we proved that \(E\) is a graph of spaces, essentially because it sits within a product of trees. With this setup, after identification, the Bass-Serre maps that collapse vertex spaces to points and fibers of edge space products to points are projection maps. We're acting via a product action so projection maps are invariant maps which means the image of \(E\) under projection is invariant. Lastly, our \(G\)-trees are minimal so the Bass-Serre map from \(E\) maps onto the original trees.
+Earlier we proved that \(E\) is a graph of spaces, essentially because it sits within a product of trees. With this setup, after identification, the Bass-Serre maps that collapse vertex spaces to points and fibers of edge space products to points are projection maps. We're acting via a product action so projection maps are equivariant maps which means the image of \(E\) under projection is invariant. Lastly, our \(G\)-trees are minimal so the Bass-Serre maps from \(E\) maps onto the original trees.
 
 \begin{lem}
     \label{lem:boximp} 
@@ -1267,7 +1274,7 @@ The following result is not proved as a direct consequence of the previous lemma
 \begin{lem}
     [Iterated Splitting]
     \label{lem:iteratedsplitting} 
-    Let \(T_1\) and \(T_2\) be two locally finite \(G\)-trees in different deformation spaces. Then the vertex groups of each tree act non-trivially on the other tree.
+    Let \(T_1\) and \(T_2\) be two non-trivial locally finite \(G\)-trees in different deformation spaces. Then the vertex groups of each tree act non-trivially on the other tree.
     \begin{proof}
         Suppose \(x\) were a vertex of \(T_1\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_2\). If \(K\) had a global fixed point in \(T_2\)  then by local finiteness of \(T_1\) every vertex group of \(T_1\) would as well. Then by \ref{thm:ellipticimpliesequality} \(T_1\) and \(T_2\) are in the same deformation space; a contradiction.
     \end{proof}
