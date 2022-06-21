@@ -410,9 +410,9 @@ to
 
 From a topological perspective we want to look at groups that are fundamental groups of spaces where the space itself is built up from repeatedly applying van kampen's theorem. More formally, there are a collection of vertex and edge spaces having prescribed fundamental groups. After taking products of edge spaces with intervals one gets spaces that can be glued from both ends to the vertex spaces in a way that is injective on fundamental groups. The result is a graph of spaces. The corresponding algebraic data is an indexed set of groups along with injective homomorphisms. The graph of spaces construction is unique up to homotopy so the groups and injective homomorphisms are essentially all the data needed to construct the geometric picture. It turns out that this graph of spaces view corresponds exactly via Bass-Serre theory to group actions on trees without edge inversions.
 
-Once you have a graph of groups one can get a new one by collapsing an edge that corresponds to \(A*_CC\) to a vertex \(A\). Such a move or it's reverse is called an elementary deformation. A deformation space is defined to be the space of all graphs of groups obtained by a finite sequence of elementary deformations. Graphs of groups where there are no remaining elementary deformations are called reduced.
+Once you have a graph of groups you can get a new one by collapsing an edge corresponding to \(A*_CC\) to a vertex \(A\). Such a move or it's reverse is called an elementary deformation. A deformation space is defined to be the space of all graphs of groups obtained by a finite sequence of elementary deformations. We say a graph of groups is reduced if there are no remaining elementary deformations.
 
-Graphs of groups where the vertex and edge groups are trivial yield free groups. Allowing abelian free groups gives what are called Generalized Baumslag-Solitar groups which include special cases like BS(1,2) and BS(p,q) which serve as interesting examples and counterexamples in their own right. For this paper we work with groups of cohomological dimension 2 with locally finite trees and finitely generated vertex and edge groups. These correspond to finite-index graphs of finite rank free groups. The space itself will involve products and therefore becomes a square complex. We will see some conditions to guarantee that a certain square complex can be decomposed into a graph of free groups.
+Graphs of groups where the vertex and edge groups are trivial yield free groups. Allowing abelian free groups gives what are called Generalized Baumslag-Solitar groups which include special cases like BS(1,2) and BS(p,q) which serve as interesting examples and counterexamples in their own right. For this paper we work with groups of cohomological dimension 2 with locally finite trees and finitely generated vertex and edge groups. These correspond to finite-index graphs of finite rank free groups. The space itself will use graphs to represent free groups; taking products we will end up with a square complex.
 
 \begin{thm}
     [Main Theorem]
@@ -430,7 +430,6 @@ We conjecture that primitive VHD complexes all have a fundamental group of \(\ma
 
 \chapter{Preliminaries}
 \section{Cited results}
-(??? find a better name for this section or integrate the citations) 
 
 \begin{prop}
     [Hyperbolic gives unique minimal tree]
@@ -467,9 +466,19 @@ See Proposition 3.1 from [2].
     Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, or being irreducible. Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
 \end{thm}
 
-\begin{rmk}
-    Once you assume you have a minimal tree action without inversions there are only a few possibilities for the tree: point, line, exactly one fixed end e.g. BS(1,2), or there exist two hyperbolic axes with compact intersection (the typical case) -- when it comes to the name irreducible there is no reduction operation, it's just a name. The two axes also get you a non-abelian free group inside G. Essentially, irreducible is the typical interesting case.
-\end{rmk}
+From \cite{boundingcomplexity} we have the following classification of \(G\)-trees.
+\begin{thm}
+    [\(G\)-tree Classification]
+    \label{thm:classification}
+    Let \(G\) be a finitely generated group and \(T\) a minimal \(G\)-tree acting without inversions, then \(T\) satisfies exactly one of the following:
+    
+    \begin{enumerate}
+        \item Elliptic: \(T\) is a point or equivalently every element of \(G\) is elliptic.
+        \item Dihedral: \(T\) is a line and there exists an epimorphism from \(G\) to the infinite dihedral group.
+        \item Parabolic: \(T\) has one end fixed by \(G\). This includes cases where \(T\) is a line as well as the tree for \(BS(1,2)\). Additionally, there is an epimorphism from \(T\) to \mathbb{Z}.
+        \item Hyperbolic (aka irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
+    \end{enumerate}
+\end{thm}
 
 \begin{lem}
     \label{lem:guirardel-extension}
@@ -505,12 +514,6 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
     
     For (2)$\Rightarrow$(1), suppose $f:X\to Y$ was a simplicial $G$-map. Consider a vertex group of $X$, say $G_x$. Let $g\in G_x$, then $g\cdot f(x)=f(g\cdot x)=f(x)$ a vertex in $Y$ since the map is simplicial. Hence, $G_x$ also fixes the vertex $f(x)\in Y$. Hence, every vertex group for $X$ fixes a vertex of $Y$. Therefore, every elliptic subgroup for $X$ is also elliptic for $Y$.
 \end{proof}
-
-\begin{prop} The index of an edge stabilizer in the stabilizer of a terminal vertex is the size of the edge orbit in the star at the terminal vertex
-\begin{proof}
-    (??? details) Apply orbit stabilizer via Gv/Ge biject Gv orbit of e
-\end{proof}
-\end{prop}
 
 \begin{dfn}
     [Minimal Action]
@@ -554,20 +557,19 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
     A minimal simplicial action of a finitely generated group is geometric if and only if all edge groups are finitely generated.
 \end{lem}
 
-
-\begin{dfn}
-    [Reduced]
-    \label{defn:reduced}
-\end{dfn}
-
 \section{Folding} 
 
 \begin{dfn}
     [Folding]
     \label{defn:folding}
-    Cite Bestvina-Feign for type A folding stuff
-    See also Matt Clay
+    
+    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together equivariently. After folding and subdividing a new \(G\)-tree, also without inversions, is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
 \end{dfn}
+
+\begin{exa}
+\label{exa:folding}
+(??? detailed folding example)
+\end{exa}
 
 \begin{thm}[Factoring as folds, from Bestvina paper, p455]
     \label{thm:folds} 
@@ -698,9 +700,11 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 \chapter{Locally finite trees and elliptic subgroups}
 
 \begin{lem}
-    (??? follows from Lemma 2.10 from complexity paper and defn of minimal subtree)
     \label{lem:pullbacklocallyfinite}
-    If \(X\) and \(Y\) are in the same deformation space and \(Y_\text{min}\) is is locally finite then \(X_\text{min}\) is also locally finite
+    If \(X\) and \(Y\) are in the same deformation space and \(Y_\text{min}\) is is locally finite then \(X_\text{min}\) is also locally finite.
+    \begin{proof}
+        Apply Lemma 2.10 from \cite{draftpaper} and use the definition of minimal subtree.
+    \end{proof}
 \end{lem}
 
 
@@ -727,7 +731,7 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
         For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The tree $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
         
         
-        Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
+        Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem applied to the set of edges adjacent to a given vertex, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
     \end{proof}
 \end{lem}
 
@@ -864,7 +868,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 
 \begin{dfn}
     [Orthant Convex]
-    smallest set that is the complement of a union of orthants but still contains the set
+    A subset \(S\) of a product of three trees is \emph{orthant convex} if it's complement is a union of orthants.
 \end{dfn}
 
 \begin{dfn}
@@ -1154,19 +1158,27 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
 
 \section{Construct CCP set}
 
-        Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\). 
-        
-        Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions 
+        Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\).  Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions 
         \ref{lem:technicalconditions} for us to apply the Guirardel Extension Lemma \ref{lem:guirardel-extension} to obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
-        Next let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. 
+        Next, let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. 
         
         \begin{rmk}
             
-        In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map
+        The following is an informal sketch of what Bass-Serre maps look like during this proof. In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map
         \end{rmk}
         
-        (??? where is this map defined, originally we referenced \ref{lem:coneextension} but it's not a real lemma) After coning off  we get extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and similarly \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Lastly we form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
+        Our goal is to produce a map from \(\widetilde {X_{12}}^+\) to \(T_1\times T_2\times T_3\). The map \(f_{123}^+\) is already defined on all of \(\widetilde {X_{12}}^+\), so it remains to extend the Bass-Serre maps \(f_{121}\) and \(f_{122}\). By construction, \(\widetilde {X_{12}}^+\) has the form of a \(\Lambda(f_{123}, K)\) from \ref{dfn:subgraphconing} for some choice of \(K\).
+        
+        \begin{rmk}
+            The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps. We also of course need the main conclusion of the extension theorem which says that fibers are connected.
+        \end{rmk}
+        
+        Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps by mapping the end of the cone to a single point inside of e.g. \(f_{121}(K)\) while extending this linearly across the rest of the simplices in the cone.
+        
+        This is enough to create extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
+        
+         We form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). 
         
         Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\).
         
@@ -1384,12 +1396,6 @@ Conjecturally, this is sort of the only non-example
 \section{Lemmas}
 
 
-\begin{lem}
-    [Cone extension]
-    \label{lem:coneextension}
-    (??? I think this will get deleted. We can define this kind of thing inline, it's only used as a quick way to see that a map can be defined in a compatible way)
-    Start with a map $f$ from a complex $X$ to a tree $T$. This extension is exactly the same as the Guirardel Extension except instead of gluing one end of a product to the original space and quotienting the other end using $f$ we simply send the other end to a point in $T$ contained in \(\text{Im}(f)\). To extend $f$ we map the fibers of the product space that was glued on to geodesics in the tree $T$.
-\end{lem}
 
 
 
