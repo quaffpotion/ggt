@@ -425,7 +425,7 @@ We conjecture that primitive VHD complexes all have a fundamental group of \(\ma
 
 \begin{conj}
     [Main Conjecture]
-    If \(G\) is finitely generated, dimension 2, and not \(\mathbb{Z}\times \mathbb{Z}\), then there are at most two pairwise transverse deformation spaces of locally finite, finite-type \(G\)-trees
+    If \(G\) is finitely generated, dimension 2, and not \(\mathbb{Z}\times \mathbb{Z}\), then there are at most two pairwise transverse deformation spaces of locally finite, finite-type \(G\)-trees.
 \end{conj}
 
 \chapter{Preliminaries}
@@ -458,6 +458,9 @@ See Proposition 3.1 from [2].
         \item If \(X/G\) is finite and \(G_x\) is finitely generated for all \(x\in X\) then \(G\) is finitely generated
         \item If \(G\) is finitely generated and acts minimally on \(X\) then \(X/G\) is finite
     \end{enumerate}
+    \begin{proof}
+        For details see Proposition 7.9 in \cite{hymanbass}.
+    \end{proof}
 \end{lem}
 
 \begin{thm}
@@ -475,8 +478,8 @@ From \cite{boundingcomplexity} we have the following classification of \(G\)-tre
     \begin{enumerate}
         \item Elliptic: \(T\) is a point or equivalently every element of \(G\) is elliptic.
         \item Dihedral: \(T\) is a line and there exists an epimorphism from \(G\) to the infinite dihedral group.
-        \item Parabolic: \(T\) has one end fixed by \(G\). This includes cases where \(T\) is a line as well as the tree for \(BS(1,2)\). Additionally, there is an epimorphism from \(T\) to \mathbb{Z}.
-        \item Hyperbolic (aka irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
+        \item Parabolic: \(T\) has one end fixed by \(G\). This includes cases where \(T\) is a line as well as the tree for \(BS(1,2)\). Additionally, there is an epimorphism from \(G\) to \(\mathbb{Z}\).
+        \item Hyperbolic (i.e. irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
     \end{enumerate}
 \end{thm}
 
@@ -485,9 +488,6 @@ From \cite{boundingcomplexity} we have the following classification of \(G\)-tre
     (Lemma 8.9 in Guirardel)
     Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
 \end{lem}
-\begin{rmk}
-    For our purposes we only need that the map \(X_{12}^+\to T_3\) have connected fibers. From Guirardel, if \(G\) is finitely presented we can choose \(X_{12}^+\) to be simply connected. (??? Add some intuition about choosing \(K\) a suitable compact graph that carries all of the fundamental group; this remark will supercede \ref{lem:shortcircuit})
-\end{rmk}
 
 \section{Actions on Trees}
 
@@ -524,8 +524,7 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \begin{dfn}
     [Bass-Serre Map]
     \label{defn:bsmap}
-    (sketch ???)
-    the universal cover of a graph of spaces is a tree of spaces, this map takes $X_v$ to a point and $X_e \times I$ to an edge
+    The universal cover of a graph of spaces is a tree of spaces. Define a map taking $X_v$ to a point and $X_e \times I$ to an edge by collapsing fibers.
 \end{dfn}
 
 
@@ -586,6 +585,22 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \begin{lem}
     [Affine Equivariant Map]
     \label{lem:affineequivariantmap} 
+    
+    (??? Somewhere in the Niblo or related papers this should be citable. Also from Nir Lazaravich:
+    
+        As part of the proof, Dunwoody introduced two key tools: patterns and resolutions. He observed
+        that any action of an almost finitely presented group, G, on a tree could be resolved to a G-tree
+        obtained from a geometric pattern on the universal cover of the presentation complex of G. This
+        resolution is simpler in certain aspects, e.g, the edge stabilizers are finitely generated and one
+        can bound the number of parallelism classes of edges in the resolution. This result is known as
+        Dunwoody’s Lemma ([4, Lemma 4.4])
+        
+        I don't see Lemma 4.4 in the exact publication specified but some items look to be close
+
+
+    )
+
+
     Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where the connected components of the fibers of \(f\) are the leaves of a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
     \begin{proof}
         Construct an equivariant map.
@@ -687,6 +702,10 @@ Note that the link of every VH-complex is a bipartite graph; this follows from c
     \label{dfn:decompositiongraph}
     
     (??? possibly some definitions around singular, but this should be enough to explain how we will be using the graphs in practice, the point is that the mobius band realized as a VH-complex with 1 square and 4 edges has a singular fiber in the center and the quotient would not correspond to gates and corridors because one of the edges is getting folded or if you like fibers near the center double cover the center)
+    
+    (??? Essentially, being directed means we can describe it as a graph of spaces and the wise defn when applied to a universal cover is the bass-serre map)
+    
+    (??? What about the third picture makes it directed besides the fact that it doesn't have any singular fibers. What does it mean for an attaching map to be orientation preserving on horizontal edges)
     
     Given a directed VH-complex \(X\) we define a map \(\rho: X\to \Gamma_X\) from \(X\) to a graph. The vertices of \(\Gamma_X\) are defined to be the connected components of \(V_X\) which we call gates and the edges are given by the connected components of \(X\smallsetminus V_X\) which we call corridors. After foliating each square with vertical segments, given \(x\in X\) define \(V_x\) to be the smallest subset of \(X\) that contains \(x\) and any vertical segment that it intersects. Because \(X\) is directed there are no singular leaves and \(V_a\) and \(V_b\) are translates of each other if \(a\) and \(b\) lie in the interior of the same horizontal edge. The set of all \(V_x\) then gives a foliation of \(X\). Collapsing each leaf of the foliation is enough to define a map to \(\Gamma_X\) viewed as a 1-dimensional cell complex. 
 \end{dfn}
@@ -802,7 +821,7 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 
     $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. 
     
-    We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. Given this we want to apply Bieri \ref{pro:bireridimension} twice. In the third equality below in order to apply Bieri we need a finite quotient. Without loss of generality we can restrict to the minimal tree in the \(G_{x_0}\) action on \(Y\) in order to apply \ref{lem:bassfgcon} which gives the finite quotient. (A group can act minimally on a tree but a subgroup like \(\langle g\rangle\) might fix an axis)
+    We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. We will apply Bieri \ref{pro:bireridimension} twice. The third equality below comes from applying Bieri to the action of \(G_{x_0}\) on \(Y\) restricted to the minimal subtree. To know this action is cocompact we use \ref{lem:bassfgcon}.
     \begin{align*}
         2 &= dG\\
           &= dG_{x_0}+1\\
@@ -1113,6 +1132,17 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
     \end{proof}
 \end{lem}
 
+\begin{pro}
+\label{prop:directionunion}
+Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{\delta \in D(x_1)} \overline{\delta}\times \{x_2\}.$$
+\end{pro}
+
+\begin{lem}
+	[Guirardel Lemma 5.4, Corollary 5.5]
+	(??? we should have this cited elsewhere, use that reference instead
+ \label{lem:guirardel} 
+	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
+\end{lem}
 
 \begin{lem}
     [Slice Switching]
@@ -1174,7 +1204,7 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
             The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps. We also of course need the main conclusion of the extension theorem which says that fibers are connected.
         \end{rmk}
         
-        Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps by mapping the end of the cone to a single point inside of e.g. \(f_{121}(K)\) while extending this linearly across the rest of the simplices in the cone.
+        Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps by mapping the end of the cone to a single point inside of e.g. \(f_{121}(K)\) and then extending linearly across the rest of the simplices in the cone.
         
         This is enough to create extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
         
