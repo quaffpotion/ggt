@@ -483,6 +483,8 @@ From \cite{boundingcomplexity} we have the following classification of \(G\)-tre
     \end{enumerate}
 \end{thm}
 
+(??? ... 3 = acting on a line by translations and BS(1,2) aumslaug acting on it's BS tree)
+
 \begin{lem}
     \label{lem:guirardel-extension}
     (Lemma 8.9 in Guirardel)
@@ -561,8 +563,8 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \begin{dfn}
     [Folding]
     \label{defn:folding}
-    
-    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together equivariently. After folding and subdividing a new \(G\)-tree, also without inversions, is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
+     (??? possibly copy from the complexity paper)
+    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together. This this operation is extended by folding their translates equivariently. After folding and subdividing a new \(G\)-tree, also without inversions, is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
 \end{dfn}
 
 \begin{exa}
@@ -702,6 +704,15 @@ Note that the link of every VH-complex is a bipartite graph; this follows from c
     \label{dfn:decompositiongraph}
     
     (??? possibly some definitions around singular, but this should be enough to explain how we will be using the graphs in practice, the point is that the mobius band realized as a VH-complex with 1 square and 4 edges has a singular fiber in the center and the quotient would not correspond to gates and corridors because one of the edges is getting folded or if you like fibers near the center double cover the center)
+    
+    (??? when wise says putting an orientation on a vertical graph ... 
+    
+    
+    hyperplanes are 2-sided i.e. there is a choice of orientation on dual edges that is concistent across squares
+    
+    note, if you want this property just subdivide maybe twice, see wise
+    
+    )
     
     (??? Essentially, being directed means we can describe it as a graph of spaces and the wise defn when applied to a universal cover is the bass-serre map)
     
@@ -887,12 +898,12 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 
 \begin{dfn}
     [Orthant Convex]
-    A subset \(S\) of a product of three trees is \emph{orthant convex} if it's complement is a union of orthants.
+    A subset \(S\) of a product of three trees is \emph{orthant convex} if its complement is a union of orthants.
 \end{dfn}
 
 \begin{dfn}
     [Orthant Slice Convex]
-    Fibers are quadrant convex
+    (??? add context of we're in a product) Fibers are quadrant convex
 \end{dfn}
 
 \begin{dfn}
