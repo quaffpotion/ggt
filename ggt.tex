@@ -478,12 +478,10 @@ From \cite{boundingcomplexity} we have the following classification of \(G\)-tre
     \begin{enumerate}
         \item Elliptic: \(T\) is a point or equivalently every element of \(G\) is elliptic.
         \item Dihedral: \(T\) is a line and there exists an epimorphism from \(G\) to the infinite dihedral group.
-        \item Parabolic: \(T\) has one end fixed by \(G\). This includes cases where \(T\) is a line as well as the tree for \(BS(1,2)\). Additionally, there is an epimorphism from \(G\) to \(\mathbb{Z}\).
+        \item Parabolic: \(T\) has one end fixed by \(G\). Additionally, there is an epimorphism from \(G\) to \(\mathbb{Z}\).
         \item Hyperbolic (i.e. irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
     \end{enumerate}
 \end{thm}
-
-(??? ... 3 = acting on a line by translations and BS(1,2) aumslaug acting on it's BS tree)
 
 \begin{lem}
     \label{lem:guirardel-extension}
@@ -563,8 +561,7 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \begin{dfn}
     [Folding]
     \label{defn:folding}
-     (??? possibly copy from the complexity paper)
-    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together. This this operation is extended by folding their translates equivariently. After folding and subdividing a new \(G\)-tree, also without inversions, is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
+    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together followed by folding their translates together equivariently. After folding and possibly subdividing a new \(G\)-tree without inversions is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
 \end{dfn}
 
 \begin{exa}
@@ -690,6 +687,7 @@ A module is of type FP if there exists a finitely generated projective resolutio
     \begin{enumerate}
         \item the link at each vertex is simplicial;
         \item each edge is labelled vertical or horizontal;
+        \item each hyperplane is two-sided;
         \item attaching maps alternate between each type of edge.
     \end{enumerate}
     Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons. 
@@ -700,25 +698,19 @@ Note that the link of every VH-complex is a bipartite graph; this follows from c
 \end{rmk}
 
 \begin{dfn}
+    [Two-sided Hyperplanes]
+    A hyperplane \(H\) is \emph{two-sided} if the open cubical neighborhood is homeomorphic to \(H\times (-1,1)\). For details see \cite{haglundwise}.
+\end{dfn}
+
+\begin{rmk}
+    A hyperplane is two-sided if and only if there is a choice of orientation on each edge dual to the hyperplane that is consistent across squares. This orientation condition can always be achieved by subdividing a cube complex twice. For details see Wise \cite{wisecsc}. This allows us to avoid twisting (e.g. Mobius bands) and ensure our cube complexes will decompose easily into graphs of spaces.
+\end{rmk}
+
+\begin{dfn}
     [Decomposition Graph]
     \label{dfn:decompositiongraph}
     
-    (??? possibly some definitions around singular, but this should be enough to explain how we will be using the graphs in practice, the point is that the mobius band realized as a VH-complex with 1 square and 4 edges has a singular fiber in the center and the quotient would not correspond to gates and corridors because one of the edges is getting folded or if you like fibers near the center double cover the center)
-    
-    (??? when wise says putting an orientation on a vertical graph ... 
-    
-    
-    hyperplanes are 2-sided i.e. there is a choice of orientation on dual edges that is concistent across squares
-    
-    note, if you want this property just subdivide maybe twice, see wise
-    
-    )
-    
-    (??? Essentially, being directed means we can describe it as a graph of spaces and the wise defn when applied to a universal cover is the bass-serre map)
-    
-    (??? What about the third picture makes it directed besides the fact that it doesn't have any singular fibers. What does it mean for an attaching map to be orientation preserving on horizontal edges)
-    
-    Given a directed VH-complex \(X\) we define a map \(\rho: X\to \Gamma_X\) from \(X\) to a graph. The vertices of \(\Gamma_X\) are defined to be the connected components of \(V_X\) which we call gates and the edges are given by the connected components of \(X\smallsetminus V_X\) which we call corridors. After foliating each square with vertical segments, given \(x\in X\) define \(V_x\) to be the smallest subset of \(X\) that contains \(x\) and any vertical segment that it intersects. Because \(X\) is directed there are no singular leaves and \(V_a\) and \(V_b\) are translates of each other if \(a\) and \(b\) lie in the interior of the same horizontal edge. The set of all \(V_x\) then gives a foliation of \(X\). Collapsing each leaf of the foliation is enough to define a map to \(\Gamma_X\) viewed as a 1-dimensional cell complex. 
+    Given a VH-complex \(X\) we define a map \(\rho: X\to \Gamma_X\) from \(X\) to a graph. The vertices of \(\Gamma_X\) are defined to be the connected components of \(V_X\) which we call gates and the edges are given by the connected components of \(X\smallsetminus V_X\) which we call corridors. After foliating each square with vertical segments, given \(x\in X\) define \(V_x\) to be the smallest subset of \(X\) that contains \(x\) and any vertical segment that it intersects. Because \(X\) has two-sided hyperplanes there are no singular leaves and \(V_a\) and \(V_b\) are translates of each other if \(a\) and \(b\) lie in the interior of the same horizontal edge. The set of all \(V_x\) then gives a foliation of \(X\). Collapsing each leaf of the foliation is enough to define a map to \(\Gamma_X\) viewed as a 1-dimensional cell complex. 
 \end{dfn}
 
 The following is a restatement of theorem 2.16 \cite{wisethesis} from Wise:
@@ -887,6 +879,12 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     A subset \(S \subset T_1\times T_2\) is quadrant convex if the complement is the union of quadrants. The quadrant hull of a set \(S\) is the smallest quadrant convex subset containing \(S\) or it's the intersection of all quadrant convex subsets containing \(S\). Equivalently, it's the complement of the union of all quadrants disjoint from \(S\). 
 \end{dfn}
 
+\begin{dfn}
+    [Fibers in trees]
+    \label{dfn:treefibers}
+    A fiber of a product of trees is the inverse image of a point under a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A one-dimensional fiber of a product of three trees is the inverse image of a point under a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
+\end{dfn}
+
 \begin{thm}
     [Guirardel Quadrant Convex from Fibers]
     \label{thm:guirardelsliceconvex}
@@ -903,14 +901,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 
 \begin{dfn}
     [Orthant Slice Convex]
-    (??? add context of we're in a product) Fibers are quadrant convex
-\end{dfn}
-
-\begin{dfn}
-    [Fibers in trees]
-    \label{dfn:treefibers}
-    A fiber of a product of trees is the inverse image of a point under a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A one-dimensional fiber of a product of three trees is the inverse image of a point under a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
-    
+    A subset \(S\) of a product of three trees is \emph{orthant slice convex} if its fibers are quadrant convex.
 \end{dfn}
 
 \section{Property preservation lemmas}
@@ -1155,6 +1146,12 @@ Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{
 	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
 
+\begin{prop}
+\label{prop:sliceunion}
+\[ \left(T_1 \times T_2\right) \smallsetminus \left(T_1\times x_2\right) = \bigcup_{\delta\in D(x_2)} T_1\times \delta\]
+\end{prop}
+
+
 \begin{lem}
     [Slice Switching]
     \label{lem:sliceswitching}
@@ -1186,7 +1183,6 @@ Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{
     \end{proof}
 \end{lem}
 
-\section{Cocompactness of orthant hulls}
 \chapter{Proof of main theorem}
 
 \section{Setup}
@@ -1215,6 +1211,8 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
             The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps. We also of course need the main conclusion of the extension theorem which says that fibers are connected.
         \end{rmk}
         
+        (??? just kidding, we can apply LEMMA 5.2.6 ... then do the sendto single point thing)
+        
         Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps by mapping the end of the cone to a single point inside of e.g. \(f_{121}(K)\) and then extending linearly across the rest of the simplices in the cone.
         
         This is enough to create extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
@@ -1224,6 +1222,8 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
         Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\).
         
     \subsection{Check that action has the correct topological properties}
+    
+    
         The transverse condition \ref{pro:transverseconstruction} tells us that the action on the vertices of a product of any two trees is free; hence free on the vertices of the product of all three trees. Acting by simplicial automorphisms with finite vertex stabilizers (in our case trivial) gives a PD action. 
         
         For a cube of any dimension, if you fix a point on it's interior then that cube is taken to itself.
@@ -1235,7 +1235,7 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
         Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact.
         
         \begin{rmk}
-            Properly discontinuous free actions on Hausdorff spaces are covering space actions cf: ch1 ex23 in Hatcher
+            Properly discontinuous (here we mean the version with finitely many group elements) free actions on Hausdorff spaces are covering space actions cf: ch1 ex23 in Hatcher
         \end{rmk}
         
         
@@ -1394,7 +1394,7 @@ Conjecturally, this is sort of the only non-example
 
 \begin{lem}
     [Shortcircuit Guirardel Proof] 
-    \label{lem:shortcircuit} (??? much of this can be deletd based on a discussion about how it's really about finding the correct K, however saying that it's easy in our f.p. case is still useful for the reader) Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then \(X'\) from the conclusion \ref{lem:guirardel-extension} can be taken to be a subgraph cone \ref{dfn:subgraphconing}, denoted \(\Lambda(f,K)\) for certain choices of \(K\).
+    \label{lem:shortcircuit} Suppose the hypotheses of \ref{lem:guirardel-extension}. In addition, suppose that $G$ is finitely presented. Then \(X'\) from the conclusion \ref{lem:guirardel-extension} can be taken to be a subgraph cone \ref{dfn:subgraphconing}, denoted \(\Lambda(f,K)\) for certain choices of \(K\).
     \begin{proof}
         In the proof of \ref{lem:guirardel-extension} from \cite{guirardelcorepaper} the space \(\Lambda(f,K)\) has a free PDC action, hence the orbit map gives a cover. Moreover, when \(G\) is finitely presented the subgraph \(K\) can be chosen to make \(\Lambda(f,K)\) a simply connected cover. Combined with theorem 8.5 from \cite{guirardelcorepaper} we can take \(X' = \Lambda(f,K)\).
     \end{proof}
@@ -1411,7 +1411,7 @@ Conjecturally, this is sort of the only non-example
 % \begin{figure}[htp]
 %     \centering
 %     \includegraphics[width=6cm]{transversefoliation.png}
-%     \caption{(??? need new pictures!) A simplex with a foliation that is transverse to two edges and tangent to one edge}
+%     \caption{ A simplex with a foliation that is transverse to two edges and tangent to one edge}
 %     \label{fig:guirardelextension}
 % \end{figure}
 
@@ -1526,6 +1526,10 @@ some journal
 Culler and Morgan
 \textit{Group Actions on $\mathbb{R}$-trees}
 Journal, Volume, Number, Dates (???)
+
+\bibitem{haglundwise}
+SPECIAL CUBE COMPLEXES
+Frederic Haglund and Daniel T. Wise
 
 \bibitem{hymanbass}
 Hyman Bass.
