@@ -559,7 +559,7 @@ Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ 
 \begin{thm}
     \label{mainthmf}
     [Forester, \cite{foresterdeformationrigidity}]
-    Main theorem, we can perhaps use this everywhere instead of using \ref{thm:forester}
+    (restate in the language of above, but add in the assumptions)
 \end{thm}
 
 \begin{prop}
@@ -572,11 +572,13 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \end{enumerate}
 \end{prop}
 \begin{proof}
-    For (1)$\Rightarrow$(2) we will construct a $G$-map. As in \ref{lem:affineequivariantmap} we define a map on representatives of ...
+    For (1)$\Rightarrow$(2) we will construct a $G$-map. As in \ref{lem:affineequivariantmap} we start by defining a map on representatives of vertex orbits and extending equivariantly. Pick a vertex \(x\in X\), by (1) \(G_x\) is also elliptic in \(Y\) and so fixes at least one vertex, say \(y\). Define \(f(x)=y\). Next, we check that the resulting map is well-defined.
     
-    (??? similar to previous but the difference is instead of arbitrarily choosing \(f(v)\) you take it to be a vertex that the stabilizer of \(v\) stabilizes in \(Y\). Then instead of using the fact that \(g^{-1}h\) is identity we use that it's in the correct stabilizer. Once defined on vertices, define on edges by saying if e is sent to a path of length k, subdivide the original edge e, if endpoints of e go to the same vertex, send the entire edge there)
+    Indeed, if \(gv = hv\) then \(g^{-1}h = v\) which means \(g^{-1}h \in G_v\). Then by the definition of \(f\) the element \(g^{-1}h\) fixes \(f(v)\in Y\). Hence,
     
+    \[f(gv) = gf(v) = g(g^{-1}h)f(v) = hf(v) = f(hv).\]
     
+    Once defined on vertices, define on edges by sending the edge \(vw\) to the unique path in \(Y\) from \(f(v)\) to \(f(w)\). To make this definition work on edges it may be necessary to subdivide the edge \(vw \in X\). If the endpoints of an edge go to the same vertex, send the entire edge to that vertex. 
     
     For (2)$\Rightarrow$(1), suppose $f:X\to Y$ was a simplicial $G$-map. Consider a vertex group of $X$, say $G_x$. Let $g\in G_x$, then $g\cdot f(x)=f(g\cdot x)=f(x)$ a vertex in $Y$ since the map is simplicial. Hence, $G_x$ also fixes the vertex $f(x)\in Y$. Hence, every vertex group for $X$ fixes a vertex of $Y$. Therefore, every elliptic subgroup for $X$ is also elliptic for $Y$.
 \end{proof}
@@ -642,12 +644,12 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 
 \begin{dfn}
     [Morphism]
-    A \emph{morphism} is a map between graphs where vertices go to vertices and edges go to edges. (??? isn't this just a morphism in the category of graphs?)
+    A \emph{morphism} is a map between graphs where vertices go to vertices and edges go to edges. (Alternatively, this is a simplicial map where no edges are collapsed)
 \end{dfn}
 
 \begin{dfn}
     [Collapse Map]
-    A \emph{collapse map} is a map between two trees obtained by quotienting each connected component of a union of subtrees to a point.  (??? is this correct?)
+    A \emph{collapse map} is a map between two trees obtained by quotienting each connected component of a union of subtrees to a point. (Alternatively, it's a simplicial map where the preimage of every vertex is connected)
 \end{dfn}
 
 \begin{lem}
@@ -669,7 +671,7 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
         
         Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so
         
-        \[ f(gv) = gf(v) = g(g^{-1}h)f(v) = hf(v) = f(hv) \]
+        \[ f(gv) = gf(v) = g(g^{-1}h)f(v) = hf(v) = f(hv). \]
         
         Next we define the map on the 1-skeleton by mapping each edge. If \(vw\) is an edge, map it to the unique geodesic \([f(v), f(w)]\) in \(T\).
         
@@ -687,14 +689,30 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
     \end{proof}
 \end{lem}
 
-(??? need a reference for this... should be forester 2002 somewhere:
+(??? Found a reference about minimality:
+
+
+... proof is easier if cocompact due to result of bass
+
+... bass: minimal <=> condition on quotient graph
+
+... if you're not minimal then in the quotient you are a core graph + collapsible trees (where every edge is collapsible but also maybe infinite)
+
+
+..... can also prove using ... invariant tree and think about what a random edge has to do
+
+===
 
 "Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
 
-Do we need cocompact for this? Perhaps not)
+In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
+
+Update: Still looking for this result from the bass paper
+
+)
 \begin{lem}
     \label{reducedcocompact}
-    If \(X\) is a \(G\)-tree that is reduced and cocompact then it is minimal
+    If \(X\) is a \(G\)-tree that is reduced then it is minimal
 \end{lem}
 
 
@@ -752,10 +770,7 @@ A module is of type FP if there exists a finitely generated projective resolutio
 
 \section{VH-complexes}
 
-\begin{dfn}
-    [Hyperplane]
-    (??? Cite the big special cube complex paper for this as it's very precise while being readable)
-\end{dfn}
+A \emph{cube complex} is a CW-complex consisting of cubes glued together via face isometries. A \emph{midcube} of a cube \([-1,1]^k\) is the result of restricting one coordinate to zero. A \emph{hyperplane} of a cube complex comes from taking a single midcube and extending it along glued faces of the cube complex to include other midcubes. Hyperplanes are cube complexes themselves but come with an immersion into the surrounding complex. For details see \cite{haglundwise}.
 
 \begin{dfn}
     [Square Complex]
@@ -775,7 +790,7 @@ A module is of type FP if there exists a finitely generated projective resolutio
 \end{dfn}
 
 \begin{rmk}
-Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not (??? in his decomp theorem he requires VH to be NPC) require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience. The link property also generalizes to an object we need later called a VHD-complex.
+Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience. The link property also generalizes to an object we need later called a VHD-complex.
 \end{rmk}
 
 \begin{dfn}
@@ -884,7 +899,7 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 
 \begin{dfn}
     [Refinement]
-    (??? need to add) is this equivalent to the existence of a collapse map  that is compatible with the action?
+    For \(G\)-trees \(T_1\) and \(T_2\) we say that \(T_1\) \emph{is a refinement of} \(T_2\) if there is an equivariant collapse map from \(T_1\) to \(T_2\).
 \end{dfn}
 
 \begin{lem}
@@ -963,17 +978,47 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  which after homotoping is a geodesic path made of vertical edges. Lifting this to $\widetilde{K}$ gives a path. Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. 
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  (??? (this needs to get moved see below) which after homotoping is a geodesic path made of vertical edges). Lifting this to $\widetilde{K}$ gives a path (??? which after homotoping is a geodesic path made of vertical edges). Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. Call the vertical axis \(\ell_V\) and the horizontal axis \(\ell_H\).
     
     %(We could tighten to geodesics loops and lift or tighten afterwards)
     
-    (???
-        One idea is to say the following:
-        "G acts on X, Y. From K~ we get BS-maps to X, Y (Wise). The product of these BS-maps injects K~ into X x Y"
+    % (???
+    %     One idea is to say the following:
+    %     "G acts on X, Y. From K~ we get BS-maps to X, Y (Wise). The product of these BS-maps injects K~ into X x Y"
+    %     ....
+    %     .... K -> XxY (NOT onto)
+    %     .... 
+    %     .... Z on line, then product action on X x Y is diag translations ... K is a strip going diagonally
         
-        However, BS-maps on definitionally surjective because they are quotients. Our K~ may not be a CSC so K~ may not necessarily be all of X x Y
-    )
-    By Wise, the action of $G$ on $\widetilde{K}$ extends to an action on $X \times Y$ with $\widetilde{K}\subset X\times Y$. By lemma \ref{lem:axeshausdorff} the axes are Hausdorff equivalent. Except, two unbounded sets from separate factors cannot be Hausdorff equivalent under the product metric, a contradiction.
+    %     However, BS-maps on definitionally surjective because they are quotients. Our K~ may not be a CSC so K~ may not necessarily be all of X x Y
+    % )
+    
+    % ( 
+    %     The action on K~ by convering translations is the restriction of the product action of G on X x Y -- using the BS product, we get K~ injected equivariantly into X x Y
+        
+    %     ...
+        
+    %     enough to locally inject bc NPC
+        
+        
+    %     ...
+        
+    %     think about the annulus as a square ladder... trees are real lines ... action is Z
+    % )
+    
+    
+    
+    % (Each splitting of K~ gives a BS-map, the product of these maps injects K~ into X x Y equivariantly. Therefore, the action on K~ by convering translations is the restriction of the product action of G on X x Y. )
+    
+    % ( All we need is the G-map K -> XxY from the product of the BS-maps )
+    
+    
+    The map from \(\widetilde K\) to \(X \times Y\) given by the product of the Bass-Serre maps is a \(G\)-map that takes vertical edges to vertical edges and similarly for horizontal edges. Hence, the image of an axis in  \(\widetilde K\) is contained in a fiber of \(X \times Y\).
+    
+    Pick vertices \(v1, v2\in \widetilde K\) from the axes \(\ell_V\) and \(\ell_H\) respectively. Consider the images of \(v_1\) and \(v_2\) after repeated applications of \(g\). Each is an infinite set of discrete points contained in a tree fiber. The action on \(X \times Y\) is by isometries so the images of \(g^nv_1\) and \(g^nv_2\) should remain close for all \(n\). However, this is impossible \(\langle g\rangle v_1\) is contained in a vertical tree fiber while \(\langle g\rangle v_2\) is contained in a horizontal tree fiber.
+    
+    
+    % By lemma \ref{lem:axeshausdorff} the axes in \(X \times Y\) are Hausdorff equivalent. Except, two unbounded sets from separate factors cannot be Hausdorff equivalent under the product metric, a contradiction.
     
 \end{proof}
 \end{thm}
@@ -998,7 +1043,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     \label{thm:guirardelsliceconvex}
     Let \(X\) and \(Y\) be two simplicial trees and \(F\subset X\times Y\) a closed subset. Then \(F\) is quadrant convex if and only if all of its fibers are connected.
     \begin{proof}
-        Follows immediately from Lemma 5.4 and Corollary 5.5 from \cite{guirardelcorepaper}. Note that being quadrant convex implies connected fibers \cite{guirardelcorepaper}. (??? double check that this is correct)
+        Follows immediately from Lemma 5.4 from \cite{guirardelcorepaper} and the fact that  quadrant convex implies connected fibers.
     \end{proof}
 \end{thm}
 
@@ -1018,8 +1063,8 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 [Technical assumptions for Guirardel]
     \label{lem:technicalconditions}
  The following properties hold for \(\widetilde{ X_{12} }\) and the map \(f_{123}: \widetilde{ X_{12}}\to T_3\) from \ref{lem:affineequivariantmap}. (Compare to \ref{lem:guirardel-extension})
- (??? these sholud be sentences?)
     \begin{enumerate}
+    (??? these should be sentences?)
         \item geometric action
         \item free properly discontinuous cocompact
         \item finitely generated
@@ -1038,8 +1083,6 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     \end{enumerate}
     \end{proof}
 \end{lem}
-
-(??? END OF FORESTER EDITS)
 
 \begin{prop}
     [Slices are connected]
@@ -1300,7 +1343,7 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 
         
         
-        Next, define \(K := \text{cell}(J)\). By prop \ref{pro:cellinvariant}, \(K\) is \(G\) invariant and because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(K\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(K\) has property CCP as well.
+        Next, define \(K := \text{cell}(J)\). As \(J\) is \(G\) invariant so is \(K\).  Because our trees are locally finite and a cellular neighborhood is contained in a bounded neighborhood we have that \(K\) is cocompact. Taking a cellular neighborhood respects slices by \ref{lem:cellrespecslice}  so \(K\) has property CCP as well.
 
 \section{Filling}
 
@@ -1520,12 +1563,12 @@ elementary collapse moves are quasi-isometries thanks to old forester paper
         \end{rmk}
         
         
-(??? add this defn somewhere bc it's used once: total space = raelization of graph of psaces)
+( add this defn somewhere bc it's used once: total space = raelization of graph of psaces)
 
 
 ===
 
-    (??? Somewhere in the Niblo or related papers this should be citable (affine equi map). Also from Nir Lazaravich:
+    (Somewhere in the Niblo or related papers this should be citable (affine equi map). Also from Nir Lazaravich:
     
         As part of the proof, Dunwoody introduced two key tools: patterns and resolutions. He observed
         that any action of an almost finitely presented group, G, on a tree could be resolved to a G-tree
@@ -1543,5 +1586,36 @@ elementary collapse moves are quasi-isometries thanks to old forester paper
     \begin{pro}
     [Invariant Cell Complex]
     \label{pro:cellinvariant}
-    (??? cell(X) = cell(gX) bc X = gX... but cell(gX) = gcell(X) by observation ergo cell(X) g invariant )
+    (cell(X) = cell(gX) bc X = gX... but cell(gX) = gcell(X) by observation ergo cell(X) g invariant )
 \end{pro}
+
+
+=== Meeting: 31-07-2022
+
+==== Figuring out the part where we need to get a contradiction from our axes in K tilde by morally placing them in a product.
+
+ax1 in K~ all H .... pt in the ax ... send over to Tree x v. 
+
+ax2 ... v x Tree
+
+....
+
+in CAT(0) any two orbits of points will fellow travel (really bc we are acting by isometries)
+
+
+...
+
+
+product BS map to X x Y
+consider all H axis, pick point in K~
+that aixs goes to tree x y
+..... x x Tree
+
+==== Following up
+
+{ talk about getting two axes in K~, one composed entirely of vertical edges and the other composed entirely of horizontal edges }
+
+From the splittings we get BS-maps from K~ -> X and K~ -> Y. Take the product and think about K~ -> X x Y a G-map. Pick a vertex in the vertical axis, it's orbit is sent to a vertical factor in X x Y. Similarly for horizontal axis. In X x Y the points are some distance a part but we are acting by isometries so the distance is constant but the images of the orbits are infinite discrete points. This violates fellow traveling.
+
+
+
