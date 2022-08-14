@@ -677,7 +677,7 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
         
         Lastly, for 2-cells we use the standard fibration coming from mapping triangles to tripods. There are four cases based on where the 3 vertices land in \(T\). 
         
-(??? update left triangle so that quotient tree is rotated to be correct)        
+(??? update left triangle so that quotient tree is rotated to be in line with what the picture is showing)        
 \begin{figure}[htp]
     \centering
     \includegraphics[width=16cm]{triangle_fibers.png}
@@ -914,6 +914,7 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 \begin{lem}
     [Axes are hausdorff equivalent]
     \label{lem:axeshausdorff}
+    (??? no longer needed in proof of transverse lemma)
     Any two axes for a given hyperbolic isometry of a geodesic metric space are Hausdorff equivalent.
 \begin{proof}
 
@@ -978,7 +979,29 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
 \item $3\Rightarrow 2$: 
     
 
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. Take a vertex $b \in X_{\overline{x}}$, the vertex space in $K$ corresponding to $\overline{x}$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$  (??? (this needs to get moved see below) which after homotoping is a geodesic path made of vertical edges). Lifting this to $\widetilde{K}$ gives a path (??? which after homotoping is a geodesic path made of vertical edges). Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. Call the vertical axis \(\ell_V\) and the horizontal axis \(\ell_H\).
+(
+  
+Want to represent g as an honest loop in vertex
+loops up to free homoto
+
+===
+
+1. g non-trivial in G_x
+2. a conjugate g' of g can be represented as loop in X_xbar
+3. the lift this loop is a path with different end points in tree Y bc covering space
+4. covering space action, acting freely on a tree, so has an axis
+
+
+===
+
+unbased loop represents cc of an element 
+
+===
+
+
+)
+
+    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$. Lifting this to $\widetilde{K}$ gives a path in \(\{x\}\times Y\). Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. Call the vertical axis \(\ell_V\) and the horizontal axis \(\ell_H\).
     
     %(We could tighten to geodesics loops and lift or tighten afterwards)
     
@@ -1064,7 +1087,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     \label{lem:technicalconditions}
  The following properties hold for \(\widetilde{ X_{12} }\) and the map \(f_{123}: \widetilde{ X_{12}}\to T_3\) from \ref{lem:affineequivariantmap}. (Compare to \ref{lem:guirardel-extension})
     \begin{enumerate}
-    (??? these should be sentences?)
+    (??? these should be sentences)
         \item geometric action
         \item free properly discontinuous cocompact
         \item finitely generated
