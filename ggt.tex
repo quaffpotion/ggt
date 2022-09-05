@@ -410,12 +410,13 @@ to
 
 From a topological perspective we want to look at groups that are fundamental groups of spaces where the space itself is built up from repeatedly applying van kampen's theorem. More formally, there are a collection of vertex and edge spaces having prescribed fundamental groups. After taking products of edge spaces with intervals one gets spaces that can be glued from both ends to the vertex spaces in a way that is injective on fundamental groups. The result is a graph of spaces. The corresponding algebraic data is an indexed set of groups along with injective homomorphisms. The graph of spaces construction is unique up to homotopy so the groups and injective homomorphisms are essentially all the data needed to construct the geometric picture. It turns out that this graph of spaces view corresponds exactly via Bass-Serre theory to group actions on trees without edge inversions.
 
-Once you have a graph of groups you can get a new one by collapsing an edge corresponding to \(A*_CC\) to a vertex \(A\). Such a move or its reverse is called an elementary deformation. A deformation space is defined to be the space of all graphs of groups obtained by a finite sequence of elementary deformations. We say a graph of groups is reduced if there are no remaining elementary deformations.
+Once you have a graph of groups you can get a new one by collapsing an edge corresponding to \(A*_CC\) to the vertex corresponding to \(A\). Such a move or its reverse is called an elementary deformation. A deformation space then is the space of all graphs of groups obtained by a finite sequence of elementary deformations. We say a graph of groups is reduced if there are no remaining elementary deformations.
 
 Graphs of groups where the vertex and edge groups are trivial yield free groups. Allowing abelian free groups gives what are called Generalized Baumslag-Solitar groups which include special cases like BS(1,2) and BS(p,q) which serve as interesting examples and counterexamples in their own right. For this paper we work with groups of cohomological dimension 2 with locally finite trees and finitely generated vertex and edge groups. These correspond to finite-index graphs of finite rank free groups. The space itself will use graphs to represent free groups; taking products we will end up with a square complex.
 
 \begin{thm}
     [Main Theorem]
+    \label{thm:martino}
     If \(G\) is finitely generated and has dimension 2 then either \(G\) is the fundamental group of a primitive VHD complex or there are at most two pairwise transverse deformation spaces of locally finite, finite-type \(G\)-trees.
 \end{thm}
 
@@ -461,18 +462,24 @@ Spell out the standard picture where FH, FL, FP sort of correspond to the module
 \end{exa}
 
 \begin{exa}
-Non-example: The Torus has infinitely many decompositions all in different deformation spaces
 
-The torus is Z x Z, or if you like it's Z with the generator glued to itself via the identity (the HNN version). 
-From the Z x Z perspective, a pair of extended (i.e. include infinity so we allow 1/0 and 0/1) rationals p/q and r/s correspond to a basis for Z x Z if [[p,r],[q,s]] has determinant 1 so that < (p,q), (r,s) > contained in Z x Z is a basis.
+An important non-example: The Torus has infinitely many graph of spaces decompositions each lying in a different deformation space. To see this, note that simple closed curves on the torus correspond to graph of spaces decompositions with the curve as the edge space. Up to homotopy, such curves correspond to extended rationals e.g. r/s, 1/0, and 0/1 each telling you how many times a curve wraps around both directions of the torus. The wrapping numbers correspond to coordinates of \(\mathbb{Z}\times \mathbb{Z}\), so r/s corresponds to the cyclic subgroup \(\langle (r,s)\rangle\leq \mathbb{Z}\times \mathbb{Z}\). With this perspective, \(\mathbb{Z}\times \mathbb{Z}\) can be viewed as an HNN extension (i.e. a graph of groups with exactly one edge and one vertex) where the vertex and edge space is named by some r/s. The elliptic subgroups are exactly the vertex group and it's subgroups therefore by  \ref{thm:forester} each splitting is in a different deformation space.
 
-Z x Z isom pi1(torus) isom HNN of < (p,q) > over < (p,q) >
 
-Simple closed curves on the torus correspond to graph of space decompositions of the torus with the curve as the edge space.
 
-It's easy to see that the one vertex group is different because it's just powers of a single element in ZxZ; the (p,q).
 
-Conjecturally, this is sort of the only non-example
+% Non-example: The Torus has infinitely many decompositions all in different deformation spaces
+
+% The torus is Z x Z, or if you like it's Z with the generator glued to itself via the identity (the HNN version). 
+% From the Z x Z perspective, a pair of extended (i.e. include infinity so we allow 1/0 and 0/1) rationals p/q and r/s correspond to a basis for Z x Z if [[p,r],[q,s]] has determinant 1 so that < (p,q), (r,s) > contained in Z x Z is a basis.
+
+% Z x Z isom pi1(torus) isom HNN of < (p,q) > over < (p,q) >
+
+% Simple closed curves on the torus correspond to graph of space decompositions of the torus with the curve as the edge space.
+
+% It's easy to see that the one vertex group is different because it's just powers of a single element in ZxZ; the (p,q).
+
+% Conjecturally, this is sort of the only non-example
 
 
 \end{exa}
@@ -480,43 +487,7 @@ Conjecturally, this is sort of the only non-example
 
 \section{Cited results}
 
-\begin{lem}
-	[Guirardel Lemma 5.4, Corollary 5.5]
-    \label{lem:guirardel} 
-	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
-\end{lem}
 
-\begin{prop}
-    [Hyperbolic gives unique minimal tree]
-    \label{pro:uniquemintree}
-    
-    If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
-\end{prop}
-\begin{proof}
-See Proposition 3.1 from [2].
-\end{proof}
-\begin{prop}
-    [Commensurable groups have the same minimal tree]
-    \label{pro:commintree}
-    Suppose $G$ acts on a tree $X$ and $H$ and $K$ are commensurable subgroups. If $H$ contains a hyperbolic element, then so does $K$ and the minimal subtrees for $H$ and $K$ are equal.
-\end{prop}
-\begin{proof}
-    This follows from \ref{pro:uniquemintree}, for details see Corollary 7.7 from \cite{hymanbass}.
-\end{proof}
-
-
-\begin{lem}
-    [Bass finitely generated conditions]
-    \label{lem:bassfgcon}
-    Consider a group \(G\) acting on a tree \(X\)
-    \begin{enumerate}
-        \item If \(X/G\) is finite and \(G_x\) is finitely generated for all \(x\in X\) then \(G\) is finitely generated
-        \item If \(G\) is finitely generated and acts minimally on \(X\) then \(X/G\) is finite
-    \end{enumerate}
-    \begin{proof}
-        For details see Proposition 7.9 in \cite{hymanbass}.
-    \end{proof}
-\end{lem}
 
 \begin{thm}
     [Guirardel Core Theorem]
@@ -528,6 +499,10 @@ See Proposition 3.1 from [2].
     \label{guirardelcocompact}
     As Guirardel explains after Theorem 8.1 in \cite{guirardelcorepaper}, if \(T_1\) and \(T_2\) are simplicial trees then the core from \ref{thm:guirardelcore} is cocompact.
 \end{rmk}
+
+
+
+\section{Actions on Trees}
 
 From \cite{boundingcomplexity} we have the following classification of \(G\)-trees.
 \begin{thm}
@@ -543,23 +518,19 @@ From \cite{boundingcomplexity} we have the following classification of \(G\)-tre
     \end{enumerate}
 \end{thm}
 
-\begin{lem}
-    \label{lem:guirardel-extension}
-    (Lemma 8.9 in Guirardel)
-    Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
-\end{lem}
-
-\section{Actions on Trees}
-
-\begin{thm}[Forester, Thm 4.2 in \cite{foresterdeformationrigidity}]
-\label{thm:forester}
-Let $G$ be a group and let $X$ and $Y$ be cocompact $G$-trees. Then $X$ and $Y$ are in the same deformation space (i.e. $X\sim Y$) if and only if they have the same elliptic subgroups.
-\end{thm}
-
-\begin{thm}
-    \label{mainthmf}
-    [Forester, \cite{foresterdeformationrigidity}]
-    (restate in the language of above, but add in the assumptions)
+The following is a corollary of the main theorem from \cite{foresterdeformationrigidity}.
+\begin{thm} [Forester]
+    \label{thm:forester}
+    Let \(G\) be a group and let \(X\) and \(Y\) be cocompact \(G\)–trees. The following conditions are equivalent.
+    \begin{enumerate}
+        \item \(X\) and \(Y\) are related by an elementary deformation. 
+        \item \(X\) and \(Y\) have the same elliptic subgroups.
+    \end{enumerate}
+If all vertex stabilizers are finitely generated then we may also include:
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item \(X\) and \(Y\) have the same elliptic elements.
+\end{enumerate}
 \end{thm}
 
 \begin{prop}
@@ -689,27 +660,27 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
     \end{proof}
 \end{lem}
 
-(??? Found a reference about minimality:
+% (??? Found a reference about minimality:
 
 
-... proof is easier if cocompact due to result of bass
+% ... proof is easier if cocompact due to result of bass
 
-... bass: minimal <=> condition on quotient graph
+% ... bass: minimal <=> condition on quotient graph
 
-... if you're not minimal then in the quotient you are a core graph + collapsible trees (where every edge is collapsible but also maybe infinite)
+% ... if you're not minimal then in the quotient you are a core graph + collapsible trees (where every edge is collapsible but also maybe infinite)
 
 
-..... can also prove using ... invariant tree and think about what a random edge has to do
+% ..... can also prove using ... invariant tree and think about what a random edge has to do
 
-===
+% ===
 
-"Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
+% "Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
 
-In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
+% In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
 
-Update: Still looking for this result from the bass paper
+% Update: Still looking for this result from the bass paper
 
-)
+% )
 \begin{lem}
     \label{reducedcocompact}
     If \(X\) is a \(G\)-tree that is reduced then it is minimal
@@ -818,6 +789,24 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 \chapter{Locally finite trees and elliptic subgroups}
 
 \begin{prop}
+    [Hyperbolic gives unique minimal tree]
+    \label{pro:uniquemintree}
+    
+    If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
+\end{prop}
+\begin{proof}
+See Proposition 3.1 from [2].
+\end{proof}
+\begin{prop}
+    [Commensurable groups have the same minimal tree]
+    \label{pro:commintree}
+    Suppose $G$ acts on a tree $X$ and $H$ and $K$ are commensurable subgroups. If $H$ contains a hyperbolic element, then so does $K$ and the minimal subtrees for $H$ and $K$ are equal.
+\end{prop}
+\begin{proof}
+    This follows from \ref{pro:uniquemintree}, for details see Corollary 7.7 from \cite{hymanbass}.
+\end{proof}
+
+\begin{prop}
     [Folding preserves properties]
     \label{lem:foldingpreserveshyp}
     Suppose $X$ and $Y$ are $G$-trees. In addition suppose $Y$ has a locally finite minimal subtree that is not a point. Let $\phi:X\to Y$ be a type A fold. Then if an element of $G$ is hyperbolic for $X$ it is also hyperbolic for $Y$.
@@ -847,16 +836,15 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
     \label{lem:preservehyperbolicity}
     Suppose \(X \to Y\) is a collapse map with \(Y\) locally finite. Suppose \(Y\) is not a single point. Then, if an element is hyperbolic for \(X\) it is also hyperbolic for \(Y\).
     \begin{proof}
-        (Proof in Style 1)
         Suppose for sake of a contradiction that \(g\in G\) were hyperbolic for \(X\) and elliptic for \(Y\). Let \(y \in Y\) be some vertex fixed by the elliptic element \(g\) and \(G_y\) it's stabilizer. Since \(Y\) is not a single point, there is another vertex \(y\neq z \in Y\). Because \(Y\) is locally finite, \(G_y\) and \(G_z\) are commensurable. For \(G\)-maps, pre-images are invariant. By the construction of a collapse map, the preimage of vertices are connected and non-empty. Putting these together we have that the preimages of vertices are invariant trees. This means that the minimal subtrees of \(G_y\) and \(G_z\) acting on \(X\) are contained in the disjoint preimages of \(y\) and \(z\) respectively. However, since they are commensurable and \(G_y\) contains the hyperbolic element \(g\), these minimal trees are non-empty and equal by \ref{pro:commintree}. This is a contradiction.
     \end{proof}
-    \begin{proof}
-        (Proof in Style 2)
-        For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The tree $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
+    % \begin{proof}
+    %     (Proof in Style 2)
+    %     For sake of a contradiction suppose $g\in G$ acts hyperbolically on $X$ but elliptically on $Y$.  Then $g$ fixes some vertex $y\in Y$.  Consider the stabilizer $G_y$ acting on $X$. The tree $f^{-1}(y)$ is stabilized by $G_y$ because the map is a $G$-map. This means the minimal tree for the $G_y$ action on $X$ is contained in $f^{-1}(y)$. It's non-empty because $g\in G_y$ is hyperbolic for $X$.
         
         
-        Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem applied to the set of edges adjacent to a given vertex, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
-    \end{proof}
+    %     Since $Y$ is not a single point, there exists some vertex $z\in Y$ with $z\neq y$. As before, $G_z$ stabilizes the tree $f^{-1}(z)$ so the minimal tree for the $G_z$ action on $X$ is contained in $f^{-1}(z)$. By local finiteness and the orbit-stabilizer theorem applied to the set of edges adjacent to a given vertex, $G_y$ and $G_z$ are commensurable. By \ref{pro:commintree} the minimal tree for $G_y$ is non-empty and equal to the minimal tree for $G_z$. Except now the minimal tree for $G_y$ acting on $X$ is contained in two non-empty disjoint sets $f^{-1}(y)$ and $f^{-1}(z)$ a contradiction.
+    % \end{proof}
 \end{lem}
 
 
@@ -911,25 +899,39 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
     \end{proof}
 \end{lem}
 
+% \begin{lem}
+%     [Axes are hausdorff equivalent]
+%     \label{lem:axeshausdorff}
+%     (??? no longer needed in proof of transverse lemma)
+%     Any two axes for a given hyperbolic isometry of a geodesic metric space are Hausdorff equivalent.
+% \begin{proof}
+
+% \begin{figure}[htp]
+%     \centering
+%     \includegraphics[width=4cm]{axis-hausdorff.jpg}
+%     \caption{To show the axes are close, we translate two closest points until they are near an arbitrary point and then apply the triangle inequality}
+%     \label{fig:axis-hausdorff}
+% \end{figure}
+
+%     Let $X$ be a geodesic metric space and $g$ a hyperbolic isometry with translation length $a$. Suppose $\ell_1$ and $\ell_2$ are axes for $g$. Let $D:= d(\ell_1,\ell_2)$ denote the distance between the closed sets $\ell_1$ and $\ell_2$. Suppose that $x_0\in\ell_1$ and $y_0\in\ell_2$ realize that distance. Let $x\in\ell_1$ be arbitrary. Because the translation length of $g$ is $a$ there is some integer $m$ such that $g^mx_0$ is within $a$ of $x$. The isometry preserves distances so $g^mx_0$ and $g^my_0$ are $D$ far apart. Hence, $$d(x, g^my_0)\leq d(x, g^mx_0) + d(g^mx_0, g^my_0)\leq a+D$$ so $\ell_1$ is within the $a+D$ neighborhood of $\ell_2$. By symmetry, the axes $\ell_1$ and $\ell_2$ are Hausdorff equivalent.
+% \end{proof}
+
+% \end{lem}
+
 \begin{lem}
-    [Axes are hausdorff equivalent]
-    \label{lem:axeshausdorff}
-    (??? no longer needed in proof of transverse lemma)
-    Any two axes for a given hyperbolic isometry of a geodesic metric space are Hausdorff equivalent.
-\begin{proof}
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=4cm]{axis-hausdorff.jpg}
-    \caption{To show the axes are close, we translate two closest points until they are near an arbitrary point and then apply the triangle inequality}
-    \label{fig:axis-hausdorff}
-\end{figure}
-
-    Let $X$ be a geodesic metric space and $g$ a hyperbolic isometry with translation length $a$. Suppose $\ell_1$ and $\ell_2$ are axes for $g$. Let $D:= d(\ell_1,\ell_2)$ denote the distance between the closed sets $\ell_1$ and $\ell_2$. Suppose that $x_0\in\ell_1$ and $y_0\in\ell_2$ realize that distance. Let $x\in\ell_1$ be arbitrary. Because the translation length of $g$ is $a$ there is some integer $m$ such that $g^mx_0$ is within $a$ of $x$. The isometry preserves distances so $g^mx_0$ and $g^my_0$ are $D$ far apart. Hence, $$d(x, g^my_0)\leq d(x, g^mx_0) + d(g^mx_0, g^my_0)\leq a+D$$ so $\ell_1$ is within the $a+D$ neighborhood of $\ell_2$. By symmetry, the axes $\ell_1$ and $\ell_2$ are Hausdorff equivalent.
-\end{proof}
-
+    [Bass finitely generated conditions]
+    \label{lem:bassfgcon}
+    Consider a group \(G\) acting on a tree \(X\)
+    \begin{enumerate}
+        \item If \(X/G\) is finite and \(G_x\) is finitely generated for all \(x\in X\) then \(G\) is finitely generated
+        \item If \(G\) is finitely generated and acts minimally on \(X\) then \(X/G\) is finite
+    \end{enumerate}
+    \begin{proof}
+        For details see Proposition 7.9 in \cite{hymanbass}.
+    \end{proof}
 \end{lem}
 
+The following should be thought of as a prequel to the main theorem \ref{thm:martino}. In one of the implications below we take two trees, impose a condition on its vertex stabilizers, apply the Guirardel Core machinery \ref{thm:guirardelcore}, and finally produce a compact 2-dimensional complex with a prescribed fundamental group. In the proof of the sequel, we will take three trees, impose a similar condition on vertex stabilizers, carefully arrange that a key lemma of Guirardel \ref{thm:guirardelsliceconvex} applies, and finally produce a compact 3-dimensional complex.
 
 \begin{thm}
     [Transverse Construction]
@@ -965,7 +967,7 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     
     First note that $X$ and $Y$ are minimal $G$-trees by assumption.
     
-    If our trees had homothetic length functions (i.e. the length functions were a constant multiple of each other) then they would vanish on the same elements, which would imply they had the same elliptic elements. Our trees are cocompact with FP vertex groups, and FP implies finitely generated so we can apply \ref{mainthmf} of \cite{foresterdeformationrigidity} which says in this case having the same elliptic elements is enough to conclude that the elliptic subgroups are also the same. Hence, both trees lie in the same deformation space, a contradiction. Therefore, \(X\) and \(Y\) have non-homothetic length functions. By \ref{lem:nocommonrefinement} our trees are not refinements of a common non-trivial simplicial $G$-tree.
+    If our trees had homothetic length functions (i.e. the length functions were a constant multiple of each other) then they would vanish on the same elements, which would imply they had the same elliptic elements. Our trees are cocompact with FP vertex groups, and FP implies finitely generated so we can apply \ref{thm:forester} of \cite{foresterdeformationrigidity} which says in this case having the same elliptic elements is enough to conclude that the elliptic subgroups are also the same. Hence, both trees lie in the same deformation space, a contradiction. Therefore, \(X\) and \(Y\) have non-homothetic length functions. By \ref{lem:nocommonrefinement} our trees are not refinements of a common non-trivial simplicial $G$-tree.
     
     Apply the Guirardel Core Theorem \ref{thm:guirardelcore} to obtain $C$ a certain subset of $X \times Y$ that we call the core. The core \(C\) has convex fibers. It's also CAT(0). Our \(G\)-trees are simplicial so \(C\) is a subcomplex. Condition (2) says that $G$ acts freely on the vertices of the product $X\times Y$ and therefore also on the the vertices of the core, a subset of $X \times Y$. Since the \(G\)-trees are simplicial and the product action is free on vertices, and the VH property rules out rotating a square by 90 degrees, and the product action prevents rotations by 180 degrees (a rotation by 180 degrees would invert an edge in the projection) we get that the product action on the cell complex \(C\) will be a covering space action.
     
@@ -977,71 +979,37 @@ $2\Rightarrow 3$: Take $X \times Y$ and give it the VH-structure where $X$ and $
     
     
 \item $3\Rightarrow 2$: 
-    
 
-(
-  
-Want to represent g as an honest loop in vertex
-loops up to free homoto
+    We have \(\widetilde K\) and its vertical and horizontal foliations. Collapsing
+leaves to points gives \(G\)-maps \(\widetilde K\) to \(X\) and \(\widetilde K\) to \(Y\). These are the
+Bass-Serre maps. The product map gives a map from \(\widetilde K\) to \(X\times Y\).
 
-===
+\begin{claim*} This map is 1-1.
+\begin{proof}
 
-1. g non-trivial in G_x
-2. a conjugate g' of g can be represented as loop in X_xbar
-3. the lift this loop is a path with different end points in tree Y bc covering space
-4. covering space action, acting freely on a tree, so has an axis
+It's enough to be 1-1 on vertices. Suppose \(v\), \(v'\) go to the same
+vertex of \(X\times Y\). This means \(v\), \(v'\) are on the same leaf of the vertical foliation, and are also on the same leaf of the horizontal foliation.
+Call these leaves \(V_v\) and \(H_v\).
+By Lemma 3.7 of Wise in \cite{wisecsc}, the intersection of \(V_v\) and \(H_v\) is at most
+one point. (Remark: the lemma says exactly one point, for \(\widetilde K\) a CSC.
+But for "at most one point", it only needs that \(\widetilde K\) is VH and CAT(0),
+not complete.) Hence \(v = v'\).
+\end{proof}
+\end{claim*}
 
+Both \(\widetilde K\) and \(X\times Y\) are CAT(0) square complexes, and we regard \(\widetilde K\) as a
+subcomplex that is invariant under the product \(G\)-action on \(X\times Y\). The
+action on \(\widetilde K\) is free because it is a covering space action.
 
-===
+By Cor 5.2 of Haglund in \cite{haglundss} if \(G\) acts on a CAT(0) cube complex \(X\)
+without inversions then every element either has a fixed vertex or a
+combinatorial axis, and not both.
 
-unbased loop represents cc of an element 
-
-===
-
-
-)
-
-    Suppose $1\neq g \in G$ is an element of $G_x\cap G_y$ where $x \in V(X)$ and $y\in V(Y)$. Consider $\overline{x}$, the image of $x$ in $X/G$, a vertex of the quotient graph. Now, $X/G$ is the underlying graph for the horizontal splitting of $K$. The complex $K$ is VH so $X_{\overline{x}}$ is a graph made of vertical edges. Since $g\in G_x$ we can represent it as a loop in $X_{\overline{x}}$. Lifting this to $\widetilde{K}$ gives a path in \(\{x\}\times Y\). Repeatedly applying $g$ gives a concatenation of paths which forms an axis composed of vertical edges in $\widetilde{K}$. Doing the same for $y$ gives an axis composed of horizontal edges. Call the vertical axis \(\ell_V\) and the horizontal axis \(\ell_H\).
-    
-    %(We could tighten to geodesics loops and lift or tighten afterwards)
-    
-    % (???
-    %     One idea is to say the following:
-    %     "G acts on X, Y. From K~ we get BS-maps to X, Y (Wise). The product of these BS-maps injects K~ into X x Y"
-    %     ....
-    %     .... K -> XxY (NOT onto)
-    %     .... 
-    %     .... Z on line, then product action on X x Y is diag translations ... K is a strip going diagonally
-        
-    %     However, BS-maps on definitionally surjective because they are quotients. Our K~ may not be a CSC so K~ may not necessarily be all of X x Y
-    % )
-    
-    % ( 
-    %     The action on K~ by convering translations is the restriction of the product action of G on X x Y -- using the BS product, we get K~ injected equivariantly into X x Y
-        
-    %     ...
-        
-    %     enough to locally inject bc NPC
-        
-        
-    %     ...
-        
-    %     think about the annulus as a square ladder... trees are real lines ... action is Z
-    % )
-    
-    
-    
-    % (Each splitting of K~ gives a BS-map, the product of these maps injects K~ into X x Y equivariantly. Therefore, the action on K~ by convering translations is the restriction of the product action of G on X x Y. )
-    
-    % ( All we need is the G-map K -> XxY from the product of the BS-maps )
-    
-    
-    The map from \(\widetilde K\) to \(X \times Y\) given by the product of the Bass-Serre maps is a \(G\)-map that takes vertical edges to vertical edges and similarly for horizontal edges. Hence, the image of an axis in  \(\widetilde K\) is contained in a fiber of \(X \times Y\).
-    
-    Pick vertices \(v1, v2\in \widetilde K\) from the axes \(\ell_V\) and \(\ell_H\) respectively. Consider the images of \(v_1\) and \(v_2\) after repeated applications of \(g\). Each is an infinite set of discrete points contained in a tree fiber. The action on \(X \times Y\) is by isometries so the images of \(g^nv_1\) and \(g^nv_2\) should remain close for all \(n\). However, this is impossible \(\langle g\rangle v_1\) is contained in a vertical tree fiber while \(\langle g\rangle v_2\) is contained in a horizontal tree fiber.
-    
-    
-    % By lemma \ref{lem:axeshausdorff} the axes in \(X \times Y\) are Hausdorff equivalent. Except, two unbounded sets from separate factors cannot be Hausdorff equivalent under the product metric, a contradiction.
+Now take any non-trivial \(g \in G\). Acting on \(\widetilde K\), it has a combinatorial
+axis \(L\), because the action is free. But \(L\) is also a combinatorial axis
+in \(X\times Y\). By the lemma, \(g\) acting on \(X\times Y\) cannot fix a vertex.
+So, no non-trivial element fixes a vertex of \(X\times Y\). Hence \(G_x \cap G_y =
+1\) for all vertices \(x \in X\), \(y \in Y\).
     
 \end{proof}
 \end{thm}
@@ -1083,29 +1051,12 @@ unbased loop represents cc of an element
 \section{Building the orthant hull}
 
 \begin{lem}
-[Technical assumptions for Guirardel]
-    \label{lem:technicalconditions}
- The following properties hold for \(\widetilde{ X_{12} }\) and the map \(f_{123}: \widetilde{ X_{12}}\to T_3\) from \ref{lem:affineequivariantmap}. (Compare to \ref{lem:guirardel-extension})
-    \begin{enumerate}
-    (??? these should be sentences)
-        \item geometric action
-        \item free properly discontinuous cocompact
-        \item finitely generated
-        \item \(\mathscr{F}\) a \(G\)-invariant measured foliation
-        \item \(f\) constant on leaves
-        \item \(f\) isometric to restriction to transverse edges
-        
-    \end{enumerate}
-    
-    \begin{proof}
-    (??? details)
-    \begin{enumerate}
-        \item Geometric: We use a result of Levitt and Paulin for geometric \ref{lem:simpgeo}.
-        \item free properly discontinuous cocompact: follows the fact that we are working with a covering space (We get this for free because we're dealing with a covering space. Later we will need to show that the action on the extended core $E$ is PDC.
-        \item essentially for free
-    \end{enumerate}
-    \end{proof}
+	[Guirardel Lemma 5.4, Corollary 5.5]
+    \label{lem:guirardel} 
+	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
 \end{lem}
+
+
 
 \begin{prop}
     [Slices are connected]
@@ -1311,6 +1262,23 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
 
 \section{Construct CCP set}
 
+        The content of this technical lemma is that maps from a 2-complex that are constant on leaves can be extended to a map with connected fibers by enlarging the 2-complex.
+        \begin{lem}
+            \label{lem:guirardel-extension}
+            (Lemma 8.9 in Guirardel)
+            Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
+        \end{lem}
+        
+\begin{lem}
+[Technical assumptions for Guirardel]
+    \label{lem:technicalconditions}
+ The following properties hold for \(\widetilde{ X_{12} }\) and the map \(f_{123}: \widetilde{ X_{12}}\to T_3\) constructed via  \ref{lem:affineequivariantmap}. The action of \(G\) on \(T_3\) is geometric. The action of \(G\) on \(X_{12}\) is free, properly discontinuous, and cocompact. (Compare to \ref{lem:guirardel-extension})
+    
+    \begin{proof}
+        Our trees are simplicial and the actions are minimal, hence by \ref{lem:simpgeo} they are also geometric. The action on \(X_{12}\) is a covering space action from \ref{pro:transverseconstruction} and is therefore free, properly discontinuous, and cocompact.
+    \end{proof}
+\end{lem}
+
         Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\).  Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions 
         \ref{lem:technicalconditions} for us to apply the Guirardel Extension Lemma \ref{lem:guirardel-extension} to obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
 
@@ -1319,7 +1287,7 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
         Our goal is to produce a map from \(\widetilde {X_{12}}^+\) to \(T_1\times T_2\times T_3\). The map \(f_{123}^+\) is already defined on all of \(\widetilde {X_{12}}^+\), so it remains to extend the Bass-Serre maps \(f_{121}\) and \(f_{122}\). By construction, \(\widetilde {X_{12}}^+\) has the form of a \(\Lambda(f_{123}, K)\) from \ref{dfn:subgraphconing} for some choice of \(K\). Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps to \(\widetilde {X_{12}}^+\) by applying \ref{lem:confib}. This gives extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\). Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. By \ref{prop:fibershomeoplanes} \(J\) has property CCP.
         
         \begin{rmk}
-            The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps. We also of course need the main conclusion of the extension theorem which says that fibers are connected.
+            The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps.
         \end{rmk}
         
         \begin{rmk}
@@ -1392,9 +1360,14 @@ Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that 
 
 
 \begin{rmk}
-    Our definition of VHD-Complex does not require that hyperplanes are injective on fundamental groups, only that hyperplanes are two-sided. The injectivity property is needed to obtain an honest graph of groups decomposition. For the VHD-Complex we consider the injectivity property follows from fact that there is a universal cover with simply-connected hyperplanes. In dimension two, for a VH-Complex the injectivty follows automatically from the two-sided requirement and the vertex link requirement.
+    Our definition of VHD-Complex does not require that hyperplanes are injective on fundamental groups, only that hyperplanes are two-sided. The injectivity property is  however needed to obtain an honest graph of groups decomposition. For the VHD-Complex \(E/G\) we are considering the injectivity property follows from fact that there is a universal cover \(E\) with simply-connected hyperplanes. In dimension two, for a VH-Complex the injectivty follows automatically from the two-sided requirement and the vertex link requirement.
 \end{rmk}
 
+\begin{lem}
+
+    The action of \(G\) on \(E\) is a covering space action.
+    
+    \begin{proof}
         Consider the product action of \(G\) on \(T_1\times T_2\times T_3\). 
         The trees \(T_1, T_2,\) and \(T_3\) are mutually transverse which tells us that the action on the vertices of a product of any two trees is free; hence free on the vertices of the product of all three trees. Acting by simplicial automorphisms with finite vertex stabilizers (in our case trivial) gives a PD action. 
         
@@ -1404,7 +1377,9 @@ Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that 
         
         Hence, no non-trivial element takes a cube to itself. Thus, the action is free. This implies that the product action is a covering space action.
         
-        Lastly, \(E\subseteq T_1\times T_2\times T_3\) is a \(G\)-invariant subset and therefore the action of \(G\) on \(E\) is a covering space action.
+        Lastly, \(E\subseteq T_1\times T_2\times T_3\) is a \(G\)-invariant subset and therefore the action of \(G\) on \(E\) is also a covering space action.
+    \end{proof}
+\end{lem}
 
 \begin{lem}
     [Extended Core is simply connected]
@@ -1444,17 +1419,14 @@ Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that 
 \subsection{Finding original trees in extended core}
 We want to state that the VHD complex \(E\) has three splittings which correspond exactly to the original trees.
 
-Earlier we proved that \(E\) is a graph of spaces, essentially because it sits within a product of trees. With this setup, after identification, the Bass-Serre maps that collapse vertex spaces to points and fibers of edge space products to points are projection maps. We're acting via a product action so projection maps are equivariant maps which means the image of \(E\) under projection is invariant. Lastly, our \(G\)-trees are minimal so the Bass-Serre maps from \(E\) maps onto the original trees.
-
-\begin{lem}
-    \label{lem:boximp} 
-    Repeatedly applying \ref{lem:switching} to both \(S\) and \(S_{\alpha}\) where \(\alpha\) is one of \(x,y,\) or \(z\)  and noticing that \(\langle (12),(23) \rangle = S_{3}\) we get that \(\sxyz\) is equal to any of the permutations of the indices. In particular, \(\Sxyz{x}{y}{z}=\Sxyz{y}{z}{x}=\Sxyz{z}{x}{y}\) which shows that \(\sxyz\) has connected one dimensional fibers.
-\end{lem}
+Earlier we proved that \(E\) is a graph of spaces, essentially because it sits within a product of trees. With this setup, after identification, the Bass-Serre maps that collapse vertex spaces to points and fibers of edge space products to points are projection maps. We're acting via a product action so projection maps are equivariant maps which means the image of \(E\) under projection is invariant. Lastly, our \(G\)-trees are minimal so the Bass-Serre maps from \(E\) map onto the original trees.
 
 
 \subsection{Apply Bieri to iterated splittings}
 
-For convenience we restate corollaries of Bieri's results here.
+Previously, we completed the construction of \(E\), a three dimensional complex that split in three ways over 2-dimensional VH-complexes. By Wise, VH-complexes themselves come with two splittings over 1-dimensional graphs. Lastly, graphs are themselves splittings over trivial groups. Using a result of Bieri, we show this iterated splitting pushes the cohomological dimension of \(G\) higher which gives the final contradiction needed for the proof of the main theorem.
+
+To start we restate corollaries of Bieri's results.
 \begin{lem}
 (See Corollary 6.5, Bieri, p87)
 Let \(G=G_1\ast_H G_2\) be an amalgamated product of groups of type \(FP_\infty\) over \(R\), with \(H\) a proper subgroup of finite index in both factors. Then for \(k=1,2\) we have: \[\text{cd}_R(G)=\text{cd}_R(G_k)+1.\]
@@ -1465,13 +1437,15 @@ Let \(G=G_1\ast_H G_2\) be an amalgamated product of groups of type \(FP_\infty\
 Let \(G=G_1\ast_{H,\phi}\) be an HNN extension where \(G_1\) is of type \(FP_\infty\) over \(R\) with subgroups \(H\) and \(\phi(H)\) of finite index in \(G_1\). Then \[\text{cd}_R(G) = \text{cd}_R(G_1)+1.\]
 \end{lem}
 
-The following result is not proved as a direct consequence of the previous lemmas, instead Bieri is able to run the argument again to obtain a similar result for general graphs of groups.
+The following result is not proved as a direct consequence of the previous lemmas, instead Bieri is able to run the argument again to obtain a similar result for general graphs of groups. This is the version we will be applying.
 \begin{thm}
     [Bieri dimension plus one]
     \label{pro:bireridimension}
-    (Exercise p.93 from Bieri)
+    (Exercise p.93 from Bieri \cite{bieribook})
     For a non-trivial cocompact locally finite simplicial \(G\)-tree with \(FP_\infty\) vertex and edge groups we have that the dimension of \(G\) is exactly one more than the dimension of any vertex or edge group.
 \end{thm}
+
+The following lemma shows that the second step in the iterative splitting is non-trivial.
 
 \begin{lem}
     [Iterated Splitting]
@@ -1482,9 +1456,9 @@ The following result is not proved as a direct consequence of the previous lemma
     \end{proof}
 \end{lem}
 
-We will now iterate the splitting process and then apply Bieri. To begin, by assumption each splitting is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the two trees coming from splittings of the VH-complexes by Wise. These last splittings are themselves splittings over trivial groups - but are they trivial splittings? Here we need to assume that one such iterated sequence of splittings ends in a graph with positive rank.
+We will now iterate the splitting process and then apply Bieri. To begin, by assumption each of the original splittings \(T_1\), \(T_2\), and \(T_3\) is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the other two trees. Moreover, as each vertex group is the fundamental group of a VH-complex from \ref{thm:wisegraph} the vertex groups split as a graph of free groups. These last splittings are themselves splittings over trivial groups -- but are they trivial splittings? Here we need to assume that at least one sequence of iterated splittings ends in a graph with positive rank.
         
-Then by the Bieri dimenson argument, \(G\) has dimension 3 a contradiction.
+Then by the Bieri dimension theorem \ref{pro:bireridimension}, \(G\) has dimension 3, a contradiction. This completes the proof of the main theorem.
 
 
 
@@ -1518,6 +1492,9 @@ some journal
 Culler and Morgan
 \textit{Group Actions on $\mathbb{R}$-trees}
 Journal, Volume, Number, Dates (???)
+
+\bibitem{haglundss}
+ISOMETRIES OF CAT(0) CUBE COMPLEXES ARE SEMI-SIMPLE
 
 \bibitem{haglundwise}
 SPECIAL CUBE COMPLEXES
