@@ -431,6 +431,8 @@ We conjecture that primitive VHD complexes all have a fundamental group of \(\ma
 
 \chapter{Preliminaries}
 
+    This section collects general results and fixes terminology.
+
     A \emph{\(G\)-Tree} is an action of a group \(G\) on a simplicial tree without inversions. An element \(g\in G\) is \emph{elliptic} if \(g\) fixes a vertex and \emph{hyperbolic} otherwise. A subgroup \(H\leq G\) is \emph{elliptic} if there is a vertex that is fixed by all elements of \(H\). We denote the set of all elliptic subgroups by \(\mathcal{E}(G)\).
 
 \section{Examples}
@@ -788,6 +790,8 @@ Suppose \(X\) is a VH-complex. Then the vertical and horizontal decomposition gr
 
 \chapter{Locally finite trees and elliptic subgroups}
 
+In this section we prove various utility lemmas related to locally finite trees. We also give a key sufficient condition for when elliptic subgroup containment can be upgraded to equality.
+
 \begin{prop}
     [Hyperbolic gives unique minimal tree]
     \label{pro:uniquemintree}
@@ -873,6 +877,8 @@ See Proposition 3.1 from [2].
 \end{thm}
 
 \chapter{Transverse deformation spaces}
+
+In this section, we introduce the transverse property and use it to give a construction of a VH-complex with prescribed splittings. This construction will be the first step in bootstrapping the construction of the extended core used in the proof of the main theorem.
 
 \begin{dfn}
     [Transverse]
@@ -1017,6 +1023,7 @@ So, no non-trivial element fixes a vertex of \(X\times Y\). Hence \(G_x \cap G_y
 
 \chapter{Notions of convexity in products of trees}
 
+This section shows how fibers, quadrants, and orthants relate to each other. Later, we will use the fact that an object has connected fibers to conclude it's quadrant convex, and therefore simply-connected.
 
 \begin{dfn}
     [Quadrant Convex]
@@ -1028,6 +1035,12 @@ So, no non-trivial element fixes a vertex of \(X\times Y\). Hence \(G_x \cap G_y
     \label{dfn:treefibers}
     A \emph{fiber} of a product of trees is the inverse image of a point under a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A \emph{one-dimensional fiber} of a product of three trees is the inverse image of a point under a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
 \end{dfn}
+
+\begin{lem}
+	[Guirardel Lemma 5.4, Corollary 5.5]
+    \label{lem:guirardel} 
+	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
+\end{lem}
 
 \begin{thm}
     [Equivalent Quadrant Convex Condition]
@@ -1048,15 +1061,9 @@ So, no non-trivial element fixes a vertex of \(X\times Y\). Hence \(G_x \cap G_y
     A subset \(S\) of a product of three trees is \emph{orthant slice convex} if its fibers are quadrant convex.
 \end{dfn}
 
-\section{Building the orthant hull}
+\chapter{Building the orthant hull}
 
-\begin{lem}
-	[Guirardel Lemma 5.4, Corollary 5.5]
-    \label{lem:guirardel} 
-	Let \(T_{1} , T_{2}\) be two \(\mathbb{R}\)-trees and let \(F\) be a nonempty connected subset of \(T_{1} \times T_{2}\) with convex fibers. Then the complement of \(\overline{F}\) is a union of quadrants. That is, \(\overline{F}\) is also nonempty, connected, and has convex fibers.
-\end{lem}
-
-
+In this section we work by analogy with Guirardel's results on connected fibers and quadrant hulls. To create a quadrant hull one can either work subtractively by taking away quadrants or additively by adding material to connect fibers. We will work one dimension up with orthants instead of quadrants. Though we never actually take an orthant hull, we will by analogy build up an object by filling in fibers.
 
 \begin{prop}
     [Slices are connected]
@@ -1252,6 +1259,8 @@ Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{
 
 \chapter{Proof of main theorem}
 
+Starting with the hypotheses from the main theorem, this section breaks the proof into pieces.
+
 \section{Setup}
 
 Suppose for sake of a contradiction that there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that are pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Transversality and finite quotients are preserved by deformations. Therefore, by \ref{reducedcocompact}, without loss of generality we may assume that these are minimal \(G\)-trees after performing a sequence of elementary deformations. 
@@ -1338,6 +1347,8 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 
 \section{Filling}
 
+Filling is a way to ensure an object has connected 1-dimensional fibers; at least in the direction of the filling. Each time you fill, material is added that could in principle create disconnected fibers in the other two  directions. Here we apply the switching lemma \ref{lem:switching} in the context of the extended core construction so this does not happen and we obtain an object with connected 1-dimensional fibers. We also verify cocompactness.
+
 \begin{lem} 
 [Filling preserves cocompactness]
 \label{lem:fillingcocompact}
@@ -1348,9 +1359,11 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 \end{proof}
 \end{lem}
 
-Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP  by construction to get that \(E:= Kxyz\) is cocompact and has CCP. By switching \ref{lem:switching} \(E\) has connected 1-dimensional fibers. 
+To finish the construction of the extended core, repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP  by construction to get that \(E:= Kxyz\) is cocompact and has CCP. By switching \ref{lem:switching} \(E\) has connected 1-dimensional fibers. 
 
-\subsection{Topological properties of the Extended Core}
+\section{Topological properties of the Extended Core}
+
+Here we explain why the definition of VHD-complex is an appropriate generalization of a VH-complex and verify that \(E\) is a universal cover.
 
 \begin{dfn}
     [VHD-Complex]
@@ -1358,9 +1371,11 @@ Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that 
     We say \(X\) is a VHD-complex if it's a 3 dimensional cube complex with simplicial links and two-sided hyperplanes where edges are labelled one of V, H, or D and parallel edges have the same label.
 \end{dfn}
 
+To start, \(T_1\times T_2\times T_3\) has a natural VHD-complex structure with \(E\) as a \(G\)-invariant subset. The action is a product action so orbits of edges remain in the same parallelism class, therefore the quotient inherits the VHD-complex labeling. The tree actions do not have any inversions and therefore \(E\) and the quotient \(E/G\) have two-sided hyperplanes. Hence, \(E\) and \(E/G\) are VHD-complexes.
+
 
 \begin{rmk}
-    Our definition of VHD-Complex does not require that hyperplanes are injective on fundamental groups, only that hyperplanes are two-sided. The injectivity property is  however needed to obtain an honest graph of groups decomposition. For the VHD-Complex \(E/G\) we are considering the injectivity property follows from fact that there is a universal cover \(E\) with simply-connected hyperplanes. In dimension two, for a VH-Complex the injectivty follows automatically from the two-sided requirement and the vertex link requirement.
+    Our definition of VHD-Complex does not require that hyperplanes are injective on fundamental groups, only that hyperplanes are two-sided. The injectivity property is  however needed to obtain an honest graph of groups decomposition. For the VHD-Complex \(E/G\) we are considering the injectivity property follows from fact that there is a universal cover \(E\) with simply-connected hyperplanes. For comparison, in dimension two, for a VH-Complex the injectivty follows automatically from the two-sided requirement and the vertex link requirement.
 \end{rmk}
 
 \begin{lem}
@@ -1380,6 +1395,8 @@ Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that 
         Lastly, \(E\subseteq T_1\times T_2\times T_3\) is a \(G\)-invariant subset and therefore the action of \(G\) on \(E\) is also a covering space action.
     \end{proof}
 \end{lem}
+
+This lemma ensures \(E/G\) will have the correct fundamental group and is the main reason we need that \(E\) has connected 1-dimensional fibers. 
 
 \begin{lem}
     [Extended Core is simply connected]
@@ -1416,17 +1433,13 @@ Next we repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that 
 
 \section{Bieri dimension argument}
 
-\subsection{Finding original trees in extended core}
-We want to state that the VHD complex \(E\) has three splittings which correspond exactly to the original trees.
+At this stage the construction of \(E/G\) is complete. It's a three dimensional complex that splits in three ways over 2-dimensional VH-complexes. By Wise, VH-complexes themselves come with two splittings over 1-dimensional graphs. Lastly, graphs are themselves splittings over trivial groups. Using a result of Bieri, we show this iterated splitting pushes the cohomological dimension of \(G\) higher which gives the final contradiction needed for the proof of the main theorem.
+
+In order to use our assumptions we need to show the first iteration of splittings coming from the VHD complex \(E\) correspond exactly to the original trees.
 
 Earlier we proved that \(E\) is a graph of spaces, essentially because it sits within a product of trees. With this setup, after identification, the Bass-Serre maps that collapse vertex spaces to points and fibers of edge space products to points are projection maps. We're acting via a product action so projection maps are equivariant maps which means the image of \(E\) under projection is invariant. Lastly, our \(G\)-trees are minimal so the Bass-Serre maps from \(E\) map onto the original trees.
 
-
-\subsection{Apply Bieri to iterated splittings}
-
-Previously, we completed the construction of \(E\), a three dimensional complex that split in three ways over 2-dimensional VH-complexes. By Wise, VH-complexes themselves come with two splittings over 1-dimensional graphs. Lastly, graphs are themselves splittings over trivial groups. Using a result of Bieri, we show this iterated splitting pushes the cohomological dimension of \(G\) higher which gives the final contradiction needed for the proof of the main theorem.
-
-To start we restate corollaries of Bieri's results.
+Next, we restate corollaries of Bieri's results.
 \begin{lem}
 (See Corollary 6.5, Bieri, p87)
 Let \(G=G_1\ast_H G_2\) be an amalgamated product of groups of type \(FP_\infty\) over \(R\), with \(H\) a proper subgroup of finite index in both factors. Then for \(k=1,2\) we have: \[\text{cd}_R(G)=\text{cd}_R(G_k)+1.\]
