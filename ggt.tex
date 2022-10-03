@@ -487,21 +487,6 @@ An important non-example: The Torus has infinitely many graph of spaces decompos
 \end{exa}
 
 
-\section{Cited results}
-
-
-
-\begin{thm}
-    [Guirardel Core Theorem]
-    \label{thm:guirardelcore}
-    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, or being irreducible (see \ref{thm:classification}). Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
-\end{thm}
-
-\begin{rmk}
-    \label{guirardelcocompact}
-    As Guirardel explains after Theorem 8.1 in \cite{guirardelcorepaper}, if \(T_1\) and \(T_2\) are simplicial trees then the core from \ref{thm:guirardelcore} is cocompact.
-\end{rmk}
-
 
 
 \section{Actions on Trees}
@@ -686,6 +671,9 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \begin{lem}
     \label{reducedcocompact}
     If \(X\) is a \(G\)-tree that is reduced then it is minimal
+    \begin{proof}
+        (???) cite forester deformation and rigidity or add cocompactness and use a result from Bass
+    \end{proof}
 \end{lem}
 
 
@@ -799,7 +787,7 @@ In this section we prove various utility lemmas related to locally finite trees.
     If $G$ is acting on a tree $X$ and contains a hyperbolic element then there is a unique minimal subtree equal to the union of all hyperbolic axes. In particular it is non-empty.
 \end{prop}
 \begin{proof}
-See Proposition 3.1 from [2].
+See Proposition 3.1 from \cite{hymanbass}.
 \end{proof}
 \begin{prop}
     [Commensurable groups have the same minimal tree]
@@ -809,6 +797,8 @@ See Proposition 3.1 from [2].
 \begin{proof}
     This follows from \ref{pro:uniquemintree}, for details see Corollary 7.7 from \cite{hymanbass}.
 \end{proof}
+
+The reader should think about a sequence of folds from \ref{thm:folds} while reading the statements of \ref{lem:foldingpreserveshyp}, \ref{lem:pullbacklocallyfinite}, and \ref{lem:preservehyperbolicity}. Combined these lemmas allow us to inductively push properties across folds.
 
 \begin{prop}
     [Folding preserves properties]
@@ -852,6 +842,7 @@ See Proposition 3.1 from [2].
 \end{lem}
 
 
+We already saw that being in the same deformation space is equivalent to having the same elliptic subgroups. This further reduces the problem to having the same elliptic elements.
 \begin{thm}
     [Elliptic elements determine elliptic subgroups]
     \label{thm:ellelesubgroups} 
@@ -866,6 +857,8 @@ See Proposition 3.1 from [2].
     \end{proof}
 \end{thm}
 
+The following is used whenever we need to apply Bieri's results on dimension iteratively. This happens once during the transverse construction \ref{pro:transverseconstruction} as well as part of the final argument \ref{lem:iteratedsplitting} in the proof of the main theorem. The proof works by factoring a tree map into a sequence of folds and showing that the decomposition of the group into elliptic and hyperbolic elements is preserved across folds. In our setting, this decomposition is enough to force the elliptic subgroups to be preserved as well.
+
 \begin{thm}
     [Elliptic containment implies equality]
     \label{thm:ellipticimpliesequality} 
@@ -878,7 +871,7 @@ See Proposition 3.1 from [2].
 
 \chapter{Transverse deformation spaces}
 
-In this section, we introduce the transverse property and use it to give a construction of a VH-complex with prescribed splittings. This construction will be the first step in bootstrapping the construction of the extended core used in the proof of the main theorem.
+In this section, we introduce the transverse property and use it to  construct a VH-complex with two predetermined splittings. This will be the first step in bootstrapping the construction of the extended core.
 
 \begin{dfn}
     [Transverse]
@@ -889,6 +882,19 @@ In this section, we introduce the transverse property and use it to give a const
 \begin{rmk}
     The definition of transverse does not depend on the vertices chosen and remains unchanged up to deformation. \new{From the definition of transverse one gets that \(G_x\cap G_y\) is FP for a specific \(x\) and \(y\). Consider \(G_{x'}\). Local finiteness of \(X\) implies that \(G_{x'}\) and \(G_x\) are commensurable so they share a finite index subgroup. Taking the subgroup diagram and intersecting everything with \(G_y\) and checking the inclusions are still of finite index gives that \(G_{x'}\cap G_y\) is commensurable with \(G_x\cap G_y\) and so also must be FP. A similar argument works for vertices \(y'\) in the second tree.
     An elementary deformation either pulls a subgroup out into a new vertex group or pushes one back in. In either case, the tree remains transverse to the same trees.}
+\end{rmk}
+
+Given two tree actions one can take their product and use the diagonal action to obtain a new object that can fail to be cocompact. Guirardel's theorem below gives a way to find a cocompact subset in this situation. It's worth noting that the problem of finding a compact subset that carries the fundamental group of a space isn't always solvable. For a graph with a finitely generated fundamental group  one can find a compact core but Wise was able to find a 2-complex in \cite{wisecompactcore} where no compact subcomplex carried the fundamental group.
+
+\begin{thm}
+    [Guirardel Core Theorem]
+    \label{thm:guirardelcore}
+    Let \(T_1\), \(T_2\) be two minimal actions of \(G\) on \(\mathbb{R}\)-trees having non-homothetic length functions, or being irreducible (see \ref{thm:classification}). Assume that \(T_1\) and \(T_2\) are not the refinement of a common simplicial non-trivial action. Then there exists a subset \(\mathscr{C}\subseteq T_1\times T_2\) which is the smallest non-empty closed invariant connected subset of \(T_1\times T_2\) having convex fibers. Moreover, \(\mathscr{C}\) is CAT(0) for the induced path-metric, and \(T_1\times T_2\) equivariantly deformation retracts to \(\mathscr{C}\). We call \(\mathscr{C}\) the core of \(T_1\times T_2\).
+\end{thm}
+
+\begin{rmk}
+    \label{guirardelcocompact}
+    As Guirardel explains after Theorem 8.1 in \cite{guirardelcorepaper}, if \(T_1\) and \(T_2\) are simplicial trees then the core from \ref{thm:guirardelcore} is cocompact.
 \end{rmk}
 
 \begin{dfn}
@@ -938,6 +944,10 @@ In this section, we introduce the transverse property and use it to give a const
 \end{lem}
 
 The following should be thought of as a prequel to the main theorem \ref{thm:martino}. In one of the implications below we take two trees, impose a condition on its vertex stabilizers, apply the Guirardel Core machinery \ref{thm:guirardelcore}, and finally produce a compact 2-dimensional complex with a prescribed fundamental group. In the proof of the sequel, we will take three trees, impose a similar condition on vertex stabilizers, carefully arrange that a key lemma of Guirardel \ref{thm:guirardelsliceconvex} applies, and finally produce a compact 3-dimensional complex.
+
+
+
+
 
 \begin{thm}
     [Transverse Construction]
@@ -1023,18 +1033,46 @@ So, no non-trivial element fixes a vertex of \(X\times Y\). Hence \(G_x \cap G_y
 
 \chapter{Notions of convexity in products of trees}
 
-This section shows how fibers, quadrants, and orthants relate to each other. Later, we will use the fact that an object has connected fibers to conclude it's quadrant convex, and therefore simply-connected.
+% - intro qc
+% - qc => sc
+% - qc <=> connected fibers
+
+% - connected slices
+% - def filling, coning
+% - switching
+
+% - cocompactness
+
+This section develops the definitions for fibers, filling, and quadrant convexity along with the tools needed to apply them during the construction of the extended core.  
 
 \begin{dfn}
     [Quadrant Convex]
-    A subset \(S \subset T_1\times T_2\) is \emph{quadrant convex} if the complement is the union of quadrants. The \emph{quadrant hull} of a set \(S\) is the smallest quadrant convex subset containing \(S\) or it's the intersection of all quadrant convex subsets containing \(S\). Equivalently, it's the complement of the union of all quadrants disjoint from \(S\). 
+    A subset \(S \subset T_1\times T_2\) is \emph{quadrant convex} if the complement is the union of quadrants. The \emph{quadrant hull} of a set \(S\) is the smallest quadrant convex subset containing \(S\) i.e. it's the intersection of all quadrant convex subsets containing \(S\). Equivalently, it's the complement of the union of all quadrants disjoint from \(S\). 
 \end{dfn}
+
+
+The following proposition is the first important application of quadrant convexity. Guirardel uses it to prove that his core is simply connected and later we will use it to show that the hyperplanes in our extended core are simply connected as a step towards showing the entire space is also simply connected.
+
+\begin{prop}
+    [Quadrant Convex implies Deformation Retraction]
+    Let \(T_1\) and \(T_2\) be simplicial trees, and \(S\) a connected quadrant convex subset of \(T_1\times T_2\), then there is a deformation retraction from \(p_1(S) \times p_2(S)\) onto S. 
+    
+    \begin{proof}
+        Guirardels' proof of prop 4.17 from \cite{guirardelcorepaper}.
+    \end{proof}
+\end{prop}
+
+\begin{rmk}
+    Later we will find subsets \(S\) where \(p_i(S)\) is a tree for \(i\in\{1,2\}\) and we will conclude \(S\) is simply connected.
+\end{rmk}
 
 \begin{dfn}
     [Fibers in trees]
     \label{dfn:treefibers}
     A \emph{fiber} of a product of trees is the inverse image of a point under a projection map; e.g. \( \pi_1^{-1}(x) = \{x\} \times Y\) is a fiber of \(X\times Y\). A \emph{one-dimensional fiber} of a product of three trees is the inverse image of a point under a map \(\pi_{jk}: T_1\times T_2\times T_3 \to T_j\times T_k\) given by \(p = (p_1,p_2,p_3) \mapsto (p_j, p_k)\). We use similar terminology for subsets of tree products, that is a one-dimensional fiber of a subset of a product of trees is the intersection of that subset with a one-dimensional fiber of the product.
 \end{dfn}
+
+Next, we give an equivalence between connected fibers and quadrant convexity. The forward direction gives the second important application of quadrant convexity. During the construction of the extended core we will show a set has connected fibers, is quadrant convex, and simply connected with each proving the next in turn.
 
 \begin{lem}
 	[Guirardel Lemma 5.4, Corollary 5.5]
@@ -1047,23 +1085,26 @@ This section shows how fibers, quadrants, and orthants relate to each other. Lat
     \label{thm:guirardelsliceconvex}
     Let \(X\) and \(Y\) be two simplicial trees and \(F\subset X\times Y\) a closed subset. Then \(F\) is quadrant convex if and only if all of its fibers are connected.
     \begin{proof}
-        Follows immediately from Lemma 5.4 from \cite{guirardelcorepaper} and the fact that  quadrant convex implies connected fibers.
+        Follows immediately from \ref{lem:guirardel} and the fact that  quadrant convex implies connected fibers.
     \end{proof}
 \end{thm}
 
-\begin{dfn}
-    [Orthant Convex]
-    A subset \(S\) of a product of three trees is \emph{orthant convex} if its complement is a union of orthants.
-\end{dfn}
 
-\begin{dfn}
-    [Orthant Slice Convex]
-    A subset \(S\) of a product of three trees is \emph{orthant slice convex} if its fibers are quadrant convex.
-\end{dfn}
+% DO WE STILL NEED THESE?
+% \begin{dfn}
+%     [Orthant Convex]
+%     A subset \(S\) of a product of three trees is \emph{orthant convex} if its complement is a union of orthants.
+% \end{dfn}
 
-\chapter{Building the orthant hull}
+% \begin{dfn}
+%     [Orthant Slice Convex]
+%     A subset \(S\) of a product of three trees is \emph{orthant slice convex} if its fibers are quadrant convex.
+% \end{dfn}
 
-In this section we work by analogy with Guirardel's results on connected fibers and quadrant hulls. To create a quadrant hull one can either work subtractively by taking away quadrants or additively by adding material to connect fibers. We will work one dimension up with orthants instead of quadrants. Though we never actually take an orthant hull, we will by analogy build up an object by filling in fibers.
+\section{Building the orthant hull}
+
+In this section we work by analogy with Guirardel's results on connected fibers and quadrant hulls. To create a quadrant hull one can either work subtractively by taking away quadrants or additively by connecting fibers with new material. We will work additively one dimension up and build  an object by filling in fibers.
+
 
 \begin{prop}
     [Slices are connected]
@@ -1077,6 +1118,7 @@ In this section we work by analogy with Guirardel's results on connected fibers 
     \end{align*}
 \end{prop}
 
+The following definition serves only to give a name to an object created by Guirardel during the proof of the extension lemma \ref{lem:guirardel-extension}.
 \begin{dfn}
     [Subgraph Coning]
     \label{dfn:subgraphconing}
@@ -1097,7 +1139,7 @@ In this section we work by analogy with Guirardel's results on connected fibers 
 \end{dfn}
 
 \begin{dfn}
-    [Property CCP: Connected in coordinate planes]
+    [Connected in coordinate planes]
     \label{defn:ccp} 
     Let \(S \subseteq X_1\times X_2\times X_3\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) path is connected for all \(p \in X_{k}\) for all \(k\in \{1,2,3\}\).
 \end{dfn}
@@ -1257,6 +1299,19 @@ Let $T_1$ and $T_2$ be trees with $x_2\in T_2$. Then $$T_1\times x_2 = \bigcup_{
     \end{proof}
 \end{lem}
 
+
+\section{Cocompactness of orthant hulls}
+
+\begin{lem} 
+[Filling preserves cocompactness]
+\label{lem:fillingcocompact}
+    Let $T_1,T_2,T_3$ be simplicial $G$-trees that are pairwise transverse and $S\subset T_1\times T_2\times T_3$ an invariant cocompact subcomplex. Then $S_x$ is also cocompact.
+\begin{proof}
+    Observe that $S\subseteq T_1\times B$ where $B=\pi_{23}(S)$. Under the product action $B$ is an invariant set. Projection is a continuous map so $B$ is cocompact. Next, consider a one-dimensional fiber of $S$ above a point, that is $S' = S\cap (T_1\times \{b\})$ where $b\in B$ is a vertex. Because $T_2$ and $T_3$ are transverse the stabilizer of $b$ is trivial. Hence, the quotient map on the one-dimensional fiber $S'$ is an embedding into a compact set $S/G$. Hence, $S'$ is also compact. For each vertex $b\in B$ consider the one-dimensional fiber $S\cap (T_1\times \{b\})$, the action in $T_1$ is by simplicial automorphisms so distances are preserved. Hence, every one-dimensional fiber in an orbit has the same finite diameter. Because $B$ is cocompact there are a finite number of vertex orbits and therefore a universal bound on the diameters of one-dimensional fibers above vertices. After identifying a one-dimensional fiber with $T_1$ we see that each vertex of $S_x$ is obtained by filling in the convex hull of some one-dimensional fiber; more precisely, if $v\in S_x$ then for some $b\in B$ a vertex, $v_1\in \text{cvx}(\pi_1(S\cap(T_1\times \{b\})))$ where $v_1$ is the first coordinate of $v$.) In particular, $S_x$ is contained within a bounded neighborhood of $S$ with the product metric. Since $S$ was a subcomplex, so is $S_x$. Hence, $S_x$ is cocompact.
+    % (We are relying on $S_x$ being a subcomplex so that we can prove that it is cocompact by saying there are a finite number of vertex orbits in $B$ and each element of an orbit has a universally bounded number of vetices) ((Could also argue that this si cocompact by saying in the product metric - really just one factor - it's a subcomplex contained in a bounded neibhorhood))
+\end{proof}
+\end{lem}
+
 \chapter{Proof of main theorem}
 
 Starting with the hypotheses from the main theorem, this section breaks the proof into pieces.
@@ -1274,10 +1329,11 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
         The content of this technical lemma is that maps from a 2-complex that are constant on leaves can be extended to a map with connected fibers by enlarging the 2-complex.
         \begin{lem}
             \label{lem:guirardel-extension}
-            (Lemma 8.9 in Guirardel)
+            (Guirardel's Extension Lemma)
             Consider a geometric action of a finitely generated group \(G\) on an \(\mathbb{R}\)-tree \(T\), and let \(X\) be a 2-complex endowed with a free properly discontinuous cocompact action of \(G\). Let \(\mathscr{F}\) be a \(G\)-invariant measured foliation on \(X\). Consider a map \(f: X \to T\) which is constant on leaves of \(\mathscr{F}\), and isometric in restriction to transverse edges of \(X\). Then there exists a 2-complex \( X'\) containing \(X\), endowed with a free properly discontinuous cocompact action of \(G\), a measured foliation \(\mathscr{F} '\) extending \(\mathscr{F}\), and which induces an isometry between \(X'/ \mathscr{F}'\) and \(T\). Moreover, the inclusion \(X \subseteq X'\) induces an epimorphism of fundamental groups.
         \end{lem}
         
+        Next, we check that the extension lemma can be used within our setting.
 \begin{lem}
 [Technical assumptions for Guirardel]
     \label{lem:technicalconditions}
@@ -1293,7 +1349,13 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
 
         Next, let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. 
         
-        Our goal is to produce a map from \(\widetilde {X_{12}}^+\) to \(T_1\times T_2\times T_3\). The map \(f_{123}^+\) is already defined on all of \(\widetilde {X_{12}}^+\), so it remains to extend the Bass-Serre maps \(f_{121}\) and \(f_{122}\). By construction, \(\widetilde {X_{12}}^+\) has the form of a \(\Lambda(f_{123}, K)\) from \ref{dfn:subgraphconing} for some choice of \(K\). Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps to \(\widetilde {X_{12}}^+\) by applying \ref{lem:confib}. This gives extensions \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). Form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\). Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. By \ref{prop:fibershomeoplanes} \(J\) has property CCP.
+        Our goal is to produce a map from the extended complex \(\widetilde {X_{12}}^+\) to \(T_1\times T_2\times T_3\). The map   \(f_{123}^+\) defined on \(\widetilde {X_{12}}^+\) is already determined by the extension lemma, so it remains to extend the Bass-Serre maps \(f_{121}\) and \(f_{122}\) from \(\widetilde {X_{12}}\) to \(\widetilde {X_{12}}^+\). 
+        
+        By construction, \(\widetilde {X_{12}}^+\) has the form \(\Lambda(f_{123}, K)\) from \ref{dfn:subgraphconing} for some choice of graph \(K\). Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps to \(\widetilde {X_{12}}^+\) by applying \ref{lem:confib}. Denote the resulting extensions by \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations by  \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
+        
+        Form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\). Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. 
+        
+        Finally, by \ref{prop:fibershomeoplanes} \(J\) has property CCP.
         
         \begin{rmk}
             The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps.
@@ -1347,17 +1409,9 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 
 \section{Filling}
 
-Filling is a way to ensure an object has connected 1-dimensional fibers; at least in the direction of the filling. Each time you fill, material is added that could in principle create disconnected fibers in the other two  directions. Here we apply the switching lemma \ref{lem:switching} in the context of the extended core construction so this does not happen and we obtain an object with connected 1-dimensional fibers. We also verify cocompactness.
+Filling is a way to ensure an object has connected 1-dimensional fibers; at least in the direction of the filling. Each time you fill, material is added that could in principle create disconnected fibers in the other two  directions. Here we apply the switching lemma \ref{lem:switching} in the context of the extended core construction so this does not happen and we obtain an object with connected 1-dimensional fibers. 
 
-\begin{lem} 
-[Filling preserves cocompactness]
-\label{lem:fillingcocompact}
-    Let $T_1,T_2,T_3$ be simplicial $G$-trees that are pairwise transverse and $S\subset T_1\times T_2\times T_3$ an invariant cocompact subcomplex. Then $S_x$ is also cocompact.
-\begin{proof}
-    Observe that $S\subseteq T_1\times B$ where $B=\pi_{23}(S)$. Under the product action $B$ is an invariant set. Projection is a continuous map so $B$ is cocompact. Next, consider a one-dimensional fiber of $S$ above a point, that is $S' = S\cap (T_1\times \{b\})$ where $b\in B$ is a vertex. Because $T_2$ and $T_3$ are transverse the stabilizer of $b$ is trivial. Hence, the quotient map on the one-dimensional fiber $S'$ is an embedding into a compact set $S/G$. Hence, $S'$ is also compact. For each vertex $b\in B$ consider the one-dimensional fiber $S\cap (T_1\times \{b\})$, the action in $T_1$ is by simplicial automorphisms so distances are preserved. Hence, every one-dimensional fiber in an orbit has the same finite diameter. Because $B$ is cocompact there are a finite number of vertex orbits and therefore a universal bound on the diameters of one-dimensional fibers above vertices. After identifying a one-dimensional fiber with $T_1$ we see that each vertex of $S_x$ is obtained by filling in the convex hull of some one-dimensional fiber; more precisely, if $v\in S_x$ then for some $b\in B$ a vertex, $v_1\in \text{cvx}(\pi_1(S\cap(T_1\times \{b\})))$ where $v_1$ is the first coordinate of $v$.) In particular, $S_x$ is contained within a bounded neighborhood of $S$ with the product metric. Since $S$ was a subcomplex, so is $S_x$. Hence, $S_x$ is cocompact.
-    % (We are relying on $S_x$ being a subcomplex so that we can prove that it is cocompact by saying there are a finite number of vertex orbits in $B$ and each element of an orbit has a universally bounded number of vetices) ((Could also argue that this si cocompact by saying in the product metric - really just one factor - it's a subcomplex contained in a bounded neibhorhood))
-\end{proof}
-\end{lem}
+
 
 To finish the construction of the extended core, repeatedly apply lemma \ref{lem:fillingcocompact} and use the fact that filling preserves CCP  by construction to get that \(E:= Kxyz\) is cocompact and has CCP. By switching \ref{lem:switching} \(E\) has connected 1-dimensional fibers. 
 
@@ -1411,9 +1465,10 @@ This lemma ensures \(E/G\) will have the correct fundamental group and is the ma
         
         % - Later we still need to show that E/G is a graph of spaces so perhaps it's impossible to separate
     
-        We will show that $E$ is the total space of a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree. The edge spaces are hyperplanes and the vertex spaces are the connected components of the complement of the corridors of the hyperplanes. Now, $E$ is a subset of a product so hyperplanes are embedded and two-sided and come with maps to each side of their corridor. 
+        We will show that \(E\) is the total space of a graph of spaces where the edge and vertex spaces are simply connected and the underlying graph is a tree. The edge spaces are hyperplanes and the vertex spaces are the connected components of the complement of the corridors of the hyperplanes. Now, $E$ is a subset of a product so hyperplanes are embedded and two-sided and come with maps to each side of their corridor. 
         
-        By Property CCP the intersection of $E$ with hyperplanes are path connected. Since hyperplanes are the intersection of fibers (e.g. $\pi_1^{-1}(p)$) with $E$ we have that they are separating. This means the underlying graph is a tree. Because $E$ has connected 1-dimensional fibers the hyperplanes also have connected 1-dimensional fibers and so are quadrant convex by Guirardel \ref{thm:guirardelsliceconvex} and so are also simply connected. Hence, $E$ is a tree of simply connected spaces and is therefore simply connected.
+        The hyperplanes of \(E\) are the connected components of the intersections of fibers (e.g. \(\pi_1^{-1}(p)\)) with \(E\).
+        By Property CCP then, the hyperplanes are path connected. Since the fibers are separating, the hyperplanes are also separating. This means the underlying graph is a tree. Because $E$ has connected 1-dimensional fibers the hyperplanes also have connected 1-dimensional fibers and so are quadrant convex by Guirardel \ref{thm:guirardelsliceconvex} and so are also simply connected. Hence, $E$ is a tree of simply connected spaces and is therefore simply connected.
         
         %Our \(E\) inherits a VHD structure from the product of three trees that it sits in. 
         
@@ -1465,11 +1520,11 @@ The following lemma shows that the second step in the iterative splitting is non
     \label{lem:iteratedsplitting} 
     Let \(T_1\) and \(T_2\) be two non-trivial locally finite \(G\)-trees in different deformation spaces. Then the vertex groups of each tree act non-trivially on the other tree.
     \begin{proof}
-        Suppose \(x\) were a vertex of \(T_1\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_2\). If \(K\) had a global fixed point in \(T_2\)  then by local finiteness of \(T_1\) every vertex group of \(T_1\) would as well. Then by \ref{thm:ellipticimpliesequality} \(T_1\) and \(T_2\) are in the same deformation space; a contradiction.
+        Suppose \(x\) were a vertex of \(T_1\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_2\). If \(K\) had a global fixed point in \(T_2\)  then by local finiteness of \(T_1\) every vertex group of \(T_1\) would as well. Then by \ref{thm:ellipticimpliesequality} \(T_1\) and \(T_2\) are in the same deformation space; a contradiction. Therefore, \(K\) acts non-trivially on \(T_2\) as needed.
     \end{proof}
 \end{lem}
 
-We will now iterate the splitting process and then apply Bieri. To begin, by assumption each of the original splittings \(T_1\), \(T_2\), and \(T_3\) is non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} those vertex groups act non-trivially on the other two trees. Moreover, as each vertex group is the fundamental group of a VH-complex from \ref{thm:wisegraph} the vertex groups split as a graph of free groups. These last splittings are themselves splittings over trivial groups -- but are they trivial splittings? Here we need to assume that at least one sequence of iterated splittings ends in a graph with positive rank.
+We will now iterate the splitting process and then apply Bieri. To begin, by assumption each of the original splittings \(T_1\), \(T_2\), and \(T_3\) are non-trivial. Now, consider the vertex groups of a given splitting. By lemma \ref{lem:iteratedsplitting} each of those vertex groups acts non-trivially on the other two trees. These non-trivial actions are the second iteration of the splitting process. Each vertex group from the original splitting is a fundamental group of a VH-complex, by \ref{thm:wisegraph} they split as a graph of spaces where the vertex and edge spaces are themselves graphs. The graphs can be regarded as splittings over the trivial group -- but are they trivial splittings? It could happen that every graph has trivial fundamental group. Here we need to assume that at least one sequence of iterated splittings ends in a graph with positive rank.
         
 Then by the Bieri dimension theorem \ref{pro:bireridimension}, \(G\) has dimension 3, a contradiction. This completes the proof of the main theorem.
 
@@ -1532,6 +1587,9 @@ Forester deformation and rigidity
 
 \bibitem{wisethesis}
 Wise Thesis
+
+\bibitem{wisecompactcore}
+A Covering Space with No Compact Core
 
 \bibitem{boundingcomplexity}
 Bounding the complexity of simpliciail group actions
