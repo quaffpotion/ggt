@@ -412,11 +412,13 @@ We are interested in groups acting on locally finite trees. By Bass-Serre theory
 
 In order to have access to results from homological algebra and make the problem tractable we restrict ourselves to cocomapct actions where the stabilizers are FP. Property FP along with \(FP_n\), \(FP_\infty\), and \(F\) are all related finiteness properties. We will only need Property FP; for examples take groups \(G\) with cocompact finite dimensional \(K(G,1)\) spaces. Our setting then is finite index graphs of groups where the vertex and edge groups are FP and the quotient graph is finite. (Note, finite index implies that if any stabilizer is FP then they all are)
 
-One basic question to ask of a group is it's cohomological dimension. Trivial groups have dimension zero, non-abelian free groups have dimension one, and so on. Even at dimension two there are interesting examples that fit within our setup. Danny Wise as well as Burger and Mozes used a kind of square complex called a VH-complex to produce intricate examples of groups with special properties. 
+One basic question to ask of a group is it's cohomological dimension. Trivial groups have dimension zero, non-abelian free groups have dimension one, and so on. Even at dimension two there are interesting examples that fit within our setup. Danny Wise invented a kind of 2-complex called a VH-complex and used them to construct groups with no finite quotients \cite{wisethesis}. Burger and Mozes produced infinite, finitely presented, torsion-free simple groups in the same class \cite{burgermozes}.
 
-Our goal is to fix a group \(G\) of dimension two (as this is the first interesting case after free groups) and give a uniqueness result. Already, Wise has shown that \(G\) comes with two splittings but there is no comment on uniqueness and indeed the torus shows that \(\mathbb{Z}\times\mathbb{Z}\) has an infinite number of splittings all lying in different deformation spaces. We will however show that for certain actions the answer is exactly two.
+Our goal is to fix a group \(G\) of dimension two (as this is the first interesting case after free groups) and give a uniqueness result on the number of splittings. Already, Wise has shown that \(G\) comes with two splittings but there is no comment on uniqueness and indeed the torus shows that \(\mathbb{Z}\times\mathbb{Z}\) has an infinite number of splittings all lying in different deformation spaces. We will show that for certain actions the answer is exactly two.
 
-The proof proceeds by encoding two tree actions into a single square complex called Guirardel's core. Then, using a supposed third action we are able to construct a three dimensional complex that can be built up from lower dimensional complexes in such a way that results of Bieri on dimension apply. The result is an extended core with dimension three that \(G\) acts on; this contradicts the original assumption that \(G\) only had dimension two. 
+The proof proceeds by encoding two tree actions into a single square complex called Guirardel's core. Then, using a supposed third action we are able to construct a three dimensional complex that can be built up from lower dimensional complexes in such a way that results of Bieri on cohomological dimension apply. The result is an extended core with dimension three that \(G\) acts on; this contradicts the original assumption that \(G\) only had dimension two. 
+
+By analogy with VH-complexes that come with a vertical and horizontal splitting thanks to the work of Wise, our extended core  will satisfy the VHD property (see \ref{dfn:vhd}, here ``D'' stands for ``Depth'') that we introduce below. Not all VHD complexes will have a third splitting but we show our extended core does. Lastly, it's possible to have a VHD-complex where the splittings are in a sense degenerate for our purposes; essentially the splitting process can be iterated until only graphs remain and we require at least one graph of positive rank. We call these primitive \ref{dfn:primitive} VHD-complexes and account for them.
 
 The main result is the following.
 \begin{thm}
@@ -438,39 +440,76 @@ We conjecture that primitive VHD complexes all have a fundamental group of \(\ma
 
     This section collects general results and fixes terminology.
 
-    A \emph{\(G\)-Tree} is an action of a group \(G\) on a simplicial tree without inversions. An element \(g\in G\) is \emph{elliptic} if \(g\) fixes a vertex and \emph{hyperbolic} otherwise. A subgroup \(H\leq G\) is \emph{elliptic} if there is a vertex that is fixed by all elements of \(H\). We denote the set of all elliptic subgroups by \(\mathcal{E}(G)\).
+% \section{Examples}
 
-\section{Examples}
+% (??? work on examples)
+% \begin{exa}
+% Need an example of a collapse expand move / reduced not reduced / etc.
+% \end{exa}
 
-(??? work on examples)
+% \begin{exa}
+% give the standard Bass-Serre example about SL2Z etc
+% \end{exa}
+
+% \begin{exa}
+% Spell out the standard picture where FH, FL, FP sort of correspond to the module situation with ZG ... \(ZG^k\) where k is the number of cells and the slot is the dimension of cells
+
+% ...has a cellular chain complex ... free Z modules infinite rank
+% ...group into copies of ZG ...
+
+
+
+% ===
+
+
+
+
+
+
+% \end{exa}
+
+
+
+
+
+\section{Actions on Trees}
+
+In this section we introduce \(G\)-trees, their equivalence with graphs of groups, and related results.
+
+A \emph{\(G\)-Tree} is an action of a group \(G\) on a simplicial tree without inversions. An element \(g\in G\) is \emph{elliptic} if \(g\) fixes a vertex and \emph{hyperbolic} otherwise. A subgroup \(H\leq G\) is \emph{elliptic} if there is a vertex that is fixed by all elements of \(H\). We denote the set of all elliptic subgroups by \(\mathcal{E}(G)\).
+
+\begin{dfn}
+    [Minimal Action]
+    \label{defn:minimal}
+    We say a $G$-tree is \emph{minimal} if there is no proper invariant subtree.
+\end{dfn}
+
+Under the correspondence between \(G\)-trees and graphs of groups, minimality is equivalent to requiring that every proper subgraph corresponds to a proper subgroup of \(G\).
+
+From \cite{boundingcomplexity} we have the following classification of \(G\)-trees. Note, any tree action can be made to act without inversions by subdividing once.
+\begin{thm}
+    [\(G\)-tree Classification]
+    \label{thm:classification}
+    Let \(G\) be a finitely generated group and \(T\) a minimal \(G\)-tree acting without inversions. Then \(T\) satisfies exactly one of the following:
+    
+    \begin{enumerate}
+        \item Elliptic: \(T\) is a point or equivalently every element of \(G\) is elliptic.
+        \item Dihedral: \(T\) is a line and there exists an epimorphism from \(G\) to the infinite dihedral group.
+        \item Parabolic: \(T\) has one end fixed by \(G\). Additionally, there is an epimorphism from \(G\) to \(\mathbb{Z}\).
+        \item Hyperbolic (i.e. irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
+    \end{enumerate}
+\end{thm}
+
+Given a \(G\)-tree, or equivalently a graph of groups a \emph{collapse move} produces a new graph where an edge corresponding to \(A*_CC\) is collapsed to a vertex \(A\). The reverse is called an \emph{expansion move}. An \emph{elementary deformation} is a finite sequence of such moves. We say a \(G\)-tree is \emph{reduced} when one can no longer perform any collapse moves. For details and examples see \cite{foresterdeformationrigidity}, \cite{mattclay}.
+
+\begin{dfn}
+    [Deformation Space]
+    We say two \(G\)-trees \(T_1\) and \(T_2\) are in the same \emph{deformation space} if there is an elementary deformation from \(T_1\) to \(T_2\).
+\end{dfn}
+
 \begin{exa}
-Need an example of a collapse expand move / reduced not reduced / etc.
-\end{exa}
 
-\begin{exa}
-give the standard Bass-Serre example about SL2Z etc
-\end{exa}
-
-\begin{exa}
-Spell out the standard picture where FH, FL, FP sort of correspond to the module situation with ZG ... \(ZG^k\) where k is the number of cells and the slot is the dimension of cells
-
-...has a cellular chain complex ... free Z modules infinite rank
-...group into copies of ZG ...
-
-
-
-===
-
-
-
-
-
-
-\end{exa}
-
-\begin{exa}
-
-An important non-example: The Torus has infinitely many graph of spaces decompositions each lying in a different deformation space. To see this, note that simple closed curves on the torus correspond to graph of spaces decompositions with the curve as the edge space. Up to homotopy, such curves correspond to extended rationals e.g. r/s, 1/0, and 0/1 each telling you how many times a curve wraps around both directions of the torus. The wrapping numbers correspond to coordinates of \(\mathbb{Z}\times \mathbb{Z}\), so r/s corresponds to the cyclic subgroup \(\langle (r,s)\rangle\leq \mathbb{Z}\times \mathbb{Z}\). With this perspective, \(\mathbb{Z}\times \mathbb{Z}\) can be viewed as an HNN extension (i.e. a graph of groups with exactly one edge and one vertex) where the vertex and edge space is named by some r/s. The elliptic subgroups are exactly the vertex group and it's subgroups therefore by  \ref{thm:forester} each splitting is in a different deformation space.
+An important example: The Torus has infinitely many graph of spaces decompositions each lying in a different deformation space. To see this, note that simple closed curves on the torus correspond to graph of spaces decompositions with the curve as the edge space. Up to homotopy, such curves correspond to extended rationals e.g. r/s, 1/0, and 0/1 each telling you how many times a curve wraps around both directions of the torus. The wrapping numbers correspond to coordinates of \(\mathbb{Z}\times \mathbb{Z}\), so r/s corresponds to the cyclic subgroup \(\langle (r,s)\rangle\leq \mathbb{Z}\times \mathbb{Z}\). With this perspective, \(\mathbb{Z}\times \mathbb{Z}\) can be viewed as an HNN extension (i.e. a graph of groups with exactly one edge and one vertex) where the vertex and edge space is named by some r/s. The elliptic subgroups are exactly the vertex group and it's subgroups therefore by  \ref{thm:forester} each splitting is in a different deformation space.
 
 
 
@@ -492,25 +531,23 @@ An important non-example: The Torus has infinitely many graph of spaces decompos
 \end{exa}
 
 
+% "Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
 
+% In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
 
-\section{Actions on Trees}
+% Update: Still looking for this result from the bass paper
 
-From \cite{boundingcomplexity} we have the following classification of \(G\)-trees.
-\begin{thm}
-    [\(G\)-tree Classification]
-    \label{thm:classification}
-    Let \(G\) be a finitely generated group and \(T\) a minimal \(G\)-tree acting without inversions, then \(T\) satisfies exactly one of the following:
-    
-    \begin{enumerate}
-        \item Elliptic: \(T\) is a point or equivalently every element of \(G\) is elliptic.
-        \item Dihedral: \(T\) is a line and there exists an epimorphism from \(G\) to the infinite dihedral group.
-        \item Parabolic: \(T\) has one end fixed by \(G\). Additionally, there is an epimorphism from \(G\) to \(\mathbb{Z}\).
-        \item Hyperbolic (i.e. irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
-    \end{enumerate}
-\end{thm}
+% )
+\begin{lem}
+    \label{reducedcocompact}
+    If \(X\) is a \(G\)-tree that is reduced then it is minimal
+    \begin{proof}
+        See Forester \cite{foresterdeformationrigidity}.
+    \end{proof}
+\end{lem}
 
-The following is a corollary of the main theorem from \cite{foresterdeformationrigidity}.
+The following is a corollary of the main theorem from \cite{foresterdeformationrigidity} that relates elliptic subgroups and deformations.
+
 \begin{thm} [Forester]
     \label{thm:forester}
     Let \(G\) be a group and let \(X\) and \(Y\) be cocompact \(G\)–trees. The following conditions are equivalent.
@@ -525,6 +562,8 @@ If all vertex stabilizers are finitely generated then we may also include:
 \end{enumerate}
 \end{thm}
 
+
+If one \(G\)-tree contains the elliptic subgroups of another it is possible to produce a \(G\)-map between the two trees. This map in turn can be analyzed using Stallings folds as in \ref{lem:gmapfactor}.
 \begin{prop}
 [Equivariant Map equivalent to elliptic subgroup containment]
 \label{pro:gmapfromsubset}
@@ -535,7 +574,7 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 \end{enumerate}
 \end{prop}
 \begin{proof}
-    For (1)$\Rightarrow$(2) we will construct a $G$-map. As in \ref{lem:affineequivariantmap} we start by defining a map on representatives of vertex orbits and extending equivariantly. Pick a vertex \(x\in X\), by (1) \(G_x\) is also elliptic in \(Y\) and so fixes at least one vertex, say \(y\). Define \(f(x)=y\). Next, we check that the resulting map is well-defined.
+    For (1)$\Rightarrow$(2) we will construct a $G$-map. As in \ref{lem:affineequivariantmap} we start by defining a map on representatives of vertex orbits and extending equivariantly. Pick a vertex \(x\in X\), by (1) \(G_x\) is also elliptic in \(Y\) and so fixes at least one vertex, say \(y\). Define \(f(x)=y\) and \(f(gx) = gy\) for all \(g\in G\). Next, we check that the resulting map is well-defined.
     
     Indeed, if \(gv = hv\) then \(g^{-1}h = v\) which means \(g^{-1}h \in G_v\). Then by the definition of \(f\) the element \(g^{-1}h\) fixes \(f(v)\in Y\). Hence,
     
@@ -546,38 +585,42 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
     For (2)$\Rightarrow$(1), suppose $f:X\to Y$ was a simplicial $G$-map. Consider a vertex group of $X$, say $G_x$. Let $g\in G_x$, then $g\cdot f(x)=f(g\cdot x)=f(x)$ a vertex in $Y$ since the map is simplicial. Hence, $G_x$ also fixes the vertex $f(x)\in Y$. Hence, every vertex group for $X$ fixes a vertex of $Y$. Therefore, every elliptic subgroup for $X$ is also elliptic for $Y$.
 \end{proof}
 
-\begin{dfn}
-    [Minimal Action]
-    \label{defn:minimal}
-    We say a $G$-tree is \emph{minimal} if there is no proper invariant subtree.
-\end{dfn}
-
+Bass-Serre Theory is responsible for the correspondence between \(G\)-trees and graph of groups decompositions of \(G\). The original construction creates a tree from cosets but the following definition is inspired by the topological reformulation given by Scott and Wall in \cite{scottwall}.
 \begin{dfn}
     [Bass-Serre Map]
     \label{defn:bsmap}
-    The universal cover of a graph of spaces is a tree of spaces. Define a map to the underlying tree taking $X_v$ to a point and $X_e \times I$ to an edge by collapsing fibers. This map is called a Bass-Serre map.
+    The universal cover of a graph of spaces is a tree of spaces. Define a map to the underlying tree taking $X_v$ to the vertex \(v\) and $X_e \times I$ to the edge \(e\) by collapsing fibers. This map is called a Bass-Serre map.
 \end{dfn}
 
+Here we list some technical definitions that are not part of the standard background for \(G\)-trees but are needed here or appear in results we cite.
+
+To start, we are most interested in \(G\)-trees of the following type.
+\begin{dfn}
+    [Finite Type]
+    \label{defn:finitetype} 
+    We say a $G$-tree is of \emph{finite type} if the tree is locally finite, the vertex stabilizers have property FP, and the quotient is a finite graph.
+\end{dfn}
+
+Next, we fix terminology for discussing Guirardel's work from \cite{guirardelcorepaper}.
 
 \begin{dfn}
     [Directions and Halfspaces]
     \label{dfn:directionhalfspaces}
     A \emph{direction} based at a point \(p\in T\) where \(T\) is a tree is a connected component of \(T\smallsetminus p\). If \(p\) is a midpoint of an edge then we call the resulting directions \emph{halfspaces}.
     
-    A \emph{halfspace in a product of trees} is a preimage of a direction of a tree by projection. A \emph{quadrant} in \(T_1\times T_2\) based at \((x,y)\) is the product of two directions at \(x\) and \(y\) respectively or equivalently the intersection of two halfspaces. Similarly for \emph{orthants} in a product of three trees.
+    A \emph{halfspace in a product of trees} is a preimage of a direction of a tree under projection. A \emph{quadrant} in \(T_1\times T_2\) based at \((x,y)\) is the product of two directions at \(x\) and \(y\) respectively or equivalently the intersection of two halfspaces, one from each factor. An \emph{orthant} in \(T_1\times T_2\times T_3\) based at \((x,y,z)\) is the product of three directions at \(x\) and \(y\) and \(z\) respectively or equivalently the intersection of three halfspaces, one from each factor.
 \end{dfn}
 
-\begin{dfn}
-    [Finite Type]
-    \label{defn:finitetype} 
-    We say a $G$-tree is of \emph{finite type} if the tree is locally finite, the vertex stabilizers have property FP, and the quotient is finite.
-\end{dfn}
-
-
+Finally, we need a technical condition from Levitt in \cite{levitt}. In the same paper Levitt gives an alternate condition \ref{lem:simpgeo} that applies in our situation.
  \begin{dfn}
      [Geometric Action]
      \label{defn:geometricaction}
-     See \cite{levitt} for the full definition. In the same paper Levitt gives an alternate condition \ref{lem:simpgeo} that applies in our situation.
+      (??? The definition really is complicated, we need regularity conditions, foliations, pullbacks, "leaf space made hausdorff", pseudodistance, measured foliation (and it's components)
+      
+      but something should be said and it adds intuition for what the foliations are doing in Guirardel
+      
+      It would be nice to find the S^2 foliation with dense fibers that they give as well to make a point
+      )
  \end{dfn}
  
 \begin{lem}
@@ -589,21 +632,18 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 
 \section{Folding} 
 
+Here we define a special kind of map between \(G\)-trees called a fold, first introduced by Stallings in \cite{stallingsfolds}. Later we will factor \(G\)-maps into a sequence of folds and analyze each fold separately.
+
 \begin{dfn}
     [Folding]
     \label{defn:folding}
-    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together followed by folding their translates together equivariently. After folding and possibly subdividing a new \(G\)-tree without inversions is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
+    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together followed by folding their translates together equivariently. After folding and possibly subdividing, a new \(G\)-tree without inversions is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
 \end{dfn}
 
 \begin{exa}
 \label{exa:folding}
-(??? detailed folding example)
+(??? detailed folding example; at least mention type A where v is not in Gu U Gu')
 \end{exa}
-
-\begin{thm}[Bestvina-Feighn \cite{boundingcomplexity}]
-    \label{thm:folds} 
-    Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
-\end{thm}
 
 \begin{dfn}
     [Morphism]
@@ -615,42 +655,23 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
     A \emph{collapse map} is a map between two trees obtained by quotienting each connected component of a union of subtrees to a point. (Alternatively, it's a simplicial map where the preimage of every vertex is connected)
 \end{dfn}
 
+We need a result from Bestvina and Feighn on factoring morphisms.
+\begin{thm}[Bestvina-Feighn \cite{boundingcomplexity}]
+    \label{thm:folds} 
+    Let $G$ be a finitely generated group. Suppose that $\alpha: T'\to T$ is a simplicial equivariant map from a $G$-tree $T'$ to a minimal $G$-tree $T$ such that no edge in $T'$ is mapped to a point by $\alpha$. If all edge stabilizers of $T$ are finitely generated and if $T'/G$ is finite, then $\alpha$ can be represented as a finite composition of folds.
+\end{thm}
+
+The following lemma lets us fully factor our \(G\)-maps.
 \begin{lem}
     \label{lem:gmapfactor}
     Every surjective \(G\)-map between trees factors as a collapse map, followed by a morphism.
+    \begin{proof}
+        Consider all edges that map to vertices. The connected components of this set of edges constitutes a forest which gives the collapse map.
+    \end{proof}
 \end{lem}
 % really it's collapse, morphism, immersion but who cares we just need the onto case
 
-\begin{lem}
-    [Affine Equivariant Map]
-    \label{lem:affineequivariantmap} 
 
-
-    Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where the connected components of the fibers of \(f\) are the leaves of a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
-    \begin{proof}
-        Construct an equivariant map.
-
-        We start by defining \(f\) on \(K^{(0)}\) the 0-skeleton. By equivariance it is enough to define the map on a single vertex in each vertex orbit. These choices can be arbitrary. Next we check that the resulting map is well-defined. 
-        
-        Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so
-        
-        \[ f(gv) = gf(v) = g(g^{-1}h)f(v) = hf(v) = f(hv). \]
-        
-        Next we define the map on the 1-skeleton by mapping each edge. If \(vw\) is an edge, map it to the unique geodesic \([f(v), f(w)]\) in \(T\).
-        
-        Lastly, for 2-cells we use the standard fibration coming from mapping triangles to tripods. There are four cases based on where the 3 vertices land in \(T\). 
-        
-(??? update left triangle so that quotient tree is rotated to be in line with what the picture is showing)        
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=16cm]{triangle_fibers.png}
-    \caption{Possible fibrations for each simplex}
-    \label{fig:triangle_fibers}
-\end{figure}
-        
-        To obtain a transverse measure, take a small arc \(\alpha\) that is transverse to the leaves of the foliation. The length of \(\alpha\) is defined to be the length of \(f \circ \alpha\) in the tree. Hence, by construction \(f\) is an isometry on edges transverse to \(F\).
-    \end{proof}
-\end{lem}
 
 % (??? Found a reference about minimality:
 
@@ -665,21 +686,6 @@ Suppose $X$ and $Y$ are simplicial \(G\)-trees. Then the following are equivalen
 % ..... can also prove using ... invariant tree and think about what a random edge has to do
 
 % ===
-
-% "Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
-
-% In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
-
-% Update: Still looking for this result from the bass paper
-
-% )
-\begin{lem}
-    \label{reducedcocompact}
-    If \(X\) is a \(G\)-tree that is reduced then it is minimal
-    \begin{proof}
-        (???) cite forester deformation and rigidity or add cocompactness and use a result from Bass
-    \end{proof}
-\end{lem}
 
 
 \section{Cohomological Dimension and Groups of Type FP}
@@ -712,7 +718,7 @@ A module \(M\) over \(A\) has property \(FP_n\) with \(0\leq n\leq \infty\) if t
 \end{dfn}
 
 \begin{rmk}
-The property \(FP_n\) generalizes familiar properties. For a module \(M\) being finitely generated is equivalent to having property \(FP_0\). Similarly for being finitely presented and property \(FP_1\).
+The property \(FP_n\) generalizes familiar properties. For a module \(M\), being finitely generated is equivalent to having property \(FP_0\), being finitely presented is equivalent to having property \(FP_1\).
 \end{rmk}
 
 \begin{dfn}
@@ -731,12 +737,22 @@ A group \(G\) is finitely generated if and only if \(G\) is of type \(FP_1\) ove
 \begin{dfn}
 [Property FP]
 (Bieri p55)
-A module is of type FP if there exists a finitely generated projective resolution of finite length.
+A module is of type \(FP\) if there exists a finitely generated projective resolution of finite length. This is equivalent to being of type \(FP_\infty\) and having finite cohomological dimension.
 \end{dfn}
 
 \section{VH-complexes}
 
-A \emph{cube complex} is a CW-complex consisting of cubes glued together via face isometries. A \emph{midcube} of a cube \([-1,1]^k\) is the result of restricting one coordinate to zero. A \emph{hyperplane} of a cube complex comes from taking a single midcube and extending it along glued faces of the cube complex to include other midcubes. Hyperplanes are cube complexes themselves but come with an immersion into the surrounding complex. For details see \cite{haglundwise}.
+A \emph{cube complex} is a CW-complex consisting of cubes glued together along isometries of faces. Here an \emph{\(n\)-cube} is a copy of \([-1,1]^n\) with the Euclidean metric, a \emph{\(k\)-face} is a subset of an \(n\)-cube where all but \(k\) coordinates are restricted to \(-1\) or \(1\), a \emph{midcube} of a cube \([-1,1]^n\) is the result of restricting exactly one coordinate to zero. A \emph{hyperplane} of a cube complex comes from taking a single midcube and extending it along glued faces of the cube complex to include other midcubes. More specifically, a hyperplane is a minimal closed subset whose intersection with any closed cube is a union of midcubes. Hyperplanes are cube complexes themselves but come with an immersion into the surrounding complex. For details see \cite{manning}, \cite{haglundwise}.
+
+\begin{dfn}
+    [Non-positively curved]
+    A cube complex is \emph{non-positively curved} or \emph{NPC} if the link of every vertex is a flag simplicial complex.
+\end{dfn}
+
+\begin{dfn}
+    [Combinatorial complex]
+    (??? grab dfn from haglund but is this actually what Wise meant?, not sure we need this at all)
+\end{dfn}
 
 \begin{dfn}
     [Square Complex]
@@ -750,13 +766,13 @@ A \emph{cube complex} is a CW-complex consisting of cubes glued together via fac
         \item the link at each vertex is simplicial;
         \item each edge is labelled vertical or horizontal;
         \item each hyperplane is two-sided;
-        \item attaching maps alternate between each type of edge.
+        \item attaching maps alternate between horizontal and vertical edges.
     \end{enumerate}
     Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons. 
 \end{dfn}
 
 \begin{rmk}
-Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges. Wise does not require his VH-complexes to be NPC. For our purposes we assume the equivalent link property in dimension 2 for convenience. The link property also generalizes to an object we need later called a VHD-complex.
+Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to satisfying the \emph{flag condition} i.e. requiring that all links be simplicial graphs, so no double edges or loops. Wise does not require his VH-complexes to be NPC. However, for convenience, we assume the flag condition and so our VH-complexes will be NPC. The flag condition also generalizes to an object we need later called a VHD-complex (see \ref{dfn:vhd}).
 \end{rmk}
 
 \begin{dfn}
@@ -765,7 +781,7 @@ Note that the link of every VH-complex is a bipartite graph; this follows from c
 \end{dfn}
 
 \begin{rmk}
-    A hyperplane is two-sided if and only if there is a choice of orientation on each edge dual to the hyperplane that is consistent across squares. This orientation condition can always be achieved by subdividing a cube complex twice. For details see Wise \cite{wisecsc}. This allows us to avoid twisting (e.g. Mobius bands) and ensure our cube complexes will decompose easily into graphs of spaces.
+    A hyperplane is two-sided if and only if there is a choice of orientation on each edge dual to the hyperplane that is consistent across squares. This orientation condition can always be achieved by subdividing a cube complex twice. For details see Wise \cite{wisecsc}. This allows us to avoid twisting (e.g. Mobius bands) and ensures our cube complexes will decompose easily into graphs of spaces.
 \end{rmk}
 
 \begin{dfn}
@@ -1342,7 +1358,43 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
 
 \section{Construct CCP set}
 
-        The content of this technical lemma is that maps from a 2-complex that are constant on leaves can be extended to a map with connected fibers by enlarging the 2-complex.
+So far we have only used \(T_1\) and \(T_2\) to define \(X_{12}\). We need to include our third action. 
+
+\begin{lem}
+    [Affine Equivariant Map]
+    \label{lem:affineequivariantmap} 
+
+
+    Suppose that \(G\) acts freely on a simplicial complex \(K\) and acts on a simplicial tree \(T\). Then there exists an equivariant map \(f: K \to T\) where the connected components of the fibers of \(f\) are the leaves of a measured foliation and \(f\) is an isometry on edges transverse to \(\mathscr{F}\).
+    \begin{proof}
+        Construct an equivariant map.
+
+        We start by defining \(f\) on \(K^{(0)}\) the 0-skeleton. By equivariance it is enough to define the map on a single vertex in each vertex orbit, and extend equivariantly. These choices can be arbitrary. Next we check that the resulting map is well-defined. 
+        
+        Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so
+        
+        \[ f(gv) = gf(v) = g(g^{-1}h)f(v) = hf(v) = f(hv). \]
+        
+        Next we define the map on the 1-skeleton by mapping each edge. If \(vw\) is an edge, map it to the unique geodesic \([f(v), f(w)]\) in \(T\).
+        
+        Lastly, for 2-cells we use the standard fibration coming from mapping triangles to tripods. There are four cases based on where the 3 vertices land in \(T\). 
+        
+(??? update left triangle so that quotient tree is rotated to be in line with what the picture is showing)        
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=16cm]{triangle_fibers.png}
+    \caption{Possible fibrations for each simplex}
+    \label{fig:triangle_fibers}
+\end{figure}
+        
+        To obtain a transverse measure, take a small arc \(\alpha\) that is transverse to the leaves of the foliation. The length of \(\alpha\) is defined to be the length of \(f \circ \alpha\) in the tree. Hence, by construction \(f\) is an isometry on edges transverse to \(F\).
+    \end{proof}
+\end{lem}
+
+
+Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\).  Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively.
+
+        The content of this lemma is that a map from a 2-complex that is constant on leaves can be extended to a map with connected leaves by enlarging the 2-complex.
         \begin{lem}
             \label{lem:guirardel-extension}
             (Guirardel's Extension Lemma)
@@ -1360,27 +1412,32 @@ Applying the transverse construction lemma \ref{pro:transverseconstruction} we o
     \end{proof}
 \end{lem}
 
-        Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\).  Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively. Moreover these satisfy enough technical conditions 
-        \ref{lem:technicalconditions} for us to apply the Guirardel Extension Lemma \ref{lem:guirardel-extension} to obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\).
+        With \ref{lem:technicalconditions} we now have everything needed to apply the Guirardel Extension Lemma \ref{lem:guirardel-extension} to \(\widetilde{X_{12}}\), \(f_{123}\) and \(\mathscr{F}_{123}\) in order to obtain \(\widetilde{X_{12}}^{+}\) and \(f_{123}^{+}\) and \(\mathscr{F}_{123}^{+}\) respectively. Having connected the fibers for \(f_{123}\) we continue with  work on the other functions.
 
-        Next, let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively. 
+        Next, let  \(f_{121}\) and  \(f_{122}\)  denote the Bass-Serre \ref{defn:bsmap} maps from \(\widetilde {X_{12}}\) to \(T_{1}\) and \(T_{2}\) respectively.
+        
+                \begin{rmk}
+            
+        The following is an informal sketch of what the Bass-Serre maps \(f_{122}\) and \(f_{121}\) look like. In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$ (recall \ref{dfn:decompositiongraph}). Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map. 
+        \end{rmk}
         
         Our goal is to produce a map from the extended complex \(\widetilde {X_{12}}^+\) to \(T_1\times T_2\times T_3\). The map   \(f_{123}^+\) defined on \(\widetilde {X_{12}}^+\) is already determined by the extension lemma, so it remains to extend the Bass-Serre maps \(f_{121}\) and \(f_{122}\) from \(\widetilde {X_{12}}\) to \(\widetilde {X_{12}}^+\). 
         
-        By construction, \(\widetilde {X_{12}}^+\) has the form \(\Lambda(f_{123}, K)\) from \ref{dfn:subgraphconing} for some choice of graph \(K\). Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps to \(\widetilde {X_{12}}^+\) by applying \ref{lem:confib}. Denote the resulting extensions by \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations by  \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
+        By construction, \(\widetilde {X_{12}}^+\) has the form \(\Lambda(f_{123}, K)\) from \ref{dfn:subgraphconing} for some choice of graph \(K\). 
+        
+                
+        \begin{rmk}
+            The following is an explanation of how the graph \(K\) from applying \ref{lem:guirardel-extension} in Guirardel's paper is used. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps.
+        \end{rmk}
+        
+        
+        Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps to \(\widetilde {X_{12}}^+\) by applying \ref{lem:confib}. Denote the resulting extensions by \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations by  \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
         
         Form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\). Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. 
         
         Finally, by \ref{prop:fibershomeoplanes} \(J\) has property CCP.
-        
-        \begin{rmk}
-            The following is an explanation of where the graph \(K\) is used or not used in this proof. In short, for \(G\) finitely presented Guirardel's proof picks a specific compact subgraph of the 1-skeleton \(K\) that is large enough to make \(\widetilde {X_{12}}^+\) simply connected. Strictly speaking, we do not need to know the nature of \(K\), only that the extension has some graph coning structure so we can extend the Bass-Serre maps.
-        \end{rmk}
-        
-        \begin{rmk}
-            
-        The following is an informal sketch of what Bass-Serre maps look like during this proof. In our case \(\widetilde {X_{12}}\) is a VH-complex so edge and vertex spaces are graphs. Each square has a vertical and horizontal foliation. When $x$ is a vertex or a point on a horizontal edge, call the subset we get from extending the vertical foliation $V_x$. Then collapsing all the $V_x$ spaces to a point gives the map to $T_1$ called \(f_{121}\) defined above as the Bass-Serre map
-        \end{rmk}
+    
+
     
         
         
@@ -1433,19 +1490,25 @@ To finish the construction of the extended core, repeatedly apply lemma \ref{lem
 
 \section{Topological properties of the Extended Core}
 
-Here we explain why the definition of VHD-complex is an appropriate generalization of a VH-complex and verify that \(E\) is a universal cover.
+Here we verify that \(E\) is a universal cover and that \(E/G\) has three honest graph of spaces decompositions.
 
 \begin{dfn}
     [VHD-Complex]
     \label{dfn:vhd}
-    We say \(X\) is a VHD-complex if it's a 3 dimensional cube complex with simplicial links and two-sided hyperplanes where edges are labelled one of V, H, or D and parallel edges have the same label.
+    We say \(X\) is a VHD-complex if it is a 3 dimensional cube complex with simplicial links and two-sided hyperplanes where edges are labelled one of V, H, or D, parallel edges have the same label, and edges with a common vertex have different labels. (??? do we need this? what about graphs?)
 \end{dfn}
 
-To start, \(T_1\times T_2\times T_3\) has a natural VHD-complex structure with \(E\) as a \(G\)-invariant subset. The action is a product action so orbits of edges remain in the same parallelism class, therefore the quotient inherits the VHD-complex labeling. The tree actions do not have any inversions and therefore \(E\) and the quotient \(E/G\) have two-sided hyperplanes. Hence, \(E\) and \(E/G\) are VHD-complexes.
+\begin{dfn}
+    [Primitive]
+    \label{dfn:primitive}
+    (??? need to define in context, but essentially if NONE of the final splittings have positive rank)
+\end{dfn}
+
+To start, \(T_1\times T_2\times T_3\) has a natural VHD-complex structure given by labelling \(T_1\) edges with \(V\), \(T_2\) edges with \(H\) and \(T_3\) edges with \(D\). The product \(T_1\times T_2\times T_3\) contains \(E\) as a \(G\)-invariant subset. The action is a product action so orbits of edges remain in the same parallelism class, therefore the quotient inherits the VHD-complex labeling. The tree actions do not have any inversions and therefore \(E\) and the quotient \(E/G\) have two-sided hyperplanes. Hence, \(E\) and \(E/G\) are VHD-complexes.
 
 
 \begin{rmk}
-    Our definition of VHD-Complex does not require that hyperplanes are injective on fundamental groups, only that hyperplanes are two-sided. The injectivity property is  however needed to obtain an honest graph of groups decomposition. For the VHD-Complex \(E/G\) we are considering the injectivity property follows from fact that there is a universal cover \(E\) with simply-connected hyperplanes. For comparison, in dimension two, for a VH-Complex the injectivty follows automatically from the two-sided requirement and the vertex link requirement.
+    Our definition of VHD-Complex does not require that hyperplanes are injective on fundamental groups, only that hyperplanes are two-sided. The injectivity property is  however needed to obtain an honest graph of groups decomposition. For the VHD-Complex \(E/G\) we are considering the injectivity property follows from fact that there is a universal cover \(E\) with simply-connected hyperplanes. For comparison, in dimension two, in a VH-Complex the \(\pi_1\)-injectivty of hyperplanes follows automatically from the two-sided requirement and the vertex link requirement.
 \end{rmk}
 
 \begin{lem}
@@ -1466,7 +1529,7 @@ To start, \(T_1\times T_2\times T_3\) has a natural VHD-complex structure with \
     \end{proof}
 \end{lem}
 
-This lemma ensures \(E/G\) will have the correct fundamental group and is the main reason we need that \(E\) has connected 1-dimensional fibers. 
+This lemma and the next one ensures \(E/G\) will have fundamental group \(G\). 
 
 \begin{lem}
     [Extended Core is simply connected]
@@ -1497,6 +1560,17 @@ This lemma ensures \(E/G\) will have the correct fundamental group and is the ma
         % We need these maps to be injective on fundamental groups in $E/G$. The push map from a hyperplane to a vertex space followed by inclusion is the same up to homotopy as globally including the hyperplane into \(E/G\). We will show that the composition is injective so that the induced map from the edge space to the vertex space is injective on fundamental groups as needed. It is enough to show that lifts of hyperplanes are simply connected.
     
         % A hyperplane of $E/G$ lifts to a hyperplane of $E$ which sits inside a slice of $T_1 \times T_2\times T_3$. Since $E$ has connected 1-dimensional fibers by Guirardel the hyperplane is quadrant convex which implies simply connected.
+        
+        \begin{lem}
+            [Injective on fundamental groups]
+            \label{lem:injpi1}
+            Let \(A\subseteq X\) and \(\rho:\widetilde X\to X\) the universal cover of \(X\). Then the inclusion map of \(A\) into \(X\) is \(\pi_1\)-injective if and only if the connected components of \(\rho^{-1}(A)\) are simply connected.
+            \begin{proof}
+                (??? see hatcher or munkres probably, maybe even omitt proof)
+            \end{proof}
+        \end{lem}
+        
+        The final topological property we need is for the hyperplanes of \(E/G\) to be \(\pi_1\)-injective. Fortunately, during the proof of \ref{lem:coresc} we show that the hyperplanes of \(E\) are simply connected. This combined with \ref{lem:injpi1} gives the injectivity property. As a corollary, \(E/G\) has three splittings corresponding to \(T_1\), \(T_2\), and \(T_3\).
 
     \end{proof}
 \end{lem}
@@ -1559,6 +1633,20 @@ We will now iterate the splitting process and then apply Bieri. To begin, by ass
 
 \begin{thebibliography}{9}
 
+\bibitem{stallingsfolds}
+ J. R. Stallings, Topology of finite graphs
+
+\bibitem{scottwall}
+topological methods in group theory
+
+\bibitem{burgermozes}
+Lattices in product of trees
+Burger, Marc  ; Mozes, Shahar
+
+\bibitem{manning}
+Cubulating spaces and groups, lecture notes
+(working draft – March 3, 2020)
+Jason F. Mannin
 
 \bibitem{levitt}
 Gilbert Levitt.
@@ -1581,6 +1669,9 @@ ISOMETRIES OF CAT(0) CUBE COMPLEXES ARE SEMI-SIMPLE
 \bibitem{haglundwise}
 SPECIAL CUBE COMPLEXES
 Frederic Haglund and Daniel T. Wise
+
+\bibitem{mattclay}
+baumslag paper
 
 \bibitem{hymanbass}
 Hyman Bass.
