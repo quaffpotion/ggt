@@ -408,13 +408,13 @@ to
 
 \chapter{Introduction}
 
-We are interested in groups acting on locally finite trees. By Bass-Serre theory this corresponds to groups that split as a finite index graph of groups. When working with splittings there is already a notion of similarity given by elementary deformations. We say two graphs of groups lie in the same deformation space if they are related by a sequence of moves that transform edges of the form \(A*_CC\) to \(A\) or the reverse.
+We are interested in groups acting on locally finite trees. By Bass-Serre theory this corresponds to groups that split as a finite index graph of groups. When working with splittings there is already a notion of similarity given by elementary deformations. We say two graphs of groups lie in the same deformation space if they are related by a sequence of moves that transform edges of the form \(A*_CC\) to a vertex \(A\) or the reverse.
 
-In order to have access to results from homological algebra and make the problem tractable we restrict ourselves to cocomapct actions where the stabilizers are FP. Property FP along with \(FP_n\), \(FP_\infty\), and \(F\) are all related finiteness properties. We will only need Property FP; for examples take groups \(G\) with cocompact finite dimensional \(K(G,1)\) spaces. Our setting then is finite index graphs of groups where the vertex and edge groups are FP and the quotient graph is finite. (Note, finite index implies that if any stabilizer is FP then they all are)
+In order to have access to results from homological algebra and make the problem tractable we restrict ourselves to cocompact actions where the stabilizers are groups of type FP. Property FP along with \(FP_n\), \(FP_\infty\), and \(F\) are all related finiteness properties. We will only need Property FP; for examples take groups \(G\) with cocompact finite dimensional \(K(G,1)\) spaces. Our setting then is finite index graphs of groups where the vertex and edge groups are FP and the quotient graph is finite. (Note, finite index implies that if any stabilizer is FP then they all are)
 
-One basic question to ask of a group is it's cohomological dimension. Trivial groups have dimension zero, non-abelian free groups have dimension one, and so on. Even at dimension two there are interesting examples that fit within our setup. Danny Wise invented a kind of 2-complex called a VH-complex and used them to construct groups with no finite quotients \cite{wisethesis}. Burger and Mozes produced infinite, finitely presented, torsion-free simple groups in the same class \cite{burgermozes}.
+One basic question to ask of a group is its cohomological dimension. Trivial groups have dimension zero, non-abelian free groups have dimension one, and so on. Even at dimension two there are interesting examples that fit within our setup. Daniel Wise invented a kind of 2-complex called a VH-complex and used them to construct groups with no finite quotients \cite{wisethesis}. Burger and Mozes produced infinite, finitely presented, torsion-free simple groups in the same class \cite{burgermozes}.
 
-Our goal is to fix a group \(G\) of dimension two (as this is the first interesting case after free groups) and give a uniqueness result on the number of splittings. Already, Wise has shown that \(G\) comes with two splittings but there is no comment on uniqueness and indeed the torus shows that \(\mathbb{Z}\times\mathbb{Z}\) has an infinite number of splittings all lying in different deformation spaces. We will show that for certain actions the answer is exactly two.
+Our goal is to fix a group \(G\) of dimension two (as this is the first interesting case after free groups) and give a uniqueness result on the number of splittings. Already, Wise has shown that \(G\) comes with two splittings but there is no comment on uniqueness and indeed the torus shows that \(\mathbb{Z}\times\mathbb{Z}\) has an infinite number of splittings all lying in different deformation spaces. We will show that for certain actions there are exactly two splittings up to deformation.
 
 The proof proceeds by encoding two tree actions into a single square complex called Guirardel's core. Then, using a supposed third action we are able to construct a three dimensional complex that can be built up from lower dimensional complexes in such a way that results of Bieri on cohomological dimension apply. The result is an extended core with dimension three that \(G\) acts on; this contradicts the original assumption that \(G\) only had dimension two. 
 
@@ -476,7 +476,9 @@ We conjecture that primitive VHD complexes all have a fundamental group of \(\ma
 
 In this section we introduce \(G\)-trees, their equivalence with graphs of groups, and related results.
 
-A \emph{\(G\)-Tree} is an action of a group \(G\) on a simplicial tree without inversions. An element \(g\in G\) is \emph{elliptic} if \(g\) fixes a vertex and \emph{hyperbolic} otherwise. A subgroup \(H\leq G\) is \emph{elliptic} if there is a vertex that is fixed by all elements of \(H\). We denote the set of all elliptic subgroups by \(\mathcal{E}(G)\).
+A \emph{\(G\)-tree} is an action of a group \(G\) on a simplicial tree without inversions. An element \(g\in G\) is \emph{elliptic} if \(g\) fixes a vertex and \emph{hyperbolic} otherwise. (??? mention that it comes with an axis) A subgroup \(H\leq G\) is \emph{elliptic} if there is a vertex that is fixed by all elements of \(H\). We denote the set of all elliptic subgroups by \(\mathcal{E}(G)\).
+
+(??? F: need graph of groups dfn and maybe graph of spaces)
 
 \begin{dfn}
     [Minimal Action]
@@ -496,20 +498,54 @@ From \cite{boundingcomplexity} we have the following classification of \(G\)-tre
         \item Elliptic: \(T\) is a point or equivalently every element of \(G\) is elliptic.
         \item Dihedral: \(T\) is a line and there exists an epimorphism from \(G\) to the infinite dihedral group.
         \item Parabolic: \(T\) has one end fixed by \(G\). Additionally, there is an epimorphism from \(G\) to \(\mathbb{Z}\).
-        \item Hyperbolic (i.e. irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
+        \item Hyperbolic (or irreducible): There exists two axes in \(T\) with compact intersection. When this happens, \(G\) contains a non-abelian free group.
     \end{enumerate}
 \end{thm}
 
-Given a \(G\)-tree, or equivalently a graph of groups a \emph{collapse move} produces a new graph where an edge corresponding to \(A*_CC\) is collapsed to a vertex \(A\). The reverse is called an \emph{expansion move}. An \emph{elementary deformation} is a finite sequence of such moves. We say a \(G\)-tree is \emph{reduced} when one can no longer perform any collapse moves. For details and examples see \cite{foresterdeformationrigidity}, \cite{mattclay}.
+Given a \(G\)-tree, or equivalently a graph of groups, a \emph{collapse move} produces a new graph where an edge corresponding to \(A*_CC\) is collapsed to a vertex \(A\). The reverse is called an \emph{expansion move}. An \emph{elementary deformation} is a finite sequence of such moves. We say a \(G\)-tree is \emph{reduced} when one can no longer perform any collapse moves. For details and examples see \cite{foresterdeformationrigidity}, \cite{mattclay}.
 
 \begin{dfn}
     [Deformation Space]
     We say two \(G\)-trees \(T_1\) and \(T_2\) are in the same \emph{deformation space} if there is an elementary deformation from \(T_1\) to \(T_2\).
 \end{dfn}
 
+
+
+
+% "Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
+
+% In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
+
+% Update: Still looking for this result from the bass paper
+
+% )
+\begin{lem}
+    \label{reducedcocompact}
+    If \(X\) is a \(G\)-tree that is reduced then it is minimal
+    \begin{proof}
+    One can show that if \(e\) is an edge outside of a \(G\)-invariant subtree, then it admits an elementary collapse move. For details see \cite{foresterdeformationrigidity}.
+    \end{proof}
+\end{lem}
+
+The following is a corollary of the main theorem from \cite{foresterdeformationrigidity} that relates elliptic subgroups and deformations.
+
+\begin{thm} [Forester]
+    \label{thm:forester}
+    Let \(G\) be a group and let \(X\) and \(Y\) be cocompact \(G\)–trees. The following conditions are equivalent.
+    \begin{enumerate}
+        \item \(X\) and \(Y\) are related by an elementary deformation. 
+        \item \(X\) and \(Y\) have the same elliptic subgroups.
+    \end{enumerate}
+If all vertex stabilizers are finitely generated then we may also include:
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item \(X\) and \(Y\) have the same elliptic elements.
+\end{enumerate}
+\end{thm}
+
 \begin{exa}
 
-An important example: The Torus has infinitely many graph of spaces decompositions each lying in a different deformation space. To see this, note that simple closed curves on the torus correspond to graph of spaces decompositions with the curve as the edge space. Up to homotopy, such curves correspond to extended rationals e.g. r/s, 1/0, and 0/1 each telling you how many times a curve wraps around both directions of the torus. The wrapping numbers correspond to coordinates of \(\mathbb{Z}\times \mathbb{Z}\), so r/s corresponds to the cyclic subgroup \(\langle (r,s)\rangle\leq \mathbb{Z}\times \mathbb{Z}\). With this perspective, \(\mathbb{Z}\times \mathbb{Z}\) can be viewed as an HNN extension (i.e. a graph of groups with exactly one edge and one vertex) where the vertex and edge space is named by some r/s. The elliptic subgroups are exactly the vertex group and it's subgroups therefore by  \ref{thm:forester} each splitting is in a different deformation space.
+An important example: The Torus has infinitely many graph of spaces decompositions each lying in a different deformation space. To see this, note that simple closed curves on the torus correspond to graph of spaces decompositions with the curve as the edge space. Up to homotopy, such curves correspond to extended rationals e.g. r/s, 1/0, and 0/1 each telling you how many times a curve wraps around both directions of the torus. The wrapping numbers correspond to coordinates of \(\mathbb{Z}\times \mathbb{Z}\), so r/s corresponds to the cyclic subgroup \(\langle (r,s)\rangle\leq \mathbb{Z}\times \mathbb{Z}\). With this perspective, \(\mathbb{Z}\times \mathbb{Z}\) can be viewed as an HNN extension (i.e. a graph of groups with exactly one edge and one vertex) where the vertex and edge groups are \(\langle (r,s)\rangle\). The elliptic subgroups are exactly the vertex group and its subgroups therefore by  \ref{thm:forester} each splitting is in a different deformation space.
 
 
 
@@ -529,38 +565,6 @@ An important example: The Torus has infinitely many graph of spaces decompositio
 
 
 \end{exa}
-
-
-% "Note that if a G–tree (or a graph of groups) is reduced then it is minimal." \cite{foresterdeformationrigidity}
-
-% In the lemma below, do we need cocompactness? (no) -- but it's easier and we can cite a nice  Bass Covering Theory paper stuff
-
-% Update: Still looking for this result from the bass paper
-
-% )
-\begin{lem}
-    \label{reducedcocompact}
-    If \(X\) is a \(G\)-tree that is reduced then it is minimal
-    \begin{proof}
-        See Forester \cite{foresterdeformationrigidity}.
-    \end{proof}
-\end{lem}
-
-The following is a corollary of the main theorem from \cite{foresterdeformationrigidity} that relates elliptic subgroups and deformations.
-
-\begin{thm} [Forester]
-    \label{thm:forester}
-    Let \(G\) be a group and let \(X\) and \(Y\) be cocompact \(G\)–trees. The following conditions are equivalent.
-    \begin{enumerate}
-        \item \(X\) and \(Y\) are related by an elementary deformation. 
-        \item \(X\) and \(Y\) have the same elliptic subgroups.
-    \end{enumerate}
-If all vertex stabilizers are finitely generated then we may also include:
-\begin{enumerate}
-    \setcounter{enumi}{2}
-    \item \(X\) and \(Y\) have the same elliptic elements.
-\end{enumerate}
-\end{thm}
 
 
 If one \(G\)-tree contains the elliptic subgroups of another it is possible to produce a \(G\)-map between the two trees. This map in turn can be analyzed using Stallings folds as in \ref{lem:gmapfactor}.
@@ -589,7 +593,7 @@ Bass-Serre Theory is responsible for the correspondence between \(G\)-trees and 
 \begin{dfn}
     [Bass-Serre Map]
     \label{defn:bsmap}
-    The universal cover of a graph of spaces is a tree of spaces. Define a map to the underlying tree taking $X_v$ to the vertex \(v\) and $X_e \times I$ to the edge \(e\) by collapsing fibers. This map is called a Bass-Serre map.
+    The universal cover of a graph of spaces is a tree of spaces. Define a map to the underlying tree taking $X_v$ to the vertex \(v\) and $X_e \times I$ to the edge \(e\) by collapsing onto the second factor. This map is called a Bass-Serre map.
 \end{dfn}
 
 Here we list some technical definitions that are not part of the standard background for \(G\)-trees but are needed here or appear in results we cite.
@@ -610,18 +614,8 @@ Next, we fix terminology for discussing Guirardel's work from \cite{guirardelcor
     
     A \emph{halfspace in a product of trees} is a preimage of a direction of a tree under projection. A \emph{quadrant} in \(T_1\times T_2\) based at \((x,y)\) is the product of two directions at \(x\) and \(y\) respectively or equivalently the intersection of two halfspaces, one from each factor. An \emph{orthant} in \(T_1\times T_2\times T_3\) based at \((x,y,z)\) is the product of three directions at \(x\) and \(y\) and \(z\) respectively or equivalently the intersection of three halfspaces, one from each factor.
 \end{dfn}
-
-Finally, we need a technical condition from Levitt in \cite{levitt}. In the same paper Levitt gives an alternate condition \ref{lem:simpgeo} that applies in our situation.
- \begin{dfn}
-     [Geometric Action]
-     \label{defn:geometricaction}
-      (??? The definition really is complicated, we need regularity conditions, foliations, pullbacks, "leaf space made hausdorff", pseudodistance, measured foliation (and it's components)
-      
-      but something should be said and it adds intuition for what the foliations are doing in Guirardel
-      
-      It would be nice to find the S2 foliation with dense fibers that they give as well to make a point
-      )
- \end{dfn}
+ 
+ Finally, there is a notion of a geometric action on an \(\mathbb{R}\)-tree. The full details do not concern us but \cite{levitt} gives a condition \ref{lem:simpgeo} that applies when specialized to our setup.
  
 \begin{lem}
     [Geometric Condition]
@@ -637,7 +631,9 @@ Here we define a special kind of map between \(G\)-trees called a fold, first in
 \begin{dfn}
     [Folding]
     \label{defn:folding}
-    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together followed by folding their translates together equivariently. After folding and possibly subdividing, a new \(G\)-tree without inversions is produced. There are several named types of folds based on the effect the folding has in the quotient graph. The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
+    Folding is an operation on \(G\)-trees without inversions. Essentially, two edges sharing a vertex are folded together followed by folding their translates together equivariently. After folding and possibly subdividing, a new \(G\)-tree without inversions is produced.
+    
+    There are several types of folds with names based on a case by case analaysis of the quotient graph \(T/G\). The main folds are of type IA, IIA, IIIA. We also have folds of type IB,IIB, IIIB and IIIC but these are compositions of type A folds and subdivisions. For details see \cite{boundingcomplexity} and \ref{exa:folding}.
 \end{dfn}
 
 \begin{exa}
@@ -742,21 +738,29 @@ A module is of type \(FP\) if there exists a finitely generated projective resol
 
 \section{VH-complexes}
 
-A \emph{cube complex} is a CW-complex consisting of cubes glued together along isometries of faces. Here an \emph{\(n\)-cube} is a copy of \([-1,1]^n\) with the Euclidean metric, a \emph{\(k\)-face} is a subset of an \(n\)-cube where all but \(k\) coordinates are restricted to \(-1\) or \(1\), a \emph{midcube} of a cube \([-1,1]^n\) is the result of restricting exactly one coordinate to zero. A \emph{hyperplane} of a cube complex comes from taking a single midcube and extending it along glued faces of the cube complex to include other midcubes. More specifically, a hyperplane is a minimal closed subset whose intersection with any closed cube is a union of midcubes. Hyperplanes are cube complexes themselves but come with an immersion into the surrounding complex. For details see \cite{manning}, \cite{haglundwise}.
+A \emph{cube complex} is a CW-complex consisting of cubes glued together via isometries between their faces. Here an \emph{\(n\)-cube} is a copy of \([-1,1]^n\) with the Euclidean metric, a \emph{\(k\)-face} is a subset of an \(n\)-cube where all but \(k\) coordinates are restricted to \(-1\) or \(1\), a \emph{midcube} of a cube \([-1,1]^n\) is the result of restricting exactly one coordinate to zero. A \emph{hyperplane} of a cube complex comes from taking a single midcube and extending it along glued faces of the cube complex to include other midcubes. More specifically, a hyperplane is a minimal closed subset whose intersection with any closed cube is a union of midcubes. For details see \cite{manning}, \cite{haglundwise}.
+
+There are several notions of what it means for a space to have non-positive curvature. For a cube complex there is a local combinatorial condition.
 
 \begin{dfn}
-    [Non-positively curved]
-    A cube complex is \emph{non-positively curved} or \emph{NPC} if the link of every vertex is a flag simplicial complex.
+    [Link of a vertex]
+    Let \(X\) be a cube complex. The \emph{link of a vertex \(v\)} is the complex formed by taking a small spherical neighborhood of the vertex \(v\).
 \end{dfn}
 
 \begin{dfn}
-    [Combinatorial complex]
-    See \cite{bridsonhaefliger}
+    [Flag simplicial complex]
+    A simplicial complex \(K\) satisfies the \emph{flag simplicial} property if every complete subgraph of the 1-skeleton of \(K\) bounds a simplex 
 \end{dfn}
+
+\begin{dfn}
+    [Non-positively curved (NPC)]
+    A cube complex \(X\) is \emph{non-positively curved (NPC)} if the link of every vertex is simplicial and satisfies the flag condition. If \(X\) is also simply connected then we say it is \emph{CAT(0)}.
+\end{dfn}
+
 
 \begin{dfn}
     [Square Complex]
-    A \emph{square complex} is a combinatorial 2-complex whose 2-cells are attached by combinatorial paths of length 4
+    A \emph{square complex} is a 2-complex whose 2-cells are attached by combinatorial paths of length 4.
 \end{dfn}
 
 \begin{dfn}
@@ -768,22 +772,23 @@ A \emph{cube complex} is a CW-complex consisting of cubes glued together along i
         \item each hyperplane is two-sided;
         \item attaching maps alternate between horizontal and vertical edges.
     \end{enumerate}
-    Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the vertical and horizontal skeletons. 
+    Let $V$ and $H$ denote the set of vertical and horizontal edges. Take $V_X = V \cup X^{(0)}$ and $H_X = H \cup X^{(0)}$ to be the \emph{vertical} and \emph{horizontal} skeletons. 
 \end{dfn}
 
 \begin{rmk}
-Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to satisfying the \emph{flag condition} i.e. requiring that all links be simplicial graphs, so no double edges or loops. Wise does not require his VH-complexes to be NPC. However, for convenience, we assume the flag condition and so our VH-complexes will be NPC. The flag condition also generalizes to an object we need later called a VHD-complex (see \ref{dfn:vhd}).
+Note that the link of every VH-complex is a bipartite graph; this follows from conditions (2) and (3), see also remark 1.4 from Wise \cite{wisethesis}. In dimension 2 the NPC property for a cube complex is equivalent to requiring that all links be simplicial graphs i.e. no double edges or loops. Wise does not require his VH-complexes to be NPC. However, for convenience, we assume property (1) and so our VH-complexes will be NPC. The link condition also generalizes to an object we need later called a VHD-complex (see \ref{dfn:vhd}).
 \end{rmk}
 
 \begin{dfn}
     [Two-sided Hyperplanes]
-    A hyperplane \(H\) is \emph{two-sided} if the open cubical neighborhood is homeomorphic to \(H\times (-1,1)\). For details see \cite{haglundwise}.
+    A hyperplane is \emph{two-sided} if there is a choice of orientation on each edge dual to the hyperplane that is consistent across squares.
 \end{dfn}
 
 \begin{rmk}
-    A hyperplane is two-sided if and only if there is a choice of orientation on each edge dual to the hyperplane that is consistent across squares. This orientation condition can always be achieved by subdividing a cube complex twice. For details see Wise \cite{wisecsc}. This allows us to avoid twisting (e.g. Mobius bands) and ensures our cube complexes will decompose easily into graphs of spaces.
+    An embedded hyperplane \(H\) is \emph{two-sided} if and only if the open cubical neighborhood is homeomorphic to \(H\times (-1,1)\). This orientation condition can always be achieved by subdividing a cube complex twice which allows us to avoid any twisting (e.g. Mobius bands) and ensures our cube complex will decompose easily into a graph of spaces.
 \end{rmk}
 
+The following is necessary to state an important result of Wise about the existence of splittings for VH-complexes. The notion of a  foliation will appear in Guirardel's work as well.
 \begin{dfn}
     [Decomposition Graph]
     \label{dfn:decompositiongraph}
@@ -842,7 +847,7 @@ The reader should think about a sequence of folds from \ref{thm:folds} while rea
     \label{lem:pullbacklocallyfinite}
     If \(X\) and \(Y\) are in the same deformation space and \(Y_\text{min}\) is is locally finite then \(X_\text{min}\) is also locally finite.
     \begin{proof}
-        Apply Lemma 2.10 from \cite{draftpaper} and use the definition of minimal subtree.
+        Apply Lemma 2.10 from \cite{draftpaper} and use the definition of minimal subtree. (??? actually lift the proof)
     \end{proof}
 \end{lem}
 
@@ -980,13 +985,13 @@ The following should be thought of as a prequel to the main theorem \ref{thm:mar
     \label{pro:transverseconstruction} 
  Let \(G\) be a group of cohomological dimension 2. If \(X\) and \(Y\) are non-trivial minimal \(G\)-trees of finite type that are in different deformation spaces then the following are equivalent:
 \begin{enumerate}
-    \item $X$ and $Y$ are transverse
-    \item $x \in V(X), y\in V(Y)\Longrightarrow G_x\cap G_y = \{1\}$
+    \item $X$ and $Y$ are transverse;
+    \item $G_x\cap G_y = \{1\}$ for all vertices \(x \in V(X), y\in V(Y)\);
     \item There exists a compact VH-complex $K$ with $\pi_1(K) \cong G$ whose horizontal and vertical splittings are $X$ and $Y$.
 \end{enumerate}
 \begin{proof}
 
-    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies it's edge groups are finite index subgroups of it's vertex groups. Hence the edge groups are also FP. 
+    $1\Rightarrow 2$: Fix $x_0 \in V(X)$. Let $y\in V(Y)$. Then $G_{x_0} \cap G_y = (G_{x_0})_y$. By (1) $X$ is transverse to $Y$ hence $G_{x_0}\cap G_y$ is FP. Since the choice of $y\in V(Y)$ was arbitrary, the vertex groups of the $G_{x_0}$ action on $Y$ are FP. Note, $Y$ locally finite implies its edge groups are finite index subgroups of its vertex groups. Hence the edge groups are also FP. 
     
     We claim that the action of $G_{x_0}$ on $Y$ is non-trivial. We will apply Bieri \ref{pro:bireridimension} twice. The third equality below comes from applying Bieri to the action of \(G_{x_0}\) on \(Y\) restricted to the minimal subtree. To know this action is cocompact we use \ref{lem:bassfgcon}.
     \begin{align*}
@@ -1033,7 +1038,7 @@ It's enough to be 1-1 on vertices. Suppose \(v\), \(v'\) go to the same
 vertex of \(X\times Y\). This means \(v\), \(v'\) are on the same leaf of the vertical foliation, and are also on the same leaf of the horizontal foliation.
 Call these leaves \(V_v\) and \(H_v\).
 By Lemma 3.7 of Wise in \cite{wisecsc}, the intersection of \(V_v\) and \(H_v\) is at most
-one point. (Remark: the lemma says exactly one point, for \(\widetilde K\) a CSC.
+one point. (Remark: the lemma says exactly one point, for \(\widetilde K\) a Complete Square Complex (CSC).
 But for "at most one point", it only needs that \(\widetilde K\) is VH and CAT(0),
 not complete.) Hence \(v = v'\).
 \end{proof}
@@ -1141,20 +1146,25 @@ In this section we work by analogy with Guirardel's results on connected fibers 
 \begin{prop}
     [Slices are connected]
  \label{prop:fibershomeoplanes} 
-    Put \(f =  f_{1} \times f_{2} \times f_{3}: X \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). We claim that \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({ f_{3}}^{-1}(z))\). Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\) then we have the following. 
+    Put \(f =  f_{1} \times f_{2} \times f_{3}: X \to T_{1} \times T_{2} \times T_{3} \) and \(J = \text{Im}(f)\). Then \(J \cap T_{1} \times T_{2} \times \{z\} = \text{Im}_{f} ({ f_{3}}^{-1}(z))\). 
+    
+
+    \begin{proof}
+            Let \(p = (p_{1}, p_{2} , p_{3}) \in T_{1} \times T_{2} \times T_{3}\). Then we have the following, 
     \begin{align*}
         p \in \text { LHS } & \Longleftrightarrow p \in \text{Im}(f) \wedge p_{3} = z \\ 
         & \Longleftrightarrow \exists x \in X (f(x)=p \wedge  f_3(x)=z)\\
         & \Longleftrightarrow \exists x \in X (f(x)=p \wedge x \in f_3^{-1} (z))\\
-        & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z))
+        & \Longleftrightarrow p \in \text{Im}_f(f_3^{-1} (z)).
     \end{align*}
+    \end{proof}
 \end{prop}
 
 The following definition serves only to give a name to an object created by Guirardel during the proof of the extension lemma \ref{lem:guirardel-extension}.
 \begin{dfn}
     [Subgraph Coning]
     \label{dfn:subgraphconing}
-    Let \(X\) be a 2-complex with a \(G\)-action. Let \(T\) be a simplicial \(G\)-tree. Let \(f:X\to T\) be a map. Let \(K\) be a subgraph of the 1-skeleton of \(X\). Then the subgraph cone of \(f\) with \(K\) denoted \(\Lambda(f, K)\) is the set \[X \bigsqcup \left(G\times C_K\right)\] modulo the relation sending \((g, (x,0))\) to \(g\cdot x\) where \(C_K\) is the set \[ K\times [0,1]\] modulo the relation that glues \((x,1)\) to \((x', 1)\) if and only if \(f(x) = x'\). 
+    Let \(X\) be a 2-complex with a \(G\)-action. Let \(T\) be a simplicial \(G\)-tree. Let \(f:X\to T\) be a map. Let \(K\) be a subgraph of the 1-skeleton of \(X\). Then the \emph{subgraph cone of \(f\) with \(K\)} denoted \(\Lambda(f, K)\) is the set \[X \sqcup \left(G\times C_K\right)\] modulo the relation sending \((g, (x,0))\) to \(g\cdot x\) where \(C_K\) is the set \[ K\times [0,1]\] modulo the relation that glues \((x,1)\) to \((x', 1)\) if and only if \(f(x) = x'\). 
 \end{dfn}
 
 \begin{dfn}
@@ -1163,17 +1173,21 @@ The following definition serves only to give a name to an object created by Guir
     Given \(S \subseteq X := X_1\times X_2\times X_3\) define \(S_{k}\) for \(k \in \{1,2,3\}\) via: 
     \[
         p \in S_{k} \iff \exists 
-        \,q,r\in S\, \forall j\in K: j\neq k 
+        \,q,r\in S\, \forall j\in \{1,2,3\}: j\neq k 
         \Longrightarrow ( p_{j} = q_{j} = r_{j}
         \text{ and } p_{k} \in \text{cvxhull}_k (\{q_{k} , r_{k}\}))
     \] 
     where \(\text{cvxhull}_k\) is the convex hull operation on subsets of \(X_k\).
 \end{dfn}
 
+For us, when we apply the above definition the factor spaces will be trees and therefore the filling operation that produces, say \(S_3\) is ensuring the one-dimensional fibers of \(\pi_{12}: S_3\to X_1\times X_2\) are connected. In the case of a tree, fibers are connected by drawing unique geodesics between points.
+
+
+
 \begin{dfn}
-    [Connected in coordinate planes]
+[Connected in coordinate planes (CCP)]
     \label{defn:ccp} 
-    Let \(S \subseteq X_1\times X_2\times X_3\). Then \(S\) is connected in all coordinate planes if \(S \cap \pi_{k}^{-1} (p)\) path is connected for all \(p \in X_{k}\) for all \(k\in \{1,2,3\}\).
+    Let \(S \subseteq X_1\times X_2\times X_3\). Then \(S\) is \emph{connected in all coordinate planes (CCP)} if \(S \cap \pi_{k}^{-1} (p)\) path is connected for all \(p \in X_{k}\) for all \(k\in \{1,2,3\}\).
 \end{dfn}
 
 
@@ -1350,7 +1364,7 @@ Starting with the hypotheses from the main theorem, this section breaks the proo
 
 \section{Setup}
 
-Suppose for sake of a contradiction that there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that are pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Transversality and finite quotients are preserved by deformations. Therefore, by \ref{reducedcocompact}, without loss of generality we may assume that these are minimal \(G\)-trees after performing a sequence of elementary deformations. 
+Suppose for sake of a contradiction that there were three non-trivial \(G\)-trees \(T_{1}\), \(T_{2}\), and \(T_{3}\) of finite type \ref{defn:finitetype} that are pairwise transverse \ref{defn:transverse} and no two are in the same deformation space. Transversality and finite quotients are preserved by deformations. Therefore, by \ref{reducedcocompact}, without loss of generality we may assume that these are minimal \(G\)-trees after performing a sequence of elementary collapses. 
 
 \section{Construct square complex with two splittings and given fundamental group}
 
@@ -1369,7 +1383,7 @@ So far we have only used \(T_1\) and \(T_2\) to define \(X_{12}\). We need to in
     \begin{proof}
         Construct an equivariant map.
 
-        We start by defining \(f\) on \(K^{(0)}\) the 0-skeleton. By equivariance it is enough to define the map on a single vertex in each vertex orbit, and extend equivariantly. These choices can be arbitrary. Next we check that the resulting map is well-defined. 
+        We start by defining \(f\) on \(K^{(0)}\) the 0-skeleton. It is enough to define the map on a single vertex in each vertex orbit, and extend equivariantly. These choices can be arbitrary. Next we check that the resulting map is well-defined. 
         
         Indeed, if \(gv=hv\) then \(g^{-1} h = 1\) by freeness and so
         
@@ -1394,7 +1408,7 @@ So far we have only used \(T_1\) and \(T_2\) to define \(X_{12}\). We need to in
 
 Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\).  Applying the affine equivariant map construction \ref{lem:affineequivariantmap} to the actions on \(\widetilde {X_{12}}\) and \(T_{3}\) gives an equivariant  map and a foliation that we denote by \(f_{123}\) and \(\mathscr{F}_{123}\) respectively.
 
-        The content of this lemma is that a map from a 2-complex that is constant on leaves can be extended to a map with connected leaves by enlarging the 2-complex.
+        The content of the next lemma is that a map from a 2-complex that is constant on leaves can be extended to a map with connected leaves by enlarging the 2-complex.
         \begin{lem}
             \label{lem:guirardel-extension}
             (Guirardel's Extension Lemma)
@@ -1433,7 +1447,7 @@ Let \(\widetilde {X_{12}}\) denote the universal cover of \(X_{12}\).  Applying 
         
         Once we know that the extension has this graph coning structure we can extend the Bass-Serre maps to \(\widetilde {X_{12}}^+\) by applying \ref{lem:confib}. Denote the resulting extensions by \(f_{121}^{\wedge}\) and \(f_{122}^{\wedge}\) and foliations by  \(\mathscr{F}^{\wedge}_{121}\) and \(\mathscr{F}^{\wedge}_{122}\). 
         
-        Form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is invariant so \(G\) acts on \(J\). Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. 
+        Form the product map \(f:= f_{121}^{\wedge} \times f_{122}^{\wedge} \times f_{123}^{+}\). Finally, define \(J := \text{Im}(f) \subset T_1\times T_2\times T_3\). Each map is equivariant so \(G\) acts on \(J\). Since \(J\) is the image of a cocompact set under a continuous \(G\)-map it is cocompact. 
         
         Finally, by \ref{prop:fibershomeoplanes} \(J\) has property CCP.
     
@@ -1482,6 +1496,8 @@ If necessary, use the open cells containing \(p'\) and \(q'\), to draw paths  to
 
 \section{Filling}
 
+(??? make this section differentate between saying we're doing something and actually doing it, see notes)
+
 Filling is a way to ensure an object has connected 1-dimensional fibers; at least in the direction of the filling. Each time you fill, material is added that could in principle create disconnected fibers in the other two  directions. Here we apply the switching lemma \ref{lem:switching} in the context of the extended core construction so this does not happen and we obtain an object with connected 1-dimensional fibers. 
 
 
@@ -1495,13 +1511,13 @@ Here we verify that \(E\) is a universal cover and that \(E/G\) has three honest
 \begin{dfn}
     [VHD-Complex]
     \label{dfn:vhd}
-    We say \(X\) is a VHD-complex if it is a 3 dimensional cube complex with simplicial links and two-sided hyperplanes where edges are labelled one of V, H, or D, parallel edges have the same label, and edges with a common vertex have different labels. (??? do we need this? what about graphs?)
+    We say \(X\) is a VHD-complex if it is a 3 dimensional cube complex with simplicial links and two-sided hyperplanes where edges are labelled one of V, H, or D, parallel edges have the same label, and incident edges of square have different labels.
 \end{dfn}
 
 \begin{dfn}
     [Primitive]
     \label{dfn:primitive}
-    (??? need to define in context, but essentially if NONE of the final splittings have positive rank)
+    A VHD complex is \emph{primitive} if its 1-skeleton contains no non-trivial circuit with edges of the same label. That is, for each label, the subgraph spanned by edges with that label is a forest.
 \end{dfn}
 
 To start, \(T_1\times T_2\times T_3\) has a natural VHD-complex structure given by labelling \(T_1\) edges with \(V\), \(T_2\) edges with \(H\) and \(T_3\) edges with \(D\). The product \(T_1\times T_2\times T_3\) contains \(E\) as a \(G\)-invariant subset. The action is a product action so orbits of edges remain in the same parallelism class, therefore the quotient inherits the VHD-complex labeling. The tree actions do not have any inversions and therefore \(E\) and the quotient \(E/G\) have two-sided hyperplanes. Hence, \(E\) and \(E/G\) are VHD-complexes.
@@ -1570,7 +1586,7 @@ This lemma and the next one ensures \(E/G\) will have fundamental group \(G\).
             \end{proof}
         \end{lem}
         
-        The final topological property we need is for the hyperplanes of \(E/G\) to be \(\pi_1\)-injective. Fortunately, during the proof of \ref{lem:coresc} we show that the hyperplanes of \(E\) are simply connected. This combined with \ref{lem:injpi1} gives the injectivity property. As a corollary, \(E/G\) has three splittings corresponding to \(T_1\), \(T_2\), and \(T_3\).
+        The final topological property we need is for the hyperplanes of \(E/G\) to be \(\pi_1\)-injective. Fortunately, during the proof of \ref{lem:coresc} we show that the hyperplanes of \(E\) are simply connected. This combined with \ref{lem:injpi1} gives the injectivity property. As a corollary, \(E/G\) has three splittings  with Bass-Serre trees \(T_1\), \(T_2\), and \(T_3\).
 
     \end{proof}
 \end{lem}
@@ -1613,6 +1629,8 @@ The following lemma shows that the second step in the iterative splitting is non
         Suppose \(x\) were a vertex of \(T_1\), Let \(K\) be it's stabilizer. Now \(K\) is a subgroup of \(G\) and so also acts on \(T_2\). If \(K\) had a global fixed point in \(T_2\)  then by local finiteness of \(T_1\) every vertex group of \(T_1\) would as well. Then by \ref{thm:ellipticimpliesequality} \(T_1\) and \(T_2\) are in the same deformation space; a contradiction. Therefore, \(K\) acts non-trivially on \(T_2\) as needed.
     \end{proof}
 \end{lem}
+
+(??? specialize further and split at D first so you can say V and H later)
 
 We will now iterate the splitting process and then apply Bieri. To begin, by assumption each of the original splittings \(T_1\), \(T_2\), and \(T_3\) are non-trivial. Now, consider a vertex group \(G_v\) from some splitting \(T_i\) where \(i\in \{1,2,3\}\). By lemma \ref{lem:iteratedsplitting}, \(G_v\) acts non-trivially on \(T_j\) for \(j\neq i\). These non-trivial actions are the second iteration of the splitting process. The vertex group \(G_v\) is the fundamental group of  the vertex space \(X_v\), a VH-complex with two splittings from \ref{thm:wisegraph}; in fact \(X_v\) is a graph of spaces where the vertex and edge spaces are also graphs. The graphs can be regarded as splittings over the trivial group -- but are they trivial splittings? It could happen that every graph has trivial fundamental group. Here we need to assume that at least one sequence of iterated splittings ends in a graph with positive rank. Suppose this were the case for \(G_v\), that is when \(X_v\) splits there is a vertex space \(\Gamma\) which is a graph of positive rank. The fundamental group of \(\Gamma\) is a non-abelian free group and therefore has dimension one. This fact can also be seen as an application of Bieri to \(\Gamma\) where \(\Gamma\) is viewed as a non-trivial splitting over the trivial group. In this case the trivial group has dimension zero, so Bieri gives that \(\pi_1(\Gamma)\) has dimension one. After a second application of Bieri we get that \(G_v\) must have dimension two. Finally, after a third application of Bieri's dimension theorem \ref{pro:bireridimension} we know \(G\) has dimension 3, a contradiction. This completes the proof of the main theorem.
 
